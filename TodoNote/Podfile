@@ -9,7 +9,8 @@ target 'TodoNote' do
   pod "KRProgressHUD"
   pod 'UIDeviceIdentifier'
   pod 'UITextView+Placeholder'
-
+  pod 'ULID.swift', '~> 1.2.0'
+  
   # for Firebase
   pod 'FirebaseAnalytics'
   pod 'FirebaseCrashlytics'
@@ -31,3 +32,6 @@ target 'TodoNote' do
   end
 
 end
+
+install! 'cocoapods',
+            :warn_for_unused_master_specs_repo => false

@@ -17,6 +17,8 @@
 		AABB4F922A80D7A5008FC467 /* TodoNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F912A80D7A5008FC467 /* TodoNoteTests.swift */; };
 		AABB4F9C2A80D7A5008FC467 /* TodoNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F9B2A80D7A5008FC467 /* TodoNoteUITests.swift */; };
 		AABB4F9E2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F9D2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift */; };
+		AABB4FB02A80DA99008FC467 /* TodoId.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4FAF2A80DA99008FC467 /* TodoId.swift */; };
+		AABB4FB22A80DAC7008FC467 /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4FB12A80DAC7008FC467 /* TodoEntity.swift */; };
 		D1945F9F28FF19DE6AAF5173 /* Pods_TodoNoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13F7D3177464E3F8AFBA262 /* Pods_TodoNoteTests.framework */; };
 		D2F524287E4BC9EFF59C95F8 /* Pods_TodoNote_TodoNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFFC1F6D5117760F4DE1E09 /* Pods_TodoNote_TodoNoteUITests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		AABB4F972A80D7A5008FC467 /* TodoNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB4F9B2A80D7A5008FC467 /* TodoNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNoteUITests.swift; sourceTree = "<group>"; };
 		AABB4F9D2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AABB4FAF2A80DA99008FC467 /* TodoId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoId.swift; sourceTree = "<group>"; };
+		AABB4FB12A80DAC7008FC467 /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
 		B00E0C4FA7CAEADA7D5B4F10 /* Pods-TodoNote-TodoNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote-TodoNoteUITests.release.xcconfig"; path = "Target Support Files/Pods-TodoNote-TodoNoteUITests/Pods-TodoNote-TodoNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C0374BAE478EC804447FFD37 /* Pods-TodoNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote.release.xcconfig"; path = "Target Support Files/Pods-TodoNote/Pods-TodoNote.release.xcconfig"; sourceTree = "<group>"; };
 		D13F7D3177464E3F8AFBA262 /* Pods_TodoNoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoNoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +104,6 @@
 				4C8E73468BBA2838F5E0AE51 /* Pods-TodoNoteTests.debug.xcconfig */,
 				87AC245C9E85DC7B8DC6F6D4 /* Pods-TodoNoteTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -139,12 +142,14 @@
 		AABB4F7A2A80D7A4008FC467 /* TodoNote */ = {
 			isa = PBXGroup;
 			children = (
-				AABB4F7B2A80D7A4008FC467 /* TodoNoteApp.swift */,
 				AABB4F7D2A80D7A4008FC467 /* ContentView.swift */,
-				AABB4F7F2A80D7A5008FC467 /* Assets.xcassets */,
-				AABB4F842A80D7A5008FC467 /* Persistence.swift */,
-				AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */,
+				AABB4F7B2A80D7A4008FC467 /* TodoNoteApp.swift */,
+				AABB4FAD2A80DA23008FC467 /* Database */,
+				AABB4FAC2A80DA1D008FC467 /* Model */,
 				AABB4F812A80D7A5008FC467 /* Preview Content */,
+				AABB4FAA2A80DA03008FC467 /* Resources */,
+				AABB4FAB2A80DA18008FC467 /* Screen */,
+				AABB4FAE2A80DA7A008FC467 /* Utility */,
 			);
 			path = TodoNote;
 			sourceTree = "<group>";
@@ -172,6 +177,46 @@
 				AABB4F9D2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift */,
 			);
 			path = TodoNoteUITests;
+			sourceTree = "<group>";
+		};
+		AABB4FAA2A80DA03008FC467 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AABB4F7F2A80D7A5008FC467 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AABB4FAB2A80DA18008FC467 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		AABB4FAC2A80DA1D008FC467 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AABB4FAF2A80DA99008FC467 /* TodoId.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AABB4FAD2A80DA23008FC467 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				AABB4F842A80D7A5008FC467 /* Persistence.swift */,
+				AABB4FB12A80DAC7008FC467 /* TodoEntity.swift */,
+				AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		AABB4FAE2A80DA7A008FC467 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,9 +457,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABB4FB22A80DAC7008FC467 /* TodoEntity.swift in Sources */,
 				AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */,
 				AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */,
 				AABB4F7E2A80D7A4008FC467 /* ContentView.swift in Sources */,
+				AABB4FB02A80DA99008FC467 /* TodoId.swift in Sources */,
 				AABB4F7C2A80D7A4008FC467 /* TodoNoteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,21 +625,26 @@
 				DEVELOPMENT_TEAM = QWWZHGNG38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ch3cooh.TodoNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -608,21 +660,26 @@
 				DEVELOPMENT_TEAM = QWWZHGNG38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ch3cooh.TodoNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -630,7 +687,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4C8E73468BBA2838F5E0AE51 /* Pods-TodoNoteTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -651,7 +707,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87AC245C9E85DC7B8DC6F6D4 /* Pods-TodoNoteTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -672,7 +727,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 80067E3A84656A6B71761630 /* Pods-TodoNote-TodoNoteUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QWWZHGNG38;
@@ -691,7 +745,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B00E0C4FA7CAEADA7D5B4F10 /* Pods-TodoNote-TodoNoteUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QWWZHGNG38;

@@ -125,6 +125,7 @@ PODS:
   - SwiftFormat/CLI (0.51.15)
   - UIDeviceIdentifier (2.3.0)
   - "UITextView+Placeholder (1.4.0)"
+  - ULID.swift (1.2.0)
 
 DEPENDENCIES:
   - FirebaseAnalytics
@@ -137,6 +138,7 @@ DEPENDENCIES:
   - SwiftFormat/CLI (~> 0.49)
   - UIDeviceIdentifier
   - "UITextView+Placeholder"
+  - ULID.swift (~> 1.2.0)
 
 SPEC REPOS:
   trunk:
@@ -164,6 +166,7 @@ SPEC REPOS:
     - SwiftFormat
     - UIDeviceIdentifier
     - "UITextView+Placeholder"
+    - ULID.swift
 
 SPEC CHECKSUMS:
   FirebaseABTesting: 86ac5a4fc749088bb4d55a1cbfb2c4cb42c6d5de
@@ -190,7 +193,8 @@ SPEC CHECKSUMS:
   SwiftFormat: 9bb35148209f3e809e920037f9b95c4c889c3612
   UIDeviceIdentifier: 442b65b4ff1832d4ca9c2a157815cb29ad981b17
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
+  ULID.swift: 7dddbacf51b74c60742d0ce49b81cb11491f803f
 
-PODFILE CHECKSUM: 5c65848d825d69396ed4b8f08d95a51e08664b81
+PODFILE CHECKSUM: e65d2adce09ce4cdc661e5ba85c551bb6c11f4a6
 
 COCOAPODS: 1.12.1
