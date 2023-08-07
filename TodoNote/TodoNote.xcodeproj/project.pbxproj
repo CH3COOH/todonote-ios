@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A668B311F47C06E2A7631D17 /* Pods_TodoNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36325D806F2A306BEC0CBE42 /* Pods_TodoNote.framework */; };
-		AABB4F802A80D7A5008FC467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F7F2A80D7A5008FC467 /* Assets.xcassets */; };
 		AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */; };
 		AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F842A80D7A5008FC467 /* Persistence.swift */; };
 		AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */; };
@@ -17,7 +16,6 @@
 		AABB4F9E2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F9D2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift */; };
 		AABB4FB02A80DA99008FC467 /* TodoId.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4FAF2A80DA99008FC467 /* TodoId.swift */; };
 		AABB4FB22A80DAC7008FC467 /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4FB12A80DAC7008FC467 /* TodoEntity.swift */; };
-		AAE79F682A80DDCA009823FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE79F672A80DDCA009823FB /* Colors.xcassets */; };
 		AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F6B2A80DE50009823FB /* SplashView.swift */; };
 		AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F6D2A80DE5C009823FB /* SplashViewModel.swift */; };
 		AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F702A80DE75009823FB /* RootViewController.swift */; };
@@ -53,7 +51,6 @@
 		AAE79FC02A80FD2F009823FB /* CheckVersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FBA2A80FD2F009823FB /* CheckVersionUseCase.swift */; };
 		AAE79FC12A80FD2F009823FB /* CheckVersionUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FBB2A80FD2F009823FB /* CheckVersionUseCaseResult.swift */; };
 		AAE79FC42A80FDA6009823FB /* UseCaseProctol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FC32A80FDA6009823FB /* UseCaseProctol.swift */; };
-		AAE79FC62A80FDFD009823FB /* AppConstValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FC52A80FDFD009823FB /* AppConstValues.swift */; };
 		AAE79FC82A80FFBB009823FB /* AppTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FC72A80FFBB009823FB /* AppTitleView.swift */; };
 		AAE79FCA2A810175009823FB /* HomeEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FC92A810175009823FB /* HomeEmptyView.swift */; };
 		AAE79FCE2A810444009823FB /* EditTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FCD2A810444009823FB /* EditTodoView.swift */; };
@@ -62,6 +59,9 @@
 		AAE79FD42A810D20009823FB /* PreviewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FD32A810D20009823FB /* PreviewUtil.swift */; };
 		AAE79FD82A8113AC009823FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FD72A8113AC009823FB /* LoginView.swift */; };
 		AAE79FDB2A811416009823FB /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FDA2A811416009823FB /* TodoDetailView.swift */; };
+		AAE79FDF2A81180B009823FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE79FDC2A81180A009823FB /* Colors.xcassets */; };
+		AAE79FE02A81180B009823FB /* AppConstValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FDD2A81180A009823FB /* AppConstValues.swift */; };
+		AAE79FE12A81180B009823FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE79FDE2A81180A009823FB /* Assets.xcassets */; };
 		D1945F9F28FF19DE6AAF5173 /* Pods_TodoNoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13F7D3177464E3F8AFBA262 /* Pods_TodoNoteTests.framework */; };
 		D2F524287E4BC9EFF59C95F8 /* Pods_TodoNote_TodoNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFFC1F6D5117760F4DE1E09 /* Pods_TodoNote_TodoNoteUITests.framework */; };
 /* End PBXBuildFile section */
@@ -90,7 +90,6 @@
 		80067E3A84656A6B71761630 /* Pods-TodoNote-TodoNoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote-TodoNoteUITests.debug.xcconfig"; path = "Target Support Files/Pods-TodoNote-TodoNoteUITests/Pods-TodoNote-TodoNoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		87AC245C9E85DC7B8DC6F6D4 /* Pods-TodoNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNoteTests.release.xcconfig"; path = "Target Support Files/Pods-TodoNoteTests/Pods-TodoNoteTests.release.xcconfig"; sourceTree = "<group>"; };
 		AABB4F782A80D7A4008FC467 /* TodoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AABB4F7F2A80D7A5008FC467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AABB4F842A80D7A5008FC467 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		AABB4F872A80D7A5008FC467 /* TodoNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoNote.xcdatamodel; sourceTree = "<group>"; };
@@ -101,7 +100,6 @@
 		AABB4F9D2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AABB4FAF2A80DA99008FC467 /* TodoId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoId.swift; sourceTree = "<group>"; };
 		AABB4FB12A80DAC7008FC467 /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
-		AAE79F672A80DDCA009823FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		AAE79F6B2A80DE50009823FB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		AAE79F6D2A80DE5C009823FB /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		AAE79F702A80DE75009823FB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 		AAE79FBA2A80FD2F009823FB /* CheckVersionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckVersionUseCase.swift; sourceTree = "<group>"; };
 		AAE79FBB2A80FD2F009823FB /* CheckVersionUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckVersionUseCaseResult.swift; sourceTree = "<group>"; };
 		AAE79FC32A80FDA6009823FB /* UseCaseProctol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProctol.swift; sourceTree = "<group>"; };
-		AAE79FC52A80FDFD009823FB /* AppConstValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstValues.swift; sourceTree = "<group>"; };
 		AAE79FC72A80FFBB009823FB /* AppTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitleView.swift; sourceTree = "<group>"; };
 		AAE79FC92A810175009823FB /* HomeEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEmptyView.swift; sourceTree = "<group>"; };
 		AAE79FCD2A810444009823FB /* EditTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoView.swift; sourceTree = "<group>"; };
@@ -146,6 +143,9 @@
 		AAE79FD32A810D20009823FB /* PreviewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewUtil.swift; sourceTree = "<group>"; };
 		AAE79FD72A8113AC009823FB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AAE79FDA2A811416009823FB /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
+		AAE79FDC2A81180A009823FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = Resource/Colors.xcassets; sourceTree = "<group>"; };
+		AAE79FDD2A81180A009823FB /* AppConstValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstValues.swift; path = Resource/AppConstValues.swift; sourceTree = "<group>"; };
+		AAE79FDE2A81180A009823FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resource/Assets.xcassets; sourceTree = "<group>"; };
 		B00E0C4FA7CAEADA7D5B4F10 /* Pods-TodoNote-TodoNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote-TodoNoteUITests.release.xcconfig"; path = "Target Support Files/Pods-TodoNote-TodoNoteUITests/Pods-TodoNote-TodoNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C0374BAE478EC804447FFD37 /* Pods-TodoNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote.release.xcconfig"; path = "Target Support Files/Pods-TodoNote/Pods-TodoNote.release.xcconfig"; sourceTree = "<group>"; };
 		D13F7D3177464E3F8AFBA262 /* Pods_TodoNoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoNoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,10 +272,10 @@
 			children = (
 				AAE79FA22A80E78A009823FB /* InfoPlist.strings */,
 				AAE79FA32A80E78A009823FB /* Localizable.strings */,
-				AAE79FC52A80FDFD009823FB /* AppConstValues.swift */,
+				AAE79FDD2A81180A009823FB /* AppConstValues.swift */,
 				AAE79F742A80DF13009823FB /* R.generated.swift */,
-				AABB4F7F2A80D7A5008FC467 /* Assets.xcassets */,
-				AAE79F672A80DDCA009823FB /* Colors.xcassets */,
+				AAE79FDE2A81180A009823FB /* Assets.xcassets */,
+				AAE79FDC2A81180A009823FB /* Colors.xcassets */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -628,11 +628,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE79F682A80DDCA009823FB /* Colors.xcassets in Resources */,
+				AAE79FDF2A81180B009823FB /* Colors.xcassets in Resources */,
 				AAE79FA52A80E78A009823FB /* Localizable.strings in Resources */,
 				AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */,
-				AABB4F802A80D7A5008FC467 /* Assets.xcassets in Resources */,
 				AAE79F872A80E2FC009823FB /* Main.storyboard in Resources */,
+				AAE79FE12A81180B009823FB /* Assets.xcassets in Resources */,
 				AAE79FA42A80E78A009823FB /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -820,7 +820,6 @@
 			files = (
 				AABB4FB22A80DAC7008FC467 /* TodoEntity.swift in Sources */,
 				AAE79FC12A80FD2F009823FB /* CheckVersionUseCaseResult.swift in Sources */,
-				AAE79FC62A80FDFD009823FB /* AppConstValues.swift in Sources */,
 				AAE79FAA2A80E882009823FB /* HomeView.swift in Sources */,
 				AAE79F732A80DEEA009823FB /* SafariUtil.swift in Sources */,
 				AAE79F9E2A80E51D009823FB /* RSwiftUI.swift in Sources */,
@@ -828,6 +827,7 @@
 				AAE79F9C2A80E4E3009823FB /* AlertItem.swift in Sources */,
 				AAE79F942A80E376009823FB /* SettingsListSwitchView.swift in Sources */,
 				AAE79FC02A80FD2F009823FB /* CheckVersionUseCase.swift in Sources */,
+				AAE79FE02A81180B009823FB /* AppConstValues.swift in Sources */,
 				AAE79FDB2A811416009823FB /* TodoDetailView.swift in Sources */,
 				AAE79FBC2A80FD2F009823FB /* LaunchUseCaseInput.swift in Sources */,
 				AAE79FB02A80FAC1009823FB /* Todo.swift in Sources */,
