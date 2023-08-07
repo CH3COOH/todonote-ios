@@ -13,13 +13,35 @@ struct EditTodoView: View {
         viewControllerHolder.value
     }
 
-    var body: some View {
-        VStack {
-            Text("Hello, World!")
+    @StateObject var model = EditTodoViewModel()
 
-            Button(action: onClickAddButton) {
-                Text("追加する")
+    var body: some View {
+        ScrollView {
+            VStack {
+                Text("タイトル")
+
+                TextField("キャベツを買う", text: $model.title)
+
+                Text("詳細")
+
+                TextField("スーパーは高いので商店街の八百屋で買うこと", text: $model.body)
+
+                DatePicker("明日", selection: $model.date)
+
+                Button(action: onClickAddButton) {
+                    HStack {
+                        Text("保存する")
+                            .foregroundColor(Color.white)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(R.color.accentColor.color)
+                    )
+                }
             }
+            .padding(.horizontal, 24)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
