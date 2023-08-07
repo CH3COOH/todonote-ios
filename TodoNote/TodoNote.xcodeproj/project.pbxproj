@@ -58,6 +58,8 @@
 		AAE79FCA2A810175009823FB /* HomeEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FC92A810175009823FB /* HomeEmptyView.swift */; };
 		AAE79FCE2A810444009823FB /* EditTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FCD2A810444009823FB /* EditTodoView.swift */; };
 		AAE79FD02A8106F0009823FB /* EditTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FCF2A8106F0009823FB /* EditTodoViewModel.swift */; };
+		AAE79FD22A810CB0009823FB /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FD12A810CB0009823FB /* TodoRepository.swift */; };
+		AAE79FD42A810D20009823FB /* PreviewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FD32A810D20009823FB /* PreviewUtil.swift */; };
 		D1945F9F28FF19DE6AAF5173 /* Pods_TodoNoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13F7D3177464E3F8AFBA262 /* Pods_TodoNoteTests.framework */; };
 		D2F524287E4BC9EFF59C95F8 /* Pods_TodoNote_TodoNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFFC1F6D5117760F4DE1E09 /* Pods_TodoNote_TodoNoteUITests.framework */; };
 /* End PBXBuildFile section */
@@ -138,6 +140,8 @@
 		AAE79FC92A810175009823FB /* HomeEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEmptyView.swift; sourceTree = "<group>"; };
 		AAE79FCD2A810444009823FB /* EditTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoView.swift; sourceTree = "<group>"; };
 		AAE79FCF2A8106F0009823FB /* EditTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoViewModel.swift; sourceTree = "<group>"; };
+		AAE79FD12A810CB0009823FB /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
+		AAE79FD32A810D20009823FB /* PreviewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewUtil.swift; sourceTree = "<group>"; };
 		B00E0C4FA7CAEADA7D5B4F10 /* Pods-TodoNote-TodoNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote-TodoNoteUITests.release.xcconfig"; path = "Target Support Files/Pods-TodoNote-TodoNoteUITests/Pods-TodoNote-TodoNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C0374BAE478EC804447FFD37 /* Pods-TodoNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote.release.xcconfig"; path = "Target Support Files/Pods-TodoNote/Pods-TodoNote.release.xcconfig"; sourceTree = "<group>"; };
 		D13F7D3177464E3F8AFBA262 /* Pods_TodoNoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoNoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,6 +316,7 @@
 				AAE79F722A80DEEA009823FB /* SafariUtil.swift */,
 				AAE79F7E2A80E0E0009823FB /* UIAppearanceUtil.swift */,
 				AAE79F9D2A80E51D009823FB /* RSwiftUI.swift */,
+				AAE79FD32A810D20009823FB /* PreviewUtil.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -459,6 +464,7 @@
 		AAE79FC22A80FD33009823FB /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				AAE79FD12A810CB0009823FB /* TodoRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -799,6 +805,7 @@
 				AAE79F7D2A80E0C1009823FB /* AppDelegate.swift in Sources */,
 				AAE79F792A80DFC2009823FB /* UIViewController+SwiftUI.swift in Sources */,
 				AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */,
+				AAE79FD22A810CB0009823FB /* TodoRepository.swift in Sources */,
 				AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */,
 				AAE79F822A80E101009823FB /* SceneDelegate.swift in Sources */,
 				AAE79FBD2A80FD2F009823FB /* LaunchUseCase.swift in Sources */,
@@ -817,6 +824,7 @@
 				AAE79FC82A80FFBB009823FB /* AppTitleView.swift in Sources */,
 				AAE79F852A80E1BC009823FB /* ActivityIndicatorView.swift in Sources */,
 				AAE79F962A80E376009823FB /* SettingsListAppIconView.swift in Sources */,
+				AAE79FD42A810D20009823FB /* PreviewUtil.swift in Sources */,
 				AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */,
 				AAE79F772A80DF48009823FB /* FAPage.swift in Sources */,
 				AAE79F932A80E376009823FB /* SettingsViewRouter.swift in Sources */,

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension TodoEntity {
+    func toModel() -> Todo? {
+        return nil
+    }
+}

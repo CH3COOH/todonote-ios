@@ -10,13 +10,14 @@ import CoreData
 struct PersistenceController {
     static let shared = PersistenceController()
 
+    static var managedObjectContext: NSManagedObjectContext {
+        isPreviewing ? preview.managedObjectContext : shared.managedObjectContext
+    }
+
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0 ..< 10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
+
         do {
             try viewContext.save()
         } catch {
@@ -52,5 +53,28 @@ struct PersistenceController {
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
+//        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        container.viewContext.mergePolicy = NSErrorMergePolicy
+    }
+
+    var managedObjectContext: NSManagedObjectContext {
+        container.viewContext
+    }
+}
+
+extension NSManagedObjectContext {
+    func autosave() {
+        if hasChanges {
+            do {
+                try save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                #if DEBUG
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                #endif
+            }
+        }
     }
 }
