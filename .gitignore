@@ -91,3 +91,4 @@ iOSInjectionProject/
 TodoNote/Pods/
 TodoNote/vendor/
 .DS_Store
+TodoNote/TodoNote/Resource/R.generated.swift

@@ -19,6 +19,20 @@
 		AABB4F9E2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F9D2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift */; };
 		AABB4FB02A80DA99008FC467 /* TodoId.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4FAF2A80DA99008FC467 /* TodoId.swift */; };
 		AABB4FB22A80DAC7008FC467 /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4FB12A80DAC7008FC467 /* TodoEntity.swift */; };
+		AAE79F682A80DDCA009823FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE79F672A80DDCA009823FB /* Colors.xcassets */; };
+		AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F6B2A80DE50009823FB /* SplashView.swift */; };
+		AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F6D2A80DE5C009823FB /* SplashViewModel.swift */; };
+		AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F702A80DE75009823FB /* RootViewController.swift */; };
+		AAE79F732A80DEEA009823FB /* SafariUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F722A80DEEA009823FB /* SafariUtil.swift */; };
+		AAE79F752A80DF13009823FB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F742A80DF13009823FB /* R.generated.swift */; };
+		AAE79F772A80DF48009823FB /* FAPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F762A80DF48009823FB /* FAPage.swift */; };
+		AAE79F792A80DFC2009823FB /* UIViewController+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F782A80DFC2009823FB /* UIViewController+SwiftUI.swift */; };
+		AAE79F7B2A80E008009823FB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F7A2A80E008009823FB /* AppState.swift */; };
+		AAE79F7D2A80E0C1009823FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F7C2A80E0C1009823FB /* AppDelegate.swift */; };
+		AAE79F7F2A80E0E0009823FB /* UIAppearanceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F7E2A80E0E0009823FB /* UIAppearanceUtil.swift */; };
+		AAE79F822A80E101009823FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F812A80E101009823FB /* SceneDelegate.swift */; };
+		AAE79F852A80E1BC009823FB /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F842A80E1BC009823FB /* ActivityIndicatorView.swift */; };
+		AAE79F872A80E2FC009823FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE79F862A80E2FC009823FB /* Main.storyboard */; };
 		D1945F9F28FF19DE6AAF5173 /* Pods_TodoNoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13F7D3177464E3F8AFBA262 /* Pods_TodoNoteTests.framework */; };
 		D2F524287E4BC9EFF59C95F8 /* Pods_TodoNote_TodoNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFFC1F6D5117760F4DE1E09 /* Pods_TodoNote_TodoNoteUITests.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +74,20 @@
 		AABB4F9D2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AABB4FAF2A80DA99008FC467 /* TodoId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoId.swift; sourceTree = "<group>"; };
 		AABB4FB12A80DAC7008FC467 /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
+		AAE79F672A80DDCA009823FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		AAE79F6B2A80DE50009823FB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		AAE79F6D2A80DE5C009823FB /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		AAE79F702A80DE75009823FB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		AAE79F722A80DEEA009823FB /* SafariUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariUtil.swift; sourceTree = "<group>"; };
+		AAE79F742A80DF13009823FB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Resource/R.generated.swift; sourceTree = "<group>"; };
+		AAE79F762A80DF48009823FB /* FAPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAPage.swift; sourceTree = "<group>"; };
+		AAE79F782A80DFC2009823FB /* UIViewController+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SwiftUI.swift"; sourceTree = "<group>"; };
+		AAE79F7A2A80E008009823FB /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		AAE79F7C2A80E0C1009823FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AAE79F7E2A80E0E0009823FB /* UIAppearanceUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAppearanceUtil.swift; sourceTree = "<group>"; };
+		AAE79F812A80E101009823FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AAE79F842A80E1BC009823FB /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		AAE79F862A80E2FC009823FB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B00E0C4FA7CAEADA7D5B4F10 /* Pods-TodoNote-TodoNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote-TodoNoteUITests.release.xcconfig"; path = "Target Support Files/Pods-TodoNote-TodoNoteUITests/Pods-TodoNote-TodoNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C0374BAE478EC804447FFD37 /* Pods-TodoNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote.release.xcconfig"; path = "Target Support Files/Pods-TodoNote/Pods-TodoNote.release.xcconfig"; sourceTree = "<group>"; };
 		D13F7D3177464E3F8AFBA262 /* Pods_TodoNoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoNoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,12 +148,12 @@
 		AABB4F6F2A80D7A4008FC467 = {
 			isa = PBXGroup;
 			children = (
+				703993724F59D152F4294128 /* Frameworks */,
+				62C58EB4DC3F8DEB0A297A46 /* Pods */,
+				AABB4F792A80D7A4008FC467 /* Products */,
 				AABB4F7A2A80D7A4008FC467 /* TodoNote */,
 				AABB4F902A80D7A5008FC467 /* TodoNoteTests */,
 				AABB4F9A2A80D7A5008FC467 /* TodoNoteUITests */,
-				AABB4F792A80D7A4008FC467 /* Products */,
-				62C58EB4DC3F8DEB0A297A46 /* Pods */,
-				703993724F59D152F4294128 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,12 +170,14 @@
 		AABB4F7A2A80D7A4008FC467 /* TodoNote */ = {
 			isa = PBXGroup;
 			children = (
+				AAE79F7C2A80E0C1009823FB /* AppDelegate.swift */,
 				AABB4F7D2A80D7A4008FC467 /* ContentView.swift */,
+				AAE79F812A80E101009823FB /* SceneDelegate.swift */,
 				AABB4F7B2A80D7A4008FC467 /* TodoNoteApp.swift */,
 				AABB4FAD2A80DA23008FC467 /* Database */,
 				AABB4FAC2A80DA1D008FC467 /* Model */,
 				AABB4F812A80D7A5008FC467 /* Preview Content */,
-				AABB4FAA2A80DA03008FC467 /* Resources */,
+				AABB4FAA2A80DA03008FC467 /* Resource */,
 				AABB4FAB2A80DA18008FC467 /* Screen */,
 				AABB4FAE2A80DA7A008FC467 /* Utility */,
 			);
@@ -179,17 +209,21 @@
 			path = TodoNoteUITests;
 			sourceTree = "<group>";
 		};
-		AABB4FAA2A80DA03008FC467 /* Resources */ = {
+		AABB4FAA2A80DA03008FC467 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AAE79F742A80DF13009823FB /* R.generated.swift */,
 				AABB4F7F2A80D7A5008FC467 /* Assets.xcassets */,
+				AAE79F672A80DDCA009823FB /* Colors.xcassets */,
 			);
-			name = Resources;
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		AABB4FAB2A80DA18008FC467 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				AAE79F6F2A80DE65009823FB /* Common */,
+				AAE79F692A80DE3D009823FB /* Splash */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -198,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				AABB4FAF2A80DA99008FC467 /* TodoId.swift */,
+				AAE79F762A80DF48009823FB /* FAPage.swift */,
+				AAE79F7A2A80E008009823FB /* AppState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,8 +251,46 @@
 		AABB4FAE2A80DA7A008FC467 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				AAE79F722A80DEEA009823FB /* SafariUtil.swift */,
+				AAE79F7E2A80E0E0009823FB /* UIAppearanceUtil.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		AAE79F692A80DE3D009823FB /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				AAE79F6A2A80DE44009823FB /* Splash */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		AAE79F6A2A80DE44009823FB /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				AAE79F6B2A80DE50009823FB /* SplashView.swift */,
+				AAE79F6D2A80DE5C009823FB /* SplashViewModel.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		AAE79F6F2A80DE65009823FB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AAE79F862A80E2FC009823FB /* Main.storyboard */,
+				AAE79F702A80DE75009823FB /* RootViewController.swift */,
+				AAE79F782A80DFC2009823FB /* UIViewController+SwiftUI.swift */,
+				AAE79F832A80E1B2009823FB /* Bridge */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AAE79F832A80E1B2009823FB /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				AAE79F842A80E1BC009823FB /* ActivityIndicatorView.swift */,
+			);
+			path = Bridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +301,9 @@
 			buildConfigurationList = AABB4FA12A80D7A5008FC467 /* Build configuration list for PBXNativeTarget "TodoNote" */;
 			buildPhases = (
 				1DD51F7D0304EE1B96CDA4CF /* [CP] Check Pods Manifest.lock */,
+				AABB4FB32A80DBF1008FC467 /* SwiftFormat */,
+				AABB4FB42A80DBF2008FC467 /* LicensePlist */,
+				AABB4FB52A80DBF4008FC467 /* RSwift */,
 				AABB4F742A80D7A4008FC467 /* Sources */,
 				AABB4F752A80D7A4008FC467 /* Frameworks */,
 				AABB4F762A80D7A4008FC467 /* Resources */,
@@ -328,8 +405,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE79F682A80DDCA009823FB /* Colors.xcassets in Resources */,
 				AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */,
 				AABB4F802A80D7A5008FC467 /* Assets.xcassets in Resources */,
+				AAE79F872A80E2FC009823FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +507,63 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodoNote-TodoNoteUITests/Pods-TodoNote-TodoNoteUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AABB4FB32A80DBF1008FC467 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}/TodoNote\"\n";
+		};
+		AABB4FB42A80DBF2008FC467 /* LicensePlist */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = LicensePlist;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ $ENABLE_PREVIEWS != \"NO\" ]; then \n    exit 0\nfi\n\n${PODS_ROOT}/LicensePlist/license-plist --output-path ./TodoNote/Resource/Settings.bundle\n";
+		};
+		AABB4FB52A80DBF4008FC467 /* RSwift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = RSwift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/TodoNote/Resource/R.generated.swift\"\n";
+		};
 		B82577DB4DFEAEE71038D85A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,11 +594,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				AABB4FB22A80DAC7008FC467 /* TodoEntity.swift in Sources */,
+				AAE79F732A80DEEA009823FB /* SafariUtil.swift in Sources */,
 				AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */,
+				AAE79F7D2A80E0C1009823FB /* AppDelegate.swift in Sources */,
+				AAE79F792A80DFC2009823FB /* UIViewController+SwiftUI.swift in Sources */,
+				AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */,
 				AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */,
+				AAE79F822A80E101009823FB /* SceneDelegate.swift in Sources */,
 				AABB4F7E2A80D7A4008FC467 /* ContentView.swift in Sources */,
 				AABB4FB02A80DA99008FC467 /* TodoId.swift in Sources */,
 				AABB4F7C2A80D7A4008FC467 /* TodoNoteApp.swift in Sources */,
+				AAE79F7B2A80E008009823FB /* AppState.swift in Sources */,
+				AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */,
+				AAE79F752A80DF13009823FB /* R.generated.swift in Sources */,
+				AAE79F7F2A80E0E0009823FB /* UIAppearanceUtil.swift in Sources */,
+				AAE79F852A80E1BC009823FB /* ActivityIndicatorView.swift in Sources */,
+				AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */,
+				AAE79F772A80DF48009823FB /* FAPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +772,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TodoNote/Preview Content\"";
 				DEVELOPMENT_TEAM = QWWZHGNG38;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TodoNote/Resource/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -659,7 +808,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TodoNote/Preview Content\"";
 				DEVELOPMENT_TEAM = QWWZHGNG38;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TodoNote/Resource/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -5,15 +5,16 @@
 //  Created by KENJIWADA on 2023/08/07.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
+        animation: .default
+    )
     private var items: FetchedResults<Item>
 
     var body: some View {

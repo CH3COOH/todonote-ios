@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardId {
+struct TodoId {
     let rawValue: String
 }
 
