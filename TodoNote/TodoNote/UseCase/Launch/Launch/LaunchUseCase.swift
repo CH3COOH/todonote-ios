@@ -5,7 +5,6 @@
 //
 
 import Foundation
-// import FirebasePerformance
 
 class LaunchUseCase: UseCaseProctol {
     let checkVersionUseCase = CheckVersionUseCase()

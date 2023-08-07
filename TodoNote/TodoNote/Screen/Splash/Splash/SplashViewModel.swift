@@ -31,7 +31,7 @@ class SplashViewModel: ObservableObject {
             SceneDelegate.shared?.rootViewController.switchToHomeScreen()
         case .moveToWalkthrough:
 //            SceneDelegate.shared?.rootViewController.switchToWalkthroughScreen()
-            SceneDelegate.shared?.rootViewController.switchToHomeScreen()
+            SceneDelegate.shared?.rootViewController.switchToLoginScreen()
         case .moveToVersionInformation:
 //            SceneDelegate.shared?.rootViewController.switchToVersionInformationScreen()
             SceneDelegate.shared?.rootViewController.switchToHomeScreen()

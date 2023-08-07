@@ -30,6 +30,15 @@ final class RootViewController: UIViewController {
         animateFadeTransition(to: vc)
     }
 
+    func switchToLoginScreen() {
+        let vc = UINavigationController(
+            rootViewController: UIViewController.hostingController {
+                LoginView()
+            }
+        )
+        animateFadeTransition(to: vc)
+    }
+
     // メイン画面に遷移する際のアニメーションメソッド
     private func animateFadeTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
         current.willMove(toParent: nil)
