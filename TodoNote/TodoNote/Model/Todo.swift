@@ -12,7 +12,9 @@ struct Todo {
     let status: RegistrationStatus
     let title: String
     let body: String
-    let date: Date
+    let datetime: Date
+    let careteAt: Date
+    let updateAt: Date
     let finished: Bool
 }
 
