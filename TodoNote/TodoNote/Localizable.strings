@@ -1,0 +1,200 @@
+/*
+  Localizable.strings
+  ja
+  
+  Generate by csv2strings
+*/
+
+
+// MARK: - app info
+"app_name" = "TodoNote";
+"BundleDisplayName" = "TodoNote";
+
+// MARK: - common
+"ok" = "OK";
+"cancel" = "キャンセル";
+"close" = "閉じる";
+"save" = "保存";
+"delete" = "削除";
+"done" = "完了";
+"edit" = "編集";
+"error" = "エラー";
+"mail_address" = "メールアドレス";
+"password" = "パスワード";
+"confirmation_code" = "確認コード";
+"nickname" = "ユーザー名";
+"prev" = "戻る";
+"next" = "次へ";
+"add" = "追加";
+"select" = "選択";
+"update" = "更新";
+"open" = "開く";
+"download" = "ダウンロード";
+"login" = "ログイン";
+"logout" = "ログアウト";
+"register" = "登録";
+"on" = "On";
+"off" = "Off";
+"share" = "共有";
+
+// MARK: - app/common
+
+// MARK: - permission
+"permission_err_camera" = "カメラの使用が許可されていません";
+"permission_err_album" = "フォトアルバムの使用が許可されていません";
+"permission_err_message" = "設定アプリから許可してください。";
+"PhotoLibraryUsageDescription" = "画像を設定するためにフォトライブラリにアクセスします。";
+"PhotoLibraryAddUsageDescription" = "撮影した写真を保存するためにフォトライブラリにアクセスします。";
+"CameraUsageDescription" = "写真を撮影するためにカメラにアクセスします。";
+"UserTrackingUsageDescription" = "許可されると好みにあった広告が表示されやすくなります。";
+"error_permission_write_external_storage" = "画像の保存するためには「ストレージへの書き込み権限」を許可していただく必要があります。設定の許可画面をご確認ください。";
+"error_permission_write_external_storage_button" = "設定アプリを開く";
+
+// MARK: - tab
+"tab_home" = "ホーム";
+"tab_history" = "履歴";
+
+// MARK: - login
+"login_button_login" = "Twitter でログイン";
+"login_button_agree_tos" = "利用規約に同意する";
+"login_section_connect" = "アプリ連携について";
+"login_section_usage" = "アプリの使い方";
+"login_connect_desc_1" = "本アプリでは、Twitterアカウントによる認証をおこないますが、その際に以下のアクセス権を要求します。";
+"login_connect_desc_2" = "・ このアカウントのタイムラインに表示されるツイート（非公開ツイートを含む）や、リストとコレクションを確認する。
+・ このアカウントでプロフィール情報とアカウントの設定を確認する。
+・ フォロー、ミュート、ブロックしているアカウントを確認する。
+・ 他のアカウントをフォロー、フォロー解除する。
+・ このアカウントでプロフィールとアカウントの設定を変更する。
+・ このアカウントでツイートを送信および削除する、他のアカウントのツイートをエンゲージメント（いいね、いいねの取り消し、ツイートへの返信、リツイートなど）する。
+・ このアカウントでリストやコレクションを作成、管理、削除する。
+・ 他のアカウントをミュート、ブロック、報告する。";
+"login_connect_desc_3" = "Twitterのサードパーティアプリには、機能に応じて異なるアクセス権限があります。
+
+本アプリでは、ミュート・ブロック機能を利用するために「Read and Write」のアクセス権限を要求します。これにより、上記に書かれているようにツイートの投稿やフォローの操作が可能になりますが、安全を最優先するため本アプリ内では実際に使用するのは、検索・ミュート・ブロック機能のみです。
+
+アプリ開発者として、私たちはユーザーのプライバシーと安全を重視しており、アクセス権限の範囲内で不必要な操作は一切行いません。また、アプリのアップデートがあった場合でも、必要最低限のアクセス権限のみを維持し続けます。ご理解とご協力をお願いいたします。";
+"login_usage_desc" = "1. Twitter アカウントでログインする
+2. ツイートを検索する
+3. ブロックするアカウントを選択して、ブロックボタンをタップする。";
+"login_item_privacy_policy" = "プライバシーポリシー";
+"login_item_tos" = "利用規約";
+
+// MARK: - home
+"home_title" = "残高チェッカー";
+"home_nav_button_settings" = "設定";
+"home_section_settings" = "検索設定";
+"home_section_search_secreen_name" = "スクリーンネーム宛の返信を探す";
+"home_section_search_tweet" = "ツイート宛の返信を探す";
+"home_section_spam" = "スパムツイートを探す";
+"home_item_information" = "Twitter の API 変更に伴い、2023年4月10日以降にアプリが使えなくなる可能性があります。詳しくはお知らせをご覧ください。";
+"home_item_include_followers" = "フォロー中のユーザーを含める";
+"home_item_search" = "にリプしているユーザーを探す";
+"home_item_search_domain" = "%@ を含むツイートをしているアカウントを探す";
+"home_item_search_reply" = "%@ にリプライしているアカウントを探す";
+"home_item_alert_logout" = "ログアウトしますか？";
+
+// MARK: - search
+"search_title" = "検索結果";
+"search_include_domain_title" = "%@ を含むツイート";
+"search_button_block" = "ブロックする";
+"search_alert_complete_block" = "ブロック処理が完了しました！";
+"search_empty_items" = "該当するツイートがありません";
+
+// MARK: - ダイアログ/ATT
+"dialog_att_title_1" = "あなた好みのコンテンツを楽しむために";
+"dialog_att_title_2" = " 許可 ";
+"dialog_att_title_3" = "をお願いします";
+"dialog_att_desc_1" = "お客さまの興味関心に合わせた広告を表示するためには、次の画面で「許可」を選択してください。";
+"dialog_att_desc_2" = "※アプリがあなたの個人情報等にアクセスすることはありません。\n※トラッキング設定は端末の設定アプリからいつでも変更可能です。";
+
+// MARK: - 設定画面
+"settings_title" = "設定";
+"settings_section_information" = "Information";
+"settings_cell_information" = "Twitter 社による Twitter API の仕様変更により、本アプリの機能が突然利用できなくなる可能性があります。2023年4月末までは利用可能と思われますが機能が停止したらごめんなさい。Twitter API v1.1 の廃止がいつ実施されるのか不明なため、4月10日頃を目処にアプリの配信を停止いたします。";
+"settings_section_other" = "その他";
+"settings_cell_feedback" = "お問い合わせ";
+"settings_cell_feedback_desc" = "このアプリに関する要望を送ってください";
+"settings_cell_bug_report" = "不具合の報告";
+"settings_cell_bug_report_desc" = "見つけたバグを教えてください";
+"settings_cell_write_review" = "レビューを書く";
+"settings_cell_write_review_desc" = "あなたの愛を共有してください";
+"settings_cell_about" = "アプリについて";
+"settings_cell_about_desc" = "アプリに関する情報をみる";
+"settings_cell_store" = "プレミアムプラン";
+"settings_cell_store_desc" = "TwiProtect をもっと便利に使いたい！";
+"settings_copy_right" = "Copyright ©︎ 2023 ch3cooh.jp All Rights Reserved.\nVersion %@(%@)";
+"settings_section_other_app" = "このデベロッパのその他のApp";
+"settings_cell_fourcropper_title" = "Four Cropper";
+"settings_cell_fourcropper_desc" = "大きな画像を四分割してシェアしよう！";
+"settings_cell_ptcgnote_title" = "ptcgnote";
+"settings_cell_ptcgnote_desc" = "オフラインでポケカのデッキ構築しよう！";
+
+// MARK: - 設定画面/About
+"settings_about_title" = "アプリについて";
+"settings_about_version" = "Version %@(%@)";
+"settings_about_cell_licences" = "ライセンス";
+"settings_about_cell_user_policy" = "利用規約";
+"settings_about_cell_privacy_policy" = "プライバシーポリシー";
+"settings_about_cell_company" = "開発者";
+"settings_about_cell_company_desc" = "Kenji Wada";
+
+// MARK: - 設定画面/問い合わせダイアログ
+"settings_bug_report_desc" = "不具合の報告は\n下記「不具合の報告」よりご連絡ください。早急に対応いたします。";
+"settings_report_bugs" = "不具合の報告";
+"settings_write_review" = "レビューを書く";
+
+// MARK: - 設定画面/プレミアム
+"settings_store_title" = "プレミアムプラン";
+"settings_store_header_title" = "TwiProtect Premium Plan";
+"settings_store_header_subtitle" = "プラン登録でさらに便利に！";
+"settings_store_section_function" = "プレミアム機能";
+"settings_store_section_buy" = "いますぐ購入！";
+"settings_store_section_management" = "購入履歴の管理";
+"settings_store_function_item_banner" = "バナー広告を非表示にする";
+"settings_store_function_item_intersticial" = "ブロック・ミュート時に表示されるインタースティシャル広告を非表示にする";
+"settings_store_cell_restore" = "購入履歴をリストアする";
+"settings_store_cell_already_purchased" = "購入済み";
+"settings_store_alert_title" = "購入処理の完了";
+"settings_store_alert_message_purchased" = "購入処理が完了しました";
+"settings_store_alert_message_restored" = "リストア処理が完了しました";
+"store_item_hide_ads" = "開発者に牛めしをおごって、バナー広告を非表示にする。";
+"store_item_note" = "● 機種変更時の復元
+機種変更時には、以前購入した有料版を無料で復元できます。設定画面の[プレミアム]に遷移して[購入履歴をリストアする]を選択してください。購入履歴はApple IDに紐付いているため、購入時と同じAppleIDでログインしていてください。
+
+● 自動継続課金について
+請求の締め日の 24 時間前までにサブスクリプションを解約しないと、新しい請求期間になるたびにその開始日に請求されます。
+
+● 確認と解約
+iOSの設定アプリを起動して、画面上部にある[ユーザー]->[サブスプリクション]->[TwiProtect]を選択します。サブスクリプションの更新日の確認ができます。また自動更新の設定/解除することもできます。
+
+● 注意点
+・サブスクリプションの解約をご希望の方は、上記の方法によってお手続きください。
+・Apple IDアカウントを経由して課金されます。
+
+● プライバシーポリシー
+https://products.ch3cooh.net/entry/twiprotect/privacy_policy
+
+● 利用規約
+https://products.ch3cooh.net/entry/twiprotect/terms_of_use_service";
+
+// MARK: - 設定画面/問い合わせフォーム
+"feedback_title" = "お問い合わせ";
+"feedback_topics_title" = "トピック";
+"feedback_send_mail" = "メールで送信";
+"feedback_description_placeholder" = "詳細をお願いいたします。";
+"feedback_table_header_topics" = "入力事項";
+"feedback_table_header_basic_info" = "動作環境の情報";
+"feedback_topics_question" = "質問";
+"feedback_topics_request" = "アプリに関するご意見・ご要望";
+"feedback_topics_bug_report" = "不具合の報告";
+"feedback_topics_media" = "マスメディア";
+"feedback_topics_business" = "ビジネス";
+"feedback_topics_other" = "その他";
+"feedback_topics_device" = "デバイス";
+"feedback_topics_app_name" = "アプリ名";
+"feedback_topics_app_version" = "アプリバージョン";
+"feedback_mail_can_not_send_mail_error_title" = "メールが起動できません";
+"feedback_mail_can_not_send_mail_error" = "設定アプリでメールアカウントを設定してください。";
+"feedback_mail_did_finish_with_error" = "送信に失敗しました。しばらく時間をおいてからもう一度お試しください。";
+"feedback_mail_to" = "kenjiwada.sb+twiprotect@gmail.com";
+"feedback_footer" = "皆様からいただいたご意見・ご感想・お問い合わせには必ず目を通しておりますが、個別に返信・対応をお約束するものではございません。何卒ご了承くださいますようお願い申し上げます。";

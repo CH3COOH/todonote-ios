@@ -1,6 +1,5 @@
 //
 //  SettingsListItemView.swift
-//  ptcgnote
 //
 //  Created by KENJIWADA on 2022/03/20.
 //  Copyright © 2022 KENJI WADA. All rights reserved.
@@ -65,26 +64,26 @@ struct SettingsListItemView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                SettingsListItemView(
-                    image: R.image.crown_1.image.resizable(),
-                    title: Text("おしらせ"),
-                    description: Text("アプリの更新をお知らせします。"),
-                    action: nil
-                )
-
-                SettingsListItemView(
-                    image: R.image.diamond_1.image.resizable(),
-                    title: Text("おしらせ"),
-                    description: Text("アプリの更新をお知らせします。"),
-                    action: nil
-                )
-
-                SettingsListItemView(
-                    image: R.image.diamond_2.image.resizable(),
-                    title: Text("おしらせ"),
-                    description: Text("アプリの更新をお知らせします。"),
-                    action: nil
-                )
+//                SettingsListItemView(
+//                    image: R.image.crown_1.image.resizable(),
+//                    title: Text("おしらせ"),
+//                    description: Text("アプリの更新をお知らせします。"),
+//                    action: nil
+//                )
+//
+//                SettingsListItemView(
+//                    image: R.image.diamond_1.image.resizable(),
+//                    title: Text("おしらせ"),
+//                    description: Text("アプリの更新をお知らせします。"),
+//                    action: nil
+//                )
+//
+//                SettingsListItemView(
+//                    image: R.image.diamond_2.image.resizable(),
+//                    title: Text("おしらせ"),
+//                    description: Text("アプリの更新をお知らせします。"),
+//                    action: nil
+//                )
 
                 SettingsListItemView(
                     image: Image(systemName: "info.circle"),

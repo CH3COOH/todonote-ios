@@ -25,25 +25,27 @@ class SettingsViewModel: ObservableObject {
 //        }
 //
 //        isDebug = UIDevice.isSimulator
+
+        appVersion = "アプリバージョン"
+        isDebug = true
     }
 
     // MARK: -
 
-    func update() {
-    }
+    func update() {}
 
     /// レビューを書く
-    func onClickWriteReviewButton(from viewController: UIViewController?) {
+    func onClickWriteReviewButton(from _: UIViewController?) {
         reportActionSheetItem = .init(
             sheet: ActionSheet(
                 title: R.string.localizable.settings_bug_report_desc.text,
                 message: nil,
                 buttons: [
                     .default(R.string.localizable.settings_report_bugs.text) {
-                        SettingsViewRouter.moveBugReport(from: viewController, fromReview: true)
+                        // SettingsViewRouter.moveBugReport(from: viewController, fromReview: true)
                     },
                     .default(R.string.localizable.settings_write_review.text) {
-                        SettingsViewRouter.moveStoreReview(from: viewController)
+                        // SettingsViewRouter.moveStoreReview(from: viewController)
                     },
                     .cancel(),
                 ]

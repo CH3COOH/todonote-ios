@@ -1,6 +1,5 @@
 //
 //  SettingsListSwitchView.swift
-//  ptcgnote
 //
 //  Created by KENJIWADA on 2022/06/19.
 //  Copyright © 2022 KENJI WADA. All rights reserved.

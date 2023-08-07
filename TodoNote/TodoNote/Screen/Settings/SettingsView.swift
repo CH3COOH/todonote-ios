@@ -16,11 +16,6 @@ struct SettingsView: View {
 
     @ObservedObject private var model = SettingsViewModel()
 
-    var premiumImage: Image {
-        R.image.diamond_2.image
-            .resizable()
-    }
-
     var body: some View {
         List {
 //            // アプリ内設定
