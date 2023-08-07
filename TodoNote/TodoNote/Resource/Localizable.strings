@@ -80,7 +80,7 @@
 "login_item_tos" = "利用規約";
 
 // MARK: - home
-"home_title" = "残高チェッカー";
+"home_title" = "Todo Note";
 "home_nav_button_settings" = "設定";
 "home_section_settings" = "検索設定";
 "home_section_search_secreen_name" = "スクリーンネーム宛の返信を探す";
@@ -196,5 +196,5 @@ https://products.ch3cooh.net/entry/twiprotect/terms_of_use_service";
 "feedback_mail_can_not_send_mail_error_title" = "メールが起動できません";
 "feedback_mail_can_not_send_mail_error" = "設定アプリでメールアカウントを設定してください。";
 "feedback_mail_did_finish_with_error" = "送信に失敗しました。しばらく時間をおいてからもう一度お試しください。";
-"feedback_mail_to" = "kenjiwada.sb+twiprotect@gmail.com";
+"feedback_mail_to" = "kenjiwada.sb+todonote@gmail.com";
 "feedback_footer" = "皆様からいただいたご意見・ご感想・お問い合わせには必ず目を通しておりますが、個別に返信・対応をお約束するものではございません。何卒ご了承くださいますようお願い申し上げます。";

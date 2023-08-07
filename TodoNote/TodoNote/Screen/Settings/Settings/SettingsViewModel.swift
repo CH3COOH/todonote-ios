@@ -15,18 +15,17 @@ class SettingsViewModel: ObservableObject {
     @Published var reportActionSheetItem: ActionSheetItem?
 
     init() {
-//        // アプリバージョンの取得
-//        if let version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String,
-//           let shortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-//        {
-//            appVersion = R.string.localizable.settings_copy_right(shortVersion, version)
-//        } else {
-//            appVersion = R.string.localizable.settings_copy_right("---", "---")
-//        }
+        // アプリバージョンの取得
+        if let version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String,
+           let shortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        {
+            appVersion = R.string.localizable.settings_copy_right(shortVersion, version)
+        } else {
+            appVersion = R.string.localizable.settings_copy_right("---", "---")
+        }
 //
 //        isDebug = UIDevice.isSimulator
 
-        appVersion = "アプリバージョン"
         isDebug = true
     }
 

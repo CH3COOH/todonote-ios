@@ -21,6 +21,15 @@ final class RootViewController: UIViewController {
         current.didMove(toParent: self)
     }
 
+    func switchToHomeScreen() {
+        let vc = UINavigationController(
+            rootViewController: UIViewController.hostingController {
+                HomeView()
+            }
+        )
+        animateFadeTransition(to: vc)
+    }
+
     // メイン画面に遷移する際のアニメーションメソッド
     private func animateFadeTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
         current.willMove(toParent: nil)
