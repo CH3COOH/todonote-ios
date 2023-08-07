@@ -279,11 +279,11 @@
 		AABB4FAB2A80DA18008FC467 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				AAE79FCB2A810427009823FB /* Todo */,
 				AAE79F6F2A80DE65009823FB /* Common */,
 				AAE79FA62A80E824009823FB /* Home */,
 				AAE79F892A80E376009823FB /* Settings */,
 				AAE79F692A80DE3D009823FB /* Splash */,
+				AAE79FCB2A810427009823FB /* Todo */,
 			);
 			path = Screen;
 			sourceTree = "<group>";

@@ -26,15 +26,14 @@ class TodoRepository {
             do {
                 for object in objects {
                     let entity = TodoEntity(context: context)
-//                    entity.card_id = object.cardId.rawValue
-//                    entity.card_id_1 = object.cardId1
-//                    entity.card_id_2 = object.cardId2
-//                    entity.card_id_3 = object.cardId3
-//                    entity.card_id_4 = object.cardId4
-//                    entity.pin = object.pin
-//                    entity.memo = object.memo
-//                    entity.balance = Int32(object.balance)
-//                    entity.update_at = Date()
+                    entity.todo_id = object.todoId.rawValue
+                    entity.status = object.status.rawValue
+                    entity.title = object.title
+                    entity.body = object.body
+                    entity.datetime = object.datetime
+                    entity.created_at = object.createdAt
+                    entity.updated_at = object.updatedAt
+                    entity.finished = object.finished
 
                     counter += 1
                     if counter % saveCount == 0 {
@@ -55,7 +54,7 @@ class TodoRepository {
     func fetch() async throws -> [Todo] {
         let request = TodoEntity.fetchRequest()
         request.sortDescriptors = [
-            NSSortDescriptor(key: "card_id", ascending: true),
+            NSSortDescriptor(key: "todo_id", ascending: true),
         ]
 
         return try await MainActor.run {
@@ -66,9 +65,9 @@ class TodoRepository {
 
     func fetch(ids: [TodoId]) async throws -> [Todo] {
         let request = TodoEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "card_id IN %@", ids.map { $0.rawValue })
+        request.predicate = NSPredicate(format: "todo_id IN %@", ids.map { $0.rawValue })
         request.sortDescriptors = [
-            NSSortDescriptor(key: "card_id", ascending: true),
+            NSSortDescriptor(key: "todo_id", ascending: true),
         ]
 
         return try await MainActor.run {

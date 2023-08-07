@@ -2,12 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="TodoEntity" representedClassName="TodoEntity" syncable="YES" codeGenerationType="class">
         <attribute name="body" optional="YES" attributeType="String"/>
-        <attribute name="create_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="datetime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="finished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="status" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="todo_id" optional="YES" attributeType="String"/>
-        <attribute name="update_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
 </model>

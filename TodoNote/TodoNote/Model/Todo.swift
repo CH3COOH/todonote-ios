@@ -13,8 +13,8 @@ struct Todo {
     let title: String
     let body: String
     let datetime: Date
-    let careteAt: Date
-    let updateAt: Date
+    let createdAt: Date
+    let updatedAt: Date
     let finished: Bool
 }
 

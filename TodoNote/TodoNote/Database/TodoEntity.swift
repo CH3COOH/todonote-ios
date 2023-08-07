@@ -15,8 +15,8 @@ extension TodoEntity {
             let registrationStatus = RegistrationStatus(rawValue: status),
             let title = title,
             let datetime = datetime,
-            let createAt = create_at,
-            let updateAt = update_at
+            let createdAt = created_at,
+            let updatedAt = updated_at
         else {
             return nil
         }
@@ -26,8 +26,8 @@ extension TodoEntity {
             title: title,
             body: body ?? "",
             datetime: datetime,
-            careteAt: createAt,
-            updateAt: updateAt,
+            createdAt: createdAt,
+            updatedAt: updatedAt,
             finished: finished
         )
     }
