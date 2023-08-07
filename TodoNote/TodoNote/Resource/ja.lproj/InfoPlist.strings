@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  ja
+  
+  Generate by csv2strings
+*/
+
+CFBundleDisplayName = "TodoNote";
+NSPhotoLibraryUsageDescription = "画像を設定するためにフォトライブラリにアクセスします。";
+NSPhotoLibraryAddUsageDescription = "撮影した写真を保存するためにフォトライブラリにアクセスします。";
+NSCameraUsageDescription = "写真を撮影するためにカメラにアクセスします。";
+NSUserTrackingUsageDescription = "許可されると好みにあった広告が表示されやすくなります。";

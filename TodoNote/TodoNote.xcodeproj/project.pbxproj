@@ -38,8 +38,6 @@
 		AAE79F9C2A80E4E3009823FB /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F9B2A80E4E3009823FB /* AlertItem.swift */; };
 		AAE79F9E2A80E51D009823FB /* RSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F9D2A80E51D009823FB /* RSwiftUI.swift */; };
 		AAE79FA12A80E543009823FB /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FA02A80E543009823FB /* ListItemView.swift */; };
-		AAE79FA42A80E78A009823FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE79FA22A80E78A009823FB /* InfoPlist.strings */; };
-		AAE79FA52A80E78A009823FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE79FA32A80E78A009823FB /* Localizable.strings */; };
 		AAE79FAA2A80E882009823FB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FA92A80E882009823FB /* HomeView.swift */; };
 		AAE79FAC2A80E88D009823FB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FAB2A80E88D009823FB /* HomeViewModel.swift */; };
 		AAE79FB02A80FAC1009823FB /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FAF2A80FAC1009823FB /* Todo.swift */; };
@@ -62,6 +60,8 @@
 		AAE79FDF2A81180B009823FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE79FDC2A81180A009823FB /* Colors.xcassets */; };
 		AAE79FE02A81180B009823FB /* AppConstValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FDD2A81180A009823FB /* AppConstValues.swift */; };
 		AAE79FE12A81180B009823FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE79FDE2A81180A009823FB /* Assets.xcassets */; };
+		AAE79FE22A8118A5009823FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE79FE42A8118A5009823FB /* InfoPlist.strings */; };
+		AAE79FE52A8118A9009823FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE79FE72A8118A9009823FB /* Localizable.strings */; };
 		D1945F9F28FF19DE6AAF5173 /* Pods_TodoNoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13F7D3177464E3F8AFBA262 /* Pods_TodoNoteTests.framework */; };
 		D2F524287E4BC9EFF59C95F8 /* Pods_TodoNote_TodoNoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFFC1F6D5117760F4DE1E09 /* Pods_TodoNote_TodoNoteUITests.framework */; };
 /* End PBXBuildFile section */
@@ -122,8 +122,6 @@
 		AAE79F9B2A80E4E3009823FB /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		AAE79F9D2A80E51D009823FB /* RSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSwiftUI.swift; sourceTree = "<group>"; };
 		AAE79FA02A80E543009823FB /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
-		AAE79FA22A80E78A009823FB /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = Resource/InfoPlist.strings; sourceTree = "<group>"; };
-		AAE79FA32A80E78A009823FB /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resource/Localizable.strings; sourceTree = "<group>"; };
 		AAE79FA92A80E882009823FB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AAE79FAB2A80E88D009823FB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AAE79FAF2A80FAC1009823FB /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
@@ -146,6 +144,10 @@
 		AAE79FDC2A81180A009823FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = Resource/Colors.xcassets; sourceTree = "<group>"; };
 		AAE79FDD2A81180A009823FB /* AppConstValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstValues.swift; path = Resource/AppConstValues.swift; sourceTree = "<group>"; };
 		AAE79FDE2A81180A009823FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resource/Assets.xcassets; sourceTree = "<group>"; };
+		AAE79FE32A8118A5009823FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AAE79FE62A8118A9009823FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AAE79FE82A8118B8009823FB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AAE79FE92A8118B8009823FB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B00E0C4FA7CAEADA7D5B4F10 /* Pods-TodoNote-TodoNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote-TodoNoteUITests.release.xcconfig"; path = "Target Support Files/Pods-TodoNote-TodoNoteUITests/Pods-TodoNote-TodoNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C0374BAE478EC804447FFD37 /* Pods-TodoNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote.release.xcconfig"; path = "Target Support Files/Pods-TodoNote/Pods-TodoNote.release.xcconfig"; sourceTree = "<group>"; };
 		D13F7D3177464E3F8AFBA262 /* Pods_TodoNoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoNoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,8 +272,8 @@
 		AABB4FAA2A80DA03008FC467 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AAE79FA22A80E78A009823FB /* InfoPlist.strings */,
-				AAE79FA32A80E78A009823FB /* Localizable.strings */,
+				AAE79FE42A8118A5009823FB /* InfoPlist.strings */,
+				AAE79FE72A8118A9009823FB /* Localizable.strings */,
 				AAE79FDD2A81180A009823FB /* AppConstValues.swift */,
 				AAE79F742A80DF13009823FB /* R.generated.swift */,
 				AAE79FDE2A81180A009823FB /* Assets.xcassets */,
@@ -610,6 +612,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = AABB4F6F2A80D7A4008FC467;
 			productRefGroup = AABB4F792A80D7A4008FC467 /* Products */;
@@ -629,11 +632,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE79FDF2A81180B009823FB /* Colors.xcassets in Resources */,
-				AAE79FA52A80E78A009823FB /* Localizable.strings in Resources */,
+				AAE79FE52A8118A9009823FB /* Localizable.strings in Resources */,
 				AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */,
 				AAE79F872A80E2FC009823FB /* Main.storyboard in Resources */,
 				AAE79FE12A81180B009823FB /* Assets.xcassets in Resources */,
-				AAE79FA42A80E78A009823FB /* InfoPlist.strings in Resources */,
+				AAE79FE22A8118A5009823FB /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -898,11 +901,35 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		AAE79FE42A8118A5009823FB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAE79FE32A8118A5009823FB /* en */,
+				AAE79FE82A8118B8009823FB /* ja */,
+			);
+			name = InfoPlist.strings;
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		AAE79FE72A8118A9009823FB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAE79FE62A8118A9009823FB /* en */,
+				AAE79FE92A8118B8009823FB /* ja */,
+			);
+			name = Localizable.strings;
+			path = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		AABB4F9F2A80D7A5008FC467 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -963,6 +990,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
