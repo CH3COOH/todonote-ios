@@ -67,7 +67,7 @@ struct HomeView: View {
                 Button(action: onClickAddButton) {
                     Label(
                         "Add",
-                        systemImage: "rectangle.badge.plus"
+                        systemImage: "plus"
                     )
                 }
             }
