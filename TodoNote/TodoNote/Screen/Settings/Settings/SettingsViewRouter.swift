@@ -5,6 +5,7 @@
 //  Created by KENJIWADA on 2023/03/18.
 //
 
+import LicensePlistViewController
 import SafariServices
 import SwiftUI
 
@@ -47,6 +48,14 @@ struct SettingsViewRouter {
 //        }
 //        vc.hidesBottomBarWhenPushed = true
 //        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    /// ライセンス
+    static func moveLicences(from viewController: UIViewController?) {
+        let vc = LicensePlistViewController(tableViewStyle: .insetGrouped)
+        vc.hidesBottomBarWhenPushed = true
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+//        FAPage.settingsLicense.send()
     }
 
 //    /// お問合せ

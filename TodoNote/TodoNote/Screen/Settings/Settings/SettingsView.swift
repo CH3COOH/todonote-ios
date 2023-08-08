@@ -75,6 +75,15 @@ struct SettingsView: View {
 //                ) {
 //                    SettingsViewRouter.moveAbout(from: viewController)
 //                }
+
+                // このアプリについて
+                SettingsListItemView(
+                    image: Image(systemName: "person.circle"),
+                    title: R.string.localizable.settings_about_cell_licences.text,
+                    description: nil
+                ) {
+                    SettingsViewRouter.moveLicences(from: viewController)
+                }
             } header: {
                 Text("その他")
 //                R.string.localizable.settings_section_other.text

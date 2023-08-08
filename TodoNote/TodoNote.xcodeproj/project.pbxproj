@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A668B311F47C06E2A7631D17 /* Pods_TodoNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36325D806F2A306BEC0CBE42 /* Pods_TodoNote.framework */; };
+		AA1932662A81C63B002C846F /* com.mono0926.LicensePlist in Resources */ = {isa = PBXBuildFile; fileRef = AA1932652A81C63B002C846F /* com.mono0926.LicensePlist */; };
+		AA1932682A81C643002C846F /* com.mono0926.LicensePlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1932672A81C643002C846F /* com.mono0926.LicensePlist.plist */; };
 		AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */; };
 		AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F842A80D7A5008FC467 /* Persistence.swift */; };
 		AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */; };
@@ -89,6 +91,8 @@
 		4C8E73468BBA2838F5E0AE51 /* Pods-TodoNoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNoteTests.debug.xcconfig"; path = "Target Support Files/Pods-TodoNoteTests/Pods-TodoNoteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		80067E3A84656A6B71761630 /* Pods-TodoNote-TodoNoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNote-TodoNoteUITests.debug.xcconfig"; path = "Target Support Files/Pods-TodoNote-TodoNoteUITests/Pods-TodoNote-TodoNoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		87AC245C9E85DC7B8DC6F6D4 /* Pods-TodoNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNoteTests.release.xcconfig"; path = "Target Support Files/Pods-TodoNoteTests/Pods-TodoNoteTests.release.xcconfig"; sourceTree = "<group>"; };
+		AA1932652A81C63B002C846F /* com.mono0926.LicensePlist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = com.mono0926.LicensePlist; path = Resource/Settings.bundle/com.mono0926.LicensePlist; sourceTree = "<group>"; };
+		AA1932672A81C643002C846F /* com.mono0926.LicensePlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = com.mono0926.LicensePlist.plist; path = Resource/Settings.bundle/com.mono0926.LicensePlist.plist; sourceTree = "<group>"; };
 		AABB4F782A80D7A4008FC467 /* TodoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AABB4F842A80D7A5008FC467 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -272,12 +276,14 @@
 		AABB4FAA2A80DA03008FC467 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AAE79FE42A8118A5009823FB /* InfoPlist.strings */,
-				AAE79FE72A8118A9009823FB /* Localizable.strings */,
+				AA1932652A81C63B002C846F /* com.mono0926.LicensePlist */,
+				AA1932672A81C643002C846F /* com.mono0926.LicensePlist.plist */,
 				AAE79FDD2A81180A009823FB /* AppConstValues.swift */,
 				AAE79F742A80DF13009823FB /* R.generated.swift */,
 				AAE79FDE2A81180A009823FB /* Assets.xcassets */,
 				AAE79FDC2A81180A009823FB /* Colors.xcassets */,
+				AAE79FE42A8118A5009823FB /* InfoPlist.strings */,
+				AAE79FE72A8118A9009823FB /* Localizable.strings */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -527,8 +533,8 @@
 			buildPhases = (
 				1DD51F7D0304EE1B96CDA4CF /* [CP] Check Pods Manifest.lock */,
 				AABB4FB32A80DBF1008FC467 /* SwiftFormat */,
-				AABB4FB42A80DBF2008FC467 /* LicensePlist */,
 				AABB4FB52A80DBF4008FC467 /* RSwift */,
+				AABB4FB42A80DBF2008FC467 /* LicensePlist */,
 				AABB4F742A80D7A4008FC467 /* Sources */,
 				AABB4F752A80D7A4008FC467 /* Frameworks */,
 				AABB4F762A80D7A4008FC467 /* Resources */,
@@ -632,9 +638,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE79FDF2A81180B009823FB /* Colors.xcassets in Resources */,
+				AA1932662A81C63B002C846F /* com.mono0926.LicensePlist in Resources */,
 				AAE79FE52A8118A9009823FB /* Localizable.strings in Resources */,
 				AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */,
 				AAE79F872A80E2FC009823FB /* Main.storyboard in Resources */,
+				AA1932682A81C643002C846F /* com.mono0926.LicensePlist.plist in Resources */,
 				AAE79FE12A81180B009823FB /* Assets.xcassets in Resources */,
 				AAE79FE22A8118A5009823FB /* InfoPlist.strings in Resources */,
 			);
@@ -756,7 +764,6 @@
 		};
 		AABB4FB42A80DBF2008FC467 /* LicensePlist */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -768,10 +775,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				$SRCROOT/TodoNote/Resource/Settings.bundle/com.mono0926.LicensePlist.plist,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ $ENABLE_PREVIEWS != \"NO\" ]; then \n    exit 0\nfi\n\n${PODS_ROOT}/LicensePlist/license-plist --output-path ./TodoNote/Resource/Settings.bundle\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ $ENABLE_PREVIEWS != \"NO\" ]; then \n    exit 0\nfi\n\n${PODS_ROOT}/LicensePlist/license-plist --output-path ./TodoNote/Resource/Settings.bundle --force\n";
 		};
 		AABB4FB52A80DBF4008FC467 /* RSwift */ = {
 			isa = PBXShellScriptBuildPhase;
