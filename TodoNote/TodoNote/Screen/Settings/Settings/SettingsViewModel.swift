@@ -5,6 +5,7 @@
 //  Created by KENJIWADA on 2023/03/18.
 //
 
+import FirebaseAuth
 import SwiftUI
 
 class SettingsViewModel: ObservableObject {
@@ -12,7 +13,9 @@ class SettingsViewModel: ObservableObject {
 
     @Published var isDebug: Bool
 
-    @Published var reportActionSheetItem: ActionSheetItem?
+    @Published var actionSheetItem: ActionSheetItem?
+
+    @Published var alertItem: AlertItem?
 
     init() {
         // アプリバージョンの取得
@@ -33,18 +36,33 @@ class SettingsViewModel: ObservableObject {
 
     func update() {}
 
-    /// レビューを書く
-    func onClickWriteReviewButton(from _: UIViewController?) {
-        reportActionSheetItem = .init(
+//    /// レビューを書く
+//    func onClickWriteReviewButton(from _: UIViewController?) {
+//        reportActionSheetItem = .init(
+//            sheet: ActionSheet(
+//                title: R.string.localizable.settings_bug_report_desc.text,
+//                message: nil,
+//                buttons: [
+//                    .default(R.string.localizable.settings_report_bugs.text) {
+//                        // SettingsViewRouter.moveBugReport(from: viewController, fromReview: true)
+//                    },
+//                    .default(R.string.localizable.settings_write_review.text) {
+//                        // SettingsViewRouter.moveStoreReview(from: viewController)
+//                    },
+//                    .cancel(),
+//                ]
+//            )
+//        )
+//    }
+
+    func onClickSignOutButton(from viewController: UIViewController?) {
+        actionSheetItem = ActionSheetItem(
             sheet: ActionSheet(
-                title: R.string.localizable.settings_bug_report_desc.text,
-                message: nil,
+                title: R.string.localizable.settings_alert_logout_title.text,
+                message: R.string.localizable.settings_alert_logout_message.text,
                 buttons: [
-                    .default(R.string.localizable.settings_report_bugs.text) {
-                        // SettingsViewRouter.moveBugReport(from: viewController, fromReview: true)
-                    },
-                    .default(R.string.localizable.settings_write_review.text) {
-                        // SettingsViewRouter.moveStoreReview(from: viewController)
+                    .destructive(R.string.localizable.logout.text) {
+                        self.logout(viewController: viewController)
                     },
                     .cancel(),
                 ]
@@ -53,4 +71,16 @@ class SettingsViewModel: ObservableObject {
     }
 
     // MARK: -
+
+    private func logout(viewController: UIViewController?) {
+        do {
+            try Auth.auth().signOut()
+
+            viewController?.dismiss(animated: false) {
+                SceneDelegate.shared?.rootViewController.switchToLoginScreen()
+            }
+        } catch {
+            // TODO: エラー処理
+        }
+    }
 }

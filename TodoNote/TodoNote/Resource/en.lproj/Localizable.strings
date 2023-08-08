@@ -50,21 +50,16 @@
 "error_permission_write_external_storage" = "In order to save images, you need to allow Write to Storage. Please check the permission screen in Settings app.";
 "error_permission_write_external_storage_button" = "Open the settings app";
 
-// MARK: - login
-"login_button_login" = "Sign in with Twitter";
-"login_button_agree_tos" = "I agree to the terms of service";
-"login_item_privacy_policy" = "Privacy Policy";
-"login_item_tos" = "Terms of Service";
-
 // MARK: - home
 "home_title" = "TodoNote";
 "home_nav_button_settings" = "Settings";
 "home_section_settings" = "Search Settings";
-"home_item_alert_logout" = "Would you like to sign out?";
+"home_empty" = "Task not yet registered";
+"home_button_add" = "Add the first task";
 
 // MARK: - login
 "login_title" = "Welcome to TodoNote !";
-"login_body" = "Thanks for downloading! TodoNote is an app to manage your TODOs. \When you click the Start button, you will be logged in to Firestore anonymously. Tasks will be saved in Firestore. You can even use it offline.";
+"login_body" = "Thanks for downloading! TodoNote is an app to manage your TODOs.\n\nWhen you click the Start button, you will be logged in to Firestore anonymously. Tasks will be saved in Firestore. You can even use it offline.";
 "login_button" = "Start this app";
 
 // MARK: - ダイアログ/ATT
@@ -94,6 +89,8 @@
 "settings_about_cell_privacy_policy" = "Privacy Policy";
 "settings_about_cell_company" = "Developer";
 "settings_about_cell_company_desc" = "Kenji Wada";
+"settings_alert_logout_title" = "Would you like to sign out?";
+"settings_alert_logout_message" = "You will not be able to access your currently registered tasks due to anonymous login. This selection cannot be undone.";
 
 // MARK: - 設定画面/問い合わせダイアログ
 "settings_bug_report_desc" = "Please contact us from Report a bug in case defect of application. We will respond to that right away.";

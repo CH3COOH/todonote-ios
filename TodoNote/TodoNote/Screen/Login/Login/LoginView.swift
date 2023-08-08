@@ -13,7 +13,7 @@ struct LoginView: View {
         VStack {
             R.image.app_icon.image
                 .resizable()
-                .frame(width: 240, height: 240)
+                .frame(width: 200, height: 200)
                 .scaledToFit()
                 .clipShape(Circle())
 

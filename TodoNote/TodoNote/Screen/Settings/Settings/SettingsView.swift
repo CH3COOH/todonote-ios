@@ -85,8 +85,18 @@ struct SettingsView: View {
                     SettingsViewRouter.moveLicences(from: viewController)
                 }
             } header: {
-                Text("その他")
-//                R.string.localizable.settings_section_other.text
+                R.string.localizable.settings_section_other.text
+            }
+
+            Section {
+                Button(action: { model.onClickSignOutButton(from: viewController) }) {
+                    HStack {
+                        R.string.localizable.logout.text
+                            .foregroundColor(Color.red)
+                            .font(.system(size: 15))
+                    }
+                    .frame(maxWidth: .infinity)
+                }
             }
 
             HStack {
@@ -100,8 +110,7 @@ struct SettingsView: View {
             }
         }
         .listStyle(.insetGrouped)
-//        .navigationTitle(R.string.localizable.settings_title.text)
-        .navigationTitle(Text("設定"))
+        .navigationTitle(R.string.localizable.settings_title.text)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             model.update()
@@ -112,11 +121,12 @@ struct SettingsView: View {
                 Button(action: {
                     viewController?.dismiss(animated: true)
                 }) {
-                    Text("閉じる")
-//                    R.string.localizable.close.text
+                    R.string.localizable.close.text
                 }
             }
         }
+        .alert(item: $model.alertItem) { $0.alert }
+        .actionSheet(item: $model.actionSheetItem) { $0.sheet }
     }
 }
 

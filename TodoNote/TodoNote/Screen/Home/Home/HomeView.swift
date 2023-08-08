@@ -31,13 +31,7 @@ struct HomeView: View {
                 List {
                     Section {
                         ForEach(model.items) { item in
-                            VStack {
-                                Button(action: {}) {}
-                                Text(item.title)
-                                if !item.body.isEmpty {
-                                    Text(item.body)
-                                }
-                            }
+                            TodoItemView(item: item)
                         }
                     }
 
@@ -57,7 +51,7 @@ struct HomeView: View {
                         .listRowSeparator(.hidden)
                     }
                 }
-                .listStyle(.plain)
+                .listStyle(.insetGrouped)
             }
         }
         .navigationTitle(Text("Home"))

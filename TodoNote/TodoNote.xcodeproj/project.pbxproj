@@ -12,7 +12,9 @@
 		AA1932682A81C643002C846F /* com.mono0926.LicensePlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1932672A81C643002C846F /* com.mono0926.LicensePlist.plist */; };
 		AA19326A2A81F200002C846F /* AccentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932692A81F200002C846F /* AccentButton.swift */; };
 		AA19326C2A8230D7002C846F /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA19326B2A8230D7002C846F /* Launch.storyboard */; };
-		AA19326F2A82371B002C846F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA19326E2A82371B002C846F /* GoogleService-Info.plist */; };
+		AA1932712A8239E7002C846F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1932702A8239E7002C846F /* GoogleService-Info.plist */; };
+		AA1932732A8248AB002C846F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932722A8248AB002C846F /* LoginViewModel.swift */; };
+		AA1932752A824B7C002C846F /* TodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932742A824B7C002C846F /* TodoItemView.swift */; };
 		AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */; };
 		AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F842A80D7A5008FC467 /* Persistence.swift */; };
 		AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */; };
@@ -98,7 +100,9 @@
 		AA1932672A81C643002C846F /* com.mono0926.LicensePlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = com.mono0926.LicensePlist.plist; path = Resource/Settings.bundle/com.mono0926.LicensePlist.plist; sourceTree = "<group>"; };
 		AA1932692A81F200002C846F /* AccentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentButton.swift; sourceTree = "<group>"; };
 		AA19326B2A8230D7002C846F /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
-		AA19326E2A82371B002C846F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA1932702A8239E7002C846F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Resource/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA1932722A8248AB002C846F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AA1932742A824B7C002C846F /* TodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemView.swift; sourceTree = "<group>"; };
 		AABB4F782A80D7A4008FC467 /* TodoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AABB4F842A80D7A5008FC467 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -282,9 +286,9 @@
 		AABB4FAA2A80DA03008FC467 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AA19326E2A82371B002C846F /* GoogleService-Info.plist */,
 				AA1932652A81C63B002C846F /* com.mono0926.LicensePlist */,
 				AA1932672A81C643002C846F /* com.mono0926.LicensePlist.plist */,
+				AA1932702A8239E7002C846F /* GoogleService-Info.plist */,
 				AAE79FDD2A81180A009823FB /* AppConstValues.swift */,
 				AAE79F742A80DF13009823FB /* R.generated.swift */,
 				AAE79FDE2A81180A009823FB /* Assets.xcassets */,
@@ -402,9 +406,10 @@
 		AAE79F9F2A80E53A009823FB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AAE79FA02A80E543009823FB /* ListItemView.swift */,
-				AAE79FC72A80FFBB009823FB /* AppTitleView.swift */,
 				AA1932692A81F200002C846F /* AccentButton.swift */,
+				AAE79FC72A80FFBB009823FB /* AppTitleView.swift */,
+				AAE79FA02A80E543009823FB /* ListItemView.swift */,
+				AA1932742A824B7C002C846F /* TodoItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE79FD72A8113AC009823FB /* LoginView.swift */,
+				AA1932722A8248AB002C846F /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -654,7 +660,7 @@
 				AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */,
 				AAE79F872A80E2FC009823FB /* Main.storyboard in Resources */,
 				AA1932682A81C643002C846F /* com.mono0926.LicensePlist.plist in Resources */,
-				AA19326F2A82371B002C846F /* GoogleService-Info.plist in Resources */,
+				AA1932712A8239E7002C846F /* GoogleService-Info.plist in Resources */,
 				AAE79FE12A81180B009823FB /* Assets.xcassets in Resources */,
 				AAE79FE22A8118A5009823FB /* InfoPlist.strings in Resources */,
 			);
@@ -887,7 +893,9 @@
 				AAE79F7B2A80E008009823FB /* AppState.swift in Sources */,
 				AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */,
 				AAE79F752A80DF13009823FB /* R.generated.swift in Sources */,
+				AA1932732A8248AB002C846F /* LoginViewModel.swift in Sources */,
 				AAE79FB22A80FAE1009823FB /* RegistrationStatus.swift in Sources */,
+				AA1932752A824B7C002C846F /* TodoItemView.swift in Sources */,
 				AAE79FC42A80FDA6009823FB /* UseCaseProctol.swift in Sources */,
 				AAE79F7F2A80E0E0009823FB /* UIAppearanceUtil.swift in Sources */,
 				AAE79FA12A80E543009823FB /* ListItemView.swift in Sources */,

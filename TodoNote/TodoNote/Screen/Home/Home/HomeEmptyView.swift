@@ -14,20 +14,19 @@ struct HomeEmptyView: View {
         VStack {
             R.image.app_icon.image
                 .resizable()
-                .frame(width: 64, height: 64)
+                .frame(width: 120, height: 120)
                 .scaledToFit()
+                .clipShape(Circle())
                 .padding(.bottom, 24)
 
-            Text("TODO はまだ登録されていません")
+            R.string.localizable.home_empty.text
                 .foregroundColor(Color(uiColor: UIColor.label))
                 .font(.system(size: 17, weight: .bold))
                 .padding(.bottom, 64)
 
             Button(action: action) {
                 HStack {
-                    Image(systemName: "plus")
-                        .foregroundColor(Color.white)
-                    Text("最初の TODO を追加する")
+                    R.string.localizable.home_button_add.text
                         .foregroundColor(Color.white)
                 }
                 .padding()

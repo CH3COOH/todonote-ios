@@ -50,21 +50,16 @@
 "error_permission_write_external_storage" = "画像の保存するためには「ストレージへの書き込み権限」を許可していただく必要があります。設定の許可画面をご確認ください。";
 "error_permission_write_external_storage_button" = "設定アプリを開く";
 
-// MARK: - login
-"login_button_login" = "Twitter でログイン";
-"login_button_agree_tos" = "利用規約に同意する";
-"login_item_privacy_policy" = "プライバシーポリシー";
-"login_item_tos" = "利用規約";
-
 // MARK: - home
 "home_title" = "TodoNote";
 "home_nav_button_settings" = "設定";
 "home_section_settings" = "検索設定";
-"home_item_alert_logout" = "ログアウトしますか？";
+"home_empty" = "タスクはまだ登録されていません";
+"home_button_add" = "最初のタスクを追加する";
 
 // MARK: - login
 "login_title" = "TodoNote へようこそ！";
-"login_body" = "ダウンロードしてくれてありがとう！TodoNote はTODOを管理するアプリだよ。\n\nスタートボタンをクリックすると、Firestore の匿名ログインをするよ。タスクは Firestore に保存するよ。オフラインでも使えるよ";
+"login_body" = "ダウンロードしてくれてありがとう！TodoNote はTODOを管理するアプリだよ。\n\nスタートボタンをクリックすると、Firestore の匿名ログインをするよ。タスクは Firestore に保存するよ。ログイン後はオフラインでも使えるよ。ゆっくりしていってね";
 "login_button" = "アプリをはじめる";
 
 // MARK: - ダイアログ/ATT
@@ -94,6 +89,8 @@
 "settings_about_cell_privacy_policy" = "プライバシーポリシー";
 "settings_about_cell_company" = "開発者";
 "settings_about_cell_company_desc" = "Kenji Wada";
+"settings_alert_logout_title" = "ログアウトしますか？";
+"settings_alert_logout_message" = "匿名ログインのため、現在登録しているタスクにアクセスできなくなります。この選択は取り消せません";
 
 // MARK: - 設定画面/問い合わせダイアログ
 "settings_bug_report_desc" = "不具合の報告は\n下記「不具合の報告」よりご連絡ください。早急に対応いたします。";

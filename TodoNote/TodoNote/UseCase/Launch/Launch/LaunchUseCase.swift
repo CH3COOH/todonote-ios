@@ -4,19 +4,19 @@
 //  Created by KENJIWADA on 2023/03/10.
 //
 
+import FirebaseAuth
 import Foundation
 
 class LaunchUseCase: UseCaseProctol {
     let checkVersionUseCase = CheckVersionUseCase()
 
     func execute(_: LaunchUseCaseInput) async -> LaunchUseCaseResult {
-        return await checkShownWalkthrough()
+        return await checkLoggedIn()
     }
 
-    private func checkShownWalkthrough() async -> LaunchUseCaseResult {
-        // 一度も表示していない場合、ウォークスルーを表示する
-        let shownWalkthrough = UserDefaults.standard.bool(forKey: AppConstValues.shown_walkthrough)
-        if !shownWalkthrough {
+    private func checkLoggedIn() async -> LaunchUseCaseResult {
+        // ログイン状態を調べる
+        if Auth.auth().currentUser == nil {
             return .moveToWalkthrough
         }
 
