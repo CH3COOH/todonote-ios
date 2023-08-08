@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ULID
 
 struct EditTodoView: View {
     @Environment(\.viewController) private var viewControllerHolder: ViewControllerHolder
@@ -63,7 +64,29 @@ struct EditTodoView: View {
     }
 
     private func onClickAddButton() {
-        // TODO:
+        // TODO: TODOアイテムの追加処理
+        Task {
+            do {
+                let resitory = TodoRepository()
+
+                let ulid = ULID()
+                let todo1 = Todo(
+                    todoId: TodoId(rawValue: ulid.ulidString),
+                    status: RegistrationStatus.ready,
+                    title: ulid.ulidString,
+                    body: "ああああああ",
+                    datetime: Date(),
+                    createdAt: Date(),
+                    updatedAt: Date(),
+                    finished: false
+                )
+                try await resitory.add(objects: [todo1])
+
+                await MainActor.run {
+                    viewController?.dismiss(animated: true)
+                }
+            }
+        }
     }
 }
 

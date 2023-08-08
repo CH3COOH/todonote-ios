@@ -25,11 +25,14 @@ class HomeViewModel: ObservableObject {
 //                    cards: cards
 //                )
 //            case .failed:
-//                // TODO: エラー時の処理
 //                break
 //            }
+            do {
+                let resitory = TodoRepository()
+                let items = try await resitory.fetch()
 
-            await set(items: [])
+                await set(items: items)
+            }
         }
     }
 

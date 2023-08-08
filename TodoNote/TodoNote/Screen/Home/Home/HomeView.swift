@@ -30,19 +30,14 @@ struct HomeView: View {
             } else {
                 List {
                     Section {
-                        ForEach(model.items) { _ in
-//                            CreditCardView(
-//                                design: .anime001,
-//                                cardNumber: card.displayCardNumber,
-//                                expirationDate: Date(),
-//                                onClickCard: {
-//                                    onClickItem(card: card)
-//                                },
-//                                onClickEdit: {
-//                                    onClickEditCardButton(cardId: card.cardId)
-//                                }
-//                            )
-                            Text("アイテム")
+                        ForEach(model.items) { item in
+                            VStack {
+                                Button(action: {}) {}
+                                Text(item.title)
+                                if !item.body.isEmpty {
+                                    Text(item.body)
+                                }
+                            }
                         }
                     }
 
