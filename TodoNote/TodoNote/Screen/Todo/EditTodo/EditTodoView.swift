@@ -66,13 +66,13 @@ struct EditTodoView: View {
                     todoId: TodoId(rawValue: ulid.ulidString),
                     status: RegistrationStatus.ready,
                     title: ulid.ulidString,
-                    body: "ああああああ",
+                    description: "ああああああ",
                     datetime: Date(),
                     createdAt: Date(),
                     updatedAt: Date(),
                     finished: false
                 )
-                try await resitory.add(objects: [todo1])
+                try await resitory.addOrUpdate(object: todo1)
 
                 await MainActor.run {
                     viewController?.dismiss(animated: true)

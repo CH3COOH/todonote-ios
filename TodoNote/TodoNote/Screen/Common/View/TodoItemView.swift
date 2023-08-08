@@ -33,8 +33,8 @@ struct TodoItemView: View {
 
             VStack {
                 Text(item.title)
-                if !item.body.isEmpty {
-                    Text(item.body)
+                if !item.description.isEmpty {
+                    Text(item.description)
                 }
             }
 

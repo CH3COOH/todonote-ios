@@ -27,7 +27,9 @@
 ### TODOアイテムの登録/編集処理
 
 * TODOアイテムの新規登録時
-    * 
+    * ステータス `editing` のレコードを作成する
+    * Save ボタンの押下で、ステータスを `editing` から `ready` へ変更。サーバーへ同期後は `complete` へ変更する
+    * Cancel ボタンの押下で、`editing` のレコードを削除する
 * 既存の TODO アイテムの編集時
     * `ready` または `complete` の既存のレコードをコピーし、ステータスを `editing` へ変更する
     * Save ボタンの押下で、既存のレコードを削除し、ステータスを `editing` から `ready` へ変更。サーバーへ同期後は `complete` へ変更する
