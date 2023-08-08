@@ -10,30 +10,41 @@ import SwiftUI
 struct TodoItemView: View {
     let item: Todo
 
-    @State private var checked = false
+    let doneAction: () -> Void
+
+    let editAction: () -> Void
 
     var body: some View {
         HStack {
-            Button(action: { checked.toggle() }) {
-                if checked {
-                    Image(systemName: "checkmark.square")
-                        .resizable()
-                        .frame(width: 44, height: 44)
-                        .scaledToFit()
-                } else {
-                    Image(systemName: "square")
-                        .resizable()
-                        .frame(width: 44, height: 44)
-                        .scaledToFit()
-                }
+            Button(action: doneAction) {
+//                if checked {
+//                    Image(systemName: "checkmark.square")
+//                        .resizable()
+//                        .frame(width: 44, height: 44)
+//                        .scaledToFit()
+//                } else {
+                Image(systemName: "square")
+                    .resizable()
+                    .frame(width: 44, height: 44)
+                    .scaledToFit()
+//                }
             }
             .buttonStyle(.plain)
+
             VStack {
                 Text(item.title)
                 if !item.body.isEmpty {
                     Text(item.body)
                 }
             }
+
+            Button(action: editAction) {
+                Image(systemName: "square.and.pencil.circle")
+                    .resizable()
+                    .frame(width: 44, height: 44)
+                    .scaledToFit()
+            }
+            .buttonStyle(.plain)
         }
     }
 }

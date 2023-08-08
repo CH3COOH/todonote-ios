@@ -49,12 +49,12 @@
 
 | ID   | ユースケース名 | 備考 |
 |:-----|:-----|:-----|
-| UA-1  | lunch  | |
-| UA-1-1  | check login  | |
-| U-1-2  | check version | |
-| U-1-3  | sync ready  | |
-| U-1-4  | check editing  | |
-| U-2  | fetch todo list  | sort option |
-| U-3  | update todo  | |
-| US-1  | settings  | |
-| US-2  | logout  | |
+| BL-A-1  | lunch  | |
+| BL-A-1-1  | check login  | |
+| BL-1-2  | check version | |
+| BL-1-4  | check editing  | |
+| BL-2  | fetch todo list  | sort option |
+| BL-3  | update todo  | |
+| BL-S01  | settings  | |
+| BL-S02  | logout  | |
+| BL-Z01  | sync ready | ready のレコードの同期を実施する |

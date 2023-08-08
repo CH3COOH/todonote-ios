@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// B-1    ホーム
 struct HomeView: View {
     @Environment(\.viewController) private var viewControllerHolder: ViewControllerHolder
     private var viewController: UIViewController? {
@@ -31,24 +32,18 @@ struct HomeView: View {
                 List {
                     Section {
                         ForEach(model.items) { item in
-                            TodoItemView(item: item)
+                            TodoItemView(
+                                item: item,
+                                doneAction: {},
+                                editAction: {
+                                    onClickEditButton(item: item)
+                                }
+                            )
                         }
                     }
 
                     Section {
-                        Button(action: onClickAddButton) {
-                            Text("Add")
-                                .foregroundColor(Color(uiColor: UIColor.label))
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(R.color.transparent.color)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.red, lineWidth: 2)
-                                )
-                        }
-                        .buttonStyle(.plain)
-                        .listRowSeparator(.hidden)
+                        HomeAddView(action: onClickAddButton)
                     }
                 }
                 .listStyle(.insetGrouped)
@@ -62,6 +57,14 @@ struct HomeView: View {
                     Label(
                         "Add",
                         systemImage: "plus"
+                    )
+                }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: model.onClickSortButton) {
+                    Label(
+                        "Sort",
+                        systemImage: "list.bullet"
                     )
                 }
             }
@@ -80,9 +83,20 @@ struct HomeView: View {
         .onAppear {
             model.onAppear(from: viewController)
         }
+        .actionSheet(item: $model.actionSheetItem) { $0.sheet }
     }
 
     private func onClickAddButton() {
+        let nc = UINavigationController(
+            rootViewController: UIViewController.hostingController {
+                EditTodoView()
+            }
+        )
+        nc.modalPresentationStyle = .fullScreen
+        viewController?.present(nc, animated: true)
+    }
+
+    private func onClickEditButton(item _: Todo) {
         let nc = UINavigationController(
             rootViewController: UIViewController.hostingController {
                 EditTodoView()

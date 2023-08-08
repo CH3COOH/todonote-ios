@@ -15,6 +15,7 @@
 		AA1932712A8239E7002C846F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1932702A8239E7002C846F /* GoogleService-Info.plist */; };
 		AA1932732A8248AB002C846F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932722A8248AB002C846F /* LoginViewModel.swift */; };
 		AA1932752A824B7C002C846F /* TodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932742A824B7C002C846F /* TodoItemView.swift */; };
+		AA1932772A82F030002C846F /* HomeAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932762A82F030002C846F /* HomeAddView.swift */; };
 		AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */; };
 		AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F842A80D7A5008FC467 /* Persistence.swift */; };
 		AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */; };
@@ -103,6 +104,7 @@
 		AA1932702A8239E7002C846F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Resource/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA1932722A8248AB002C846F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AA1932742A824B7C002C846F /* TodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemView.swift; sourceTree = "<group>"; };
+		AA1932762A82F030002C846F /* HomeAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAddView.swift; sourceTree = "<group>"; };
 		AABB4F782A80D7A4008FC467 /* TodoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AABB4F842A80D7A5008FC467 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -217,6 +219,15 @@
 				D13F7D3177464E3F8AFBA262 /* Pods_TodoNoteTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA1932782A82F537002C846F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA1932762A82F030002C846F /* HomeAddView.swift */,
+				AAE79FC92A810175009823FB /* HomeEmptyView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AABB4F6F2A80D7A4008FC467 = {
@@ -425,9 +436,9 @@
 		AAE79FA72A80E865009823FB /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				AAE79FC92A810175009823FB /* HomeEmptyView.swift */,
 				AAE79FA92A80E882009823FB /* HomeView.swift */,
 				AAE79FAB2A80E88D009823FB /* HomeViewModel.swift */,
+				AA1932782A82F537002C846F /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -885,6 +896,7 @@
 				AAE79F792A80DFC2009823FB /* UIViewController+SwiftUI.swift in Sources */,
 				AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */,
 				AAE79FD22A810CB0009823FB /* TodoRepository.swift in Sources */,
+				AA1932772A82F030002C846F /* HomeAddView.swift in Sources */,
 				AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */,
 				AAE79F822A80E101009823FB /* SceneDelegate.swift in Sources */,
 				AAE79FBD2A80FD2F009823FB /* LaunchUseCase.swift in Sources */,

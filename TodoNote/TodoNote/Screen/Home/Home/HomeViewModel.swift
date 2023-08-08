@@ -12,6 +12,8 @@ class HomeViewModel: ObservableObject {
 
     @Published var items: [Todo] = []
 
+    @Published var actionSheetItem: ActionSheetItem?
+
     var isEmpty: Bool {
         isLoaded && items.isEmpty
     }
@@ -35,6 +37,21 @@ class HomeViewModel: ObservableObject {
             }
         }
     }
+
+    func onClickSortButton() {
+        actionSheetItem = ActionSheetItem(
+            sheet: ActionSheet(
+                title: Text("あああああ"),
+                buttons: [
+                    .default(Text("期限切れのみ")),
+                    .default(Text("期限切れのみ")),
+                    .cancel(),
+                ]
+            )
+        )
+    }
+
+    // MARK: -
 
     @MainActor
     private func set(items: [Todo]) {

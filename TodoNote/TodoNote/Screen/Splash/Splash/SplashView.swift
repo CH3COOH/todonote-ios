@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A-1    スプラッシュ
 struct SplashView: View {
     @Environment(\.viewController) private var viewControllerHolder: ViewControllerHolder
     private var viewController: UIViewController? {

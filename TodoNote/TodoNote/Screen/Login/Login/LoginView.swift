@@ -8,6 +8,7 @@
 import FirebaseAuth
 import SwiftUI
 
+/// A-2    ログイン
 struct LoginView: View {
     var body: some View {
         VStack {
