@@ -1,6 +1,5 @@
 //
 //  SettingsView.swift
-//  Peacemaker
 //
 //  Created by KENJIWADA on 2023/03/16.
 //
@@ -18,72 +17,55 @@ struct SettingsView: View {
 
     var body: some View {
         List {
-//            // アプリ内設定
-//            Section {
-//
-//            } header: {
-//                R.string.localizable.settings_section_app.text
-//            }
-
-//            // ストア
-//            Section {
-//                SettingsListItemView(
-//                    image: premiumImage,
-//                    imageColor: R.color.accentColor.color,
-//                    title: R.string.localizable.settings_cell_store.text,
-//                    description: R.string.localizable.settings_cell_store_desc.text
-//                ) {
-//                    SettingsViewRouter.moveStore(from: viewController)
-//                }
-//            }
+            Section {
+                // お問合せ
+                SettingsListItemView(
+                    image: Image(systemName: "pencil.circle"),
+                    title: R.string.localizable.settings_cell_feedback.text,
+                    description: R.string.localizable.settings_cell_feedback_desc.text
+                ) {
+                    SettingsViewRouter.moveFeedback(from: viewController)
+                }
+            }
 
             // その他
             Section {
-//                // お問合せ
-//                SettingsListItemView(
-//                    image: Image(systemName: "pencil.circle"),
-//                    title: R.string.localizable.settings_cell_feedback.text,
-//                    description: R.string.localizable.settings_cell_feedback_desc.text
-//                ) {
-//                    SettingsViewRouter.moveFeedback(from: viewController)
-//                }
-//
-//                // 不具合報告
-//                SettingsListItemView(
-//                    image: Image(systemName: "ant.circle"),
-//                    title: R.string.localizable.settings_cell_bug_report.text,
-//                    description: R.string.localizable.settings_cell_bug_report_desc.text
-//                ) {
-//                    SettingsViewRouter.moveBugReport(from: viewController, fromReview: false)
-//                }
-//
-//                // レビューを書く
-//                SettingsListItemView(
-//                    image: Image(systemName: "star.circle"),
-//                    title: R.string.localizable.settings_cell_write_review.text,
-//                    description: R.string.localizable.settings_cell_write_review_desc.text
-//                ) {
-//                    model.onClickWriteReviewButton(from: viewController)
-//                }
-//                .actionSheet(item: $model.reportActionSheetItem) { $0.sheet }
-//
-//                // このアプリについて
-//                SettingsListItemView(
-//                    image: Image(systemName: "person.circle"),
-//                    title: R.string.localizable.settings_cell_about.text,
-//                    description: R.string.localizable.settings_cell_about_desc.text
-//                ) {
-//                    SettingsViewRouter.moveAbout(from: viewController)
-//                }
-
-                // このアプリについて
+                // プラポリ
                 SettingsListItemView(
-                    image: Image(systemName: "person.circle"),
+                    image: nil,
+                    title: R.string.localizable.settings_about_cell_privacy_policy.text,
+                    description: nil
+                ) {
+                    SettingsViewRouter.movePrivacyPolicy(from: viewController)
+                }
+
+                // 利用規約
+                SettingsListItemView(
+                    image: nil,
+                    title: R.string.localizable.settings_about_cell_user_policy.text,
+                    description: nil
+                ) {
+                    SettingsViewRouter.moveUserPolicy(from: viewController)
+                }
+
+                // ライセンス
+                SettingsListItemView(
+                    image: nil,
                     title: R.string.localizable.settings_about_cell_licences.text,
                     description: nil
                 ) {
                     SettingsViewRouter.moveLicences(from: viewController)
                 }
+
+                // 開発者
+                SettingsListItemView(
+                    image: Image(systemName: "person.circle"),
+                    title: R.string.localizable.settings_about_cell_company.text,
+                    description: R.string.localizable.settings_about_cell_company_desc.text
+                ) {
+                    SettingsViewRouter.moveDeveloper(from: viewController)
+                }
+
             } header: {
                 R.string.localizable.settings_section_other.text
             }

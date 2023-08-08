@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-//        UIAppearanceUtil.setup()
+        UIAppearanceUtil.setup()
         AppState.shared.setUp()
 
         FirebaseApp.configure()
