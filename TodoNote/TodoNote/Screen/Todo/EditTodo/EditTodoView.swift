@@ -29,18 +29,10 @@ struct EditTodoView: View {
 
                 DatePicker("明日", selection: $model.date)
 
-                Button(action: onClickAddButton) {
-                    HStack {
-                        Text("保存する")
-                            .foregroundColor(Color.white)
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .fill(R.color.accentColor.color)
-                    )
-                }
+                AccentButton(
+                    title: Text("保存する"),
+                    action: onClickAddButton
+                )
             }
             .padding(.horizontal, 24)
         }

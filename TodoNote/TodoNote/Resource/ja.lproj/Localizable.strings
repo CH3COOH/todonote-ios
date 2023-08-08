@@ -62,6 +62,11 @@
 "home_section_settings" = "検索設定";
 "home_item_alert_logout" = "ログアウトしますか？";
 
+// MARK: - login
+"login_title" = "TodoNote へようこそ！";
+"login_body" = "ダウンロードしてくれてありがとう！TodoNote はTODOを管理するアプリだよ。\n\nスタートボタンをクリックすると、Firestore の匿名ログインをするよ。タスクは Firestore に保存するよ。オフラインでも使えるよ";
+"login_button" = "アプリをはじめる";
+
 // MARK: - ダイアログ/ATT
 "dialog_att_title_1" = "あなた好みのコンテンツを楽しむために";
 "dialog_att_title_2" = " 許可 ";
@@ -82,11 +87,6 @@
 "settings_cell_about" = "アプリについて";
 "settings_cell_about_desc" = "アプリに関する情報をみる";
 "settings_copy_right" = "Copyright ©︎ 2023 ch3cooh.jp All Rights Reserved.\nVersion %@(%@)";
-"settings_section_other_app" = "このデベロッパのその他のApp";
-"settings_cell_fourcropper_title" = "Four Cropper";
-"settings_cell_fourcropper_desc" = "大きな画像を四分割してシェアしよう！";
-
-// MARK: - 設定画面/About
 "settings_about_title" = "アプリについて";
 "settings_about_version" = "Version %@(%@)";
 "settings_about_cell_licences" = "ライセンス";

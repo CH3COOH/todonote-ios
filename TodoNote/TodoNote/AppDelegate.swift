@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //        UIAppearanceUtil.setup()
         AppState.shared.setUp()
 
+        FirebaseApp.configure()
+
         let center = UNUserNotificationCenter.current()
         center.delegate = self
 

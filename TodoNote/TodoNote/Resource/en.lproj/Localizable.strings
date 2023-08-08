@@ -62,6 +62,11 @@
 "home_section_settings" = "Search Settings";
 "home_item_alert_logout" = "Would you like to sign out?";
 
+// MARK: - login
+"login_title" = "Welcome to TodoNote !";
+"login_body" = "Thanks for downloading! TodoNote is an app to manage your TODOs. \When you click the Start button, you will be logged in to Firestore anonymously. Tasks will be saved in Firestore. You can even use it offline.";
+"login_button" = "Start this app";
+
 // MARK: - ダイアログ/ATT
 "dialog_att_title_1" = "Please";
 "dialog_att_title_2" = " Allow ";
@@ -82,11 +87,6 @@
 "settings_cell_about" = "About this app";
 "settings_cell_about_desc" = "Learn more about the app";
 "settings_copy_right" = "Copyright ©︎ 2023 ch3cooh.jp All Rights Reserved.\nVersion %@(%@)";
-"settings_section_other_app" = "More By This Developer";
-"settings_cell_fourcropper_title" = "Four Cropper";
-"settings_cell_fourcropper_desc" = "Divide a large image into four parts and share it to social networking sites!";
-
-// MARK: - 設定画面/About
 "settings_about_title" = "About this app";
 "settings_about_version" = "Version %@(%@)";
 "settings_about_cell_licences" = "Licences";

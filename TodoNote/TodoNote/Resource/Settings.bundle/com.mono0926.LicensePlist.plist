@@ -12,6 +12,22 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/abseil</string>
+			<key>Title</key>
+			<string>abseil</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/BoringSSL-GRPC</string>
+			<key>Title</key>
+			<string>BoringSSL-GRPC</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/FirebaseABTesting</string>
 			<key>Title</key>
 			<string>FirebaseABTesting</string>
@@ -23,6 +39,22 @@
 			<string>com.mono0926.LicensePlist/FirebaseAnalytics</string>
 			<key>Title</key>
 			<string>FirebaseAnalytics</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseAppCheckInterop</string>
+			<key>Title</key>
+			<string>FirebaseAppCheckInterop</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseAuth</string>
+			<key>Title</key>
+			<string>FirebaseAuth</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -55,6 +87,14 @@
 			<string>com.mono0926.LicensePlist/FirebaseCrashlytics</string>
 			<key>Title</key>
 			<string>FirebaseCrashlytics</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseFirestore</string>
+			<key>Title</key>
+			<string>FirebaseFirestore</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -116,6 +156,30 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/gRPC-C++</string>
+			<key>Title</key>
+			<string>gRPC-C++</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/gRPC-Core</string>
+			<key>Title</key>
+			<string>gRPC-Core</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/GTMSessionFetcher</string>
+			<key>Title</key>
+			<string>GTMSessionFetcher</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/KRActivityIndicatorView</string>
 			<key>Title</key>
 			<string>KRActivityIndicatorView</string>
@@ -127,6 +191,14 @@
 			<string>com.mono0926.LicensePlist/KRProgressHUD</string>
 			<key>Title</key>
 			<string>KRProgressHUD</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/leveldb-library</string>
+			<key>Title</key>
+			<string>leveldb-library</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>

@@ -10,6 +10,9 @@
 		A668B311F47C06E2A7631D17 /* Pods_TodoNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36325D806F2A306BEC0CBE42 /* Pods_TodoNote.framework */; };
 		AA1932662A81C63B002C846F /* com.mono0926.LicensePlist in Resources */ = {isa = PBXBuildFile; fileRef = AA1932652A81C63B002C846F /* com.mono0926.LicensePlist */; };
 		AA1932682A81C643002C846F /* com.mono0926.LicensePlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1932672A81C643002C846F /* com.mono0926.LicensePlist.plist */; };
+		AA19326A2A81F200002C846F /* AccentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932692A81F200002C846F /* AccentButton.swift */; };
+		AA19326C2A8230D7002C846F /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA19326B2A8230D7002C846F /* Launch.storyboard */; };
+		AA19326F2A82371B002C846F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA19326E2A82371B002C846F /* GoogleService-Info.plist */; };
 		AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */; };
 		AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F842A80D7A5008FC467 /* Persistence.swift */; };
 		AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */; };
@@ -93,6 +96,9 @@
 		87AC245C9E85DC7B8DC6F6D4 /* Pods-TodoNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoNoteTests.release.xcconfig"; path = "Target Support Files/Pods-TodoNoteTests/Pods-TodoNoteTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA1932652A81C63B002C846F /* com.mono0926.LicensePlist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = com.mono0926.LicensePlist; path = Resource/Settings.bundle/com.mono0926.LicensePlist; sourceTree = "<group>"; };
 		AA1932672A81C643002C846F /* com.mono0926.LicensePlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = com.mono0926.LicensePlist.plist; path = Resource/Settings.bundle/com.mono0926.LicensePlist.plist; sourceTree = "<group>"; };
+		AA1932692A81F200002C846F /* AccentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentButton.swift; sourceTree = "<group>"; };
+		AA19326B2A8230D7002C846F /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		AA19326E2A82371B002C846F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AABB4F782A80D7A4008FC467 /* TodoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AABB4F842A80D7A5008FC467 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -276,6 +282,7 @@
 		AABB4FAA2A80DA03008FC467 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AA19326E2A82371B002C846F /* GoogleService-Info.plist */,
 				AA1932652A81C63B002C846F /* com.mono0926.LicensePlist */,
 				AA1932672A81C643002C846F /* com.mono0926.LicensePlist.plist */,
 				AAE79FDD2A81180A009823FB /* AppConstValues.swift */,
@@ -354,12 +361,13 @@
 		AAE79F6F2A80DE65009823FB /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				AAE79F9F2A80E53A009823FB /* View */,
+				AA19326B2A8230D7002C846F /* Launch.storyboard */,
 				AAE79F862A80E2FC009823FB /* Main.storyboard */,
+				AAE79F9B2A80E4E3009823FB /* AlertItem.swift */,
 				AAE79F702A80DE75009823FB /* RootViewController.swift */,
 				AAE79F782A80DFC2009823FB /* UIViewController+SwiftUI.swift */,
 				AAE79F832A80E1B2009823FB /* Bridge */,
-				AAE79F9B2A80E4E3009823FB /* AlertItem.swift */,
+				AAE79F9F2A80E53A009823FB /* View */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -396,6 +404,7 @@
 			children = (
 				AAE79FA02A80E543009823FB /* ListItemView.swift */,
 				AAE79FC72A80FFBB009823FB /* AppTitleView.swift */,
+				AA1932692A81F200002C846F /* AccentButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -539,6 +548,7 @@
 				AABB4F752A80D7A4008FC467 /* Frameworks */,
 				AABB4F762A80D7A4008FC467 /* Resources */,
 				0D5FE5C3B257E6634317BC2A /* [CP] Embed Pods Frameworks */,
+				AA19326D2A823676002C846F /* FirebaseCrashlytics */,
 			);
 			buildRules = (
 			);
@@ -640,9 +650,11 @@
 				AAE79FDF2A81180B009823FB /* Colors.xcassets in Resources */,
 				AA1932662A81C63B002C846F /* com.mono0926.LicensePlist in Resources */,
 				AAE79FE52A8118A9009823FB /* Localizable.strings in Resources */,
+				AA19326C2A8230D7002C846F /* Launch.storyboard in Resources */,
 				AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */,
 				AAE79F872A80E2FC009823FB /* Main.storyboard in Resources */,
 				AA1932682A81C643002C846F /* com.mono0926.LicensePlist.plist in Resources */,
+				AA19326F2A82371B002C846F /* GoogleService-Info.plist in Resources */,
 				AAE79FE12A81180B009823FB /* Assets.xcassets in Resources */,
 				AAE79FE22A8118A5009823FB /* InfoPlist.strings in Resources */,
 			);
@@ -742,6 +754,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodoNote-TodoNoteUITests/Pods-TodoNote-TodoNoteUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		AA19326D2A823676002C846F /* FirebaseCrashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = FirebaseCrashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		AABB4FB32A80DBF1008FC467 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -862,6 +893,7 @@
 				AAE79FA12A80E543009823FB /* ListItemView.swift in Sources */,
 				AAE79FD82A8113AC009823FB /* LoginView.swift in Sources */,
 				AAE79FBE2A80FD2F009823FB /* LaunchUseCaseResult.swift in Sources */,
+				AA19326A2A81F200002C846F /* AccentButton.swift in Sources */,
 				AAE79FCA2A810175009823FB /* HomeEmptyView.swift in Sources */,
 				AAE79F922A80E376009823FB /* SettingsViewModel.swift in Sources */,
 				AAE79FC82A80FFBB009823FB /* AppTitleView.swift in Sources */,
