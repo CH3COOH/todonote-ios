@@ -5,7 +5,6 @@
 //  Created by KENJIWADA on 2023/08/09.
 //
 
-import Foundation
 import FirebaseAuth
 
 class SignOutUseCase: UseCaseProctol {
@@ -23,21 +22,22 @@ class SignOutUseCase: UseCaseProctol {
         // TODO: ステータスが `ready` のレコードがあればサーバーに同期する
         return await deleteAllLocalData(input: input)
     }
-    
+
+    /// サインアウトしたのでローカルデータを全削除する
     private func deleteAllLocalData(input: SignOutUseCaseInput) async -> SignOutUseCaseResult {
         do {
             try await resitory.deleteAll()
-            
+
             return await signOut(input: input)
         } catch {
             return .failed(error)
         }
     }
-    
+
     private func signOut(input _: SignOutUseCaseInput) async -> SignOutUseCaseResult {
         do {
             try Auth.auth().signOut()
-            
+
             return .success
         } catch {
             return .failed(error)

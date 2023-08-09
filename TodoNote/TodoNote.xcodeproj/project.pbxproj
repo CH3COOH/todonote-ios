@@ -50,9 +50,7 @@
 		AAE79F912A80E376009823FB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F8A2A80E376009823FB /* SettingsView.swift */; };
 		AAE79F922A80E376009823FB /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F8B2A80E376009823FB /* SettingsViewModel.swift */; };
 		AAE79F932A80E376009823FB /* SettingsViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F8C2A80E376009823FB /* SettingsViewRouter.swift */; };
-		AAE79F942A80E376009823FB /* SettingsListSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F8E2A80E376009823FB /* SettingsListSwitchView.swift */; };
 		AAE79F952A80E376009823FB /* SettingsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F8F2A80E376009823FB /* SettingsListItemView.swift */; };
-		AAE79F962A80E376009823FB /* SettingsListAppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F902A80E376009823FB /* SettingsListAppIconView.swift */; };
 		AAE79F9C2A80E4E3009823FB /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F9B2A80E4E3009823FB /* AlertItem.swift */; };
 		AAE79F9E2A80E51D009823FB /* RSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F9D2A80E51D009823FB /* RSwiftUI.swift */; };
 		AAE79FA12A80E543009823FB /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FA02A80E543009823FB /* ListItemView.swift */; };
@@ -151,9 +149,7 @@
 		AAE79F8A2A80E376009823FB /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AAE79F8B2A80E376009823FB /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		AAE79F8C2A80E376009823FB /* SettingsViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewRouter.swift; sourceTree = "<group>"; };
-		AAE79F8E2A80E376009823FB /* SettingsListSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListSwitchView.swift; sourceTree = "<group>"; };
 		AAE79F8F2A80E376009823FB /* SettingsListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListItemView.swift; sourceTree = "<group>"; };
-		AAE79F902A80E376009823FB /* SettingsListAppIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListAppIconView.swift; sourceTree = "<group>"; };
 		AAE79F9B2A80E4E3009823FB /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		AAE79F9D2A80E51D009823FB /* RSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSwiftUI.swift; sourceTree = "<group>"; };
 		AAE79FA02A80E543009823FB /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
@@ -464,9 +460,7 @@
 		AAE79F8D2A80E376009823FB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AAE79F8E2A80E376009823FB /* SettingsListSwitchView.swift */,
 				AAE79F8F2A80E376009823FB /* SettingsListItemView.swift */,
-				AAE79F902A80E376009823FB /* SettingsListAppIconView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -937,7 +931,6 @@
 				AA1932902A837A11002C846F /* SignOutUseCaseResult.swift in Sources */,
 				AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */,
 				AAE79F9C2A80E4E3009823FB /* AlertItem.swift in Sources */,
-				AAE79F942A80E376009823FB /* SettingsListSwitchView.swift in Sources */,
 				AAE79FC02A80FD2F009823FB /* CheckVersionUseCase.swift in Sources */,
 				AAE79FE02A81180B009823FB /* AppConstValues.swift in Sources */,
 				AAE79FBC2A80FD2F009823FB /* LaunchUseCaseInput.swift in Sources */,
@@ -977,7 +970,6 @@
 				AA1932822A830A2F002C846F /* UpdateTodoUseCaseResult.swift in Sources */,
 				AAE79FC82A80FFBB009823FB /* AppTitleView.swift in Sources */,
 				AAE79F852A80E1BC009823FB /* ActivityIndicatorView.swift in Sources */,
-				AAE79F962A80E376009823FB /* SettingsListAppIconView.swift in Sources */,
 				AAE79FD42A810D20009823FB /* PreviewUtil.swift in Sources */,
 				AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */,
 				AAE79F772A80DF48009823FB /* FAPage.swift in Sources */,

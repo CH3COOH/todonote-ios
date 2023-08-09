@@ -14,7 +14,7 @@ class SettingsViewModel: ObservableObject {
     @Published var alertItem: AlertItem?
 
     private let signOutUseCase = SignOutUseCase()
-    
+
     init() {
         // アプリバージョンの取得
         if let version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String,
@@ -28,7 +28,9 @@ class SettingsViewModel: ObservableObject {
 
     // MARK: -
 
-    func update() {}
+    func onAppear(from _: UIViewController?) {
+        FAPage.settings.send()
+    }
 
     func onClickSignOutButton(from viewController: UIViewController?) {
         actionSheetItem = ActionSheetItem(
@@ -63,7 +65,7 @@ class SettingsViewModel: ObservableObject {
             }
         }
     }
-    
+
     @MainActor
     private func moveLoginScreen(from viewController: UIViewController?) {
         viewController?.dismiss(animated: false) {
