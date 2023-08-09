@@ -73,18 +73,9 @@ struct SettingsView: View {
                 Button(action: {
                     model.onClickSignOutButton(from: viewController)
                 }) {
-//                    HStack {
-//                        R.string.localizable.logout.text
-//                            .foregroundColor(Color.red)
-//                            .font(.system(size: 15, weight: .bold))
-//                    }
-//                    .frame(maxWidth: .infinity)
-
-//                    HStack {
                     R.string.localizable.logout.text
                         .foregroundColor(Color.red)
                         .font(.system(size: 15, weight: .bold))
-//                    }
                         .frame(maxWidth: .infinity)
                 }
             }
