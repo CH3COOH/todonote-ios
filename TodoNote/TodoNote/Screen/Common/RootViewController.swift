@@ -36,6 +36,7 @@ final class RootViewController: UIViewController {
                 LoginView()
             }
         )
+        vc.isNavigationBarHidden = true
         animateFadeTransition(to: vc)
     }
 
