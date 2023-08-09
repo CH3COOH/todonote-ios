@@ -11,10 +11,15 @@ import Foundation
 
 /// BL-Z01 データの同期
 class SyncReadyTodoUseCase: UseCaseProctol {
+    private let firestoreRepository: FirestoreRepository
     private let todoRepository: TodoRepository
     private let firestore = Firestore.firestore()
 
-    init(todoRepository: TodoRepository = TodoRepository()) {
+    init(
+        firestoreRepository: FirestoreRepository = FirestoreRepository(),
+        todoRepository: TodoRepository = TodoRepository()
+    ) {
+        self.firestoreRepository = firestoreRepository
         self.todoRepository = todoRepository
     }
 
@@ -38,25 +43,11 @@ class SyncReadyTodoUseCase: UseCaseProctol {
     /// Firestore へデータを同期する
     private func syncItems(input _: SyncReadyTodoUseCaseInput, items: [Todo]) async -> SyncReadyTodoUseCaseResult {
         do {
-            guard let userId = Auth.auth().currentUser?.uid else {
-                fatalError("UserId が取得できない")
-            }
-
-            let collectionRef = firestore.collection("version/1/users/\(userId)/items")
             for item in items {
-                let documentRef = collectionRef.document(item.todoId.rawValue)
                 if item.finished {
-                    try await documentRef.delete()
+                    try await firestoreRepository.addOrUpdate(object: item)
                 } else {
-                    try await documentRef.setData(
-                        [
-                            "title": item.title,
-                            "desc": item.description ?? "",
-                            "datetime": item.datetime,
-                            "create_at": item.createdAt,
-                            "update_at": item.updatedAt,
-                        ]
-                    )
+                    try await firestoreRepository.delete(object: item)
                 }
             }
 

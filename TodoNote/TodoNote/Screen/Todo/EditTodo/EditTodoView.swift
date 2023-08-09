@@ -51,6 +51,9 @@ struct EditTodoView: View {
                 Text(model.title)
             }
         }
+        .onAppear {
+            model.onAppear()
+        }
     }
 
     private func onClickCloseButton() {

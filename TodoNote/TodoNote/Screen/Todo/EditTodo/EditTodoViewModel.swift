@@ -34,7 +34,10 @@ class EditTodoViewModel: ObservableObject {
         }
     }
 
-    func onAppear() {}
+    func onAppear() {
+        todoTitle = todoId.rawValue
+        todoDescription = todoId.rawValue
+    }
 
     func onClickAddButton(from viewController: UIViewController?) {
         Task {
