@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "7FCB41E0-0187-47FC-97A2-CB789AE3C73B",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:TodoNote.xcodeproj",
+      "identifier" : "AABB4F772A80D7A4008FC467",
+      "name" : "TodoNote"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:TodoNote.xcodeproj",
+        "identifier" : "AABB4F8C2A80D7A5008FC467",
+        "name" : "TodoNoteTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:TodoNote.xcodeproj",
+        "identifier" : "AABB4F962A80D7A5008FC467",
+        "name" : "TodoNoteUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
