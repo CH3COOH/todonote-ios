@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  en
+  
+  Generate by csv2strings
+*/
+
+CFBundleDisplayName = "TodoNote";
+NSPhotoLibraryUsageDescription = "This app accesses Photo Library to set image.";
+NSPhotoLibraryAddUsageDescription = "The app accesses your photo library to save the photos you've taken.";
+NSCameraUsageDescription = "The app accesses your camera to take a picture.";
+NSUserTrackingUsageDescription = "If permitted, ads tailored to your preferences are more likely to be shown.";

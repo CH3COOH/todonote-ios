@@ -1,0 +1,98 @@
+/* 
+  Localizable.strings
+  en
+  
+  Generate by csv2strings
+*/
+
+
+// MARK: - app info
+"app_name" = "TodoNote";
+"BundleDisplayName" = "TodoNote";
+
+// MARK: - common
+"ok" = "OK";
+"cancel" = "Cancel";
+"close" = "Close";
+"save" = "Save";
+"delete" = "Delete";
+"done" = "Done";
+"edit" = "Edit";
+"error" = "Error";
+"mail_address" = "Email";
+"password" = "Password";
+"confirmation_code" = "Confirmation Code";
+"nickname" = "Username";
+"prev" = "Prev";
+"next" = "Next";
+"add" = "Add";
+"select" = "Select";
+"update" = "Update";
+"open" = "Open";
+"download" = "Downloads";
+"login" = "Login";
+"logout" = "Sign out";
+"register" = "Register";
+"on" = "On";
+"off" = "Off";
+"share" = "Share";
+
+// MARK: - app/common
+
+// MARK: - permission
+"permission_err_camera" = "You're not allowed to use the camera.";
+"permission_err_album" = "You're not allowed to use photo albums.";
+"permission_err_message" = "Please allow access through the Settings app.";
+"PhotoLibraryUsageDescription" = "This app accesses Photo Library to set image.";
+"PhotoLibraryAddUsageDescription" = "The app accesses your photo library to save the photos you've taken.";
+"CameraUsageDescription" = "The app accesses your camera to take a picture.";
+"UserTrackingUsageDescription" = "If permitted, ads tailored to your preferences are more likely to be shown.";
+"error_permission_write_external_storage" = "In order to save images, you need to allow Write to Storage. Please check the permission screen in Settings app.";
+"error_permission_write_external_storage_button" = "Open the settings app";
+
+// MARK: - home
+"home_title" = "TodoNote";
+"home_nav_button_settings" = "Settings";
+"home_section_settings" = "Search Settings";
+"home_empty" = "Task not yet registered";
+"home_button_add" = "Add the first task";
+
+// MARK: - login
+"login_title" = "Welcome to TodoNote !";
+"login_body" = "Thanks for downloading! TodoNote is an app to manage your TODOs.\n\nWhen you click the Start button, you will be logged in to Firestore anonymously. Tasks will be saved in Firestore. You can even use it offline.";
+"login_button" = "Start this app";
+
+// MARK: - ダイアログ/ATT
+"dialog_att_title_1" = "Please";
+"dialog_att_title_2" = " Allow ";
+"dialog_att_title_3" = "us to provide you with content tailored to your preferences!";
+"dialog_att_desc_1" = "To display advertisements based on your interests, please select Allow on the following screen.";
+"dialog_att_desc_2" = "*The app will not access your personal information or any other information.\n*You can change tracking settings at any time from the Settings app on your device.";
+
+// MARK: - 設定画面
+"settings_title" = "Settings";
+"settings_section_information" = "Information";
+"settings_section_other" = "Other";
+"settings_cell_feedback" = "Send app feedback";
+"settings_cell_feedback_desc" = "Send your feedback";
+"settings_cell_bug_report" = "Report a bug";
+"settings_cell_bug_report_desc" = "Report a bug you find";
+"settings_cell_write_review" = "Rate the app";
+"settings_cell_write_review_desc" = "Share your love";
+"settings_cell_about" = "About this app";
+"settings_cell_about_desc" = "Learn more about the app";
+"settings_copy_right" = "Copyright ©︎ 2023 ch3cooh.jp All Rights Reserved.\nVersion %@(%@)";
+"settings_about_title" = "About this app";
+"settings_about_version" = "Version %@(%@)";
+"settings_about_cell_licences" = "Licences";
+"settings_about_cell_user_policy" = "Terms of Use";
+"settings_about_cell_privacy_policy" = "Privacy Policy";
+"settings_about_cell_company" = "Developer";
+"settings_about_cell_company_desc" = "Kenji Wada";
+"settings_alert_logout_title" = "Would you like to sign out?";
+"settings_alert_logout_message" = "You will not be able to access your currently registered tasks due to anonymous login. This selection cannot be undone.";
+
+// MARK: - 設定画面/問い合わせダイアログ
+"settings_bug_report_desc" = "Please contact us from Report a bug in case defect of application. We will respond to that right away.";
+"settings_report_bugs" = "Report a bug";
+"settings_write_review" = "Write Review";

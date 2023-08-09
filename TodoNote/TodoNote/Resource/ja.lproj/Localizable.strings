@@ -1,0 +1,98 @@
+/* 
+  Localizable.strings
+  ja
+  
+  Generate by csv2strings
+*/
+
+
+// MARK: - app info
+"app_name" = "TodoNote";
+"BundleDisplayName" = "TodoNote";
+
+// MARK: - common
+"ok" = "OK";
+"cancel" = "キャンセル";
+"close" = "閉じる";
+"save" = "保存";
+"delete" = "削除";
+"done" = "完了";
+"edit" = "編集";
+"error" = "エラー";
+"mail_address" = "メールアドレス";
+"password" = "パスワード";
+"confirmation_code" = "確認コード";
+"nickname" = "ユーザー名";
+"prev" = "戻る";
+"next" = "次へ";
+"add" = "追加";
+"select" = "選択";
+"update" = "更新";
+"open" = "開く";
+"download" = "ダウンロード";
+"login" = "ログイン";
+"logout" = "ログアウト";
+"register" = "登録";
+"on" = "On";
+"off" = "Off";
+"share" = "共有";
+
+// MARK: - app/common
+
+// MARK: - permission
+"permission_err_camera" = "カメラの使用が許可されていません";
+"permission_err_album" = "フォトアルバムの使用が許可されていません";
+"permission_err_message" = "設定アプリから許可してください。";
+"PhotoLibraryUsageDescription" = "画像を設定するためにフォトライブラリにアクセスします。";
+"PhotoLibraryAddUsageDescription" = "撮影した写真を保存するためにフォトライブラリにアクセスします。";
+"CameraUsageDescription" = "写真を撮影するためにカメラにアクセスします。";
+"UserTrackingUsageDescription" = "許可されると好みにあった広告が表示されやすくなります。";
+"error_permission_write_external_storage" = "画像の保存するためには「ストレージへの書き込み権限」を許可していただく必要があります。設定の許可画面をご確認ください。";
+"error_permission_write_external_storage_button" = "設定アプリを開く";
+
+// MARK: - home
+"home_title" = "TodoNote";
+"home_nav_button_settings" = "設定";
+"home_section_settings" = "検索設定";
+"home_empty" = "タスクはまだ登録されていません";
+"home_button_add" = "最初のタスクを追加する";
+
+// MARK: - login
+"login_title" = "TodoNote へようこそ！";
+"login_body" = "ダウンロードしてくれてありがとう！TodoNote はTODOを管理するアプリだよ。\n\nスタートボタンをクリックすると、Firestore の匿名ログインをするよ。タスクは Firestore に保存するよ。ログイン後はオフラインでも使えるよ。ゆっくりしていってね";
+"login_button" = "アプリをはじめる";
+
+// MARK: - ダイアログ/ATT
+"dialog_att_title_1" = "あなた好みのコンテンツを楽しむために";
+"dialog_att_title_2" = " 許可 ";
+"dialog_att_title_3" = "をお願いします";
+"dialog_att_desc_1" = "お客さまの興味関心に合わせた広告を表示するためには、次の画面で「許可」を選択してください。";
+"dialog_att_desc_2" = "※アプリがあなたの個人情報等にアクセスすることはありません。\n※トラッキング設定は端末の設定アプリからいつでも変更可能です。";
+
+// MARK: - 設定画面
+"settings_title" = "設定";
+"settings_section_information" = "Information";
+"settings_section_other" = "その他";
+"settings_cell_feedback" = "お問い合わせ";
+"settings_cell_feedback_desc" = "このアプリに関する要望を送ってください";
+"settings_cell_bug_report" = "不具合の報告";
+"settings_cell_bug_report_desc" = "見つけたバグを教えてください";
+"settings_cell_write_review" = "レビューを書く";
+"settings_cell_write_review_desc" = "あなたの愛を共有してください";
+"settings_cell_about" = "アプリについて";
+"settings_cell_about_desc" = "アプリに関する情報をみる";
+"settings_copy_right" = "Copyright ©︎ 2023 ch3cooh.jp All Rights Reserved.\nVersion %@(%@)";
+"settings_about_title" = "アプリについて";
+"settings_about_version" = "Version %@(%@)";
+"settings_about_cell_licences" = "ライセンス";
+"settings_about_cell_user_policy" = "利用規約";
+"settings_about_cell_privacy_policy" = "プライバシーポリシー";
+"settings_about_cell_company" = "開発者";
+"settings_about_cell_company_desc" = "Kenji Wada";
+"settings_alert_logout_title" = "ログアウトしますか？";
+"settings_alert_logout_message" = "匿名ログインのため、現在登録しているタスクにアクセスできなくなります。この選択は取り消せません";
+
+// MARK: - 設定画面/問い合わせダイアログ
+"settings_bug_report_desc" = "不具合の報告は\n下記「不具合の報告」よりご連絡ください。早急に対応いたします。";
+"settings_report_bugs" = "不具合の報告";
+"settings_write_review" = "レビューを書く";

@@ -88,3 +88,8 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+TodoNote/Pods/
+TodoNote/vendor/
+.DS_Store
+TodoNote/TodoNote/Resource/R.generated.swift
+GoogleService-Info.plist

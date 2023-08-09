@@ -1,0 +1,47 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '16.0'
+
+target 'TodoNote' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for TodoNote
+  pod "KRProgressHUD"
+  pod 'UIDeviceIdentifier'
+  pod 'UITextView+Placeholder'
+  pod 'ULID.swift', '~> 1.2.0'
+  
+  # for Firebase
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseCrashlytics'
+  pod 'FirebasePerformance'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+
+  # for script
+  pod 'R.swift'
+  pod 'SwiftFormat/CLI', '~> 0.49'
+  pod 'LicensePlist'
+  pod 'LicensePlistViewController'
+
+  target 'TodoNoteTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'TodoNoteUITests' do
+    # Pods for testing
+  end
+
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
+    end
+  end
+end
+
+install! 'cocoapods',
+            :warn_for_unused_master_specs_repo => false
