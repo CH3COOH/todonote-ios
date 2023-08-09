@@ -332,8 +332,8 @@
 		AABB4F902A80D7A5008FC467 /* TodoNoteTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA1932792A82F8F8002C846F /* Repository */,
 				AABB4F912A80D7A5008FC467 /* TodoNoteTests.swift */,
+				AA1932792A82F8F8002C846F /* Repository */,
 			);
 			path = TodoNoteTests;
 			sourceTree = "<group>";

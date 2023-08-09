@@ -60,4 +60,4 @@
 | BL-3  | update todo  | |
 | BL-S01  | settings  | |
 | [BL-S02](./BL-S02.md)  | ログアウト  | |
-| BL-Z01  | データの同期 | ready のレコードの同期を実施する |
+| [BL-Z01](./BL-Z01.md)  | データの同期 | ready のレコードの同期を実施する |

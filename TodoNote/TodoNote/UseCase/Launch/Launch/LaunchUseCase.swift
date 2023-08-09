@@ -8,9 +8,24 @@ import FirebaseAuth
 import Foundation
 
 class LaunchUseCase: UseCaseProctol {
+    let todoRepository: TodoRepository
+
     let checkVersionUseCase = CheckVersionUseCase()
 
+    init(todoRepository: TodoRepository = TodoRepository()) {
+        self.todoRepository = todoRepository
+    }
+
     func execute(_: LaunchUseCaseInput) async -> LaunchUseCaseResult {
+        return await deleteEditingItems()
+    }
+
+    private func deleteEditingItems() async -> LaunchUseCaseResult {
+        do {
+            try await todoRepository.deleteAll(status: RegistrationStatus.editing)
+        } catch {
+            // エラーは無視する
+        }
         return await checkLoggedIn()
     }
 
