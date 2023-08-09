@@ -24,7 +24,7 @@ extension TodoEntity {
             todoId: TodoId(rawValue: id),
             status: registrationStatus,
             title: title,
-            description: body ?? "",
+            description: desc,
             datetime: datetime,
             createdAt: createdAt,
             updatedAt: updatedAt,

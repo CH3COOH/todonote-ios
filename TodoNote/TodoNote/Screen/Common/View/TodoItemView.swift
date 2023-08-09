@@ -17,26 +17,21 @@ struct TodoItemView: View {
     var body: some View {
         HStack {
             Button(action: doneAction) {
-//                if checked {
-//                    Image(systemName: "checkmark.square")
-//                        .resizable()
-//                        .frame(width: 44, height: 44)
-//                        .scaledToFit()
-//                } else {
                 Image(systemName: "square")
                     .resizable()
                     .frame(width: 44, height: 44)
                     .scaledToFit()
-//                }
             }
             .buttonStyle(.plain)
 
-            VStack {
+            VStack(alignment: .leading) {
                 Text(item.title)
-                if !item.description.isEmpty {
-                    Text(item.description)
+                if let desc = item.description, !desc.isEmpty {
+                    Text(desc)
                 }
             }
+
+            Spacer(minLength: 0)
 
             Button(action: editAction) {
                 Image(systemName: "square.and.pencil.circle")

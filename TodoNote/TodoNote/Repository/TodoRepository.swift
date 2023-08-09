@@ -60,7 +60,7 @@ class TodoRepository {
             if let entity = entities.first {
                 entity.status = object.status.rawValue
                 entity.title = object.title
-                entity.body = object.description
+                entity.desc = object.description
                 entity.datetime = object.datetime
                 entity.updated_at = object.updatedAt
                 entity.finished = object.finished
@@ -69,12 +69,14 @@ class TodoRepository {
                 entity.todo_id = object.todoId.rawValue
                 entity.status = object.status.rawValue
                 entity.title = object.title
-                entity.body = object.description
+                entity.desc = object.description
                 entity.datetime = object.datetime
                 entity.created_at = object.createdAt
                 entity.updated_at = object.updatedAt
                 entity.finished = object.finished
             }
+
+            try context.save()
         }
     }
 

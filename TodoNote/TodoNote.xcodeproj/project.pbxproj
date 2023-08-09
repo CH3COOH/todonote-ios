@@ -17,6 +17,12 @@
 		AA1932752A824B7C002C846F /* TodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932742A824B7C002C846F /* TodoItemView.swift */; };
 		AA1932772A82F030002C846F /* HomeAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932762A82F030002C846F /* HomeAddView.swift */; };
 		AA19327B2A82F946002C846F /* TodoRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19327A2A82F946002C846F /* TodoRepositoryTests.swift */; };
+		AA19327E2A830A1C002C846F /* UpdateTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19327D2A830A1C002C846F /* UpdateTodoUseCase.swift */; };
+		AA1932802A830A26002C846F /* UpdateTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19327F2A830A26002C846F /* UpdateTodoUseCaseInput.swift */; };
+		AA1932822A830A2F002C846F /* UpdateTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932812A830A2F002C846F /* UpdateTodoUseCaseResult.swift */; };
+		AA1932872A830F5B002C846F /* SyncReadyTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932842A830F5B002C846F /* SyncReadyTodoUseCase.swift */; };
+		AA1932882A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932852A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift */; };
+		AA1932892A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932862A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift */; };
 		AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */; };
 		AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F842A80D7A5008FC467 /* Persistence.swift */; };
 		AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */; };
@@ -65,7 +71,6 @@
 		AAE79FD22A810CB0009823FB /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FD12A810CB0009823FB /* TodoRepository.swift */; };
 		AAE79FD42A810D20009823FB /* PreviewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FD32A810D20009823FB /* PreviewUtil.swift */; };
 		AAE79FD82A8113AC009823FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FD72A8113AC009823FB /* LoginView.swift */; };
-		AAE79FDB2A811416009823FB /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FDA2A811416009823FB /* TodoDetailView.swift */; };
 		AAE79FDF2A81180B009823FB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE79FDC2A81180A009823FB /* Colors.xcassets */; };
 		AAE79FE02A81180B009823FB /* AppConstValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FDD2A81180A009823FB /* AppConstValues.swift */; };
 		AAE79FE12A81180B009823FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE79FDE2A81180A009823FB /* Assets.xcassets */; };
@@ -107,6 +112,12 @@
 		AA1932742A824B7C002C846F /* TodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemView.swift; sourceTree = "<group>"; };
 		AA1932762A82F030002C846F /* HomeAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAddView.swift; sourceTree = "<group>"; };
 		AA19327A2A82F946002C846F /* TodoRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepositoryTests.swift; sourceTree = "<group>"; };
+		AA19327D2A830A1C002C846F /* UpdateTodoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoUseCase.swift; sourceTree = "<group>"; };
+		AA19327F2A830A26002C846F /* UpdateTodoUseCaseInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoUseCaseInput.swift; sourceTree = "<group>"; };
+		AA1932812A830A2F002C846F /* UpdateTodoUseCaseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoUseCaseResult.swift; sourceTree = "<group>"; };
+		AA1932842A830F5B002C846F /* SyncReadyTodoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncReadyTodoUseCase.swift; sourceTree = "<group>"; };
+		AA1932852A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncReadyTodoUseCaseInput.swift; sourceTree = "<group>"; };
+		AA1932862A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncReadyTodoUseCaseResult.swift; sourceTree = "<group>"; };
 		AABB4F782A80D7A4008FC467 /* TodoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AABB4F842A80D7A5008FC467 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -158,7 +169,6 @@
 		AAE79FD12A810CB0009823FB /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
 		AAE79FD32A810D20009823FB /* PreviewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewUtil.swift; sourceTree = "<group>"; };
 		AAE79FD72A8113AC009823FB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		AAE79FDA2A811416009823FB /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
 		AAE79FDC2A81180A009823FB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = Resource/Colors.xcassets; sourceTree = "<group>"; };
 		AAE79FDD2A81180A009823FB /* AppConstValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstValues.swift; path = Resource/AppConstValues.swift; sourceTree = "<group>"; };
 		AAE79FDE2A81180A009823FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resource/Assets.xcassets; sourceTree = "<group>"; };
@@ -238,6 +248,26 @@
 				AA19327A2A82F946002C846F /* TodoRepositoryTests.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		AA19327C2A830A09002C846F /* UpdateTodo */ = {
+			isa = PBXGroup;
+			children = (
+				AA19327D2A830A1C002C846F /* UpdateTodoUseCase.swift */,
+				AA19327F2A830A26002C846F /* UpdateTodoUseCaseInput.swift */,
+				AA1932812A830A2F002C846F /* UpdateTodoUseCaseResult.swift */,
+			);
+			path = UpdateTodo;
+			sourceTree = "<group>";
+		};
+		AA1932832A830F5B002C846F /* SyncReadyTodo */ = {
+			isa = PBXGroup;
+			children = (
+				AA1932842A830F5B002C846F /* SyncReadyTodoUseCase.swift */,
+				AA1932852A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift */,
+				AA1932862A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift */,
+			);
+			path = SyncReadyTodo;
 			sourceTree = "<group>";
 		};
 		AABB4F6F2A80D7A4008FC467 = {
@@ -469,6 +499,8 @@
 			children = (
 				AAE79FC32A80FDA6009823FB /* UseCaseProctol.swift */,
 				AAE79FB32A80FD2F009823FB /* Launch */,
+				AA1932832A830F5B002C846F /* SyncReadyTodo */,
+				AA19327C2A830A09002C846F /* UpdateTodo */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -521,7 +553,6 @@
 		AAE79FCB2A810427009823FB /* Todo */ = {
 			isa = PBXGroup;
 			children = (
-				AAE79FD92A811406009823FB /* TodoDetail */,
 				AAE79FCC2A810436009823FB /* EditTodo */,
 			);
 			path = Todo;
@@ -551,14 +582,6 @@
 				AA1932722A8248AB002C846F /* LoginViewModel.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		AAE79FD92A811406009823FB /* TodoDetail */ = {
-			isa = PBXGroup;
-			children = (
-				AAE79FDA2A811416009823FB /* TodoDetailView.swift */,
-			);
-			path = TodoDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -898,14 +921,15 @@
 				AAE79F942A80E376009823FB /* SettingsListSwitchView.swift in Sources */,
 				AAE79FC02A80FD2F009823FB /* CheckVersionUseCase.swift in Sources */,
 				AAE79FE02A81180B009823FB /* AppConstValues.swift in Sources */,
-				AAE79FDB2A811416009823FB /* TodoDetailView.swift in Sources */,
 				AAE79FBC2A80FD2F009823FB /* LaunchUseCaseInput.swift in Sources */,
 				AAE79FB02A80FAC1009823FB /* Todo.swift in Sources */,
 				AAE79FCE2A810444009823FB /* EditTodoView.swift in Sources */,
+				AA19327E2A830A1C002C846F /* UpdateTodoUseCase.swift in Sources */,
 				AAE79FD02A8106F0009823FB /* EditTodoViewModel.swift in Sources */,
 				AAE79F7D2A80E0C1009823FB /* AppDelegate.swift in Sources */,
 				AAE79F792A80DFC2009823FB /* UIViewController+SwiftUI.swift in Sources */,
 				AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */,
+				AA1932872A830F5B002C846F /* SyncReadyTodoUseCase.swift in Sources */,
 				AAE79FD22A810CB0009823FB /* TodoRepository.swift in Sources */,
 				AA1932772A82F030002C846F /* HomeAddView.swift in Sources */,
 				AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */,
@@ -915,18 +939,22 @@
 				AAE79FAC2A80E88D009823FB /* HomeViewModel.swift in Sources */,
 				AAE79F7B2A80E008009823FB /* AppState.swift in Sources */,
 				AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */,
+				AA1932882A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift in Sources */,
 				AAE79F752A80DF13009823FB /* R.generated.swift in Sources */,
 				AA1932732A8248AB002C846F /* LoginViewModel.swift in Sources */,
 				AAE79FB22A80FAE1009823FB /* RegistrationStatus.swift in Sources */,
 				AA1932752A824B7C002C846F /* TodoItemView.swift in Sources */,
 				AAE79FC42A80FDA6009823FB /* UseCaseProctol.swift in Sources */,
 				AAE79F7F2A80E0E0009823FB /* UIAppearanceUtil.swift in Sources */,
+				AA1932892A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift in Sources */,
 				AAE79FA12A80E543009823FB /* ListItemView.swift in Sources */,
 				AAE79FD82A8113AC009823FB /* LoginView.swift in Sources */,
 				AAE79FBE2A80FD2F009823FB /* LaunchUseCaseResult.swift in Sources */,
 				AA19326A2A81F200002C846F /* AccentButton.swift in Sources */,
 				AAE79FCA2A810175009823FB /* HomeEmptyView.swift in Sources */,
 				AAE79F922A80E376009823FB /* SettingsViewModel.swift in Sources */,
+				AA1932802A830A26002C846F /* UpdateTodoUseCaseInput.swift in Sources */,
+				AA1932822A830A2F002C846F /* UpdateTodoUseCaseResult.swift in Sources */,
 				AAE79FC82A80FFBB009823FB /* AppTitleView.swift in Sources */,
 				AAE79F852A80E1BC009823FB /* ActivityIndicatorView.swift in Sources */,
 				AAE79F962A80E376009823FB /* SettingsListAppIconView.swift in Sources */,

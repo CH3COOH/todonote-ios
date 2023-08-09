@@ -11,7 +11,7 @@ struct Todo {
     let todoId: TodoId
     let status: RegistrationStatus
     let title: String
-    let description: String
+    let description: String?
     let datetime: Date
     let createdAt: Date
     let updatedAt: Date

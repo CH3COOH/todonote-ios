@@ -89,17 +89,25 @@ struct HomeView: View {
     private func onClickAddButton() {
         let nc = UINavigationController(
             rootViewController: UIViewController.hostingController {
-                EditTodoView()
+                EditTodoView(
+                    model: EditTodoViewModel(
+                        todoId: nil
+                    )
+                )
             }
         )
         nc.modalPresentationStyle = .fullScreen
         viewController?.present(nc, animated: true)
     }
 
-    private func onClickEditButton(item _: Todo) {
+    private func onClickEditButton(item: Todo) {
         let nc = UINavigationController(
             rootViewController: UIViewController.hostingController {
-                EditTodoView()
+                EditTodoView(
+                    model: EditTodoViewModel(
+                        todoId: item.todoId
+                    )
+                )
             }
         )
         nc.modalPresentationStyle = .fullScreen
