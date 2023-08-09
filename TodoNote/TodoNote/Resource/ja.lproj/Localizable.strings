@@ -59,7 +59,7 @@
 
 // MARK: - login
 "login_title" = "TodoNote へようこそ！";
-"login_body" = "ダウンロードしてくれてありがとう！TodoNote はTODOを管理するアプリだよ。\n\nスタートボタンをクリックすると、Firestore の匿名ログインをするよ。タスクは Firestore に保存するよ。ログイン後はオフラインでも使えるよ。ゆっくりしていってね";
+"login_body" = "ダウンロードしてくれてありがとう！\nTodoNote はTODOを管理するアプリだよ\n\nスタートボタンをクリックすると、Firestore の匿名ログインをするよ。タスクは Firestore に保存するよ。ログイン後はオフラインで使えるよ\nゆっくりしていってね";
 "login_button" = "アプリをはじめる";
 
 // MARK: - ダイアログ/ATT
@@ -71,19 +71,10 @@
 
 // MARK: - 設定画面
 "settings_title" = "設定";
-"settings_section_information" = "Information";
 "settings_section_other" = "その他";
 "settings_cell_feedback" = "お問い合わせ";
 "settings_cell_feedback_desc" = "このアプリに関する要望を送ってください";
-"settings_cell_bug_report" = "不具合の報告";
-"settings_cell_bug_report_desc" = "見つけたバグを教えてください";
-"settings_cell_write_review" = "レビューを書く";
-"settings_cell_write_review_desc" = "あなたの愛を共有してください";
-"settings_cell_about" = "アプリについて";
-"settings_cell_about_desc" = "アプリに関する情報をみる";
 "settings_copy_right" = "Copyright ©︎ 2023 ch3cooh.jp All Rights Reserved.\nVersion %@(%@)";
-"settings_about_title" = "アプリについて";
-"settings_about_version" = "Version %@(%@)";
 "settings_about_cell_licences" = "ライセンス";
 "settings_about_cell_user_policy" = "利用規約";
 "settings_about_cell_privacy_policy" = "プライバシーポリシー";

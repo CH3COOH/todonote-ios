@@ -59,7 +59,7 @@
 
 // MARK: - login
 "login_title" = "Welcome to TodoNote !";
-"login_body" = "Thanks for downloading! TodoNote is an app to manage your TODOs.\n\nWhen you click the Start button, you will be logged in to Firestore anonymously. Tasks will be saved in Firestore. You can even use it offline.";
+"login_body" = "Thanks for downloading!\nTodoNote is an app to manage your TODOs.\n\nWhen you click the Start button, you will be logged in to Firestore anonymously. Tasks will be saved in Firestore. You can even use it offline.";
 "login_button" = "Start this app";
 
 // MARK: - ダイアログ/ATT
@@ -71,19 +71,10 @@
 
 // MARK: - 設定画面
 "settings_title" = "Settings";
-"settings_section_information" = "Information";
 "settings_section_other" = "Other";
 "settings_cell_feedback" = "Send app feedback";
 "settings_cell_feedback_desc" = "Send your feedback";
-"settings_cell_bug_report" = "Report a bug";
-"settings_cell_bug_report_desc" = "Report a bug you find";
-"settings_cell_write_review" = "Rate the app";
-"settings_cell_write_review_desc" = "Share your love";
-"settings_cell_about" = "About this app";
-"settings_cell_about_desc" = "Learn more about the app";
 "settings_copy_right" = "Copyright ©︎ 2023 ch3cooh.jp All Rights Reserved.\nVersion %@(%@)";
-"settings_about_title" = "About this app";
-"settings_about_version" = "Version %@(%@)";
 "settings_about_cell_licences" = "Licences";
 "settings_about_cell_user_policy" = "Terms of Use";
 "settings_about_cell_privacy_policy" = "Privacy Policy";
