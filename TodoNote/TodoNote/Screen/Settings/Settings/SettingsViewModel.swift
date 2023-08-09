@@ -4,7 +4,6 @@
 //  Created by KENJIWADA on 2023/03/18.
 //
 
-import FirebaseAuth
 import SwiftUI
 
 class SettingsViewModel: ObservableObject {
@@ -14,6 +13,8 @@ class SettingsViewModel: ObservableObject {
 
     @Published var alertItem: AlertItem?
 
+    private let signOutUseCase = SignOutUseCase()
+    
     init() {
         // アプリバージョンの取得
         if let version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String,
@@ -47,14 +48,26 @@ class SettingsViewModel: ObservableObject {
     // MARK: -
 
     private func logout(viewController: UIViewController?) {
-        do {
-            try Auth.auth().signOut()
-
-            viewController?.dismiss(animated: false) {
-                SceneDelegate.shared?.rootViewController.switchToLoginScreen()
+        Task {
+            let result = await signOutUseCase.execute(.init())
+            switch result {
+            case .success:
+                await moveLoginScreen(from: viewController)
+            case let .failed(error):
+                alertItem = AlertItem(
+                    alert: Alert(
+                        title: R.string.localizable.error.text,
+                        message: Text(error.localizedDescription)
+                    )
+                )
             }
-        } catch {
-            // TODO: エラー処理
+        }
+    }
+    
+    @MainActor
+    private func moveLoginScreen(from viewController: UIViewController?) {
+        viewController?.dismiss(animated: false) {
+            SceneDelegate.shared?.rootViewController.switchToLoginScreen()
         }
     }
 }

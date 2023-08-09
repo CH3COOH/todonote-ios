@@ -23,6 +23,9 @@
 		AA1932872A830F5B002C846F /* SyncReadyTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932842A830F5B002C846F /* SyncReadyTodoUseCase.swift */; };
 		AA1932882A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932852A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift */; };
 		AA1932892A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932862A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift */; };
+		AA1932902A837A11002C846F /* SignOutUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19328D2A837A11002C846F /* SignOutUseCaseResult.swift */; };
+		AA1932912A837A11002C846F /* SignOutUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19328E2A837A11002C846F /* SignOutUseCaseInput.swift */; };
+		AA1932922A837A11002C846F /* SignOutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19328F2A837A11002C846F /* SignOutUseCase.swift */; };
 		AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */; };
 		AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F842A80D7A5008FC467 /* Persistence.swift */; };
 		AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */; };
@@ -118,6 +121,9 @@
 		AA1932842A830F5B002C846F /* SyncReadyTodoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncReadyTodoUseCase.swift; sourceTree = "<group>"; };
 		AA1932852A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncReadyTodoUseCaseInput.swift; sourceTree = "<group>"; };
 		AA1932862A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncReadyTodoUseCaseResult.swift; sourceTree = "<group>"; };
+		AA19328D2A837A11002C846F /* SignOutUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutUseCaseResult.swift; sourceTree = "<group>"; };
+		AA19328E2A837A11002C846F /* SignOutUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutUseCaseInput.swift; sourceTree = "<group>"; };
+		AA19328F2A837A11002C846F /* SignOutUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutUseCase.swift; sourceTree = "<group>"; };
 		AABB4F782A80D7A4008FC467 /* TodoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AABB4F842A80D7A5008FC467 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -268,6 +274,16 @@
 				AA1932862A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift */,
 			);
 			path = SyncReadyTodo;
+			sourceTree = "<group>";
+		};
+		AA19328C2A837A11002C846F /* SignOut */ = {
+			isa = PBXGroup;
+			children = (
+				AA19328F2A837A11002C846F /* SignOutUseCase.swift */,
+				AA19328E2A837A11002C846F /* SignOutUseCaseInput.swift */,
+				AA19328D2A837A11002C846F /* SignOutUseCaseResult.swift */,
+			);
+			path = SignOut;
 			sourceTree = "<group>";
 		};
 		AABB4F6F2A80D7A4008FC467 = {
@@ -499,6 +515,7 @@
 			children = (
 				AAE79FC32A80FDA6009823FB /* UseCaseProctol.swift */,
 				AAE79FB32A80FD2F009823FB /* Launch */,
+				AA19328C2A837A11002C846F /* SignOut */,
 				AA1932832A830F5B002C846F /* SyncReadyTodo */,
 				AA19327C2A830A09002C846F /* UpdateTodo */,
 			);
@@ -917,6 +934,7 @@
 				AAE79FAA2A80E882009823FB /* HomeView.swift in Sources */,
 				AAE79F732A80DEEA009823FB /* SafariUtil.swift in Sources */,
 				AAE79F9E2A80E51D009823FB /* RSwiftUI.swift in Sources */,
+				AA1932902A837A11002C846F /* SignOutUseCaseResult.swift in Sources */,
 				AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */,
 				AAE79F9C2A80E4E3009823FB /* AlertItem.swift in Sources */,
 				AAE79F942A80E376009823FB /* SettingsListSwitchView.swift in Sources */,
@@ -942,6 +960,7 @@
 				AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */,
 				AA1932882A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift in Sources */,
 				AAE79F752A80DF13009823FB /* R.generated.swift in Sources */,
+				AA1932922A837A11002C846F /* SignOutUseCase.swift in Sources */,
 				AA1932732A8248AB002C846F /* LoginViewModel.swift in Sources */,
 				AAE79FB22A80FAE1009823FB /* RegistrationStatus.swift in Sources */,
 				AA1932752A824B7C002C846F /* TodoItemView.swift in Sources */,
@@ -965,6 +984,7 @@
 				AAE79F932A80E376009823FB /* SettingsViewRouter.swift in Sources */,
 				AAE79F912A80E376009823FB /* SettingsView.swift in Sources */,
 				AAE79F952A80E376009823FB /* SettingsListItemView.swift in Sources */,
+				AA1932912A837A11002C846F /* SignOutUseCaseInput.swift in Sources */,
 				AAE79FBF2A80FD2F009823FB /* CheckVersionUseCaseInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
