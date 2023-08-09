@@ -9,7 +9,9 @@ import SwiftUI
 import ULID
 
 class EditTodoViewModel: ObservableObject {
-    @Published var title = ""
+    @Published var screenTitle = "Edit Todo"
+
+    @Published var buttonTitle = "Add"
 
     @Published var todoTitle = ""
 
@@ -26,11 +28,13 @@ class EditTodoViewModel: ObservableObject {
     init(todoId: TodoId?) {
         if let todoId = todoId {
             self.todoId = todoId
-            title = "編集"
+            screenTitle = R.string.localizable.edit_todo_title_edit()
+            buttonTitle = R.string.localizable.edit_todo_button_create()
         } else {
             let id = ULID().ulidString
             self.todoId = TodoId(rawValue: id)
-            title = "登録"
+            screenTitle = R.string.localizable.edit_todo_title_create()
+            buttonTitle = R.string.localizable.edit_todo_button_update()
         }
     }
 

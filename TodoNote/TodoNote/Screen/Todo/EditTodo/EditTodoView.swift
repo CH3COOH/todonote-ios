@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ULID
 
 struct EditTodoView: View {
     @Environment(\.viewController) private var viewControllerHolder: ViewControllerHolder
@@ -19,18 +18,29 @@ struct EditTodoView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("タイトル")
+                Color.clear.frame(height: 16)
+
+                VStack(alignment: .leading) {
+                    R.string.localizable.title.text
+                }
 
                 TextField("キャベツを買う", text: $model.todoTitle)
 
-                Text("詳細")
+                VStack(alignment: .leading) {
+                    R.string.localizable.desc.text
+                }
 
                 TextField("スーパーは高いので商店街の八百屋で買うこと", text: $model.todoDescription)
 
-                DatePicker("明日", selection: $model.todoDate)
+                VStack(alignment: .leading) {
+                    R.string.localizable.desc.text
+                }
+
+                DatePicker("期限", selection: $model.todoDate)
+                    .labelsHidden()
 
                 AccentButton(
-                    title: Text("保存する"),
+                    title: Text(model.buttonTitle),
                     action: {
                         model.onClickAddButton(from: viewController)
                     }
@@ -48,7 +58,7 @@ struct EditTodoView: View {
                 }
             }
             ToolbarItem(placement: .principal) {
-                Text(model.title)
+                Text(model.screenTitle)
             }
         }
         .onAppear {
@@ -59,36 +69,16 @@ struct EditTodoView: View {
     private func onClickCloseButton() {
         viewController?.dismiss(animated: true)
     }
-
-//    private func onClickAddButton() {
-//        // TODO: TODOアイテムの追加処理
-//        Task {
-//            do {
-//                let resitory = TodoRepository()
-//
-//                let ulid = ULID()
-//                let todo1 = Todo(
-//                    todoId: TodoId(rawValue: ulid.ulidString),
-//                    status: RegistrationStatus.ready,
-//                    title: ulid.ulidString,
-//                    description: "ああああああ",
-//                    datetime: Date(),
-//                    createdAt: Date(),
-//                    updatedAt: Date(),
-//                    finished: false
-//                )
-//                try await resitory.addOrUpdate(object: todo1)
-//
-//                await MainActor.run {
-//                    viewController?.dismiss(animated: true)
-//                }
-//            }
-//        }
-//    }
 }
 
-// struct EditTodoView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditTodoView()
-//    }
-// }
+struct EditTodoView_Previews: PreviewProvider {
+    static var model = EditTodoViewModel(
+        todoId: nil
+    )
+
+    static var previews: some View {
+        NavigationView {
+            EditTodoView(model: model)
+        }
+    }
+}

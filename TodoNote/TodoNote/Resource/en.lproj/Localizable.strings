@@ -38,6 +38,9 @@
 "share" = "Share";
 
 // MARK: - app/common
+"title" = "Title";
+"desc" = "Note";
+"deadline" = "Deadline";
 
 // MARK: - permission
 "permission_err_camera" = "You're not allowed to use the camera.";
@@ -56,6 +59,14 @@
 "home_section_settings" = "Search Settings";
 "home_empty" = "Task not yet registered";
 "home_button_add" = "Add the first task";
+
+// MARK: - todo edit
+"edit_todo_title_edit" = "Edit Todo";
+"edit_todo_title_create" = "New Todo";
+"edit_todo_button_create" = "Add";
+"edit_todo_button_update" = "Update";
+"edit_todo_hint_title" = "キャベツを買う";
+"edit_todo_hint_desc" = "スーパーは高いから商店街までいくこと";
 
 // MARK: - login
 "login_title" = "Welcome to TodoNote !";
