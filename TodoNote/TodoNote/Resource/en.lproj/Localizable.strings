@@ -59,7 +59,7 @@
 
 // MARK: - login
 "login_title" = "Welcome to TodoNote !";
-"login_body" = "Thanks for downloading! TodoNote is an app to manage your TODOs.\n\nWhen you click the Start button, you will be logged in to Firestore anonymously. Tasks will be saved in Firestore. You can even use it offline.";
+"login_body" = "Thanks for downloading!\nTodoNote is an app to manage your TODOs.\n\nWhen you click the Start button, you will be logged in to Firestore anonymously. Tasks will be saved in Firestore. You can even use it offline.";
 "login_button" = "Start this app";
 
 // MARK: - ダイアログ/ATT

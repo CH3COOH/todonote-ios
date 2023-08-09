@@ -59,7 +59,7 @@
 
 // MARK: - login
 "login_title" = "TodoNote へようこそ！";
-"login_body" = "ダウンロードしてくれてありがとう！\nTodoNote はTODOを管理するアプリだよ。\n\nスタートボタンをクリックすると、Firestore の匿名ログインをするよ。タスクは Firestore に保存するよ。ログイン後はオフラインで使えるよ。\nゆっくりしていってね";
+"login_body" = "ダウンロードしてくれてありがとう！\nTodoNote はTODOを管理するアプリだよ\n\nスタートボタンをクリックすると、Firestore の匿名ログインをするよ。タスクは Firestore に保存するよ。ログイン後はオフラインで使えるよ\nゆっくりしていってね";
 "login_button" = "アプリをはじめる";
 
 // MARK: - ダイアログ/ATT
