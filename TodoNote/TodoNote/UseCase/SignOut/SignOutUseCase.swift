@@ -7,26 +7,39 @@
 
 import FirebaseAuth
 
+/// BL-S02 ログアウト
 class SignOutUseCase: UseCaseProctol {
-    private let resitory: TodoRepository
+    private let todoRepository: TodoRepository
 
-    init(resitory: TodoRepository = TodoRepository()) {
-        self.resitory = resitory
+    private let syncReadyTodoUseCase: SyncReadyTodoUseCase
+
+    init(
+        todoRepository: TodoRepository = TodoRepository(),
+        syncReadyTodoUseCase: SyncReadyTodoUseCase = SyncReadyTodoUseCase()
+    ) {
+        self.todoRepository = todoRepository
+        self.syncReadyTodoUseCase = syncReadyTodoUseCase
     }
 
     func execute(_ input: SignOutUseCaseInput) async -> SignOutUseCaseResult {
         return await syncReadyData(input: input)
     }
 
+    /// ステータスが `ready` のレコードがあればサーバーに同期する
     private func syncReadyData(input: SignOutUseCaseInput) async -> SignOutUseCaseResult {
-        // TODO: ステータスが `ready` のレコードがあればサーバーに同期する
-        return await deleteAllLocalData(input: input)
+        let result = await syncReadyTodoUseCase.execute(.init())
+        switch result {
+        case .success:
+            return await deleteAllLocalData(input: input)
+        case let .failed(error):
+            return .failed(error)
+        }
     }
 
-    /// サインアウトしたのでローカルデータを全削除する
+    /// ローカルデータを全削除する
     private func deleteAllLocalData(input: SignOutUseCaseInput) async -> SignOutUseCaseResult {
         do {
-            try await resitory.deleteAll()
+            try await todoRepository.deleteAll()
 
             return await signOut(input: input)
         } catch {
@@ -34,6 +47,7 @@ class SignOutUseCase: UseCaseProctol {
         }
     }
 
+    /// サインアウトする
     private func signOut(input _: SignOutUseCaseInput) async -> SignOutUseCaseResult {
         do {
             try Auth.auth().signOut()

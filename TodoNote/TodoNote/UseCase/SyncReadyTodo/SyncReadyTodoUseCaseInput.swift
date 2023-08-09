@@ -7,9 +7,4 @@
 
 import Foundation
 
-struct SyncReadyTodoUseCaseInput {
-    let todoId: TodoId
-    let title: String
-    let description: String?
-    let datetime: Date
-}
+struct SyncReadyTodoUseCaseInput {}
