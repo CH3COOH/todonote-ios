@@ -7,6 +7,10 @@
 * オフラインでも利用可能な TODO 管理アプリ
 * ユーザーにネットワーク状態を意識させない
 
+## 現時点での制約
+
+* Firebase Auth の匿名ログインを利用しており、Twitterなどの追加認証方法は提供していない。このため一度ログアウトしてしまうと、サーバーに保存したデータにはアクセスできなくなる。現在、ログイン時にサーバーからのデータ取得という処理は実装していない
+
 ## 画面遷移図
 
 <img width="749" alt="screen-transition" src="https://github.com/CH3COOH/todonote-ios/assets/137952/dbdc0ac1-96f2-4873-ade5-7f9c9cbc7da1">
