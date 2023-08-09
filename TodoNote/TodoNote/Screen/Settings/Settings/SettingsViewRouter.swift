@@ -9,32 +9,12 @@ import SafariServices
 import SwiftUI
 
 struct SettingsViewRouter {
-    /// ストア
-    static func moveStore(from _: UIViewController?) {
-//        let vc = UIViewController.hostingController {
-//            StoreView(
-//                fromInformation: false
-//            )
-//        }
-//        vc.hidesBottomBarWhenPushed = true
-//        viewController?.navigationController?.pushViewController(vc, animated: true)
-    }
-
-    /// このアプリについて
-    static func moveAbout(from _: UIViewController?) {
-//        let vc = UIViewController.hostingController {
-//            AboutSettingsView()
-//        }
-//        vc.hidesBottomBarWhenPushed = true
-//        viewController?.navigationController?.pushViewController(vc, animated: true)
-    }
-
     /// ライセンス
     static func moveLicences(from viewController: UIViewController?) {
         let vc = LicensePlistViewController(tableViewStyle: .insetGrouped)
         vc.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.pushViewController(vc, animated: true)
-//        FAPage.settingsLicense.send()
+        FAPage.settingsLicense.send()
     }
 
     /// お問合せ

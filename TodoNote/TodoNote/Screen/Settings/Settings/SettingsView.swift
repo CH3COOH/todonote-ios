@@ -4,7 +4,6 @@
 //  Created by KENJIWADA on 2023/03/16.
 //
 
-import SafariServices
 import SwiftUI
 
 struct SettingsView: View {
@@ -71,13 +70,13 @@ struct SettingsView: View {
             }
 
             Section {
-                Button(action: { model.onClickSignOutButton(from: viewController) }) {
-                    HStack {
-                        R.string.localizable.logout.text
-                            .foregroundColor(Color.red)
-                            .font(.system(size: 15))
-                    }
-                    .frame(maxWidth: .infinity)
+                Button(action: {
+                    model.onClickSignOutButton(from: viewController)
+                }) {
+                    R.string.localizable.logout.text
+                        .foregroundColor(Color.red)
+                        .font(.system(size: 15, weight: .bold))
+                        .frame(maxWidth: .infinity)
                 }
             }
 
@@ -95,20 +94,21 @@ struct SettingsView: View {
         .navigationTitle(R.string.localizable.settings_title.text)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            model.update()
-            FAPage.settings.send()
+            model.onAppear(from: viewController)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    viewController?.dismiss(animated: true)
-                }) {
+                Button(action: onClickCloseButton) {
                     R.string.localizable.close.text
                 }
             }
         }
         .alert(item: $model.alertItem) { $0.alert }
         .actionSheet(item: $model.actionSheetItem) { $0.sheet }
+    }
+
+    private func onClickCloseButton() {
+        viewController?.dismiss(animated: true)
     }
 }
 

@@ -7,6 +7,10 @@
 * オフラインでも利用可能な TODO 管理アプリ
 * ユーザーにネットワーク状態を意識させない
 
+## 現時点での制約
+
+* Firebase Auth の匿名ログインを利用しており、Twitterアカウントでのログインなどの追加認証方法を提供していない。このため一度ログアウトしてしまうと、サーバーに保存したデータにはアクセスできなくなる。よって、現在時点では ログイン時にサーバーからのデータ取得という処理は実装していない
+
 ## 画面遷移図
 
 <img width="749" alt="screen-transition" src="https://github.com/CH3COOH/todonote-ios/assets/137952/dbdc0ac1-96f2-4873-ade5-7f9c9cbc7da1">
@@ -35,7 +39,7 @@
     * Save ボタンの押下で、既存のレコードを削除し、ステータスを `editing` から `ready` へ変更。サーバーへ同期後は `complete` へ変更する
     * Cancel ボタンの押下で、`editing` のレコードを削除する
 
-## 画面・ユースケース
+## 画面
 
 | ID   | 画面名 | 備考 |
 |:-----|:-----|:-----|
@@ -48,6 +52,7 @@
 | S-2  | ライセンス  | LicensePlistViewController で表示 |
 | S-3  | 問い合わせ  | Googleフォームを SFSafariViewController で表示 |
 
+## ユースケース
 
 | ID   | ユースケース名 | 備考 |
 |:-----|:-----|:-----|
@@ -58,5 +63,5 @@
 | BL-2  | fetch todo list  | sort option |
 | BL-3  | update todo  | |
 | BL-S01  | settings  | |
-| BL-S02  | logout  | |
-| BL-Z01  | sync ready | ready のレコードの同期を実施する |
+| [BL-S02](./BL-S02.md)  | ログアウト  | |
+| [BL-Z01](./BL-Z01.md)  | データの同期 | ready のレコードの同期を実施する |

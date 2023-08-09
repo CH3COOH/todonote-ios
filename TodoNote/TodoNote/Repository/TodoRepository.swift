@@ -118,9 +118,33 @@ class TodoRepository {
         }
     }
 
+    func fetch(status: RegistrationStatus) async throws -> [Todo] {
+        let request = TodoEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "status == %@", status.rawValue)
+
+        return try await MainActor.run {
+            let result = try context.fetch(request)
+            return result.compactMap { $0.toModel() }
+        }
+    }
+
     func fetchCount() throws -> Int {
         let request = TodoEntity.fetchRequest()
         return try context.count(for: request)
+    }
+
+    /// 指定したステータスのレコードをすべて削除する
+    func deleteAll(status: RegistrationStatus) async throws {
+        let request = TodoEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "status == %@", status.rawValue)
+
+        try await MainActor.run {
+            let entities = try context.fetch(request)
+            for entity in entities {
+                context.delete(entity)
+            }
+            try context.save()
+        }
     }
 
     /// すべてのレコードを削除する

@@ -22,6 +22,8 @@
 	<false/>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>ITSAppUsesNonExemptEncryption </key>
+	<false/>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>If allowed, it will be easier to display ads that match your preferences.</string>
 	<key>SKAdNetworkItems</key>
