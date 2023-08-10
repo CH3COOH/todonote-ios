@@ -8,23 +8,27 @@
 import Foundation
 
 enum RegistrationStatus: String {
-    case new
+//    case new
     case editing
     case ready
     case complete
 }
 
 extension RegistrationStatus {
+    static var all: [RegistrationStatus] {
+        [.editing, .ready, .complete]
+    }
+
     func from(value: String) -> RegistrationStatus {
         switch value {
-        case RegistrationStatus.new.rawValue:
-            return .new
+//        case RegistrationStatus.new.rawValue:
+//            return .new
         case RegistrationStatus.editing.rawValue:
-            return .new
+            return .editing
         case RegistrationStatus.ready.rawValue:
-            return .new
+            return .ready
         case RegistrationStatus.complete.rawValue:
-            return .new
+            return .complete
         default:
             fatalError("value が不正である")
         }

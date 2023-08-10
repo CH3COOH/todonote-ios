@@ -13,6 +13,8 @@ class EditTodoViewModel: ObservableObject {
 
     @Published var buttonTitle = "Add"
 
+    @Published var originalTodo: Todo?
+
     @Published var todoTitle = ""
 
     @Published var todoDescription = ""
@@ -86,12 +88,19 @@ class EditTodoViewModel: ObservableObject {
     }
 
     func onClickAddButton(from viewController: UIViewController?) {
+        guard let todo = originalTodo else {
+            return
+        }
+
+        let newTodo = todo.copy(
+            title: todoTitle,
+            description: todoDescription,
+            datetime: todoDate
+        )
+
         Task {
             let input = UpdateTodoUseCaseInput(
-                todoId: todoId,
-                title: todoTitle,
-                description: todoDescription,
-                datetime: todoDate
+                todo: newTodo
             )
             let result = await updateTodoUseCase.execute(input)
             switch result {
@@ -111,6 +120,7 @@ class EditTodoViewModel: ObservableObject {
     @MainActor
     func set(todo: Todo) {
         isLoaded = true
+        originalTodo = todo
         todoTitle = todo.title
         todoDescription = todo.description ?? ""
         todoDate = todo.datetime

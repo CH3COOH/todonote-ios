@@ -23,21 +23,17 @@ class UpdateTodoUseCase: UseCaseProctol {
         return await saveTodoLocally(input: input)
     }
 
-    /// ローカルでTodoを保存し、リモートサーバーとの同期を試みる
+    /// ローカルでTodoを保存する
     private func saveTodoLocally(input: UpdateTodoUseCaseInput) async -> UpdateTodoUseCaseResult {
         do {
-            let newTodo = Todo(
-                todoId: input.todoId,
+            let newTodo = input.todo.copy(
                 status: RegistrationStatus.ready,
-                title: input.title,
-                description: input.description,
-                datetime: input.datetime,
-                createdAt: Date(),
-                updatedAt: Date(),
-                finished: false
+                updatedAt: Date()
             )
-            try await todoRepository.addOrUpdate(object: newTodo)
-
+            try await todoRepository.hogehoge(
+                object: newTodo,
+                statuses: RegistrationStatus.all
+            )
             return await syncTodoWithServer(todo: newTodo)
         } catch {
             return .failed(error)
@@ -63,11 +59,13 @@ class UpdateTodoUseCase: UseCaseProctol {
                 status: RegistrationStatus.complete,
                 updatedAt: Date()
             )
-            try await todoRepository.addOrUpdate(object: updatedTodo)
-
+            try await todoRepository.hogehoge(
+                object: updatedTodo,
+                statuses: RegistrationStatus.all
+            )
             return .success
         } catch {
-            // Even if marking as complete fails, it's still a successful sync.
+            // サーバーへの書き込みに失敗しても、ユースケースの失敗とはみなさない
             return .success
         }
     }

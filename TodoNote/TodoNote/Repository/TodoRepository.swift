@@ -80,6 +80,41 @@ class TodoRepository {
         }
     }
 
+    func hogehoge(object: Todo, statuses: [RegistrationStatus]) async throws {
+        let request = TodoEntity.fetchRequest()
+        request.predicate = NSPredicate(
+            format: "todo_id == %@ AND status IN %@",
+            object.id.rawValue,
+            statuses.map { $0.rawValue }
+        )
+        
+        try await MainActor.run {
+            do {
+                // 既存のレコードを削除する
+                let matchedObjects = try context.fetch(request)
+                for object in matchedObjects {
+                    context.delete(object)
+                }
+
+                // ready のレコードを追加する
+                let entity = TodoEntity(context: context)
+                entity.todo_id = object.todoId.rawValue
+                entity.status = object.status.rawValue
+                entity.title = object.title
+                entity.desc = object.description
+                entity.datetime = object.datetime
+                entity.created_at = object.createdAt
+                entity.updated_at = object.updatedAt
+                entity.finished = object.finished
+
+                try context.save()
+            } catch {
+                context.rollback()
+                throw error
+            }
+        }
+    }
+
     func fetch() async throws -> [Todo] {
         let request = TodoEntity.fetchRequest()
         request.sortDescriptors = [
