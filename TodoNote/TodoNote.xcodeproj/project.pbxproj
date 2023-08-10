@@ -27,6 +27,7 @@
 		AA1932912A837A11002C846F /* SignOutUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19328E2A837A11002C846F /* SignOutUseCaseInput.swift */; };
 		AA1932922A837A11002C846F /* SignOutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19328F2A837A11002C846F /* SignOutUseCase.swift */; };
 		AA1932942A845296002C846F /* FirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932932A845296002C846F /* FirestoreRepository.swift */; };
+		AA1932962A84607F002C846F /* UpdateTodoUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */; };
 		AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */; };
 		AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F842A80D7A5008FC467 /* Persistence.swift */; };
 		AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */; };
@@ -124,6 +125,7 @@
 		AA19328E2A837A11002C846F /* SignOutUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutUseCaseInput.swift; sourceTree = "<group>"; };
 		AA19328F2A837A11002C846F /* SignOutUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutUseCase.swift; sourceTree = "<group>"; };
 		AA1932932A845296002C846F /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
+		AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoUseCaseTests.swift; sourceTree = "<group>"; };
 		AABB4F782A80D7A4008FC467 /* TodoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AABB4F842A80D7A5008FC467 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -284,6 +286,14 @@
 			path = SignOut;
 			sourceTree = "<group>";
 		};
+		AA1932972A84609C002C846F /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		AABB4F6F2A80D7A4008FC467 = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +346,7 @@
 			children = (
 				AABB4F912A80D7A5008FC467 /* TodoNoteTests.swift */,
 				AA1932792A82F8F8002C846F /* Repository */,
+				AA1932972A84609C002C846F /* UseCase */,
 			);
 			path = TodoNoteTests;
 			sourceTree = "<group>";
@@ -989,6 +1000,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1932962A84607F002C846F /* UpdateTodoUseCaseTests.swift in Sources */,
 				AABB4F922A80D7A5008FC467 /* TodoNoteTests.swift in Sources */,
 				AA19327B2A82F946002C846F /* TodoRepositoryTests.swift in Sources */,
 			);

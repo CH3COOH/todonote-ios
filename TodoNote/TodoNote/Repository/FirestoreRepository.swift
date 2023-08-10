@@ -14,7 +14,18 @@ class FirestoreRepository {
 
     private let firestore = Firestore.firestore()
 
+    private let isTesting: Bool
+
+    init(isTesting: Bool = false) {
+        self.isTesting = isTesting
+    }
+
     func addOrUpdate(object: Todo) async throws {
+        if isTesting {
+            // TODO: DIした方が良い気がするけど将来的に考える
+            return
+        }
+
         guard let userId = Auth.auth().currentUser?.uid else {
             fatalError("UserId が取得できない")
         }
@@ -34,6 +45,11 @@ class FirestoreRepository {
     }
 
     func delete(object: Todo) async throws {
+        if isTesting {
+            // TODO: DIした方が良い気がするけど将来的に考える
+            return
+        }
+
         guard let userId = Auth.auth().currentUser?.uid else {
             fatalError("UserId が取得できない")
         }
