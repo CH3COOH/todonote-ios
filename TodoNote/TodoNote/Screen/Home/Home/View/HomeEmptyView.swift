@@ -12,6 +12,8 @@ struct HomeEmptyView: View {
 
     @State private var rotation = Angle(degrees: 0)
 
+    @State private var scale: CGFloat = 1.0
+
     var body: some View {
         VStack {
             R.image.app_icon.image
@@ -20,6 +22,7 @@ struct HomeEmptyView: View {
                 .scaledToFit()
                 .clipShape(Circle())
                 .rotationEffect(rotation)
+                .scaleEffect(scale)
                 .onAppear {
                     withAnimation(
                         Animation
@@ -29,6 +32,25 @@ struct HomeEmptyView: View {
                         rotation = Angle(degrees: 360)
                     }
                 }
+                .gesture(
+                    TapGesture()
+                        .onEnded { _ in
+                            withAnimation(
+                                Animation
+                                    .easeInOut(duration: 0.3)
+                            ) {
+                                scale = 1.2
+                            }
+
+                            withAnimation(
+                                Animation
+                                    .easeInOut(duration: 0.1)
+                                    .delay(0.3)
+                            ) {
+                                scale = 1.0
+                            }
+                        }
+                )
                 .padding(.bottom, 16)
 
             R.string.localizable.home_empty.text
