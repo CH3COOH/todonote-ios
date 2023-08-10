@@ -16,28 +16,48 @@ struct EditTodoView: View {
     @StateObject var model: EditTodoViewModel
 
     var body: some View {
-        ScrollView {
-            VStack {
-                Color.clear.frame(height: 16)
+        VStack(spacing: 0) {
+            ScrollView {
+                VStack(spacing: 0) {
+                    Color.clear.frame(height: 24)
 
-                VStack(alignment: .leading) {
-                    R.string.localizable.title.text
+                    SectionItem(
+                        title: R.string.localizable.title()
+                    )
+                    .padding(.bottom, 8)
+
+                    TextField("キャベツを買う", text: $model.todoTitle)
+                        .padding(.bottom, 32)
+
+                    DatePicker(
+                        R.string.localizable.deadline(),
+                        selection: $model.todoDate
+                    )
+                    .padding(.bottom, 32)
+
+                    SectionItem(
+                        title: R.string.localizable.desc()
+                    )
+                    .padding(.bottom, 8)
+
+                    ZStack {
+                        TextEditor(text: $model.todoDescription)
+                            .padding(.bottom, 32)
+
+                        if model.todoDescription.isEmpty {
+                            R.string.localizable.edit_todo_hint_desc.text
+                                .foregroundColor(Color.gray)
+                        }
+                    }
                 }
+                .padding(.horizontal, 24)
+            }
 
-                TextField("キャベツを買う", text: $model.todoTitle)
-
-                VStack(alignment: .leading) {
-                    R.string.localizable.desc.text
-                }
-
-                TextField("スーパーは高いので商店街の八百屋で買うこと", text: $model.todoDescription)
-
-                VStack(alignment: .leading) {
-                    R.string.localizable.desc.text
-                }
-
-                DatePicker("期限", selection: $model.todoDate)
-                    .labelsHidden()
+            VStack(spacing: 0) {
+                Rectangle()
+                    .fill(Color(uiColor: UIColor.separator))
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 1)
 
                 AccentButton(
                     title: Text(model.buttonTitle),
@@ -45,9 +65,12 @@ struct EditTodoView: View {
                         model.onClickAddButton(from: viewController)
                     }
                 )
+                .padding(.horizontal, 24)
+                .padding(.vertical, 8)
             }
-            .padding(.horizontal, 24)
+            .background(Color.white)
         }
+        .background(Color(uiColor: UIColor.systemGroupedBackground))
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: onClickCloseButton) {

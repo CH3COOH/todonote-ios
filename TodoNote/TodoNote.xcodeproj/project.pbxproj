@@ -28,6 +28,8 @@
 		AA1932922A837A11002C846F /* SignOutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19328F2A837A11002C846F /* SignOutUseCase.swift */; };
 		AA1932942A845296002C846F /* FirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932932A845296002C846F /* FirestoreRepository.swift */; };
 		AA1932962A84607F002C846F /* UpdateTodoUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */; };
+		AA1932992A8467C5002C846F /* SectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932982A8467C5002C846F /* SectionItem.swift */; };
+		AA19329B2A8467DF002C846F /* SectionItemBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19329A2A8467DF002C846F /* SectionItemBase.swift */; };
 		AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */; };
 		AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F842A80D7A5008FC467 /* Persistence.swift */; };
 		AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */; };
@@ -126,6 +128,8 @@
 		AA19328F2A837A11002C846F /* SignOutUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutUseCase.swift; sourceTree = "<group>"; };
 		AA1932932A845296002C846F /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
 		AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoUseCaseTests.swift; sourceTree = "<group>"; };
+		AA1932982A8467C5002C846F /* SectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItem.swift; sourceTree = "<group>"; };
+		AA19329A2A8467DF002C846F /* SectionItemBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItemBase.swift; sourceTree = "<group>"; };
 		AABB4F782A80D7A4008FC467 /* TodoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AABB4F842A80D7A5008FC467 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -484,6 +488,8 @@
 				AA1932692A81F200002C846F /* AccentButton.swift */,
 				AAE79FC72A80FFBB009823FB /* AppTitleView.swift */,
 				AAE79FA02A80E543009823FB /* ListItemView.swift */,
+				AA1932982A8467C5002C846F /* SectionItem.swift */,
+				AA19329A2A8467DF002C846F /* SectionItemBase.swift */,
 				AA1932742A824B7C002C846F /* TodoItemView.swift */,
 			);
 			path = View;
@@ -944,6 +950,7 @@
 				AAE79F9E2A80E51D009823FB /* RSwiftUI.swift in Sources */,
 				AA1932902A837A11002C846F /* SignOutUseCaseResult.swift in Sources */,
 				AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */,
+				AA19329B2A8467DF002C846F /* SectionItemBase.swift in Sources */,
 				AAE79F9C2A80E4E3009823FB /* AlertItem.swift in Sources */,
 				AAE79FC02A80FD2F009823FB /* CheckVersionUseCase.swift in Sources */,
 				AAE79FE02A81180B009823FB /* AppConstValues.swift in Sources */,
@@ -964,6 +971,7 @@
 				AABB4FB02A80DA99008FC467 /* TodoId.swift in Sources */,
 				AAE79FAC2A80E88D009823FB /* HomeViewModel.swift in Sources */,
 				AAE79F7B2A80E008009823FB /* AppState.swift in Sources */,
+				AA1932992A8467C5002C846F /* SectionItem.swift in Sources */,
 				AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */,
 				AA1932882A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift in Sources */,
 				AAE79F752A80DF13009823FB /* R.generated.swift in Sources */,
