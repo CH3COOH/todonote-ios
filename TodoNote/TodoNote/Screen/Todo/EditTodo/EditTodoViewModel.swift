@@ -29,12 +29,12 @@ class EditTodoViewModel: ObservableObject {
         if let todoId = todoId {
             self.todoId = todoId
             screenTitle = R.string.localizable.edit_todo_title_edit()
-            buttonTitle = R.string.localizable.edit_todo_button_create()
+            buttonTitle = R.string.localizable.edit_todo_button_update()
         } else {
             let id = ULID().ulidString
             self.todoId = TodoId(rawValue: id)
             screenTitle = R.string.localizable.edit_todo_title_create()
-            buttonTitle = R.string.localizable.edit_todo_button_update()
+            buttonTitle = R.string.localizable.edit_todo_button_create()
         }
     }
 
