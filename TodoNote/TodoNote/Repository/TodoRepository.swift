@@ -80,14 +80,14 @@ class TodoRepository {
         }
     }
 
-    func hogehoge(object: Todo, statuses: [RegistrationStatus]) async throws {
+    func updateTodoStatus(for object: Todo, with statuses: [RegistrationStatus]) async throws {
         let request = TodoEntity.fetchRequest()
         request.predicate = NSPredicate(
             format: "todo_id == %@ AND status IN %@",
             object.id.rawValue,
             statuses.map { $0.rawValue }
         )
-        
+
         try await MainActor.run {
             do {
                 // 既存のレコードを削除する

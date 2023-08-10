@@ -30,9 +30,9 @@ class UpdateTodoUseCase: UseCaseProctol {
                 status: RegistrationStatus.ready,
                 updatedAt: Date()
             )
-            try await todoRepository.hogehoge(
-                object: newTodo,
-                statuses: RegistrationStatus.all
+            try await todoRepository.updateTodoStatus(
+                for: newTodo,
+                with: RegistrationStatus.all
             )
             return await syncTodoWithServer(todo: newTodo)
         } catch {
@@ -59,13 +59,12 @@ class UpdateTodoUseCase: UseCaseProctol {
                 status: RegistrationStatus.complete,
                 updatedAt: Date()
             )
-            try await todoRepository.hogehoge(
-                object: updatedTodo,
-                statuses: RegistrationStatus.all
+            try await todoRepository.updateTodoStatus(
+                for: updatedTodo,
+                with: RegistrationStatus.all
             )
             return .success
         } catch {
-            // サーバーへの書き込みに失敗しても、ユースケースの失敗とはみなさない
             return .success
         }
     }
