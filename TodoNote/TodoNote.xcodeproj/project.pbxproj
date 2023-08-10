@@ -30,6 +30,12 @@
 		AA1932962A84607F002C846F /* UpdateTodoUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */; };
 		AA1932992A8467C5002C846F /* SectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932982A8467C5002C846F /* SectionItem.swift */; };
 		AA19329B2A8467DF002C846F /* SectionItemBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19329A2A8467DF002C846F /* SectionItemBase.swift */; };
+		AA30E9602A84F7920063809B /* FetchTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E95D2A84F7920063809B /* FetchTodoUseCaseInput.swift */; };
+		AA30E9612A84F7920063809B /* FetchTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E95E2A84F7920063809B /* FetchTodoUseCaseResult.swift */; };
+		AA30E9622A84F7920063809B /* FetchTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E95F2A84F7920063809B /* FetchTodoUseCase.swift */; };
+		AA30E9672A8502880063809B /* CancelEditTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E9642A8502880063809B /* CancelEditTodoUseCase.swift */; };
+		AA30E9682A8502880063809B /* CancelEditTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E9652A8502880063809B /* CancelEditTodoUseCaseInput.swift */; };
+		AA30E9692A8502880063809B /* CancelEditTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E9662A8502880063809B /* CancelEditTodoUseCaseResult.swift */; };
 		AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */; };
 		AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F842A80D7A5008FC467 /* Persistence.swift */; };
 		AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */; };
@@ -130,6 +136,12 @@
 		AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoUseCaseTests.swift; sourceTree = "<group>"; };
 		AA1932982A8467C5002C846F /* SectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItem.swift; sourceTree = "<group>"; };
 		AA19329A2A8467DF002C846F /* SectionItemBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItemBase.swift; sourceTree = "<group>"; };
+		AA30E95D2A84F7920063809B /* FetchTodoUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTodoUseCaseInput.swift; sourceTree = "<group>"; };
+		AA30E95E2A84F7920063809B /* FetchTodoUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTodoUseCaseResult.swift; sourceTree = "<group>"; };
+		AA30E95F2A84F7920063809B /* FetchTodoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTodoUseCase.swift; sourceTree = "<group>"; };
+		AA30E9642A8502880063809B /* CancelEditTodoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelEditTodoUseCase.swift; sourceTree = "<group>"; };
+		AA30E9652A8502880063809B /* CancelEditTodoUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelEditTodoUseCaseInput.swift; sourceTree = "<group>"; };
+		AA30E9662A8502880063809B /* CancelEditTodoUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelEditTodoUseCaseResult.swift; sourceTree = "<group>"; };
 		AABB4F782A80D7A4008FC467 /* TodoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AABB4F842A80D7A5008FC467 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -296,6 +308,36 @@
 				AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		AA30E95B2A84DE2A0063809B /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				AA30E9632A8502690063809B /* CancelEditTodo */,
+				AA30E95C2A84DE360063809B /* FetchTodo */,
+				AA19327C2A830A09002C846F /* UpdateTodo */,
+			);
+			path = Todo;
+			sourceTree = "<group>";
+		};
+		AA30E95C2A84DE360063809B /* FetchTodo */ = {
+			isa = PBXGroup;
+			children = (
+				AA30E95F2A84F7920063809B /* FetchTodoUseCase.swift */,
+				AA30E95D2A84F7920063809B /* FetchTodoUseCaseInput.swift */,
+				AA30E95E2A84F7920063809B /* FetchTodoUseCaseResult.swift */,
+			);
+			path = FetchTodo;
+			sourceTree = "<group>";
+		};
+		AA30E9632A8502690063809B /* CancelEditTodo */ = {
+			isa = PBXGroup;
+			children = (
+				AA30E9642A8502880063809B /* CancelEditTodoUseCase.swift */,
+				AA30E9652A8502880063809B /* CancelEditTodoUseCaseInput.swift */,
+				AA30E9662A8502880063809B /* CancelEditTodoUseCaseResult.swift */,
+			);
+			path = CancelEditTodo;
 			sourceTree = "<group>";
 		};
 		AABB4F6F2A80D7A4008FC467 = {
@@ -530,7 +572,7 @@
 				AAE79FB32A80FD2F009823FB /* Launch */,
 				AA19328C2A837A11002C846F /* SignOut */,
 				AA1932832A830F5B002C846F /* SyncReadyTodo */,
-				AA19327C2A830A09002C846F /* UpdateTodo */,
+				AA30E95B2A84DE2A0063809B /* Todo */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -950,6 +992,7 @@
 				AAE79F9E2A80E51D009823FB /* RSwiftUI.swift in Sources */,
 				AA1932902A837A11002C846F /* SignOutUseCaseResult.swift in Sources */,
 				AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */,
+				AA30E9602A84F7920063809B /* FetchTodoUseCaseInput.swift in Sources */,
 				AA19329B2A8467DF002C846F /* SectionItemBase.swift in Sources */,
 				AAE79F9C2A80E4E3009823FB /* AlertItem.swift in Sources */,
 				AAE79FC02A80FD2F009823FB /* CheckVersionUseCase.swift in Sources */,
@@ -960,6 +1003,7 @@
 				AA19327E2A830A1C002C846F /* UpdateTodoUseCase.swift in Sources */,
 				AAE79FD02A8106F0009823FB /* EditTodoViewModel.swift in Sources */,
 				AAE79F7D2A80E0C1009823FB /* AppDelegate.swift in Sources */,
+				AA30E9692A8502880063809B /* CancelEditTodoUseCaseResult.swift in Sources */,
 				AAE79F792A80DFC2009823FB /* UIViewController+SwiftUI.swift in Sources */,
 				AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */,
 				AA1932872A830F5B002C846F /* SyncReadyTodoUseCase.swift in Sources */,
@@ -971,11 +1015,14 @@
 				AABB4FB02A80DA99008FC467 /* TodoId.swift in Sources */,
 				AAE79FAC2A80E88D009823FB /* HomeViewModel.swift in Sources */,
 				AAE79F7B2A80E008009823FB /* AppState.swift in Sources */,
+				AA30E9672A8502880063809B /* CancelEditTodoUseCase.swift in Sources */,
 				AA1932992A8467C5002C846F /* SectionItem.swift in Sources */,
 				AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */,
+				AA30E9622A84F7920063809B /* FetchTodoUseCase.swift in Sources */,
 				AA1932882A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift in Sources */,
 				AAE79F752A80DF13009823FB /* R.generated.swift in Sources */,
 				AA1932922A837A11002C846F /* SignOutUseCase.swift in Sources */,
+				AA30E9682A8502880063809B /* CancelEditTodoUseCaseInput.swift in Sources */,
 				AA1932732A8248AB002C846F /* LoginViewModel.swift in Sources */,
 				AAE79FB22A80FAE1009823FB /* RegistrationStatus.swift in Sources */,
 				AA1932752A824B7C002C846F /* TodoItemView.swift in Sources */,
@@ -997,6 +1044,7 @@
 				AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */,
 				AAE79F772A80DF48009823FB /* FAPage.swift in Sources */,
 				AAE79F932A80E376009823FB /* SettingsViewRouter.swift in Sources */,
+				AA30E9612A84F7920063809B /* FetchTodoUseCaseResult.swift in Sources */,
 				AAE79F912A80E376009823FB /* SettingsView.swift in Sources */,
 				AAE79F952A80E376009823FB /* SettingsListItemView.swift in Sources */,
 				AA1932912A837A11002C846F /* SignOutUseCaseInput.swift in Sources */,

@@ -118,6 +118,18 @@ class TodoRepository {
         }
     }
 
+    func fetch(by id: TodoId, statuses: [RegistrationStatus]) async throws -> Todo? {
+        let request = TodoEntity.fetchRequest()
+        request.predicate = NSPredicate(
+            format: "todo_id == %@ AND status IN %@", id.rawValue, statuses.map { $0.rawValue }
+        )
+
+        return try await MainActor.run {
+            let result = try context.fetch(request)
+            return result.compactMap { $0.toModel() }.first
+        }
+    }
+
     func fetch(status: RegistrationStatus) async throws -> [Todo] {
         let request = TodoEntity.fetchRequest()
         request.predicate = NSPredicate(format: "status == %@", status.rawValue)
@@ -128,9 +140,42 @@ class TodoRepository {
         }
     }
 
+    // 新しいTODOを追加する
+    func insert(object: Todo) async throws {
+        try await MainActor.run {
+            let entity = TodoEntity(context: context)
+            entity.todo_id = object.todoId.rawValue
+            entity.status = object.status.rawValue
+            entity.title = object.title
+            entity.desc = object.description
+            entity.datetime = object.datetime
+            entity.created_at = object.createdAt
+            entity.updated_at = object.updatedAt
+            entity.finished = object.finished
+
+            try context.save()
+        }
+    }
+
     func fetchCount() throws -> Int {
         let request = TodoEntity.fetchRequest()
         return try context.count(for: request)
+    }
+
+    func delete(by id: TodoId, status: RegistrationStatus) async throws {
+        let request = TodoEntity.fetchRequest()
+        request.predicate = NSPredicate(
+            format: "todo_id == %@ AND status == %@",
+            id.rawValue, status.rawValue
+        )
+
+        try await MainActor.run {
+            let results = try context.fetch(request)
+            for entity in results {
+                context.delete(entity)
+            }
+            try context.save()
+        }
     }
 
     /// 指定したステータスのレコードをすべて削除する

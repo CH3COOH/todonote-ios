@@ -17,40 +17,48 @@ struct EditTodoView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            ScrollView {
-                VStack(spacing: 0) {
-                    Color.clear.frame(height: 24)
+            if !model.isLoaded {
+                ActivityIndicatorView(
+                    style: .medium,
+                    color: R.color.accentColor()!
+                )
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                ScrollView {
+                    VStack(spacing: 0) {
+                        Color.clear.frame(height: 24)
 
-                    SectionItem(
-                        title: R.string.localizable.title()
-                    )
-                    .padding(.bottom, 8)
+                        SectionItem(
+                            title: R.string.localizable.title()
+                        )
+                        .padding(.bottom, 8)
 
-                    TextField("キャベツを買う", text: $model.todoTitle)
-                        .padding(.bottom, 32)
-
-                    DatePicker(
-                        R.string.localizable.deadline(),
-                        selection: $model.todoDate
-                    )
-                    .padding(.bottom, 32)
-
-                    SectionItem(
-                        title: R.string.localizable.desc()
-                    )
-                    .padding(.bottom, 8)
-
-                    ZStack {
-                        TextEditor(text: $model.todoDescription)
+                        TextField("キャベツを買う", text: $model.todoTitle)
                             .padding(.bottom, 32)
 
-                        if model.todoDescription.isEmpty {
-                            R.string.localizable.edit_todo_hint_desc.text
-                                .foregroundColor(Color.gray)
+                        DatePicker(
+                            R.string.localizable.deadline(),
+                            selection: $model.todoDate
+                        )
+                        .padding(.bottom, 32)
+
+                        SectionItem(
+                            title: R.string.localizable.desc()
+                        )
+                        .padding(.bottom, 8)
+
+                        ZStack {
+                            TextEditor(text: $model.todoDescription)
+                                .padding(.bottom, 32)
+
+                            if model.todoDescription.isEmpty {
+                                R.string.localizable.edit_todo_hint_desc.text
+                                    .foregroundColor(Color.gray)
+                            }
                         }
                     }
+                    .padding(.horizontal, 24)
                 }
-                .padding(.horizontal, 24)
             }
 
             VStack(spacing: 0) {
@@ -85,12 +93,12 @@ struct EditTodoView: View {
             }
         }
         .onAppear {
-            model.onAppear()
+            model.onAppear(from: viewController)
         }
     }
 
     private func onClickCloseButton() {
-        viewController?.dismiss(animated: true)
+        model.onClickCloseButton(from: viewController)
     }
 }
 
