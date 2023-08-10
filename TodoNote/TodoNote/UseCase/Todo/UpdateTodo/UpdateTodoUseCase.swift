@@ -20,12 +20,13 @@ class UpdateTodoUseCase: UseCaseProctol {
     }
 
     func execute(_ input: UpdateTodoUseCaseInput) async -> UpdateTodoUseCaseResult {
-        return await addTodoToLocal(input: input)
+        return await saveTodoLocally(input: input)
     }
 
-    private func addTodoToLocal(input: UpdateTodoUseCaseInput) async -> UpdateTodoUseCaseResult {
+    /// ローカルでTodoを保存し、リモートサーバーとの同期を試みる
+    private func saveTodoLocally(input: UpdateTodoUseCaseInput) async -> UpdateTodoUseCaseResult {
         do {
-            let todo1 = Todo(
+            let newTodo = Todo(
                 todoId: input.todoId,
                 status: RegistrationStatus.ready,
                 title: input.title,
@@ -35,36 +36,38 @@ class UpdateTodoUseCase: UseCaseProctol {
                 updatedAt: Date(),
                 finished: false
             )
-            try await todoRepository.addOrUpdate(object: todo1)
+            try await todoRepository.addOrUpdate(object: newTodo)
 
-            return await addTodoToRemote(input: input, item: todo1)
+            return await syncTodoWithServer(todo: newTodo)
         } catch {
             return .failed(error)
         }
     }
 
-    private func addTodoToRemote(input _: UpdateTodoUseCaseInput, item: Todo) async -> UpdateTodoUseCaseResult {
+    /// Todoアイテムをリモートサーバーと同期する
+    private func syncTodoWithServer(todo: Todo) async -> UpdateTodoUseCaseResult {
         do {
-            try await firestoreRepository.addOrUpdate(object: item)
+            try await firestoreRepository.addOrUpdate(object: todo)
 
-            return .success
+            return await markSyncComplete(todo: todo)
         } catch {
-            // サーバーへの書き込み失敗は、UseCase の失敗とはみなさない
+            // サーバーへの書き込みに失敗しても、ユースケースの失敗とはみなさない
             return .success
         }
     }
 
-    /// サーバーへの同期が完了したので、status を complete に更新する
-    private func updateStatus(input _: UpdateTodoUseCaseInput, item: Todo) async -> UpdateTodoUseCaseResult {
+    /// サーバー同期が成功すると、同期ステータスを完了としてマークする
+    private func markSyncComplete(todo: Todo) async -> UpdateTodoUseCaseResult {
         do {
-            let newItem = item.copy(
+            let updatedTodo = todo.copy(
                 status: RegistrationStatus.complete,
                 updatedAt: Date()
             )
-            try await todoRepository.addOrUpdate(object: newItem)
+            try await todoRepository.addOrUpdate(object: updatedTodo)
 
             return .success
         } catch {
+            // Even if marking as complete fails, it's still a successful sync.
             return .success
         }
     }
