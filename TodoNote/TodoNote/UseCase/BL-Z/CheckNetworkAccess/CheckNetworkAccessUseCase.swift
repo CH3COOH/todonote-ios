@@ -8,7 +8,7 @@
 import Foundation
 import Reachability
 
-class CheckNetworkAccessUseCase: UseCaseProctol {
+class CheckNetworkAccessUseCase: UseCaseProtocol {
     func execute(_: CheckNetworkAccessUseCaseInput) async -> CheckNetworkAccessUseCaseResult {
         return await checkReachability()
     }
@@ -23,13 +23,14 @@ class CheckNetworkAccessUseCase: UseCaseProctol {
                 return await checkNetworkAccess()
             }
         } catch {
-            // Reachability が例外を吐いた場合は次へ進む
+            // Reachability が例外を吐いた場合は次のステップへ進む
+            print("Error with Reachability: \(error)")
             return await checkNetworkAccess()
         }
     }
 
+    /// 自分のサイトへアクセスして、正しい文言が得られるか調べる
     private func checkNetworkAccess() async -> CheckNetworkAccessUseCaseResult {
-        // TODO: 自分のサイトにアクセスして通信可能かどうか調べている
         do {
             var request = URLRequest(url: URL(string: "https://ch3cooh.net/success.html")!)
             request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
@@ -43,7 +44,7 @@ class CheckNetworkAccessUseCase: UseCaseProctol {
             {
                 return .connected
             } else {
-                fatalError("ネットワークのアクセス経路に異常あり")
+                fatalError("ネットワークのアクセス経路に異常がある")
             }
         } catch {
             return .unavailable

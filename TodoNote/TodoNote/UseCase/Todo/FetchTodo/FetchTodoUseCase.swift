@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FetchTodoUseCase: UseCaseProctol {
+class FetchTodoUseCase: UseCaseProtocol {
     private let todoRepository: TodoRepository
 
     init(todoRepository: TodoRepository = TodoRepository()) {

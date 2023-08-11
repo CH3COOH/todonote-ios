@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UpdateTodoUseCase: UseCaseProctol {
+class UpdateTodoUseCase: UseCaseProtocol {
     private let firestoreRepository: FirestoreRepository
     private let todoRepository: TodoRepository
     private let checkNetworkAccessUseCase: CheckNetworkAccessUseCase

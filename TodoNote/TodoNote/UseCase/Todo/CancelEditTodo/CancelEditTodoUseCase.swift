@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CancelEditTodoUseCase: UseCaseProctol {
+class CancelEditTodoUseCase: UseCaseProtocol {
     private let todoRepository: TodoRepository
 
     init(

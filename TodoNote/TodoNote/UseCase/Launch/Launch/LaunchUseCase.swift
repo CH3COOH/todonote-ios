@@ -7,7 +7,7 @@
 import FirebaseAuth
 import Foundation
 
-class LaunchUseCase: UseCaseProctol {
+class LaunchUseCase: UseCaseProtocol {
     let todoRepository: TodoRepository
 
     let checkVersionUseCase = CheckVersionUseCase()

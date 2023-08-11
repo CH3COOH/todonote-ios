@@ -1,10 +1,10 @@
 //
-//  UseCaseProctol.swift
+//  UseCaseProtocol.swift
 //
 //  Created by KENJIWADA on 2023/08/07.
 //
 
-protocol UseCaseProctol<Input, Output> {
+protocol UseCaseProtocol<Input, Output> {
     associatedtype Input
     associatedtype Output
 
