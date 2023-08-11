@@ -15,28 +15,34 @@ struct TodoItemView: View {
     let editAction: () -> Void
 
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             Button(action: doneAction) {
-                Image(systemName: "square")
-                    .resizable()
-                    .frame(width: 44, height: 44)
-                    .scaledToFit()
+                Circle()
+                    .fill(Color.yellow)
+                    .frame(width: 40, height: 40)
+                    .overlay(
+                        Circle()
+                            .stroke(Color.red)
+                    )
             }
             .buttonStyle(.plain)
+            .padding(.trailing, 8)
 
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(item.title)
+                    .font(.system(size: 16, weight: .bold))
                 if let desc = item.description, !desc.isEmpty {
                     Text(desc)
+                        .font(.system(size: 14, weight: .regular))
                 }
             }
 
             Spacer(minLength: 0)
 
             Button(action: editAction) {
-                Image(systemName: "square.and.pencil.circle")
+                Image(systemName: "square.and.pencil")
                     .resizable()
-                    .frame(width: 44, height: 44)
+                    .frame(width: 24, height: 24)
                     .scaledToFit()
             }
             .buttonStyle(.plain)

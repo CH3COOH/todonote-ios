@@ -10,10 +10,18 @@ import Foundation
 class LaunchUseCase: UseCaseProtocol {
     let todoRepository: TodoRepository
 
-    let checkVersionUseCase = CheckVersionUseCase()
+    let checkVersionUseCase: CheckVersionUseCase
 
-    init(todoRepository: TodoRepository = TodoRepository()) {
+    let syncReadyTodoUseCase: SyncReadyTodoUseCase
+
+    init(
+        todoRepository: TodoRepository = TodoRepository(),
+        checkVersionUseCase: CheckVersionUseCase = CheckVersionUseCase(),
+        syncReadyTodoUseCase: SyncReadyTodoUseCase = SyncReadyTodoUseCase()
+    ) {
         self.todoRepository = todoRepository
+        self.checkVersionUseCase = checkVersionUseCase
+        self.syncReadyTodoUseCase = syncReadyTodoUseCase
     }
 
     func execute(_: LaunchUseCaseInput) async -> LaunchUseCaseResult {
@@ -35,7 +43,17 @@ class LaunchUseCase: UseCaseProtocol {
             return .moveToWalkthrough
         }
 
-        return await checkVersion()
+        return await syncReadyTodo()
+    }
+
+    private func syncReadyTodo() async -> LaunchUseCaseResult {
+        let result = await syncReadyTodoUseCase.execute(.init())
+        switch result {
+        case .success:
+            return await checkVersion()
+        case .failed:
+            return await checkVersion()
+        }
     }
 
     private func checkVersion() async -> LaunchUseCaseResult {

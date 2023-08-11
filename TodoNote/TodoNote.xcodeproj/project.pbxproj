@@ -47,6 +47,10 @@
 		AABB4F9E2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F9D2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift */; };
 		AABB4FB02A80DA99008FC467 /* TodoId.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4FAF2A80DA99008FC467 /* TodoId.swift */; };
 		AABB4FB22A80DAC7008FC467 /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4FB12A80DAC7008FC467 /* TodoEntity.swift */; };
+		AADA7FA22A864B1000B5E7C4 /* DoneTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7F9F2A864B1000B5E7C4 /* DoneTodoUseCase.swift */; };
+		AADA7FA32A864B1000B5E7C4 /* DoneTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FA02A864B1000B5E7C4 /* DoneTodoUseCaseInput.swift */; };
+		AADA7FA42A864B1000B5E7C4 /* DoneTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FA12A864B1000B5E7C4 /* DoneTodoUseCaseResult.swift */; };
+		AADA7FA62A864ED600B5E7C4 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FA52A864ED600B5E7C4 /* BaseViewModel.swift */; };
 		AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F6B2A80DE50009823FB /* SplashView.swift */; };
 		AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F6D2A80DE5C009823FB /* SplashViewModel.swift */; };
 		AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F702A80DE75009823FB /* RootViewController.swift */; };
@@ -159,6 +163,10 @@
 		AABB4F9D2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AABB4FAF2A80DA99008FC467 /* TodoId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoId.swift; sourceTree = "<group>"; };
 		AABB4FB12A80DAC7008FC467 /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
+		AADA7F9F2A864B1000B5E7C4 /* DoneTodoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTodoUseCase.swift; sourceTree = "<group>"; };
+		AADA7FA02A864B1000B5E7C4 /* DoneTodoUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTodoUseCaseInput.swift; sourceTree = "<group>"; };
+		AADA7FA12A864B1000B5E7C4 /* DoneTodoUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTodoUseCaseResult.swift; sourceTree = "<group>"; };
+		AADA7FA52A864ED600B5E7C4 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		AAE79F6B2A80DE50009823FB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		AAE79F6D2A80DE5C009823FB /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		AAE79F702A80DE75009823FB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -319,6 +327,7 @@
 		AA30E95B2A84DE2A0063809B /* Todo */ = {
 			isa = PBXGroup;
 			children = (
+				AADA7F9E2A864AE700B5E7C4 /* DoneTodo */,
 				AA30E9632A8502690063809B /* CancelEditTodo */,
 				AA30E95C2A84DE360063809B /* FetchTodo */,
 				AA19327C2A830A09002C846F /* UpdateTodo */,
@@ -492,6 +501,16 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		AADA7F9E2A864AE700B5E7C4 /* DoneTodo */ = {
+			isa = PBXGroup;
+			children = (
+				AADA7F9F2A864B1000B5E7C4 /* DoneTodoUseCase.swift */,
+				AADA7FA02A864B1000B5E7C4 /* DoneTodoUseCaseInput.swift */,
+				AADA7FA12A864B1000B5E7C4 /* DoneTodoUseCaseResult.swift */,
+			);
+			path = DoneTodo;
+			sourceTree = "<group>";
+		};
 		AAE79F692A80DE3D009823FB /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +538,7 @@
 				AAE79F782A80DFC2009823FB /* UIViewController+SwiftUI.swift */,
 				AAE79F832A80E1B2009823FB /* Bridge */,
 				AAE79F9F2A80E53A009823FB /* View */,
+				AADA7FA52A864ED600B5E7C4 /* BaseViewModel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1015,6 +1035,7 @@
 				AAE79FAA2A80E882009823FB /* HomeView.swift in Sources */,
 				AAE79F732A80DEEA009823FB /* SafariUtil.swift in Sources */,
 				AA93D3242A85E21C00BB5EF2 /* AppError.swift in Sources */,
+				AADA7FA62A864ED600B5E7C4 /* BaseViewModel.swift in Sources */,
 				AAE79F9E2A80E51D009823FB /* RSwiftUI.swift in Sources */,
 				AA1932902A837A11002C846F /* SignOutUseCaseResult.swift in Sources */,
 				AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */,
@@ -1029,6 +1050,7 @@
 				AA19327E2A830A1C002C846F /* UpdateTodoUseCase.swift in Sources */,
 				AAE79FD02A8106F0009823FB /* EditTodoViewModel.swift in Sources */,
 				AAE79F7D2A80E0C1009823FB /* AppDelegate.swift in Sources */,
+				AADA7FA22A864B1000B5E7C4 /* DoneTodoUseCase.swift in Sources */,
 				AA30E9692A8502880063809B /* CancelEditTodoUseCaseResult.swift in Sources */,
 				AAE79F792A80DFC2009823FB /* UIViewController+SwiftUI.swift in Sources */,
 				AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */,
@@ -1050,6 +1072,7 @@
 				AA1932922A837A11002C846F /* SignOutUseCase.swift in Sources */,
 				AA30E9682A8502880063809B /* CancelEditTodoUseCaseInput.swift in Sources */,
 				AA1932732A8248AB002C846F /* LoginViewModel.swift in Sources */,
+				AADA7FA42A864B1000B5E7C4 /* DoneTodoUseCaseResult.swift in Sources */,
 				AAE79FB22A80FAE1009823FB /* RegistrationStatus.swift in Sources */,
 				AA1932752A824B7C002C846F /* TodoItemView.swift in Sources */,
 				AAE79FC42A80FDA6009823FB /* UseCaseProtocol.swift in Sources */,
@@ -1077,6 +1100,7 @@
 				AAE79F912A80E376009823FB /* SettingsView.swift in Sources */,
 				AAE79F952A80E376009823FB /* SettingsListItemView.swift in Sources */,
 				AA1932912A837A11002C846F /* SignOutUseCaseInput.swift in Sources */,
+				AADA7FA32A864B1000B5E7C4 /* DoneTodoUseCaseInput.swift in Sources */,
 				AAE79FBF2A80FD2F009823FB /* CheckVersionUseCaseInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

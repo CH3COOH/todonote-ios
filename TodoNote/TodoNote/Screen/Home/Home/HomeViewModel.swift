@@ -5,14 +5,17 @@
 //  Created by KENJIWADA on 2023/08/07.
 //
 
+import KRProgressHUD
 import SwiftUI
 
-class HomeViewModel: ObservableObject {
+class HomeViewModel: BaseViewModel {
+    @Published var actionSheetItem: ActionSheetItem?
+
     @Published var isLoaded = false
 
     @Published var items: [Todo] = []
 
-    @Published var actionSheetItem: ActionSheetItem?
+    private let doneTodoUseCase = DoneTodoUseCase()
 
     var isEmpty: Bool {
         isLoaded && items.isEmpty
@@ -31,9 +34,24 @@ class HomeViewModel: ObservableObject {
 //            }
             do {
                 let resitory = TodoRepository()
-                let items = try await resitory.fetch()
+                let items = try await resitory.fetch(with: [.ready, .complete])
+                await set(
+                    items: items.filter { !$0.finished }
+                )
+            }
+        }
+    }
 
-                await set(items: items)
+    func onClickDoneButton(item: Todo) {
+        KRProgressHUD.show()
+        Task {
+            let result = await doneTodoUseCase.execute(.init(todo: item))
+            KRProgressHUD.dismiss()
+            switch result {
+            case .success:
+                await delete(deletedItem: item)
+            case let .failed(error):
+                await show(error: error)
             }
         }
     }
@@ -57,5 +75,16 @@ class HomeViewModel: ObservableObject {
     private func set(items: [Todo]) {
         isLoaded = true
         self.items = items
+    }
+
+    @MainActor
+    private func delete(deletedItem: Todo) {
+        withAnimation {
+            items.removeAll(
+                where: {
+                    $0.todoId == deletedItem.todoId
+                }
+            )
+        }
     }
 }

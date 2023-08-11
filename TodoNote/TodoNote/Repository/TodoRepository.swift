@@ -115,17 +115,17 @@ class TodoRepository {
         }
     }
 
-    func fetch() async throws -> [Todo] {
-        let request = TodoEntity.fetchRequest()
-        request.sortDescriptors = [
-            NSSortDescriptor(key: "todo_id", ascending: true),
-        ]
-
-        return try await MainActor.run {
-            let result = try context.fetch(request)
-            return result.compactMap { $0.toModel() }
-        }
-    }
+//    func fetch() async throws -> [Todo] {
+//        let request = TodoEntity.fetchRequest()
+//        request.sortDescriptors = [
+//            NSSortDescriptor(key: "todo_id", ascending: true),
+//        ]
+//
+//        return try await MainActor.run {
+//            let result = try context.fetch(request)
+//            return result.compactMap { $0.toModel() }
+//        }
+//    }
 
 //    func fetch(ids: [TodoId]) async throws -> [Todo] {
 //        let request = TodoEntity.fetchRequest()
@@ -212,6 +212,22 @@ class TodoRepository {
     func fetchCount() throws -> Int {
         let request = TodoEntity.fetchRequest()
         return try context.count(for: request)
+    }
+
+    func delete(by id: TodoId) async throws {
+        let request = TodoEntity.fetchRequest()
+        request.predicate = NSPredicate(
+            format: "todo_id == %@",
+            id.rawValue
+        )
+
+        try await MainActor.run {
+            let results = try context.fetch(request)
+            for entity in results {
+                context.delete(entity)
+            }
+            try context.save()
+        }
     }
 
     func delete(by id: TodoId, status: RegistrationStatus) async throws {
