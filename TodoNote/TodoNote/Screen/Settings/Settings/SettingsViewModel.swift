@@ -6,16 +6,14 @@
 
 import SwiftUI
 
-class SettingsViewModel: ObservableObject {
+class SettingsViewModel: BaseViewModel {
     @Published var appVersion: String
 
     @Published var actionSheetItem: ActionSheetItem?
 
-    @Published var alertItem: AlertItem?
-
     private let signOutUseCase = SignOutUseCase()
 
-    init() {
+    override init() {
         // アプリバージョンの取得
         if let version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String,
            let shortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
@@ -24,6 +22,7 @@ class SettingsViewModel: ObservableObject {
         } else {
             appVersion = R.string.localizable.settings_copy_right("---", "---")
         }
+        super.init()
     }
 
     // MARK: -
@@ -56,14 +55,7 @@ class SettingsViewModel: ObservableObject {
             case .success:
                 await moveLoginScreen(from: viewController)
             case let .failed(error):
-                Task { @MainActor in
-                    alertItem = AlertItem(
-                        alert: Alert(
-                            title: R.string.localizable.error.text,
-                            message: Text(error.localizedDescription)
-                        )
-                    )
-                }
+                await show(error: error)
             }
         }
     }

@@ -36,7 +36,7 @@ class SyncReadyTodoUseCase: UseCaseProtocol {
                 return .success
             }
 
-            return await syncItems(input: input, items: results)
+            return await availableNetworkAccess(input: input, items: results)
         } catch {
             return .failed(error)
         }
@@ -59,23 +59,39 @@ class SyncReadyTodoUseCase: UseCaseProtocol {
         do {
             for item in items {
                 if item.finished {
-                    try await firestoreRepository.addOrUpdate(object: item)
-                } else {
                     try await firestoreRepository.delete(object: item)
+                } else {
+                    try await firestoreRepository.addOrUpdate(object: item)
                 }
             }
 
-            return await updateLocalData(input: input, items: items)
+            let newItems = items.map { todo in
+                todo.copy(
+                    status: .complete,
+                    updatedAt: Date()
+                )
+            }
+            return await updateLocalData(input: input, items: newItems)
         } catch {
             return .failed(error)
         }
     }
 
-    private func updateLocalData(input _: SyncReadyTodoUseCaseInput, items _: [Todo]) async -> SyncReadyTodoUseCaseResult {
-        // TODO: ローカルのTODOアイテムのステータスを complete に変更する
-
-        // TODO: finished になっていて、サーバー上のアイテムを削除済みの場合は、ローカルデータも併せて削除する
-
-        return .success
+    private func updateLocalData(input _: SyncReadyTodoUseCaseInput, items: [Todo]) async -> SyncReadyTodoUseCaseResult {
+        do {
+            for item in items {
+                if item.finished {
+                    try await todoRepository.delete(by: item.todoId)
+                } else {
+                    try await todoRepository.updateTodoStatus(
+                        for: item,
+                        with: RegistrationStatus.all
+                    )
+                }
+            }
+            return .success
+        } catch {
+            return .failed(error)
+        }
     }
 }

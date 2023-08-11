@@ -34,7 +34,9 @@ struct HomeView: View {
                         ForEach(model.items) { item in
                             TodoItemView(
                                 item: item,
-                                doneAction: {},
+                                doneAction: {
+                                    model.onClickDoneButton(item: item)
+                                },
                                 editAction: {
                                     onClickEditButton(item: item)
                                 }

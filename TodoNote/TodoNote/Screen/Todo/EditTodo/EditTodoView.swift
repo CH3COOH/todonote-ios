@@ -82,10 +82,7 @@ struct EditTodoView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: onClickCloseButton) {
-                    Label(
-                        R.string.localizable.close(),
-                        systemImage: "xmark"
-                    )
+                    R.string.localizable.close.text
                 }
             }
             ToolbarItem(placement: .principal) {
