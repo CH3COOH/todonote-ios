@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UpdateTodoUseCase: UseCaseProctol {
+class UpdateTodoUseCase: UseCaseProtocol {
     private let resitory: TodoRepository
 
     init(resitory: TodoRepository = TodoRepository()) {

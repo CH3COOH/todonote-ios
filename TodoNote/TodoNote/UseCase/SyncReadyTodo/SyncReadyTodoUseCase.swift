@@ -10,7 +10,7 @@ import FirebaseFirestore
 import Foundation
 
 /// BL-Z01 データの同期
-class SyncReadyTodoUseCase: UseCaseProctol {
+class SyncReadyTodoUseCase: UseCaseProtocol {
     private let todoRepository: TodoRepository
     private let firestore = Firestore.firestore()
 
