@@ -5,56 +5,64 @@
 //  Created by KENJIWADA on 2023/08/09.
 //
 
-import FirebaseAuth
+import Foundation
+import UserNotifications
 
 /// BL-S02 ログアウト
 class SignOutUseCase: UseCaseProtocol {
     private let todoRepository: TodoRepository
 
+    private let authProvider: AuthProviderProtocol
+
     private let syncReadyTodoUseCase: SyncReadyTodoUseCase
 
     init(
         todoRepository: TodoRepository = TodoRepository(),
+        authProvider: AuthProviderProtocol = FirebaseAuthProvider(),
         syncReadyTodoUseCase: SyncReadyTodoUseCase = SyncReadyTodoUseCase()
     ) {
         self.todoRepository = todoRepository
+        self.authProvider = authProvider
         self.syncReadyTodoUseCase = syncReadyTodoUseCase
     }
 
-    func execute(_ input: SignOutUseCaseInput) async -> SignOutUseCaseResult {
-        return await syncReadyData(input: input)
+    func execute(_: SignOutUseCaseInput) async -> SignOutUseCaseResult {
+        return await syncReadyData()
     }
 
-    /// ステータスが `ready` のレコードがあればサーバーに同期する
-    private func syncReadyData(input: SignOutUseCaseInput) async -> SignOutUseCaseResult {
+    private func syncReadyData() async -> SignOutUseCaseResult {
         let result = await syncReadyTodoUseCase.execute(.init())
         switch result {
         case .success:
-            return await deleteAllLocalData(input: input)
+            return await signOut()
         case let .failed(error):
             return .failed(error)
         }
     }
 
-    /// ローカルデータを全削除する
-    private func deleteAllLocalData(input: SignOutUseCaseInput) async -> SignOutUseCaseResult {
+    private func signOut() async -> SignOutUseCaseResult {
         do {
-            try await todoRepository.deleteAll()
-
-            return await signOut(input: input)
+            try authProvider.signOut()
+            return await deleteAllNotificationRequests()
         } catch {
             return .failed(error)
         }
     }
 
-    /// サインアウトする
-    private func signOut(input _: SignOutUseCaseInput) async -> SignOutUseCaseResult {
-        do {
-            try Auth.auth().signOut()
+    private func deleteAllNotificationRequests() async -> SignOutUseCaseResult {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        center.removeAllDeliveredNotifications()
+        return await deleteAllLocalData()
+    }
 
-            return .success
+    private func deleteAllLocalData() async -> SignOutUseCaseResult {
+        do {
+            try await todoRepository.deleteAll()
         } catch {
-            return .failed(error)
+            // エラーは無視する
+            print(error.localizedDescription)
         }
+        return .success
     }
 }
