@@ -13,14 +13,16 @@ import Foundation
 class SyncReadyTodoUseCase: UseCaseProtocol {
     private let firestoreRepository: FirestoreRepository
     private let todoRepository: TodoRepository
-    private let firestore = Firestore.firestore()
+    private let checkNetworkAccessUseCase: CheckNetworkAccessUseCase
 
     init(
         firestoreRepository: FirestoreRepository = FirestoreRepository(),
-        todoRepository: TodoRepository = TodoRepository()
+        todoRepository: TodoRepository = TodoRepository(),
+        checkNetworkAccessUseCase: CheckNetworkAccessUseCase = CheckNetworkAccessUseCase()
     ) {
         self.firestoreRepository = firestoreRepository
         self.todoRepository = todoRepository
+        self.checkNetworkAccessUseCase = checkNetworkAccessUseCase
     }
 
     func execute(_ input: SyncReadyTodoUseCaseInput) async -> SyncReadyTodoUseCaseResult {
@@ -40,8 +42,20 @@ class SyncReadyTodoUseCase: UseCaseProtocol {
         }
     }
 
+    /// ネットワーク接続が可能か調べる
+    private func availableNetworkAccess(input: SyncReadyTodoUseCaseInput, items: [Todo]) async -> SyncReadyTodoUseCaseResult {
+        let result = await checkNetworkAccessUseCase.execute(.init())
+        switch result {
+        case .connected:
+            return await syncItems(input: input, items: items)
+        case .unavailable:
+            // ネットワークに接続されていない場合、ここで処理を終える
+            return .success
+        }
+    }
+
     /// Firestore へデータを同期する
-    private func syncItems(input _: SyncReadyTodoUseCaseInput, items: [Todo]) async -> SyncReadyTodoUseCaseResult {
+    private func syncItems(input: SyncReadyTodoUseCaseInput, items: [Todo]) async -> SyncReadyTodoUseCaseResult {
         do {
             for item in items {
                 if item.finished {
@@ -51,13 +65,13 @@ class SyncReadyTodoUseCase: UseCaseProtocol {
                 }
             }
 
-            return await updateLocalData(items: items)
+            return await updateLocalData(input: input, items: items)
         } catch {
             return .failed(error)
         }
     }
 
-    private func updateLocalData(items _: [Todo]) async -> SyncReadyTodoUseCaseResult {
+    private func updateLocalData(input _: SyncReadyTodoUseCaseInput, items _: [Todo]) async -> SyncReadyTodoUseCaseResult {
         // TODO: ローカルのTODOアイテムのステータスを complete に変更する
 
         // TODO: finished になっていて、サーバー上のアイテムを削除済みの場合は、ローカルデータも併せて削除する

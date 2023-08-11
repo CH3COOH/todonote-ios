@@ -50,7 +50,7 @@ class UpdateTodoUseCase: UseCaseProtocol {
         case .connected:
             return await syncTodoWithServer(todo: todo)
         case .unavailable:
-            // ネットワークに接続できない場合、ここで処理を終える
+            // ネットワークに接続されていない場合、ここで処理を終える
             return .success
         }
     }
@@ -67,7 +67,7 @@ class UpdateTodoUseCase: UseCaseProtocol {
         }
     }
 
-    /// サーバー同期が成功すると、同期ステータスを完了としてマークする
+    /// サーバー同期が成功すると、ステータスを complete に変更する
     private func markSyncComplete(todo: Todo) async -> UpdateTodoUseCaseResult {
         do {
             let updatedTodo = todo.copy(

@@ -18,7 +18,7 @@ class FetchTodoUseCase: UseCaseProtocol {
         return await fetchTodoWithSpecifiedId(input: input)
     }
 
-    /// 特定のステータス (`ready` または `complete`) を持つ ToDo を Core Data から取得する
+    /// 特定のステータス (`ready` または `complete`) を持つ ToDoアイテム を Core Data から取得する
     private func fetchTodoWithSpecifiedId(input: FetchTodoUseCaseInput) async -> FetchTodoUseCaseResult {
         do {
             let todo = try await todoRepository.fetch(
