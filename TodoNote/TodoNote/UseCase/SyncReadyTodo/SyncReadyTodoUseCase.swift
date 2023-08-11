@@ -11,9 +11,9 @@ import Foundation
 
 /// BL-Z01 データの同期
 class SyncReadyTodoUseCase: UseCaseProtocol {
+    private let checkNetworkAccessUseCase: CheckNetworkAccessUseCase
     private let firestoreRepository: FirestoreRepository
     private let todoRepository: TodoRepository
-    private let checkNetworkAccessUseCase: CheckNetworkAccessUseCase
 
     init(
         firestoreRepository: FirestoreRepository = FirestoreRepository(),

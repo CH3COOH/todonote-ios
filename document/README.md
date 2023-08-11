@@ -41,21 +41,21 @@ TODOアイテムは、ローカル(アプリ内データベース) と バック
 
 | ID   | 画面名 | 備考 |
 |:-----|:-----|:-----|
-| A-1  | スプラッシュ | |
-| A-2  | ログイン  | Firebaseへの匿名ログイン |
-| A-3  | 通知許諾  | |
-| B-1  | ホーム    | TODO一覧 |
-| C-1  | TODO登録  | |
-| S-1  | 設定  | |
-| S-2  | ライセンス  | LicensePlistViewController で表示 |
-| S-3  | 問い合わせ  | Googleフォームを SFSafariViewController で表示 |
+| A-01  | スプラッシュ | |
+| A-02  | ログイン  | Firebaseへの匿名ログイン |
+| A-03  | 通知許諾  | |
+| B-01  | ホーム    | TODO一覧 |
+| C-01  | TODO登録  | |
+| S-01  | 設定  | |
+| S-02  | ライセンス  | LicensePlistViewController で表示 |
+| S-03  | 問い合わせ  | Googleフォームを SFSafariViewController で表示 |
 
 ## ユースケース
 
 | ID   | ユースケース名 | 備考 |
 |:-----|:-----|:-----|
-| BL-A-1  | lunch  | |
-| BL-A-1-1  | check login  | |
+| BL-A01  | lunch  | |
+| BL-A01-1  | check login  | |
 | BL-1-2  | check version | |
 | BL-1-4  | check editing  | |
 | BL-B01  | fetch todo list  | sort option |
