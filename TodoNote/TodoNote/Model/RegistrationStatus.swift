@@ -8,7 +8,6 @@
 import Foundation
 
 enum RegistrationStatus: String {
-//    case new
     case editing
     case ready
     case complete
@@ -21,8 +20,6 @@ extension RegistrationStatus {
 
     func from(value: String) -> RegistrationStatus {
         switch value {
-//        case RegistrationStatus.new.rawValue:
-//            return .new
         case RegistrationStatus.editing.rawValue:
             return .editing
         case RegistrationStatus.ready.rawValue:
