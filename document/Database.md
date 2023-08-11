@@ -51,15 +51,11 @@ TODOアイテムは「editing」「ready」「complete」の3つのステータ�
 
 ### 前提： status=complete のレコードがある状態
 
-<img width="399" alt="database-01" src="https://github.com/CH3COOH/todonote-ios/assets/137952/dc9d3dd4-daf7-4f1a-aa93-4b8d3f5b3ce8">
-
 | todo_id | status   | title       | 
 |:--------|:---------|:------------|
 | 1       | complete | キャベツを買う |
 
 ### ステップ1：既存のレコードをコピーし、ステータスを editing とする
-
-<img width="399" alt="database-02" src="https://github.com/CH3COOH/todonote-ios/assets/137952/2843f6f1-f807-4308-a072-fb0e4f2f571b">
 
 | todo_id | status   | title       | 
 |:--------|:---------|:------------|
@@ -68,19 +64,17 @@ TODOアイテムは「editing」「ready」「complete」の3つのステータ�
 
 ### ステップ2：既存のレコードを削除して、ステータスを editing から ready へ変更する
 
-<img width="399" alt="database-03" src="https://github.com/CH3COOH/todonote-ios/assets/137952/32d6406d-3cd1-45ec-886f-97f86c96b3ec">
-
 | todo_id | status   | title       | 
 |:--------|:---------|:------------|
 | 1       | ready | りんごを買う |
 
 ### ステップ3：バックエンドへの同期
 
-* バックエンドへの保存に失敗した場合は、ステータス `ready` のまま処理を終了する
+* バックエンドへの保存する
+    * 成功時：次のステップへ
+    * 失敗時：ステータス `ready` のまま処理を終了する
 
 ### ステップ4：ステータスを ready から complete とする
-
-<img width="399" alt="database-04" src="https://github.com/CH3COOH/todonote-ios/assets/137952/5323a1ca-a71d-42d4-8d39-63ae8c7da35e">
 
 | todo_id | status   | title       | 
 |:--------|:---------|:------------|
