@@ -840,6 +840,7 @@ PODS:
   - PromisesSwift (2.3.1):
     - PromisesObjC (= 2.3.1)
   - R.swift (7.3.2)
+  - ReachabilitySwift (5.0.0)
   - SwiftFormat/CLI (0.51.15)
   - UIDeviceIdentifier (2.3.0)
   - "UITextView+Placeholder (1.4.0)"
@@ -855,6 +856,7 @@ DEPENDENCIES:
   - LicensePlist
   - LicensePlistViewController
   - R.swift
+  - ReachabilitySwift
   - SwiftFormat/CLI (~> 0.49)
   - UIDeviceIdentifier
   - "UITextView+Placeholder"
@@ -892,6 +894,7 @@ SPEC REPOS:
     - PromisesObjC
     - PromisesSwift
     - R.swift
+    - ReachabilitySwift
     - SwiftFormat
     - UIDeviceIdentifier
     - "UITextView+Placeholder"
@@ -928,11 +931,12 @@ SPEC CHECKSUMS:
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   PromisesSwift: 28dca69a9c40779916ac2d6985a0192a5cb4a265
   R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SwiftFormat: 9bb35148209f3e809e920037f9b95c4c889c3612
   UIDeviceIdentifier: 442b65b4ff1832d4ca9c2a157815cb29ad981b17
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
   ULID.swift: 7dddbacf51b74c60742d0ce49b81cb11491f803f
 
-PODFILE CHECKSUM: 0e632f05360f1dc0e6c27eaf2e885813dbe6ab36
+PODFILE CHECKSUM: f6c7def480b3d96b28108d72b2dffdf2c26d0bff
 
 COCOAPODS: 1.12.1

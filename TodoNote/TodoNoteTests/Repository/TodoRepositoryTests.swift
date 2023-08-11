@@ -149,13 +149,12 @@ final class TodoRepositoryTests: XCTestCase {
         
         try await repository.addOrUpdate(object: todo1)
         
-        let todos = try await repository.fetch(id: todoId)
+        let todos = try await repository.fetch(by: todoId)
         
-        XCTAssertEqual(todos.count, 1)
-        XCTAssertEqual(todos.first?.id, todoId)
-        XCTAssertEqual(todos.first?.status, RegistrationStatus.ready)
-        XCTAssertEqual(todos.first?.title, "タイトル")
-        XCTAssertEqual(todos.first?.description, "本文")
+        XCTAssertEqual(todos?.id, todoId)
+        XCTAssertEqual(todos?.status, RegistrationStatus.ready)
+        XCTAssertEqual(todos?.title, "タイトル")
+        XCTAssertEqual(todos?.description, "本文")
 
         try await repository.deleteAll()
         
@@ -184,13 +183,12 @@ final class TodoRepositoryTests: XCTestCase {
         
         try await repository.addOrUpdate(object: todo1)
         
-        let todos1 = try await repository.fetch(id: todoId)
+        let todos1 = try await repository.fetch(by: todoId)
         
-        XCTAssertEqual(todos1.count, 1)
-        XCTAssertEqual(todos1.first?.id, todoId)
-        XCTAssertEqual(todos1.first?.status, RegistrationStatus.editing)
-        XCTAssertEqual(todos1.first?.title, "タイトル")
-        XCTAssertEqual(todos1.first?.description, "本文")
+        XCTAssertEqual(todos1?.id, todoId)
+        XCTAssertEqual(todos1?.status, RegistrationStatus.editing)
+        XCTAssertEqual(todos1?.title, "タイトル")
+        XCTAssertEqual(todos1?.description, "本文")
 
         // 2回目：上書き
         let todo2 = Todo(
@@ -206,13 +204,12 @@ final class TodoRepositoryTests: XCTestCase {
         
         try await repository.addOrUpdate(object: todo2)
         
-        let todos2 = try await repository.fetch(id: todoId)
+        let todos2 = try await repository.fetch(by: todoId)
         
-        XCTAssertEqual(todos2.count, 1)
-        XCTAssertEqual(todos2.first?.id, todoId)
-        XCTAssertEqual(todos2.first?.status, RegistrationStatus.ready)
-        XCTAssertEqual(todos2.first?.title, "Title")
-        XCTAssertEqual(todos2.first?.description, "Body")
+        XCTAssertEqual(todos2?.id, todoId)
+        XCTAssertEqual(todos2?.status, RegistrationStatus.ready)
+        XCTAssertEqual(todos2?.title, "Title")
+        XCTAssertEqual(todos2?.description, "Body")
 
         // 削除
         try await repository.deleteAll()

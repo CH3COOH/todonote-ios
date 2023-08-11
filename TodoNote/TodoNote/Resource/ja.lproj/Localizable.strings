@@ -38,6 +38,9 @@
 "share" = "共有";
 
 // MARK: - app/common
+"title" = "タイトル";
+"desc" = "メモ";
+"deadline" = "期限";
 
 // MARK: - permission
 "permission_err_camera" = "カメラの使用が許可されていません";
@@ -56,6 +59,14 @@
 "home_section_settings" = "検索設定";
 "home_empty" = "タスクはまだ登録されていません";
 "home_button_add" = "最初のタスクを追加する";
+
+// MARK: - todo edit
+"edit_todo_title_edit" = "タスクの編集";
+"edit_todo_title_create" = "タスクの登録";
+"edit_todo_button_create" = "作成する";
+"edit_todo_button_update" = "更新する";
+"edit_todo_hint_title" = "キャベツを買う";
+"edit_todo_hint_desc" = "スーパーは高いから商店街までいくこと";
 
 // MARK: - login
 "login_title" = "TodoNote へようこそ！";

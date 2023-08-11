@@ -11,11 +11,18 @@ import Foundation
 
 /// BL-Z01 データの同期
 class SyncReadyTodoUseCase: UseCaseProtocol {
+    private let checkNetworkAccessUseCase: CheckNetworkAccessUseCase
+    private let firestoreRepository: FirestoreRepository
     private let todoRepository: TodoRepository
-    private let firestore = Firestore.firestore()
 
-    init(todoRepository: TodoRepository = TodoRepository()) {
+    init(
+        firestoreRepository: FirestoreRepository = FirestoreRepository(),
+        todoRepository: TodoRepository = TodoRepository(),
+        checkNetworkAccessUseCase: CheckNetworkAccessUseCase = CheckNetworkAccessUseCase()
+    ) {
+        self.firestoreRepository = firestoreRepository
         self.todoRepository = todoRepository
+        self.checkNetworkAccessUseCase = checkNetworkAccessUseCase
     }
 
     func execute(_ input: SyncReadyTodoUseCaseInput) async -> SyncReadyTodoUseCaseResult {
@@ -24,7 +31,7 @@ class SyncReadyTodoUseCase: UseCaseProtocol {
 
     private func fetchReadyItems(input: SyncReadyTodoUseCaseInput) async -> SyncReadyTodoUseCaseResult {
         do {
-            let results = try await todoRepository.fetch(status: RegistrationStatus.ready)
+            let results = try await todoRepository.fetch(with: [.ready])
             if results.isEmpty {
                 return .success
             }
@@ -35,38 +42,36 @@ class SyncReadyTodoUseCase: UseCaseProtocol {
         }
     }
 
-    /// Firestore へデータを同期する
-    private func syncItems(input _: SyncReadyTodoUseCaseInput, items: [Todo]) async -> SyncReadyTodoUseCaseResult {
-        do {
-            guard let userId = Auth.auth().currentUser?.uid else {
-                fatalError("UserId が取得できない")
-            }
+    /// ネットワーク接続が可能か調べる
+    private func availableNetworkAccess(input: SyncReadyTodoUseCaseInput, items: [Todo]) async -> SyncReadyTodoUseCaseResult {
+        let result = await checkNetworkAccessUseCase.execute(.init())
+        switch result {
+        case .connected:
+            return await syncItems(input: input, items: items)
+        case .unavailable:
+            // ネットワークに接続されていない場合、ここで処理を終える
+            return .success
+        }
+    }
 
-            let collectionRef = firestore.collection("version/1/users/\(userId)/items")
+    /// Firestore へデータを同期する
+    private func syncItems(input: SyncReadyTodoUseCaseInput, items: [Todo]) async -> SyncReadyTodoUseCaseResult {
+        do {
             for item in items {
-                let documentRef = collectionRef.document(item.todoId.rawValue)
                 if item.finished {
-                    try await documentRef.delete()
+                    try await firestoreRepository.addOrUpdate(object: item)
                 } else {
-                    try await documentRef.setData(
-                        [
-                            "title": item.title,
-                            "desc": item.description ?? "",
-                            "datetime": item.datetime,
-                            "create_at": item.createdAt,
-                            "update_at": item.updatedAt,
-                        ]
-                    )
+                    try await firestoreRepository.delete(object: item)
                 }
             }
 
-            return await updateLocalData(items: items)
+            return await updateLocalData(input: input, items: items)
         } catch {
             return .failed(error)
         }
     }
 
-    private func updateLocalData(items _: [Todo]) async -> SyncReadyTodoUseCaseResult {
+    private func updateLocalData(input _: SyncReadyTodoUseCaseInput, items _: [Todo]) async -> SyncReadyTodoUseCaseResult {
         // TODO: ローカルのTODOアイテムのステータスを complete に変更する
 
         // TODO: finished になっていて、サーバー上のアイテムを削除済みの場合は、ローカルデータも併せて削除する

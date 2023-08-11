@@ -5,11 +5,16 @@
 //  Created by KENJIWADA on 2023/08/07.
 //
 
+import KRProgressHUD
 import SwiftUI
 import ULID
 
 class EditTodoViewModel: ObservableObject {
-    @Published var title = ""
+    @Published var screenTitle = "Edit Todo"
+
+    @Published var buttonTitle = "Add"
+
+    @Published var originalTodo: Todo?
 
     @Published var todoTitle = ""
 
@@ -19,43 +24,114 @@ class EditTodoViewModel: ObservableObject {
 
     @Published var alertItem: AlertItem?
 
+    @Published var isLoaded = false
+
+    @Published var isEnabled = false
+
     private let todoId: TodoId
+
+    private let fetchTodoUseCase = FetchTodoUseCase()
+
+    private let cancelEditTodoUseCase = CancelEditTodoUseCase()
 
     private let updateTodoUseCase = UpdateTodoUseCase()
 
     init(todoId: TodoId?) {
         if let todoId = todoId {
             self.todoId = todoId
-            title = "編集"
+            screenTitle = R.string.localizable.edit_todo_title_edit()
+            buttonTitle = R.string.localizable.edit_todo_button_update()
         } else {
             let id = ULID().ulidString
             self.todoId = TodoId(rawValue: id)
-            title = "登録"
+            screenTitle = R.string.localizable.edit_todo_title_create()
+            buttonTitle = R.string.localizable.edit_todo_button_create()
         }
     }
 
-    func onAppear() {}
-
-    func onClickAddButton(from viewController: UIViewController?) {
+    func onAppear(from viewController: UIViewController?) {
         Task {
-            let input = UpdateTodoUseCaseInput(
-                todoId: todoId,
-                title: todoTitle,
-                description: todoDescription,
-                datetime: todoDate
-            )
-            let result = await updateTodoUseCase.execute(input)
+            let result = await fetchTodoUseCase.execute(.init(todoId: todoId))
+            switch result {
+            case let .success(todo):
+                await set(todo: todo)
+            case let .failed(error):
+                Task { @MainActor in
+                    alertItem = AlertItem(
+                        alert: Alert(
+                            title: R.string.localizable.error.text,
+                            message: Text(error.localizedDescription),
+                            dismissButton: .default(R.string.localizable.ok.text) {
+                                Task { @MainActor in
+                                    viewController?.dismiss(animated: true)
+                                }
+                            }
+                        )
+                    )
+                }
+            }
+        }
+    }
+
+    func onClickCloseButton(from viewController: UIViewController?) {
+        Task {
+            let result = await cancelEditTodoUseCase.execute(.init(todoId: todoId))
             switch result {
             case .success:
                 await viewController?.dismiss(animated: true)
             case let .failed(error):
-                alertItem = AlertItem(
-                    alert: Alert(
-                        title: R.string.localizable.error.text,
-                        message: Text(error.localizedDescription)
+                Task { @MainActor in
+                    alertItem = AlertItem(
+                        alert: Alert(
+                            title: R.string.localizable.error.text,
+                            message: Text(error.localizedDescription)
+                        )
                     )
-                )
+                }
             }
         }
+    }
+
+    func onClickAddButton(from viewController: UIViewController?) {
+        guard let todo = originalTodo else {
+            return
+        }
+
+        let newTodo = todo.copy(
+            title: todoTitle,
+            description: todoDescription,
+            datetime: todoDate
+        )
+
+        KRProgressHUD.show()
+        Task {
+            let input = UpdateTodoUseCaseInput(
+                todo: newTodo
+            )
+            let result = await updateTodoUseCase.execute(input)
+            KRProgressHUD.dismiss()
+            switch result {
+            case .success:
+                await viewController?.dismiss(animated: true)
+            case let .failed(error):
+                Task { @MainActor in
+                    alertItem = AlertItem(
+                        alert: Alert(
+                            title: R.string.localizable.error.text,
+                            message: Text(error.localizedDescription)
+                        )
+                    )
+                }
+            }
+        }
+    }
+
+    @MainActor
+    func set(todo: Todo) {
+        isLoaded = true
+        originalTodo = todo
+        todoTitle = todo.title
+        todoDescription = todo.description ?? ""
+        todoDate = todo.datetime
     }
 }

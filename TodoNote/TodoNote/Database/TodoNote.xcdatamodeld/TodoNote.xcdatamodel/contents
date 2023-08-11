@@ -9,5 +9,11 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="todo_id" optional="YES" attributeType="String"/>
         <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="todo_id"/>
+                <constraint value="status"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
 </model>

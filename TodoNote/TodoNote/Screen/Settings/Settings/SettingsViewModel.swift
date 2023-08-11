@@ -56,12 +56,14 @@ class SettingsViewModel: ObservableObject {
             case .success:
                 await moveLoginScreen(from: viewController)
             case let .failed(error):
-                alertItem = AlertItem(
-                    alert: Alert(
-                        title: R.string.localizable.error.text,
-                        message: Text(error.localizedDescription)
+                Task { @MainActor in
+                    alertItem = AlertItem(
+                        alert: Alert(
+                            title: R.string.localizable.error.text,
+                            message: Text(error.localizedDescription)
+                        )
                     )
-                )
+                }
             }
         }
     }
