@@ -44,7 +44,7 @@ class CheckNetworkAccessUseCase: UseCaseProtocol {
             {
                 return .connected
             } else {
-                fatalError("ネットワークのアクセス経路に異常がある")
+                throw AppError.invalidContent
             }
         } catch {
             return .unavailable
