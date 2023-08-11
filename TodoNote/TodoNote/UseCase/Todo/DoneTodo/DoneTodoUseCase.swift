@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// BL-B02 TODOアイテムの削除
 class DoneTodoUseCase: UseCaseProtocol {
     private let firestoreRepository: FirestoreRepository
     private let todoRepository: TodoRepository
@@ -24,11 +25,10 @@ class DoneTodoUseCase: UseCaseProtocol {
     }
 
     func execute(_ input: DoneTodoUseCaseInput) async -> DoneTodoUseCaseResult {
-        return await execuhogheogheote(input: input)
+        return await markTodoAsDone(input: input)
     }
 
-    /// finished フラグを true にする
-    func execuhogheogheote(input: DoneTodoUseCaseInput) async -> DoneTodoUseCaseResult {
+    private func markTodoAsDone(input: DoneTodoUseCaseInput) async -> DoneTodoUseCaseResult {
         do {
             let newTodo = input.todo.copy(
                 status: .ready,
@@ -38,42 +38,41 @@ class DoneTodoUseCase: UseCaseProtocol {
                 for: newTodo,
                 with: RegistrationStatus.all
             )
-            return await availableNetworkAccess(input: input, todo: newTodo)
+            return await availableNetworkAccess(todo: newTodo)
         } catch {
             return .failed(error)
         }
     }
 
-    /// ネットワーク接続が可能か調べる
-    private func availableNetworkAccess(input: DoneTodoUseCaseInput, todo: Todo) async -> DoneTodoUseCaseResult {
+    private func availableNetworkAccess(todo: Todo) async -> DoneTodoUseCaseResult {
         let result = await checkNetworkAccessUseCase.execute(.init())
         switch result {
         case .connected:
-            return await syncTodoWithServer(input: input, todo: todo)
+            return await syncTodoWithServer(todo: todo)
         case .unavailable:
             // ネットワークに接続されていない場合、ここで処理を終える
             return .success
         }
     }
 
-    /// Todoアイテムをリモートサーバーと同期する
-    private func syncTodoWithServer(input _: DoneTodoUseCaseInput, todo: Todo) async -> DoneTodoUseCaseResult {
+    private func syncTodoWithServer(todo: Todo) async -> DoneTodoUseCaseResult {
         do {
             try await firestoreRepository.delete(object: todo)
 
-            return await markSyncComplete(todo: todo)
+            return await finalizeTodoSync(todo: todo)
         } catch {
-            // サーバーへの書き込みに失敗しても、ユースケースの失敗とはみなさない
+            // サーバーへの書き込みに失敗しても失敗とはみなさない
+            print(error.localizedDescription)
             return .success
         }
     }
 
-    /// サーバー同期が成功すると、ステータスを complete に変更する
-    private func markSyncComplete(todo: Todo) async -> DoneTodoUseCaseResult {
+    private func finalizeTodoSync(todo: Todo) async -> DoneTodoUseCaseResult {
         do {
             try await todoRepository.delete(by: todo.id)
             return .success
         } catch {
+            print(error.localizedDescription)
             return .success
         }
     }
