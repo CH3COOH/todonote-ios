@@ -29,7 +29,7 @@ class SyncReadyTodoUseCase: UseCaseProctol {
 
     private func fetchReadyItems(input: SyncReadyTodoUseCaseInput) async -> SyncReadyTodoUseCaseResult {
         do {
-            let results = try await todoRepository.fetch(status: RegistrationStatus.ready)
+            let results = try await todoRepository.fetch(with: [.ready])
             if results.isEmpty {
                 return .success
             }

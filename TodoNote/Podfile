@@ -10,6 +10,7 @@ target 'TodoNote' do
   pod 'UIDeviceIdentifier'
   pod 'UITextView+Placeholder'
   pod 'ULID.swift', '~> 1.2.0'
+  pod 'ReachabilitySwift'
   
   # for Firebase
   pod 'FirebaseAnalytics'

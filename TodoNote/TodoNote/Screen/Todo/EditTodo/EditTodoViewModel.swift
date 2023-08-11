@@ -5,6 +5,7 @@
 //  Created by KENJIWADA on 2023/08/07.
 //
 
+import KRProgressHUD
 import SwiftUI
 import ULID
 
@@ -55,17 +56,19 @@ class EditTodoViewModel: ObservableObject {
             case let .success(todo):
                 await set(todo: todo)
             case let .failed(error):
-                alertItem = AlertItem(
-                    alert: Alert(
-                        title: R.string.localizable.error.text,
-                        message: Text(error.localizedDescription),
-                        dismissButton: .default(R.string.localizable.ok.text) {
-                            Task { @MainActor in
-                                viewController?.dismiss(animated: true)
+                Task { @MainActor in
+                    alertItem = AlertItem(
+                        alert: Alert(
+                            title: R.string.localizable.error.text,
+                            message: Text(error.localizedDescription),
+                            dismissButton: .default(R.string.localizable.ok.text) {
+                                Task { @MainActor in
+                                    viewController?.dismiss(animated: true)
+                                }
                             }
-                        }
+                        )
                     )
-                )
+                }
             }
         }
     }
@@ -77,12 +80,14 @@ class EditTodoViewModel: ObservableObject {
             case .success:
                 await viewController?.dismiss(animated: true)
             case let .failed(error):
-                alertItem = AlertItem(
-                    alert: Alert(
-                        title: R.string.localizable.error.text,
-                        message: Text(error.localizedDescription)
+                Task { @MainActor in
+                    alertItem = AlertItem(
+                        alert: Alert(
+                            title: R.string.localizable.error.text,
+                            message: Text(error.localizedDescription)
+                        )
                     )
-                )
+                }
             }
         }
     }
@@ -98,21 +103,25 @@ class EditTodoViewModel: ObservableObject {
             datetime: todoDate
         )
 
+        KRProgressHUD.show()
         Task {
             let input = UpdateTodoUseCaseInput(
                 todo: newTodo
             )
             let result = await updateTodoUseCase.execute(input)
+            KRProgressHUD.dismiss()
             switch result {
             case .success:
                 await viewController?.dismiss(animated: true)
             case let .failed(error):
-                alertItem = AlertItem(
-                    alert: Alert(
-                        title: R.string.localizable.error.text,
-                        message: Text(error.localizedDescription)
+                Task { @MainActor in
+                    alertItem = AlertItem(
+                        alert: Alert(
+                            title: R.string.localizable.error.text,
+                            message: Text(error.localizedDescription)
+                        )
                     )
-                )
+                }
             }
         }
     }

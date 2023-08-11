@@ -36,6 +36,9 @@
 		AA30E9672A8502880063809B /* CancelEditTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E9642A8502880063809B /* CancelEditTodoUseCase.swift */; };
 		AA30E9682A8502880063809B /* CancelEditTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E9652A8502880063809B /* CancelEditTodoUseCaseInput.swift */; };
 		AA30E9692A8502880063809B /* CancelEditTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E9662A8502880063809B /* CancelEditTodoUseCaseResult.swift */; };
+		AA93D3202A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */; };
+		AA93D3212A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */; };
+		AA93D3222A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */; };
 		AABB4F832A80D7A5008FC467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */; };
 		AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F842A80D7A5008FC467 /* Persistence.swift */; };
 		AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F862A80D7A5008FC467 /* TodoNote.xcdatamodeld */; };
@@ -142,6 +145,9 @@
 		AA30E9642A8502880063809B /* CancelEditTodoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelEditTodoUseCase.swift; sourceTree = "<group>"; };
 		AA30E9652A8502880063809B /* CancelEditTodoUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelEditTodoUseCaseInput.swift; sourceTree = "<group>"; };
 		AA30E9662A8502880063809B /* CancelEditTodoUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelEditTodoUseCaseResult.swift; sourceTree = "<group>"; };
+		AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseInput.swift; sourceTree = "<group>"; };
+		AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseResult.swift; sourceTree = "<group>"; };
+		AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCase.swift; sourceTree = "<group>"; };
 		AABB4F782A80D7A4008FC467 /* TodoNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB4F822A80D7A5008FC467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AABB4F842A80D7A5008FC467 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -338,6 +344,24 @@
 				AA30E9662A8502880063809B /* CancelEditTodoUseCaseResult.swift */,
 			);
 			path = CancelEditTodo;
+			sourceTree = "<group>";
+		};
+		AA93D31B2A85DA9700BB5EF2 /* BL-Z */ = {
+			isa = PBXGroup;
+			children = (
+				AA93D31C2A85DA9E00BB5EF2 /* CheckNetworkAccess */,
+			);
+			path = "BL-Z";
+			sourceTree = "<group>";
+		};
+		AA93D31C2A85DA9E00BB5EF2 /* CheckNetworkAccess */ = {
+			isa = PBXGroup;
+			children = (
+				AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */,
+				AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */,
+				AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */,
+			);
+			path = CheckNetworkAccess;
 			sourceTree = "<group>";
 		};
 		AABB4F6F2A80D7A4008FC467 = {
@@ -569,6 +593,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE79FC32A80FDA6009823FB /* UseCaseProctol.swift */,
+				AA93D31B2A85DA9700BB5EF2 /* BL-Z */,
 				AAE79FB32A80FD2F009823FB /* Launch */,
 				AA19328C2A837A11002C846F /* SignOut */,
 				AA1932832A830F5B002C846F /* SyncReadyTodo */,
@@ -1032,14 +1057,17 @@
 				AAE79FA12A80E543009823FB /* ListItemView.swift in Sources */,
 				AAE79FD82A8113AC009823FB /* LoginView.swift in Sources */,
 				AAE79FBE2A80FD2F009823FB /* LaunchUseCaseResult.swift in Sources */,
+				AA93D3222A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift in Sources */,
 				AA19326A2A81F200002C846F /* AccentButton.swift in Sources */,
 				AAE79FCA2A810175009823FB /* HomeEmptyView.swift in Sources */,
 				AAE79F922A80E376009823FB /* SettingsViewModel.swift in Sources */,
 				AA1932802A830A26002C846F /* UpdateTodoUseCaseInput.swift in Sources */,
 				AA1932822A830A2F002C846F /* UpdateTodoUseCaseResult.swift in Sources */,
+				AA93D3212A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift in Sources */,
 				AAE79FC82A80FFBB009823FB /* AppTitleView.swift in Sources */,
 				AAE79F852A80E1BC009823FB /* ActivityIndicatorView.swift in Sources */,
 				AA1932942A845296002C846F /* FirestoreRepository.swift in Sources */,
+				AA93D3202A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift in Sources */,
 				AAE79FD42A810D20009823FB /* PreviewUtil.swift in Sources */,
 				AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */,
 				AAE79F772A80DF48009823FB /* FAPage.swift in Sources */,

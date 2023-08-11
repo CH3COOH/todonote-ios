@@ -32,6 +32,7 @@ class FirestoreRepository {
 
         let collectionRef = firestore.collection("version/1/users/\(userId)/items")
         let documentRef = collectionRef.document(object.todoId.rawValue)
+
         try await documentRef.setData(
             [
                 "id": object.todoId.rawValue,

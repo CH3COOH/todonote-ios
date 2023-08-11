@@ -26,7 +26,7 @@ final class UpdateTodoUseCaseTests: XCTestCase {
     override func tearDownWithError() throws {
     }
     
-    func test新規作成() async throws {
+    func test登録() async throws {
         try await todoRepository.deleteAll()
         
         let todoId = TodoId(rawValue: "test1")
@@ -56,5 +56,41 @@ final class UpdateTodoUseCaseTests: XCTestCase {
         let count1 = try todoRepository.fetchCount()
 
         XCTAssertEqual(count1, 1)
+        
+        try await todoRepository.deleteAll()
+    }
+    
+    func test編集() async throws {
+        try await todoRepository.deleteAll()
+        
+        let todoId = TodoId(rawValue: "test1")
+        let date = Date()
+        let todo = Todo(
+            todoId: todoId,
+            status: RegistrationStatus.ready,
+            title: "Title",
+            description: "Body",
+            datetime: date,
+            createdAt: date,
+            updatedAt: date,
+            finished: false
+        )
+        
+        let input = UpdateTodoUseCaseInput(
+            todo: todo
+        )
+        let result = await useCase.execute(input)
+        switch result {
+        case .success:
+            break
+        case let .failed(error):
+            XCTFail(error.localizedDescription)
+        }
+        
+        let count1 = try todoRepository.fetchCount()
+
+        XCTAssertEqual(count1, 1)
+        
+        try await todoRepository.deleteAll()
     }
 }

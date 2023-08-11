@@ -140,23 +140,23 @@ class TodoRepository {
 //        }
 //    }
 
-    func fetch(id: TodoId) async throws -> [Todo] {
-        let request = TodoEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "todo_id == %@", id.rawValue)
-//        request.sortDescriptors = [
-//            NSSortDescriptor(key: "update_at", ascending: true),
-//        ]
+//    func fetch(id: TodoId) async throws -> [Todo] {
+//        let request = TodoEntity.fetchRequest()
+//        request.predicate = NSPredicate(format: "todo_id == %@", id.rawValue)
+    ////        request.sortDescriptors = [
+    ////            NSSortDescriptor(key: "update_at", ascending: true),
+    ////        ]
+//
+//        return try await MainActor.run {
+//            let result = try context.fetch(request)
+//            return result.compactMap { $0.toModel() }
+//        }
+//    }
 
-        return try await MainActor.run {
-            let result = try context.fetch(request)
-            return result.compactMap { $0.toModel() }
-        }
-    }
-
-    func fetch(by id: TodoId, statuses: [RegistrationStatus]) async throws -> Todo? {
+    func fetch(by id: TodoId) async throws -> Todo? {
         let request = TodoEntity.fetchRequest()
         request.predicate = NSPredicate(
-            format: "todo_id == %@ AND status IN %@", id.rawValue, statuses.map { $0.rawValue }
+            format: "todo_id == %@", id.rawValue
         )
 
         return try await MainActor.run {
@@ -165,9 +165,26 @@ class TodoRepository {
         }
     }
 
-    func fetch(status: RegistrationStatus) async throws -> [Todo] {
+    func fetch(by id: TodoId, with statuses: [RegistrationStatus]) async throws -> Todo? {
         let request = TodoEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "status == %@", status.rawValue)
+        request.predicate = NSPredicate(
+            format: "todo_id == %@ AND status IN %@",
+            id.rawValue,
+            statuses.map { $0.rawValue }
+        )
+
+        return try await MainActor.run {
+            let result = try context.fetch(request)
+            return result.compactMap { $0.toModel() }.first
+        }
+    }
+
+    func fetch(with statuses: [RegistrationStatus]) async throws -> [Todo] {
+        let request = TodoEntity.fetchRequest()
+        request.predicate = NSPredicate(
+            format: "status IN %@",
+            statuses.map { $0.rawValue }
+        )
 
         return try await MainActor.run {
             let result = try context.fetch(request)

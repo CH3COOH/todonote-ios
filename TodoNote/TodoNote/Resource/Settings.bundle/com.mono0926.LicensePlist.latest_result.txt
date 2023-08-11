@@ -286,6 +286,14 @@ name: R.swift, nameSpecified:
 body: The MIT License (MIT…
 version: 7.3.2
 
+name: ReachabilitySwift, nameSpecified: 
+body: Copyright (c) 2016 A…
+version: 5.0.0
+
+name: ReachabilitySwift, nameSpecified: 
+body: Copyright (c) 2016 A…
+version: 5.0.0
+
 name: SwiftFormat, nameSpecified: 
 body: MIT License
 

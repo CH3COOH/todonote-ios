@@ -6,6 +6,7 @@
 //
 
 import FirebaseCore
+import FirebaseFirestore
 import UIKit
 
 @main
@@ -18,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         if !isPreviewing {
             FirebaseApp.configure()
+
+//            let settings = FirestoreSettings()
+//            settings.cacheSettings = MemoryCacheSettings(
+//                    garbageCollectorSettings: MemoryLRUGCSettings()
+//                )
+//            Firestore.firestore().settings = settings
         }
 
         let center = UNUserNotificationCenter.current()
