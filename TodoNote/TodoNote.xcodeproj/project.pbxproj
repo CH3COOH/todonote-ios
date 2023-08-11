@@ -346,12 +346,12 @@
 			path = CancelEditTodo;
 			sourceTree = "<group>";
 		};
-		AA93D31B2A85DA9700BB5EF2 /* BL-Z */ = {
+		AA93D31B2A85DA9700BB5EF2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				AA93D31C2A85DA9E00BB5EF2 /* CheckNetworkAccess */,
 			);
-			path = "BL-Z";
+			path = Common;
 			sourceTree = "<group>";
 		};
 		AA93D31C2A85DA9E00BB5EF2 /* CheckNetworkAccess */ = {
@@ -593,7 +593,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE79FC32A80FDA6009823FB /* UseCaseProtocol.swift */,
-				AA93D31B2A85DA9700BB5EF2 /* BL-Z */,
+				AA93D31B2A85DA9700BB5EF2 /* Common */,
 				AAE79FB32A80FD2F009823FB /* Launch */,
 				AA19328C2A837A11002C846F /* SignOut */,
 				AA1932832A830F5B002C846F /* SyncReadyTodo */,
