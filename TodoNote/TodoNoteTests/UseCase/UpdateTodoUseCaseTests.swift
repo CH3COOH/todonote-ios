@@ -29,14 +29,21 @@ final class UpdateTodoUseCaseTests: XCTestCase {
     func test新規作成() async throws {
         try await todoRepository.deleteAll()
         
-        let id = TodoId(rawValue: "test1")
+        let todoId = TodoId(rawValue: "test1")
         let date = Date()
+        let todo = Todo(
+            todoId: todoId,
+            status: RegistrationStatus.ready,
+            title: "Title",
+            description: "Body",
+            datetime: date,
+            createdAt: date,
+            updatedAt: date,
+            finished: false
+        )
         
         let input = UpdateTodoUseCaseInput(
-            todoId: id,
-            title: "タイトル",
-            description: "本文",
-            datetime: date
+            todo: todo
         )
         let result = await useCase.execute(input)
         switch result {
