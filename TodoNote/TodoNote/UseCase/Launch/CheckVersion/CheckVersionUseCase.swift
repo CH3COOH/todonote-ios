@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CheckVersionUseCase: UseCaseProctol {
+class CheckVersionUseCase: UseCaseProtocol {
     func execute(_: CheckVersionUseCaseInput) async -> CheckVersionUseCaseResult {
         return await checkVersion()
     }

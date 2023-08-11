@@ -8,7 +8,7 @@
 import FirebaseAuth
 
 /// BL-S02 ログアウト
-class SignOutUseCase: UseCaseProctol {
+class SignOutUseCase: UseCaseProtocol {
     private let todoRepository: TodoRepository
 
     private let syncReadyTodoUseCase: SyncReadyTodoUseCase

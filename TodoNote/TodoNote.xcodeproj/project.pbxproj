@@ -64,7 +64,7 @@
 		AAE79FBF2A80FD2F009823FB /* CheckVersionUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FB92A80FD2F009823FB /* CheckVersionUseCaseInput.swift */; };
 		AAE79FC02A80FD2F009823FB /* CheckVersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FBA2A80FD2F009823FB /* CheckVersionUseCase.swift */; };
 		AAE79FC12A80FD2F009823FB /* CheckVersionUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FBB2A80FD2F009823FB /* CheckVersionUseCaseResult.swift */; };
-		AAE79FC42A80FDA6009823FB /* UseCaseProctol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FC32A80FDA6009823FB /* UseCaseProctol.swift */; };
+		AAE79FC42A80FDA6009823FB /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FC32A80FDA6009823FB /* UseCaseProtocol.swift */; };
 		AAE79FC82A80FFBB009823FB /* AppTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FC72A80FFBB009823FB /* AppTitleView.swift */; };
 		AAE79FCA2A810175009823FB /* HomeEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FC92A810175009823FB /* HomeEmptyView.swift */; };
 		AAE79FCE2A810444009823FB /* EditTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79FCD2A810444009823FB /* EditTodoView.swift */; };
@@ -163,7 +163,7 @@
 		AAE79FB92A80FD2F009823FB /* CheckVersionUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckVersionUseCaseInput.swift; sourceTree = "<group>"; };
 		AAE79FBA2A80FD2F009823FB /* CheckVersionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckVersionUseCase.swift; sourceTree = "<group>"; };
 		AAE79FBB2A80FD2F009823FB /* CheckVersionUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckVersionUseCaseResult.swift; sourceTree = "<group>"; };
-		AAE79FC32A80FDA6009823FB /* UseCaseProctol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProctol.swift; sourceTree = "<group>"; };
+		AAE79FC32A80FDA6009823FB /* UseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProtocol.swift; sourceTree = "<group>"; };
 		AAE79FC72A80FFBB009823FB /* AppTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitleView.swift; sourceTree = "<group>"; };
 		AAE79FC92A810175009823FB /* HomeEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEmptyView.swift; sourceTree = "<group>"; };
 		AAE79FCD2A810444009823FB /* EditTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoView.swift; sourceTree = "<group>"; };
@@ -507,7 +507,7 @@
 		AAE79FAD2A80E8DB009823FB /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				AAE79FC32A80FDA6009823FB /* UseCaseProctol.swift */,
+				AAE79FC32A80FDA6009823FB /* UseCaseProtocol.swift */,
 				AAE79FB32A80FD2F009823FB /* Launch */,
 				AA19328C2A837A11002C846F /* SignOut */,
 				AA1932832A830F5B002C846F /* SyncReadyTodo */,
@@ -957,7 +957,7 @@
 				AA1932732A8248AB002C846F /* LoginViewModel.swift in Sources */,
 				AAE79FB22A80FAE1009823FB /* RegistrationStatus.swift in Sources */,
 				AA1932752A824B7C002C846F /* TodoItemView.swift in Sources */,
-				AAE79FC42A80FDA6009823FB /* UseCaseProctol.swift in Sources */,
+				AAE79FC42A80FDA6009823FB /* UseCaseProtocol.swift in Sources */,
 				AAE79F7F2A80E0E0009823FB /* UIAppearanceUtil.swift in Sources */,
 				AA1932892A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift in Sources */,
 				AAE79FA12A80E543009823FB /* ListItemView.swift in Sources */,
