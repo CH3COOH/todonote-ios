@@ -18,23 +18,27 @@ class FetchTodoListUseCase: UseCaseProtocol {
         return await fetchTodoWithSpecifiedId(input: input)
     }
 
-    private func fetchTodoWithSpecifiedId(input _: FetchTodoListUseCaseInput) async -> FetchTodoListUseCaseResult {
+    private func fetchTodoWithSpecifiedId(input: FetchTodoListUseCaseInput) async -> FetchTodoListUseCaseResult {
         do {
             let resitory = TodoRepository()
             let items = try await resitory.fetch(with: [.ready, .complete])
 
-            let array = [
-                TodoSection(title: "あああああ", todos: items),
-                TodoSection(title: "いいいい", todos: items),
-            ]
-
-            return .success(array)
+            return await grouping(input: input, items: items.filter { !$0.finished })
         } catch {
             return .failed(error)
         }
     }
 
-    // TODO: ready と complete のレコードだけをピックアップする
+    private func grouping(input: FetchTodoListUseCaseInput, items: [Todo]) async -> FetchTodoListUseCaseResult {
+        var array: [TodoSection]
+        switch input.sortType {
+        case .hogehoge:
+            array = [
+                TodoSection(title: "あああああ", todos: items),
+                TodoSection(title: "いいいい", todos: items),
+            ]
+        }
 
-    // TODO: finished のチェックがついたのはリストに含めない
+        return .success(array)
+    }
 }
