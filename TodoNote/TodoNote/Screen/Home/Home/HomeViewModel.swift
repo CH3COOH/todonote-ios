@@ -80,13 +80,17 @@ class HomeViewModel: BaseViewModel {
     }
 
     @MainActor
-    private func delete(deletedItem _: Todo) {
+    private func delete(deletedItem: Todo) {
+        let newItems = items.compactMap { section -> TodoSection? in
+            let newTodos = section.todos.filter { $0.todoId != deletedItem.todoId }
+            if newTodos.isEmpty {
+                return nil
+            } else {
+                return TodoSection(title: section.title, todos: newTodos)
+            }
+        }
         withAnimation {
-//            items.removeAll(
-//                where: {
-//                    $0.todoId == deletedItem.todoId
-//                }
-//            )
+            items = newItems
         }
     }
 }
