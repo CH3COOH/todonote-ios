@@ -25,39 +25,58 @@ struct EditTodoView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 ScrollView {
-                    VStack(spacing: 0) {
-                        Color.clear.frame(height: 24)
-
+                    VStack(spacing: 16) { // スペーシングを調整
                         SectionItem(
                             title: R.string.localizable.title()
                         )
-                        .padding(.bottom, 8)
+                        .font(.headline) // セクションのタイトルのフォントを調整
 
                         TextField("キャベツを買う", text: $model.todoTitle)
-                            .padding(.bottom, 32)
+                            .padding()
+                            .background(Color(uiColor: UIColor.systemBackground)) // 背景色を追加
+                            .cornerRadius(8) // 角を丸くする
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.gray.opacity(0.5), lineWidth: 1) // 枠線を追加
+                            )
 
                         DatePicker(
                             R.string.localizable.deadline(),
-                            selection: $model.todoDate
+                            selection: $model.todoDate,
+                            displayedComponents: .date
                         )
-                        .padding(.bottom, 32)
+                        .datePickerStyle(CompactDatePickerStyle()) // スタイルを変更
 
                         SectionItem(
                             title: R.string.localizable.desc()
                         )
-                        .padding(.bottom, 8)
+                        .font(.headline) // セクションのタイトルのフォントを調整
 
                         ZStack {
                             TextEditor(text: $model.todoDescription)
-                                .padding(.bottom, 32)
+                                .frame(minHeight: 40)
+                                .padding()
+                                .background(Color(uiColor: UIColor.systemBackground)) // 背景色を追加
+                                .cornerRadius(8) // 角を丸くする
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(Color.gray.opacity(0.5), lineWidth: 1) // 枠線を追加
+                                )
 
                             if model.todoDescription.isEmpty {
-                                R.string.localizable.edit_todo_hint_desc.text
-                                    .foregroundColor(Color.gray)
+                                HStack {
+                                    R.string.localizable.edit_todo_hint_desc.text
+                                        .foregroundColor(Color.gray)
+                                        .allowsHitTesting(false)
+                                        .padding(.leading, 20)
+
+                                    Spacer(minLength: 0)
+                                }
+                                .frame(maxWidth: .infinity)
                             }
                         }
                     }
-                    .padding(.horizontal, 24)
+                    .padding(16) // ScrollViewのパディングを調整
                 }
             }
 

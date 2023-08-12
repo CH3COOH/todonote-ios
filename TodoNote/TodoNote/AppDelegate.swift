@@ -18,10 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         if !isPreviewing {
             FirebaseApp.configure()
-        }
 
-        let center = UNUserNotificationCenter.current()
-        center.delegate = self
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self
+        }
 
         return true
     }
