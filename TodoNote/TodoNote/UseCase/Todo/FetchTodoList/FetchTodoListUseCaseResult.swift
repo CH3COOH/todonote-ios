@@ -9,7 +9,7 @@ import Foundation
 
 enum FetchTodoListUseCaseResult {
     /// 成功
-    case success([String: [Todo]])
+    case success([TodoSection])
 
     /// 失敗
     case failed(Error)

@@ -13,7 +13,9 @@ class HomeViewModel: BaseViewModel {
 
     @Published var isLoaded = false
 
-    @Published var items: [Todo] = []
+    @Published var items: [TodoSection] = []
+
+    private let fetchTodoListUseCase = FetchTodoListUseCase()
 
     private let doneTodoUseCase = DoneTodoUseCase()
 
@@ -23,22 +25,23 @@ class HomeViewModel: BaseViewModel {
 
     func onAppear(from _: UIViewController?) {
         Task {
-//            let result = await fetchCardListUseCase.execute(.init())
-//            switch result {
-//            case let .success(cards):
-//                await set(
-//                    cards: cards
-//                )
-//            case .failed:
-//                break
-//            }
-            do {
-                let resitory = TodoRepository()
-                let items = try await resitory.fetch(with: [.ready, .complete])
+            let input = FetchTodoListUseCaseInput(sortType: .hogehoge)
+            let result = await fetchTodoListUseCase.execute(input)
+            switch result {
+            case let .success(items):
                 await set(
-                    items: items.filter { !$0.finished }
+                    items: items
                 )
+            case .failed:
+                break
             }
+//            do {
+//                let resitory = TodoRepository()
+//                let items = try await resitory.fetch(with: [.ready, .complete])
+//                await set(
+//                    items: items.filter { !$0.finished }
+//                )
+//            }
         }
     }
 
@@ -72,19 +75,19 @@ class HomeViewModel: BaseViewModel {
     // MARK: -
 
     @MainActor
-    private func set(items: [Todo]) {
+    private func set(items: [TodoSection]) {
         isLoaded = true
         self.items = items
     }
 
     @MainActor
-    private func delete(deletedItem: Todo) {
+    private func delete(deletedItem _: Todo) {
         withAnimation {
-            items.removeAll(
-                where: {
-                    $0.todoId == deletedItem.todoId
-                }
-            )
+//            items.removeAll(
+//                where: {
+//                    $0.todoId == deletedItem.todoId
+//                }
+//            )
         }
     }
 }
