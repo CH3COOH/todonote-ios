@@ -43,9 +43,9 @@ struct EditTodoView: View {
                         DatePicker(
                             R.string.localizable.deadline(),
                             selection: $model.todoDate,
-                            displayedComponents: .date
+                            displayedComponents: [.date, .hourAndMinute]
                         )
-                        .datePickerStyle(CompactDatePickerStyle())
+                        .datePickerStyle(DefaultDatePickerStyle())
 
                         SectionItem(
                             title: R.string.localizable.desc()
