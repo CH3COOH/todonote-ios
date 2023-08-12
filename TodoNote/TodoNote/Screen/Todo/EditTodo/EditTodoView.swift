@@ -25,19 +25,19 @@ struct EditTodoView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 ScrollView {
-                    VStack(spacing: 16) { // スペーシングを調整
+                    VStack(spacing: 16) {
                         SectionItem(
                             title: R.string.localizable.title()
                         )
-                        .font(.headline) // セクションのタイトルのフォントを調整
+                        .font(.headline)
 
                         TextField("キャベツを買う", text: $model.todoTitle)
                             .padding()
-                            .background(Color(uiColor: UIColor.systemBackground)) // 背景色を追加
+                            .background(Color(uiColor: UIColor.systemBackground))
                             .cornerRadius(8) // 角を丸くする
                             .overlay(
                                 RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.gray.opacity(0.5), lineWidth: 1) // 枠線を追加
+                                    .stroke(Color.gray.opacity(0.5), lineWidth: 1)
                             )
 
                         DatePicker(
@@ -45,22 +45,22 @@ struct EditTodoView: View {
                             selection: $model.todoDate,
                             displayedComponents: .date
                         )
-                        .datePickerStyle(CompactDatePickerStyle()) // スタイルを変更
+                        .datePickerStyle(CompactDatePickerStyle())
 
                         SectionItem(
                             title: R.string.localizable.desc()
                         )
-                        .font(.headline) // セクションのタイトルのフォントを調整
+                        .font(.headline)
 
                         ZStack {
                             TextEditor(text: $model.todoDescription)
                                 .frame(minHeight: 40)
                                 .padding()
-                                .background(Color(uiColor: UIColor.systemBackground)) // 背景色を追加
-                                .cornerRadius(8) // 角を丸くする
+                                .background(Color(uiColor: UIColor.systemBackground))
+                                .cornerRadius(8)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color.gray.opacity(0.5), lineWidth: 1) // 枠線を追加
+                                        .stroke(Color.gray.opacity(0.5), lineWidth: 1)
                                 )
 
                             if model.todoDescription.isEmpty {
@@ -76,7 +76,7 @@ struct EditTodoView: View {
                             }
                         }
                     }
-                    .padding(16) // ScrollViewのパディングを調整
+                    .padding(16)
                 }
             }
 
@@ -105,9 +105,6 @@ struct EditTodoView: View {
                     R.string.localizable.close.text
                 }
             }
-//            ToolbarItem(placement: .principal) {
-//                Text(model.screenTitle)
-//            }
         }
         .onAppear {
             model.onAppear(from: viewController)
