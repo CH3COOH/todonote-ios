@@ -9,6 +9,8 @@ import Foundation
 
 enum FAPage: String {
     case splash = "スプラッシュ"
+    case home = "ホーム"
+    case editTodo = "タスク編集"
 
     // 設定
     case settings = "設定"

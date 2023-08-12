@@ -36,6 +36,10 @@
 		AA30E9672A8502880063809B /* CancelEditTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E9642A8502880063809B /* CancelEditTodoUseCase.swift */; };
 		AA30E9682A8502880063809B /* CancelEditTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E9652A8502880063809B /* CancelEditTodoUseCaseInput.swift */; };
 		AA30E9692A8502880063809B /* CancelEditTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30E9662A8502880063809B /* CancelEditTodoUseCaseResult.swift */; };
+		AA8F33972A8725C70090EFDB /* FetchTodoListUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33942A8725C70090EFDB /* FetchTodoListUseCaseInput.swift */; };
+		AA8F33982A8725C70090EFDB /* FetchTodoListUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33952A8725C70090EFDB /* FetchTodoListUseCaseResult.swift */; };
+		AA8F33992A8725C70090EFDB /* FetchTodoListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33962A8725C70090EFDB /* FetchTodoListUseCase.swift */; };
+		AA8F339B2A8726DF0090EFDB /* HomeSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F339A2A8726DF0090EFDB /* HomeSortType.swift */; };
 		AA93D3202A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */; };
 		AA93D3212A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */; };
 		AA93D3222A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */; };
@@ -152,6 +156,10 @@
 		AA30E9642A8502880063809B /* CancelEditTodoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelEditTodoUseCase.swift; sourceTree = "<group>"; };
 		AA30E9652A8502880063809B /* CancelEditTodoUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelEditTodoUseCaseInput.swift; sourceTree = "<group>"; };
 		AA30E9662A8502880063809B /* CancelEditTodoUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelEditTodoUseCaseResult.swift; sourceTree = "<group>"; };
+		AA8F33942A8725C70090EFDB /* FetchTodoListUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTodoListUseCaseInput.swift; sourceTree = "<group>"; };
+		AA8F33952A8725C70090EFDB /* FetchTodoListUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTodoListUseCaseResult.swift; sourceTree = "<group>"; };
+		AA8F33962A8725C70090EFDB /* FetchTodoListUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTodoListUseCase.swift; sourceTree = "<group>"; };
+		AA8F339A2A8726DF0090EFDB /* HomeSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSortType.swift; sourceTree = "<group>"; };
 		AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseInput.swift; sourceTree = "<group>"; };
 		AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseResult.swift; sourceTree = "<group>"; };
 		AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCase.swift; sourceTree = "<group>"; };
@@ -336,6 +344,7 @@
 				AA30E9632A8502690063809B /* CancelEditTodo */,
 				AADA7F9E2A864AE700B5E7C4 /* DoneTodo */,
 				AA30E95C2A84DE360063809B /* FetchTodo */,
+				AA8F33932A8725940090EFDB /* FetchTodoList */,
 				AA19327C2A830A09002C846F /* UpdateTodo */,
 			);
 			path = Todo;
@@ -359,6 +368,16 @@
 				AA30E9662A8502880063809B /* CancelEditTodoUseCaseResult.swift */,
 			);
 			path = CancelEditTodo;
+			sourceTree = "<group>";
+		};
+		AA8F33932A8725940090EFDB /* FetchTodoList */ = {
+			isa = PBXGroup;
+			children = (
+				AA8F33962A8725C70090EFDB /* FetchTodoListUseCase.swift */,
+				AA8F33942A8725C70090EFDB /* FetchTodoListUseCaseInput.swift */,
+				AA8F33952A8725C70090EFDB /* FetchTodoListUseCaseResult.swift */,
+			);
+			path = FetchTodoList;
 			sourceTree = "<group>";
 		};
 		AA93D31B2A85DA9700BB5EF2 /* Common */ = {
@@ -483,6 +502,7 @@
 				AAE79FAF2A80FAC1009823FB /* Todo.swift */,
 				AAE79FAE2A80FAAF009823FB /* Other */,
 				AA93D3232A85E21C00BB5EF2 /* AppError.swift */,
+				AA8F339A2A8726DF0090EFDB /* HomeSortType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1058,14 +1078,17 @@
 				AABB4FB22A80DAC7008FC467 /* TodoEntity.swift in Sources */,
 				AAE79FC12A80FD2F009823FB /* CheckVersionUseCaseResult.swift in Sources */,
 				AAE79FAA2A80E882009823FB /* HomeView.swift in Sources */,
+				AA8F339B2A8726DF0090EFDB /* HomeSortType.swift in Sources */,
 				AAE79F732A80DEEA009823FB /* SafariUtil.swift in Sources */,
 				AA93D3242A85E21C00BB5EF2 /* AppError.swift in Sources */,
 				AADA7FA62A864ED600B5E7C4 /* BaseViewModel.swift in Sources */,
 				AAE79F9E2A80E51D009823FB /* RSwiftUI.swift in Sources */,
+				AA8F33972A8725C70090EFDB /* FetchTodoListUseCaseInput.swift in Sources */,
 				AA1932902A837A11002C846F /* SignOutUseCaseResult.swift in Sources */,
 				AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */,
 				AA30E9602A84F7920063809B /* FetchTodoUseCaseInput.swift in Sources */,
 				AA19329B2A8467DF002C846F /* SectionItemBase.swift in Sources */,
+				AA8F33982A8725C70090EFDB /* FetchTodoListUseCaseResult.swift in Sources */,
 				AAE79F9C2A80E4E3009823FB /* AlertItem.swift in Sources */,
 				AAE79FC02A80FD2F009823FB /* CheckVersionUseCase.swift in Sources */,
 				AAE79FE02A81180B009823FB /* AppConstValues.swift in Sources */,
@@ -1123,6 +1146,7 @@
 				AAE79FD42A810D20009823FB /* PreviewUtil.swift in Sources */,
 				AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */,
 				AAE79F772A80DF48009823FB /* FAPage.swift in Sources */,
+				AA8F33992A8725C70090EFDB /* FetchTodoListUseCase.swift in Sources */,
 				AAE79F932A80E376009823FB /* SettingsViewRouter.swift in Sources */,
 				AA30E9612A84F7920063809B /* FetchTodoUseCaseResult.swift in Sources */,
 				AAE79F912A80E376009823FB /* SettingsView.swift in Sources */,
