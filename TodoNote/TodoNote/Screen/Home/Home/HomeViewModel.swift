@@ -15,7 +15,7 @@ class HomeViewModel: BaseViewModel {
 
     @Published var items: [TodoSection] = []
 
-    private var sortType: HomeSortType = .hogehoge
+    private var sortType: HomeSortType = .standard
 
     private let fetchTodoListUseCase = FetchTodoListUseCase()
 
@@ -57,7 +57,6 @@ class HomeViewModel: BaseViewModel {
     func onClickSortButton() {
         var buttons: [ActionSheet.Button] = HomeSortType.allCases.map { type in
             .default(Text(type.title)) {
-                // print("\(type.title)")
                 self.sortType = type
                 self.onAppear(from: nil)
             }
@@ -66,7 +65,7 @@ class HomeViewModel: BaseViewModel {
 
         actionSheetItem = ActionSheetItem(
             sheet: ActionSheet(
-                title: Text("タスクの並び替え"),
+                title: R.string.localizable.home_dialog_sort_title.text,
                 buttons: buttons
             )
         )

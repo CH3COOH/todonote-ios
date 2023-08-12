@@ -30,27 +30,55 @@ class FetchTodoListUseCase: UseCaseProtocol {
     }
 
     private func grouping(input: FetchTodoListUseCaseInput, items: [Todo]) async -> FetchTodoListUseCaseResult {
-        var array: [TodoSection]
+        var array: [TodoSection] = []
         switch input.sortType {
-        case .hogehoge:
-            array = [
-                TodoSection(title: "あああああ", todos: items),
-                TodoSection(title: "いいいい", todos: items),
-            ]
-        case let .createAt(isAscending):
-            let hoge = items.sorted { rhs, lhs in
-                if isAscending {
-                    return rhs.createdAt < rhs.createdAt
-                } else {
-                    return rhs.createdAt > rhs.createdAt
-                }
+        case .standard:
+            // 今日と期限切れのセクション
+            let todaysAndOverdueTasks = items.filter {
+                let calendar = Calendar.current
+                return calendar.isDateInToday($0.datetime) || $0.datetime < Date()
             }
-            array = [
-                TodoSection(
-                    title: "",
-                    todos: hoge
+            if !todaysAndOverdueTasks.isEmpty {
+                array.append(
+                    TodoSection(
+                        title: R.string.localizable.home_today_and_overdue(),
+                        todos: todaysAndOverdueTasks
+                    )
                 )
-            ]
+            }
+
+            // 日別ごとのセクション
+            let groupedItems = Dictionary(grouping: items) { (todo: Todo) -> Date in
+                let calendar = Calendar.current
+                return calendar.startOfDay(for: todo.datetime)
+            }
+            .sorted { $0.key < $1.key }
+
+            for (date, todos) in groupedItems {
+                if Calendar.current.isDateInToday(date) || todos.first!.datetime < Date() {
+                    continue
+                }
+                let title = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
+                array.append(TodoSection(title: title, todos: todos))
+            }
+
+        case let .createdAt(isAscending):
+            let sortedTasks = items.sorted(by: {
+                isAscending ? $0.createdAt < $1.createdAt : $0.createdAt > $1.createdAt
+            })
+            let title = R.string.localizable.create_date()
+            array.append(
+                TodoSection(title: title, todos: sortedTasks)
+            )
+
+        case let .updatedAt(isAscending):
+            let sortedTasks = items.sorted(by: {
+                isAscending ? $0.updatedAt < $1.updatedAt : $0.updatedAt > $1.updatedAt
+            })
+            let title = R.string.localizable.modified_date()
+            array.append(
+                TodoSection(title: title, todos: sortedTasks)
+            )
         }
 
         return .success(array)

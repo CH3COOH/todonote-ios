@@ -6,19 +6,19 @@
 //
 
 enum HomeSortType {
-    case hogehoge
-    case createAt(isAscending: Bool)
-//    case updateAt(isAscending: Bool)
+    case standard
+    case createdAt(isAscending: Bool)
+    case updatedAt(isAscending: Bool)
 }
 
 extension HomeSortType: CaseIterable {
     static var allCases: [HomeSortType] {
         [
-            hogehoge,
-            createAt(isAscending: true),
-            createAt(isAscending: false),
-//            updateAt(isAscending: true),
-//            updateAt(isAscending: false),
+            .standard,
+            .createdAt(isAscending: true),
+            .createdAt(isAscending: false),
+            .updatedAt(isAscending: true),
+            .updatedAt(isAscending: false),
         ]
     }
 }
@@ -26,12 +26,16 @@ extension HomeSortType: CaseIterable {
 extension HomeSortType {
     var title: String {
         switch self {
-        case .hogehoge:
-            return "時間順"
-        case let .createAt(isAscending: isAscending):
-            return isAscending ? "タスクの作成日順(昇順)" : "タスクの作成日順(降順)"
-//        case .updateAt(isAscending: let isAscending):
-//            "時間順"
+        case .standard:
+            return R.string.localizable.home_sort_standard()
+        case let .createdAt(isAscending):
+            let sort = isAscending ? R.string.localizable.ascending() : R.string.localizable.descending()
+
+            return "\(R.string.localizable.create_date()) (\(sort))"
+        case let .updatedAt(isAscending):
+            let sort = isAscending ? R.string.localizable.ascending() : R.string.localizable.descending()
+
+            return "\(R.string.localizable.modified_date()) (\(sort))"
         }
     }
 }
