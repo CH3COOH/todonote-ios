@@ -15,6 +15,8 @@ class HomeViewModel: BaseViewModel {
 
     @Published var items: [TodoSection] = []
 
+    private var sortType: HomeSortType = .hogehoge
+
     private let fetchTodoListUseCase = FetchTodoListUseCase()
 
     private let doneTodoUseCase = DoneTodoUseCase()
@@ -25,7 +27,7 @@ class HomeViewModel: BaseViewModel {
 
     func onAppear(from _: UIViewController?) {
         Task {
-            let input = FetchTodoListUseCaseInput(sortType: .hogehoge)
+            let input = FetchTodoListUseCaseInput(sortType: sortType)
             let result = await fetchTodoListUseCase.execute(input)
             switch result {
             case let .success(items):
@@ -53,14 +55,19 @@ class HomeViewModel: BaseViewModel {
     }
 
     func onClickSortButton() {
+        var buttons: [ActionSheet.Button] = HomeSortType.allCases.map { type in
+            .default(Text(type.title)) {
+                // print("\(type.title)")
+                self.sortType = type
+                self.onAppear(from: nil)
+            }
+        }
+        buttons.append(.cancel())
+
         actionSheetItem = ActionSheetItem(
             sheet: ActionSheet(
-                title: Text("あああああ"),
-                buttons: [
-                    .default(Text("期限切れのみ")),
-                    .default(Text("期限切れのみ")),
-                    .cancel(),
-                ]
+                title: Text("タスクの並び替え"),
+                buttons: buttons
             )
         )
     }

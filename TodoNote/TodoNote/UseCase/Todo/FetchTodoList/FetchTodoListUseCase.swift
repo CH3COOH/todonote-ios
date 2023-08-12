@@ -37,6 +37,20 @@ class FetchTodoListUseCase: UseCaseProtocol {
                 TodoSection(title: "あああああ", todos: items),
                 TodoSection(title: "いいいい", todos: items),
             ]
+        case let .createAt(isAscending):
+            let hoge = items.sorted { rhs, lhs in
+                if isAscending {
+                    return rhs.createdAt < rhs.createdAt
+                } else {
+                    return rhs.createdAt > rhs.createdAt
+                }
+            }
+            array = [
+                TodoSection(
+                    title: "",
+                    todos: hoge
+                )
+            ]
         }
 
         return .success(array)
