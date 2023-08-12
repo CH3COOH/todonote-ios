@@ -61,7 +61,7 @@ struct EditTodoView: View {
                         .datePickerStyle(DefaultDatePickerStyle())
 
                         SectionItem(
-                            title: R.string.localizable.desc()
+                            title: R.string.localizable.desc() + "(Optional)"
                         )
                         .font(.headline)
 
