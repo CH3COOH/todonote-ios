@@ -8,5 +8,6 @@
 import Foundation
 
 class MockAuthProvider: AuthProviderProtocol {
+    func signInAnonymously() async throws {}
     func signOut() throws {}
 }

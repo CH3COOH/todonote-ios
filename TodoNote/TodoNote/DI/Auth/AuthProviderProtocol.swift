@@ -8,5 +8,6 @@
 import Foundation
 
 protocol AuthProviderProtocol {
+    func signInAnonymously() async throws
     func signOut() throws
 }
