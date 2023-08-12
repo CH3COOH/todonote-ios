@@ -43,7 +43,7 @@ class FetchTodoUseCase: UseCaseProtocol {
                     status: .editing,
                     title: "",
                     description: nil,
-                    datetime: Date(),
+                    datetime: Date().addingTimeInterval(86400),
                     createdAt: Date(),
                     updatedAt: Date(),
                     finished: false

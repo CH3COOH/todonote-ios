@@ -13,7 +13,7 @@ struct EditTodoView: View {
         viewControllerHolder.value
     }
 
-    @StateObject var model: EditTodoViewModel
+    @ObservedObject var model: EditTodoViewModel
 
     var body: some View {
         VStack(spacing: 0) {
@@ -34,11 +34,24 @@ struct EditTodoView: View {
                         TextField("キャベツを買う", text: $model.todoTitle)
                             .padding()
                             .background(Color(uiColor: UIColor.systemBackground))
-                            .cornerRadius(8) // 角を丸くする
+                            .cornerRadius(8)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                                    .stroke(
+                                        model.errorTitle.isEmpty ? Color.gray.opacity(0.5) : Color.red,
+                                        lineWidth: 1
+                                    )
                             )
+
+                        if !model.errorTitle.isEmpty {
+                            HStack {
+                                Text(model.errorTitle)
+                                    .font(.system(size: 15, weight: .bold))
+                                    .foregroundColor(Color.red)
+
+                                Spacer(minLength: 0)
+                            }
+                        }
 
                         DatePicker(
                             R.string.localizable.deadline(),
