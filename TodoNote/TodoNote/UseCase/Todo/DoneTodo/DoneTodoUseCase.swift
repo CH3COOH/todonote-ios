@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 /// BL-B02 TODOアイテムの削除
 class DoneTodoUseCase: UseCaseProtocol {
@@ -38,10 +39,23 @@ class DoneTodoUseCase: UseCaseProtocol {
                 for: newTodo,
                 with: RegistrationStatus.all
             )
-            return await availableNetworkAccess(todo: newTodo)
+            return await deleteNotificationRequest(todo: newTodo)
         } catch {
             return .failed(error)
         }
+    }
+
+    private func deleteNotificationRequest(todo: Todo) async -> DoneTodoUseCaseResult {
+        let center = UNUserNotificationCenter.current()
+
+        // 既存の通知リクエストを削除する
+        center.removePendingNotificationRequests(
+            withIdentifiers: [
+                todo.todoId.rawValue,
+            ]
+        )
+
+        return await availableNetworkAccess(todo: todo)
     }
 
     private func availableNetworkAccess(todo: Todo) async -> DoneTodoUseCaseResult {
