@@ -41,6 +41,10 @@
 "title" = "Title";
 "desc" = "Note";
 "deadline" = "Deadline";
+"create_date" = "Creation date";
+"modified_date" = "Modified date";
+"ascending" = "Ascending";
+"descending" = "Descending";
 
 // MARK: - permission
 "permission_err_camera" = "You're not allowed to use the camera.";
@@ -59,6 +63,9 @@
 "home_section_settings" = "Search Settings";
 "home_empty" = "Task not yet registered";
 "home_button_add" = "Add the first task";
+"home_dialog_sort_title" = "Sort tasks";
+"home_sort_standard" = "Standard";
+"home_today_and_overdue" = "Today and Overdue";
 
 // MARK: - todo edit
 "edit_todo_title_edit" = "Edit Todo";

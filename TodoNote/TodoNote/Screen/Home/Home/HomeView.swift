@@ -30,17 +30,21 @@ struct HomeView: View {
                 )
             } else {
                 List {
-                    Section {
-                        ForEach(model.items) { item in
-                            TodoItemView(
-                                item: item,
-                                doneAction: {
-                                    model.onClickDoneButton(item: item)
-                                },
-                                editAction: {
-                                    onClickEditButton(item: item)
+                    if !model.items.isEmpty {
+                        ForEach(model.items) { section in
+                            Section(header: Text(section.title)) {
+                                ForEach(section.todos) { item in
+                                    TodoItemView(
+                                        item: item,
+                                        doneAction: {
+                                            model.onClickDoneButton(item: item)
+                                        },
+                                        editAction: {
+                                            onClickEditButton(item: item)
+                                        }
+                                    )
                                 }
-                            )
+                            }
                         }
                     }
 

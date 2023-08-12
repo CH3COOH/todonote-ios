@@ -13,7 +13,11 @@ class HomeViewModel: BaseViewModel {
 
     @Published var isLoaded = false
 
-    @Published var items: [Todo] = []
+    @Published var items: [TodoSection] = []
+
+    private var sortType: HomeSortType = .standard
+
+    private let fetchTodoListUseCase = FetchTodoListUseCase()
 
     private let doneTodoUseCase = DoneTodoUseCase()
 
@@ -23,21 +27,15 @@ class HomeViewModel: BaseViewModel {
 
     func onAppear(from _: UIViewController?) {
         Task {
-//            let result = await fetchCardListUseCase.execute(.init())
-//            switch result {
-//            case let .success(cards):
-//                await set(
-//                    cards: cards
-//                )
-//            case .failed:
-//                break
-//            }
-            do {
-                let resitory = TodoRepository()
-                let items = try await resitory.fetch(with: [.ready, .complete])
+            let input = FetchTodoListUseCaseInput(sortType: sortType)
+            let result = await fetchTodoListUseCase.execute(input)
+            switch result {
+            case let .success(items):
                 await set(
-                    items: items.filter { !$0.finished }
+                    items: items
                 )
+            case .failed:
+                break
             }
         }
     }
@@ -57,14 +55,18 @@ class HomeViewModel: BaseViewModel {
     }
 
     func onClickSortButton() {
+        var buttons: [ActionSheet.Button] = HomeSortType.allCases.map { type in
+            .default(Text(type.title)) {
+                self.sortType = type
+                self.onAppear(from: nil)
+            }
+        }
+        buttons.append(.cancel())
+
         actionSheetItem = ActionSheetItem(
             sheet: ActionSheet(
-                title: Text("あああああ"),
-                buttons: [
-                    .default(Text("期限切れのみ")),
-                    .default(Text("期限切れのみ")),
-                    .cancel(),
-                ]
+                title: R.string.localizable.home_dialog_sort_title.text,
+                buttons: buttons
             )
         )
     }
@@ -72,19 +74,23 @@ class HomeViewModel: BaseViewModel {
     // MARK: -
 
     @MainActor
-    private func set(items: [Todo]) {
+    private func set(items: [TodoSection]) {
         isLoaded = true
         self.items = items
     }
 
     @MainActor
     private func delete(deletedItem: Todo) {
+        let newItems = items.compactMap { section -> TodoSection? in
+            let newTodos = section.todos.filter { $0.todoId != deletedItem.todoId }
+            if newTodos.isEmpty {
+                return nil
+            } else {
+                return TodoSection(title: section.title, todos: newTodos)
+            }
+        }
         withAnimation {
-            items.removeAll(
-                where: {
-                    $0.todoId == deletedItem.todoId
-                }
-            )
+            items = newItems
         }
     }
 }
