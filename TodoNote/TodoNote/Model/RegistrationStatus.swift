@@ -14,9 +14,6 @@ enum RegistrationStatus: String {
 }
 
 extension RegistrationStatus: CaseIterable {
-//    static var all: [RegistrationStatus] {
-//        [.editing, .ready, .complete]
-//    }
     static var allCases: [RegistrationStatus] {
         [.editing, .ready, .complete]
     }
