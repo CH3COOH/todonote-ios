@@ -98,15 +98,16 @@ struct EditTodoView: View {
             .background(Color.white)
         }
         .background(Color(uiColor: UIColor.systemGroupedBackground))
+        .navigationTitle(Text(model.screenTitle))
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: onClickCloseButton) {
                     R.string.localizable.close.text
                 }
             }
-            ToolbarItem(placement: .principal) {
-                Text(model.screenTitle)
-            }
+//            ToolbarItem(placement: .principal) {
+//                Text(model.screenTitle)
+//            }
         }
         .onAppear {
             model.onAppear(from: viewController)
