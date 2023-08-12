@@ -55,6 +55,11 @@ class UpdateTodoUseCase: UseCaseProtocol {
                 ]
             )
 
+            if todo.datetime < Date() {
+                // 現在より過去に期限があった場合はローカル通知リクエストを作成しない
+                return await availableNetworkAccess(todo: todo)
+            }
+
             // 新規に通知リクエストを登録しなおす
             let content = UNMutableNotificationContent()
             content.title = todo.title
