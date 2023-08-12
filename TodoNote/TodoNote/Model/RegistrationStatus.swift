@@ -13,8 +13,8 @@ enum RegistrationStatus: String {
     case complete
 }
 
-extension RegistrationStatus {
-    static var all: [RegistrationStatus] {
+extension RegistrationStatus: CaseIterable {
+    static var allCases: [RegistrationStatus] {
         [.editing, .ready, .complete]
     }
 

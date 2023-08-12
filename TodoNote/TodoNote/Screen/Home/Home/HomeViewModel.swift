@@ -9,8 +9,6 @@ import KRProgressHUD
 import SwiftUI
 
 class HomeViewModel: BaseViewModel {
-    @Published var actionSheetItem: ActionSheetItem?
-
     @Published var isLoaded = false
 
     @Published var items: [TodoSection] = []

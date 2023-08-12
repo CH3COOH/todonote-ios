@@ -8,6 +8,8 @@
 import SwiftUI
 
 class BaseViewModel: ObservableObject {
+    @Published var actionSheetItem: ActionSheetItem?
+
     @Published var alertItem: AlertItem?
 
     @MainActor

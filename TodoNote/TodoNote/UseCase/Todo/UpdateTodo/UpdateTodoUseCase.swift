@@ -36,7 +36,7 @@ class UpdateTodoUseCase: UseCaseProtocol {
             )
             try await todoRepository.updateTodoStatus(
                 for: newTodo,
-                with: RegistrationStatus.all
+                with: RegistrationStatus.allCases
             )
             return await reScheduleNotification(todo: newTodo)
         } catch {
@@ -115,7 +115,7 @@ class UpdateTodoUseCase: UseCaseProtocol {
             )
             try await todoRepository.updateTodoStatus(
                 for: updatedTodo,
-                with: RegistrationStatus.all
+                with: RegistrationStatus.allCases
             )
             return .success
         } catch {

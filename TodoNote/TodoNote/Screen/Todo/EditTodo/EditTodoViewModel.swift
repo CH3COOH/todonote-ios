@@ -9,7 +9,7 @@ import KRProgressHUD
 import SwiftUI
 import ULID
 
-class EditTodoViewModel: ObservableObject {
+class EditTodoViewModel: BaseViewModel {
     @Published var screenTitle = "Edit Todo"
 
     @Published var buttonTitle = "Add"
@@ -22,11 +22,9 @@ class EditTodoViewModel: ObservableObject {
 
     @Published var todoDate = Date()
 
-    @Published var alertItem: AlertItem?
-
     @Published var isLoaded = false
 
-    @Published var isEnabled = false
+    @Published var errorTitle = ""
 
     private let todoId: TodoId
 
@@ -56,18 +54,10 @@ class EditTodoViewModel: ObservableObject {
             case let .success(todo):
                 await set(todo: todo)
             case let .failed(error):
-                Task { @MainActor in
-                    alertItem = AlertItem(
-                        alert: Alert(
-                            title: R.string.localizable.error.text,
-                            message: Text(error.localizedDescription),
-                            dismissButton: .default(R.string.localizable.ok.text) {
-                                Task { @MainActor in
-                                    viewController?.dismiss(animated: true)
-                                }
-                            }
-                        )
-                    )
+                await show(error: error) {
+                    Task { @MainActor in
+                        viewController?.dismiss(animated: true)
+                    }
                 }
             }
         }
@@ -80,14 +70,7 @@ class EditTodoViewModel: ObservableObject {
             case .success:
                 await viewController?.dismiss(animated: true)
             case let .failed(error):
-                Task { @MainActor in
-                    alertItem = AlertItem(
-                        alert: Alert(
-                            title: R.string.localizable.error.text,
-                            message: Text(error.localizedDescription)
-                        )
-                    )
-                }
+                await show(error: error)
             }
         }
     }
@@ -97,10 +80,20 @@ class EditTodoViewModel: ObservableObject {
             return
         }
 
+        let trimmedTitle = todoTitle.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmedTitle.isEmpty {
+            errorTitle = "タイトルは入力必須項目です"
+            return
+        } else {
+            errorTitle = ""
+        }
+        let trimmedDescription = todoDescription.trimmingCharacters(in: .whitespacesAndNewlines)
+
         let newTodo = todo.copy(
-            title: todoTitle,
-            description: todoDescription,
-            datetime: todoDate
+            title: trimmedTitle,
+            description: trimmedDescription,
+            datetime: todoDate,
+            updatedAt: Date()
         )
 
         KRProgressHUD.show()
@@ -114,14 +107,7 @@ class EditTodoViewModel: ObservableObject {
             case .success:
                 await viewController?.dismiss(animated: true)
             case let .failed(error):
-                Task { @MainActor in
-                    alertItem = AlertItem(
-                        alert: Alert(
-                            title: R.string.localizable.error.text,
-                            message: Text(error.localizedDescription)
-                        )
-                    )
-                }
+                await show(error: error)
             }
         }
     }
@@ -133,5 +119,16 @@ class EditTodoViewModel: ObservableObject {
         todoTitle = todo.title
         todoDescription = todo.description ?? ""
         todoDate = todo.datetime
+    }
+
+    private func isValidInput() -> Bool {
+        let trimmedTitle = todoTitle.trimmingCharacters(in: .whitespacesAndNewlines)
+        let isTitleEmpty = trimmedTitle.isEmpty
+        let isFutureDate = todoDate > Date()
+
+        print("\(isTitleEmpty)")
+        print("\(isFutureDate)")
+
+        return !isTitleEmpty && isFutureDate
     }
 }

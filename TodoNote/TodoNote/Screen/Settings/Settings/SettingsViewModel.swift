@@ -9,8 +9,6 @@ import SwiftUI
 class SettingsViewModel: BaseViewModel {
     @Published var appVersion: String
 
-    @Published var actionSheetItem: ActionSheetItem?
-
     private let signOutUseCase = SignOutUseCase()
 
     override init() {

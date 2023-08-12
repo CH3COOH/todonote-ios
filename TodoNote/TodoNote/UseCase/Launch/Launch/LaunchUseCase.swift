@@ -30,7 +30,8 @@ class LaunchUseCase: UseCaseProtocol {
 
     private func deleteEditingItems() async -> LaunchUseCaseResult {
         do {
-            try await todoRepository.deleteAll(status: RegistrationStatus.editing)
+            // TODO: 将来的には、このタイミングで検出した editing レコードの再編集をおこなう
+            try await todoRepository.deleteAll(with: [.editing])
         } catch {
             // エラーは無視する
         }

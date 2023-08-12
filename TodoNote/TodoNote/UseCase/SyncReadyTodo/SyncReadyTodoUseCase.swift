@@ -85,7 +85,7 @@ class SyncReadyTodoUseCase: UseCaseProtocol {
                 } else {
                     try await todoRepository.updateTodoStatus(
                         for: item,
-                        with: RegistrationStatus.all
+                        with: RegistrationStatus.allCases
                     )
                 }
             }
