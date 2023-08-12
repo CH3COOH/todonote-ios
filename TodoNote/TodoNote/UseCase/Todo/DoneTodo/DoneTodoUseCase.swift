@@ -37,7 +37,7 @@ class DoneTodoUseCase: UseCaseProtocol {
             )
             try await todoRepository.updateTodoStatus(
                 for: newTodo,
-                with: RegistrationStatus.all
+                with: RegistrationStatus.allCases
             )
             return await deleteNotificationRequest(todo: newTodo)
         } catch {
