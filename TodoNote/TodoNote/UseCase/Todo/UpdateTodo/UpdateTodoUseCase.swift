@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 class UpdateTodoUseCase: UseCaseProtocol {
     private let firestoreRepository: FirestoreRepository
@@ -30,14 +31,52 @@ class UpdateTodoUseCase: UseCaseProtocol {
     private func saveTodoLocally(input: UpdateTodoUseCaseInput) async -> UpdateTodoUseCaseResult {
         do {
             let newTodo = input.todo.copy(
-                status: RegistrationStatus.ready,
+                status: .ready,
                 updatedAt: Date()
             )
             try await todoRepository.updateTodoStatus(
                 for: newTodo,
                 with: RegistrationStatus.all
             )
-            return await availableNetworkAccess(todo: newTodo)
+            return await reScheduleNotification(todo: newTodo)
+        } catch {
+            return .failed(error)
+        }
+    }
+
+    private func reScheduleNotification(todo: Todo) async -> UpdateTodoUseCaseResult {
+        do {
+            let center = UNUserNotificationCenter.current()
+
+            // 既存の通知リクエストを削除する
+            center.removePendingNotificationRequests(
+                withIdentifiers: [
+                    todo.todoId.rawValue,
+                ]
+            )
+
+            // 新規に通知リクエストを登録しなおす
+            let content = UNMutableNotificationContent()
+            content.title = todo.title
+            content.body = todo.description ?? ""
+            content.sound = UNNotificationSound.default
+            content.userInfo = ["todoID": todo.todoId.rawValue]
+
+            let components = Calendar.current.dateComponents(
+                [.year, .month, .day, .hour, .minute],
+                from: todo.datetime
+            )
+            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+
+            let request = UNNotificationRequest(
+                identifier: todo.todoId.rawValue,
+                content: content,
+                trigger: trigger
+            )
+
+            try await center.add(request)
+
+            return await availableNetworkAccess(todo: todo)
         } catch {
             return .failed(error)
         }
@@ -71,7 +110,7 @@ class UpdateTodoUseCase: UseCaseProtocol {
     private func markSyncComplete(todo: Todo) async -> UpdateTodoUseCaseResult {
         do {
             let updatedTodo = todo.copy(
-                status: RegistrationStatus.complete,
+                status: .complete,
                 updatedAt: Date()
             )
             try await todoRepository.updateTodoStatus(

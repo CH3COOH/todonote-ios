@@ -12,6 +12,8 @@ import SwiftUI
 class LoginViewModel: ObservableObject {
     @Published var alertItem: AlertItem?
 
+    let authProvider: AuthProviderProtocol = FirebaseAuthProvider()
+
     func onAppear(from _: UIViewController?) {}
 
     func onClickLoginButton() {
@@ -25,7 +27,7 @@ class LoginViewModel: ObservableObject {
             do {
                 let center = UNUserNotificationCenter.current()
                 try await center.requestAuthorization(options: [.sound, .sound])
-                try await Auth.auth().signInAnonymously()
+                try await authProvider.signInAnonymously()
                 await moveNextScreen()
             } catch {
                 Task { @MainActor in

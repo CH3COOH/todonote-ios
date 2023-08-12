@@ -54,7 +54,7 @@ TODOアイテムは、ローカル(アプリ内データベース) と バック
 
 | ID   | ユースケース名 | 備考 |
 |:-----|:-----|:-----|
-| BL-A01  | lunch  | |
+| [BL-A01](./BL/BL-A01.md)  | アプリ起動時  | |
 | BL-A01-1  | check login  | |
 | BL-1-2  | check version | |
 | BL-1-4  | check editing  | |
@@ -64,6 +64,6 @@ TODOアイテムは、ローカル(アプリ内データベース) と バック
 | BL-C02  | TODOアイテムの登録・編集完了  | Firestoreへの同期 |
 | BL-C03  | TODOアイテムの編集キャンセル  | editing のレコードを削除する |
 | BL-S01 | settings  | |
-| [BL-S02](./BL-S02.md)  | ログアウト  | |
-| [BL-Z01](./BL-Z01.md)  | データの同期 | Firestore へ ready のレコードの同期を実施する |
-| BL-Z02 | ネットワーク接続状態のチェック |  |
+| [BL-S02](./BL/BL-S02.md)  | ログアウト  | |
+| [BL-Z01](./BL/BL-Z01.md)  | データの同期 | Firestore へ ready のレコードの同期を実施する |
+| [BL-Z02](./BL/BL-Z02.md) | ネットワーク接続状態のチェック |  |
