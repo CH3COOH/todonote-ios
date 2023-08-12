@@ -35,13 +35,6 @@ class HomeViewModel: BaseViewModel {
             case .failed:
                 break
             }
-//            do {
-//                let resitory = TodoRepository()
-//                let items = try await resitory.fetch(with: [.ready, .complete])
-//                await set(
-//                    items: items.filter { !$0.finished }
-//                )
-//            }
         }
     }
 

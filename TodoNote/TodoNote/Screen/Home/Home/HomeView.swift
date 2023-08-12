@@ -30,7 +30,7 @@ struct HomeView: View {
                 )
             } else {
                 List {
-                    ForEach(model.items, id: \.self) { section in
+                    ForEach(model.items, id: \.title) { section in
                         Section(header: Text(section.title)) {
                             ForEach(section.todos) { item in
                                 TodoItemView(
@@ -45,21 +45,7 @@ struct HomeView: View {
                             }
                         }
                     }
-
-//                    Section {
-//                        ForEach(model.items) { item in
-//                            TodoItemView(
-//                                item: item,
-//                                doneAction: {
-//                                    model.onClickDoneButton(item: item)
-//                                },
-//                                editAction: {
-//                                    onClickEditButton(item: item)
-//                                }
-//                            )
-//                        }
-//                    }
-
+                    
                     Section {
                         HomeAddView(action: onClickAddButton)
                     }
