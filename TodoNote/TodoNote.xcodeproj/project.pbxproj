@@ -408,6 +408,15 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		AA8F33AC2A88D0870090EFDB /* SyncBackend */ = {
+			isa = PBXGroup;
+			children = (
+				AA8F33A42A88CA210090EFDB /* SyncBackendTodo */,
+				AA1932832A830F5B002C846F /* SyncReadyTodo */,
+			);
+			path = SyncBackend;
+			sourceTree = "<group>";
+		};
 		AA93D31B2A85DA9700BB5EF2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,8 +700,7 @@
 				AAE79FB32A80FD2F009823FB /* Launch */,
 				AA8F33AB2A88CB730090EFDB /* SignIn */,
 				AA19328C2A837A11002C846F /* SignOut */,
-				AA8F33A42A88CA210090EFDB /* SyncBackendTodo */,
-				AA1932832A830F5B002C846F /* SyncReadyTodo */,
+				AA8F33AC2A88D0870090EFDB /* SyncBackend */,
 				AA30E95B2A84DE2A0063809B /* Todo */,
 			);
 			path = UseCase;
