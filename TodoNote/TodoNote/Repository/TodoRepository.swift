@@ -90,8 +90,7 @@ class TodoRepository {
         }
     }
 
-    // 新しいTODOを追加する
-    func insert(object: Todo) async throws {
+    func insert(for object: Todo) async throws {
         try await MainActor.run {
             let entity = TodoEntity(context: context)
             entity.todo_id = object.todoId.rawValue
@@ -128,11 +127,12 @@ class TodoRepository {
         }
     }
 
-    func delete(by id: TodoId, status: RegistrationStatus) async throws {
+    func delete(by id: TodoId, with statuses: [RegistrationStatus]) async throws {
         let request = TodoEntity.fetchRequest()
         request.predicate = NSPredicate(
-            format: "todo_id == %@ AND status == %@",
-            id.rawValue, status.rawValue
+            format: "todo_id == %@ AND status IN %@",
+            id.rawValue,
+            statuses.map { $0.rawValue }
         )
 
         try await MainActor.run {
@@ -145,7 +145,7 @@ class TodoRepository {
     }
 
     /// 指定したステータスのレコードをすべて削除する
-    func deleteAll(with statuses: [RegistrationStatus]) async throws {
+    func delete(with statuses: [RegistrationStatus]) async throws {
         let request = TodoEntity.fetchRequest()
         request.predicate = NSPredicate(
             format: "status IN %@",

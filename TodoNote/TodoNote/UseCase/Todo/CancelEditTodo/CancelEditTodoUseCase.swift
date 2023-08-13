@@ -23,7 +23,7 @@ class CancelEditTodoUseCase: UseCaseProtocol {
     // 入力された `todoId` の `editing` ステータスの Todo アイテムを削除する
     private func deleteEditingStatusTodo(input: CancelEditTodoUseCaseInput) async -> CancelEditTodoUseCaseResult {
         do {
-            try await todoRepository.delete(by: input.todoId, status: .editing)
+            try await todoRepository.delete(by: input.todoId, with: [.editing])
             return .success
         } catch {
             return .failed(error)
