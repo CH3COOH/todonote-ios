@@ -16,35 +16,6 @@ class TodoRepository {
         self.context = context
     }
 
-    func addOrUpdate(object: Todo) async throws {
-        let request = TodoEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "todo_id == %@", object.todoId.rawValue)
-
-        try await MainActor.run {
-            let entities = try context.fetch(request)
-            if let entity = entities.first {
-                entity.status = object.status.rawValue
-                entity.title = object.title
-                entity.desc = object.description
-                entity.datetime = object.datetime
-                entity.updated_at = object.updatedAt
-                entity.finished = object.finished
-            } else {
-                let entity = TodoEntity(context: context)
-                entity.todo_id = object.todoId.rawValue
-                entity.status = object.status.rawValue
-                entity.title = object.title
-                entity.desc = object.description
-                entity.datetime = object.datetime
-                entity.created_at = object.createdAt
-                entity.updated_at = object.updatedAt
-                entity.finished = object.finished
-            }
-
-            try context.save()
-        }
-    }
-
     func updateTodoStatus(for object: Todo, with statuses: [RegistrationStatus]) async throws {
         let request = TodoEntity.fetchRequest()
         request.predicate = NSPredicate(
