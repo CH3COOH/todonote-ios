@@ -11,11 +11,13 @@
 
 * v1.0.0 では、TODO登録画面で(タスクの登録・編集中に) アプリが終了した場合、次回起動時に編集を再開することができない
 
-## 画面遷移図
+## 画面
+
+### 遷移図
 
 <img width="749" alt="screen-transition" src="https://github.com/CH3COOH/todonote-ios/assets/137952/dbdc0ac1-96f2-4873-ade5-7f9c9cbc7da1">
 
-## 画面一覧
+### 画面一覧
 
 | ID   | 画面名 | 備考 |
 |:-----|:-----|:-----|

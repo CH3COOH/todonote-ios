@@ -18,7 +18,7 @@ bundle exec pod install
 
 ## Development
 
-開発向けのドキュメントは [document](./document/README.md)ディレクトリに置いている。
+開発向けのドキュメントは [Documents](./Documents/README.md)ディレクトリに置いている。
 
 ### 開発環境
 
