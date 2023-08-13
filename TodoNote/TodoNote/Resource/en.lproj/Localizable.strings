@@ -98,8 +98,8 @@
 "settings_about_cell_privacy_policy" = "Privacy Policy";
 "settings_about_cell_company" = "Developer";
 "settings_about_cell_company_desc" = "Kenji Wada";
-"settings_alert_logout_title" = "Would you like to sign out?";
-"settings_alert_logout_message" = "You will not be able to access your currently registered tasks due to anonymous login. This selection cannot be undone.";
+"settings_alert_logout_title" = "Confirm";
+"settings_alert_logout_message" = "Would you like to sign out?";
 
 // MARK: - 設定画面/問い合わせダイアログ
 "settings_bug_report_desc" = "Please contact us from Report a bug in case defect of application. We will respond to that right away.";
