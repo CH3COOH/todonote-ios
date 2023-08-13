@@ -21,7 +21,6 @@ target 'TodoNote' do
 
   pod 'FirebaseUI'
   pod 'FirebaseUI/Auth'
-  pod 'FirebaseUI/OAuth'
   
   # for script
   pod 'R.swift'

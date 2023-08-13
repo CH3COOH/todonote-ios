@@ -955,7 +955,6 @@ DEPENDENCIES:
   - FirebasePerformance
   - FirebaseUI
   - FirebaseUI/Auth
-  - FirebaseUI/OAuth
   - KRProgressHUD
   - LicensePlist
   - LicensePlistViewController
@@ -1085,6 +1084,6 @@ SPEC CHECKSUMS:
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
   ULID.swift: 7dddbacf51b74c60742d0ce49b81cb11491f803f
 
-PODFILE CHECKSUM: 9e092378af5bf5efe3b042c960996a8c278333ac
+PODFILE CHECKSUM: f8197f57fea418b23e041b9e90d2146ebe070a51
 
 COCOAPODS: 1.12.1
