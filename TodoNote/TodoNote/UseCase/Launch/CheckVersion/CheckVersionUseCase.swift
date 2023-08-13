@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// BL-Z04 アプリバージョンのチェック
 class CheckVersionUseCase: UseCaseProtocol {
     func execute(_: CheckVersionUseCaseInput) async -> CheckVersionUseCaseResult {
         return await checkVersion()

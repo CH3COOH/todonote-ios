@@ -14,12 +14,12 @@ class SignOutUseCase: UseCaseProtocol {
 
     private let authProvider: AuthProviderProtocol
 
-    private let syncReadyTodoUseCase: SyncReadyTodoUseCase
+    private let syncReadyTodoUseCase: UploadReadyTodosUseCase
 
     init(
         todoRepository: TodoRepository = TodoRepository(),
         authProvider: AuthProviderProtocol = FirebaseAuthProvider(),
-        syncReadyTodoUseCase: SyncReadyTodoUseCase = SyncReadyTodoUseCase()
+        syncReadyTodoUseCase: UploadReadyTodosUseCase = UploadReadyTodosUseCase()
     ) {
         self.todoRepository = todoRepository
         self.authProvider = authProvider

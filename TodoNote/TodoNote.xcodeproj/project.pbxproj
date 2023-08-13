@@ -20,9 +20,9 @@
 		AA19327E2A830A1C002C846F /* UpdateTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19327D2A830A1C002C846F /* UpdateTodoUseCase.swift */; };
 		AA1932802A830A26002C846F /* UpdateTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19327F2A830A26002C846F /* UpdateTodoUseCaseInput.swift */; };
 		AA1932822A830A2F002C846F /* UpdateTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932812A830A2F002C846F /* UpdateTodoUseCaseResult.swift */; };
-		AA1932872A830F5B002C846F /* SyncReadyTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932842A830F5B002C846F /* SyncReadyTodoUseCase.swift */; };
-		AA1932882A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932852A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift */; };
-		AA1932892A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932862A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift */; };
+		AA1932872A830F5B002C846F /* UploadReadyTodosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932842A830F5B002C846F /* UploadReadyTodosUseCase.swift */; };
+		AA1932882A830F5B002C846F /* UploadReadyTodosUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932852A830F5B002C846F /* UploadReadyTodosUseCaseInput.swift */; };
+		AA1932892A830F5B002C846F /* UploadReadyTodosUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1932862A830F5B002C846F /* UploadReadyTodosUseCaseResult.swift */; };
 		AA1932902A837A11002C846F /* SignOutUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19328D2A837A11002C846F /* SignOutUseCaseResult.swift */; };
 		AA1932912A837A11002C846F /* SignOutUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19328E2A837A11002C846F /* SignOutUseCaseInput.swift */; };
 		AA1932922A837A11002C846F /* SignOutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19328F2A837A11002C846F /* SignOutUseCase.swift */; };
@@ -42,6 +42,10 @@
 		AA8F339B2A8726DF0090EFDB /* HomeSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F339A2A8726DF0090EFDB /* HomeSortType.swift */; };
 		AA8F339D2A872EB70090EFDB /* TodoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F339C2A872EB70090EFDB /* TodoSection.swift */; };
 		AA8F339F2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F339E2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift */; };
+		AA8F33A12A88B6360090EFDB /* FirebaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A02A88B6360090EFDB /* FirebaseUIView.swift */; };
+		AA8F33A82A88CA5A0090EFDB /* DownloadTodosUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A52A88CA5A0090EFDB /* DownloadTodosUseCaseInput.swift */; };
+		AA8F33A92A88CA5A0090EFDB /* DownloadTodosUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A62A88CA5A0090EFDB /* DownloadTodosUseCaseResult.swift */; };
+		AA8F33AA2A88CA5A0090EFDB /* DownloadTodosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A72A88CA5A0090EFDB /* DownloadTodosUseCase.swift */; };
 		AA93D3202A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */; };
 		AA93D3212A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */; };
 		AA93D3222A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */; };
@@ -52,9 +56,9 @@
 		AABB4F9E2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4F9D2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift */; };
 		AABB4FB02A80DA99008FC467 /* TodoId.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4FAF2A80DA99008FC467 /* TodoId.swift */; };
 		AABB4FB22A80DAC7008FC467 /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4FB12A80DAC7008FC467 /* TodoEntity.swift */; };
-		AADA7FA22A864B1000B5E7C4 /* DoneTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7F9F2A864B1000B5E7C4 /* DoneTodoUseCase.swift */; };
-		AADA7FA32A864B1000B5E7C4 /* DoneTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FA02A864B1000B5E7C4 /* DoneTodoUseCaseInput.swift */; };
-		AADA7FA42A864B1000B5E7C4 /* DoneTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FA12A864B1000B5E7C4 /* DoneTodoUseCaseResult.swift */; };
+		AADA7FA22A864B1000B5E7C4 /* DeleteTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7F9F2A864B1000B5E7C4 /* DeleteTodoUseCase.swift */; };
+		AADA7FA32A864B1000B5E7C4 /* DeleteTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FA02A864B1000B5E7C4 /* DeleteTodoUseCaseInput.swift */; };
+		AADA7FA42A864B1000B5E7C4 /* DeleteTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FA12A864B1000B5E7C4 /* DeleteTodoUseCaseResult.swift */; };
 		AADA7FA62A864ED600B5E7C4 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FA52A864ED600B5E7C4 /* BaseViewModel.swift */; };
 		AADA7FAA2A86FFF500B5E7C4 /* AuthProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FA92A86FFF500B5E7C4 /* AuthProviderProtocol.swift */; };
 		AADA7FAC2A86FFFE00B5E7C4 /* FirebaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FAB2A86FFFE00B5E7C4 /* FirebaseAuthProvider.swift */; };
@@ -141,9 +145,9 @@
 		AA19327D2A830A1C002C846F /* UpdateTodoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoUseCase.swift; sourceTree = "<group>"; };
 		AA19327F2A830A26002C846F /* UpdateTodoUseCaseInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoUseCaseInput.swift; sourceTree = "<group>"; };
 		AA1932812A830A2F002C846F /* UpdateTodoUseCaseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoUseCaseResult.swift; sourceTree = "<group>"; };
-		AA1932842A830F5B002C846F /* SyncReadyTodoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncReadyTodoUseCase.swift; sourceTree = "<group>"; };
-		AA1932852A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncReadyTodoUseCaseInput.swift; sourceTree = "<group>"; };
-		AA1932862A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncReadyTodoUseCaseResult.swift; sourceTree = "<group>"; };
+		AA1932842A830F5B002C846F /* UploadReadyTodosUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadReadyTodosUseCase.swift; sourceTree = "<group>"; };
+		AA1932852A830F5B002C846F /* UploadReadyTodosUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadReadyTodosUseCaseInput.swift; sourceTree = "<group>"; };
+		AA1932862A830F5B002C846F /* UploadReadyTodosUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadReadyTodosUseCaseResult.swift; sourceTree = "<group>"; };
 		AA19328D2A837A11002C846F /* SignOutUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutUseCaseResult.swift; sourceTree = "<group>"; };
 		AA19328E2A837A11002C846F /* SignOutUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutUseCaseInput.swift; sourceTree = "<group>"; };
 		AA19328F2A837A11002C846F /* SignOutUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutUseCase.swift; sourceTree = "<group>"; };
@@ -163,6 +167,10 @@
 		AA8F339A2A8726DF0090EFDB /* HomeSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSortType.swift; sourceTree = "<group>"; };
 		AA8F339C2A872EB70090EFDB /* TodoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSection.swift; sourceTree = "<group>"; };
 		AA8F339E2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTodoListUseCaseTests.swift; sourceTree = "<group>"; };
+		AA8F33A02A88B6360090EFDB /* FirebaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUIView.swift; sourceTree = "<group>"; };
+		AA8F33A52A88CA5A0090EFDB /* DownloadTodosUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadTodosUseCaseInput.swift; sourceTree = "<group>"; };
+		AA8F33A62A88CA5A0090EFDB /* DownloadTodosUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadTodosUseCaseResult.swift; sourceTree = "<group>"; };
+		AA8F33A72A88CA5A0090EFDB /* DownloadTodosUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadTodosUseCase.swift; sourceTree = "<group>"; };
 		AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseInput.swift; sourceTree = "<group>"; };
 		AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseResult.swift; sourceTree = "<group>"; };
 		AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCase.swift; sourceTree = "<group>"; };
@@ -176,9 +184,9 @@
 		AABB4F9D2A80D7A5008FC467 /* TodoNoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AABB4FAF2A80DA99008FC467 /* TodoId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoId.swift; sourceTree = "<group>"; };
 		AABB4FB12A80DAC7008FC467 /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
-		AADA7F9F2A864B1000B5E7C4 /* DoneTodoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTodoUseCase.swift; sourceTree = "<group>"; };
-		AADA7FA02A864B1000B5E7C4 /* DoneTodoUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTodoUseCaseInput.swift; sourceTree = "<group>"; };
-		AADA7FA12A864B1000B5E7C4 /* DoneTodoUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTodoUseCaseResult.swift; sourceTree = "<group>"; };
+		AADA7F9F2A864B1000B5E7C4 /* DeleteTodoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTodoUseCase.swift; sourceTree = "<group>"; };
+		AADA7FA02A864B1000B5E7C4 /* DeleteTodoUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTodoUseCaseInput.swift; sourceTree = "<group>"; };
+		AADA7FA12A864B1000B5E7C4 /* DeleteTodoUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTodoUseCaseResult.swift; sourceTree = "<group>"; };
 		AADA7FA52A864ED600B5E7C4 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		AADA7FA92A86FFF500B5E7C4 /* AuthProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderProtocol.swift; sourceTree = "<group>"; };
 		AADA7FAB2A86FFFE00B5E7C4 /* FirebaseAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthProvider.swift; sourceTree = "<group>"; };
@@ -312,14 +320,14 @@
 			path = UpdateTodo;
 			sourceTree = "<group>";
 		};
-		AA1932832A830F5B002C846F /* SyncReadyTodo */ = {
+		AA1932832A830F5B002C846F /* UploadReadyTodos */ = {
 			isa = PBXGroup;
 			children = (
-				AA1932842A830F5B002C846F /* SyncReadyTodoUseCase.swift */,
-				AA1932852A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift */,
-				AA1932862A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift */,
+				AA1932842A830F5B002C846F /* UploadReadyTodosUseCase.swift */,
+				AA1932852A830F5B002C846F /* UploadReadyTodosUseCaseInput.swift */,
+				AA1932862A830F5B002C846F /* UploadReadyTodosUseCaseResult.swift */,
 			);
-			path = SyncReadyTodo;
+			path = UploadReadyTodos;
 			sourceTree = "<group>";
 		};
 		AA19328C2A837A11002C846F /* SignOut */ = {
@@ -345,7 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				AA30E9632A8502690063809B /* CancelEditTodo */,
-				AADA7F9E2A864AE700B5E7C4 /* DoneTodo */,
+				AADA7F9E2A864AE700B5E7C4 /* DeleteTodo */,
 				AA30E95C2A84DE360063809B /* FetchTodo */,
 				AA8F33932A8725940090EFDB /* FetchTodoList */,
 				AA19327C2A830A09002C846F /* UpdateTodo */,
@@ -381,6 +389,32 @@
 				AA8F33952A8725C70090EFDB /* FetchTodoListUseCaseResult.swift */,
 			);
 			path = FetchTodoList;
+			sourceTree = "<group>";
+		};
+		AA8F33A42A88CA210090EFDB /* DownloadTodos */ = {
+			isa = PBXGroup;
+			children = (
+				AA8F33A72A88CA5A0090EFDB /* DownloadTodosUseCase.swift */,
+				AA8F33A52A88CA5A0090EFDB /* DownloadTodosUseCaseInput.swift */,
+				AA8F33A62A88CA5A0090EFDB /* DownloadTodosUseCaseResult.swift */,
+			);
+			path = DownloadTodos;
+			sourceTree = "<group>";
+		};
+		AA8F33AB2A88CB730090EFDB /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		AA8F33AC2A88D0870090EFDB /* SyncBackend */ = {
+			isa = PBXGroup;
+			children = (
+				AA8F33A42A88CA210090EFDB /* DownloadTodos */,
+				AA1932832A830F5B002C846F /* UploadReadyTodos */,
+			);
+			path = SyncBackend;
 			sourceTree = "<group>";
 		};
 		AA93D31B2A85DA9700BB5EF2 /* Common */ = {
@@ -531,14 +565,14 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		AADA7F9E2A864AE700B5E7C4 /* DoneTodo */ = {
+		AADA7F9E2A864AE700B5E7C4 /* DeleteTodo */ = {
 			isa = PBXGroup;
 			children = (
-				AADA7F9F2A864B1000B5E7C4 /* DoneTodoUseCase.swift */,
-				AADA7FA02A864B1000B5E7C4 /* DoneTodoUseCaseInput.swift */,
-				AADA7FA12A864B1000B5E7C4 /* DoneTodoUseCaseResult.swift */,
+				AADA7F9F2A864B1000B5E7C4 /* DeleteTodoUseCase.swift */,
+				AADA7FA02A864B1000B5E7C4 /* DeleteTodoUseCaseInput.swift */,
+				AADA7FA12A864B1000B5E7C4 /* DeleteTodoUseCaseResult.swift */,
 			);
-			path = DoneTodo;
+			path = DeleteTodo;
 			sourceTree = "<group>";
 		};
 		AADA7FA72A86FFDB00B5E7C4 /* DI */ = {
@@ -595,6 +629,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE79F842A80E1BC009823FB /* ActivityIndicatorView.swift */,
+				AA8F33A02A88B6360090EFDB /* FirebaseUIView.swift */,
 			);
 			path = Bridge;
 			sourceTree = "<group>";
@@ -663,8 +698,9 @@
 				AAE79FC32A80FDA6009823FB /* UseCaseProtocol.swift */,
 				AA93D31B2A85DA9700BB5EF2 /* Common */,
 				AAE79FB32A80FD2F009823FB /* Launch */,
+				AA8F33AB2A88CB730090EFDB /* SignIn */,
 				AA19328C2A837A11002C846F /* SignOut */,
-				AA1932832A830F5B002C846F /* SyncReadyTodo */,
+				AA8F33AC2A88D0870090EFDB /* SyncBackend */,
 				AA30E95B2A84DE2A0063809B /* Todo */,
 			);
 			path = UseCase;
@@ -1094,6 +1130,7 @@
 				AA8F33982A8725C70090EFDB /* FetchTodoListUseCaseResult.swift in Sources */,
 				AAE79F9C2A80E4E3009823FB /* AlertItem.swift in Sources */,
 				AAE79FC02A80FD2F009823FB /* CheckVersionUseCase.swift in Sources */,
+				AA8F33A92A88CA5A0090EFDB /* DownloadTodosUseCaseResult.swift in Sources */,
 				AAE79FE02A81180B009823FB /* AppConstValues.swift in Sources */,
 				AAE79FBC2A80FD2F009823FB /* LaunchUseCaseInput.swift in Sources */,
 				AAE79FB02A80FAC1009823FB /* Todo.swift in Sources */,
@@ -1101,13 +1138,14 @@
 				AA19327E2A830A1C002C846F /* UpdateTodoUseCase.swift in Sources */,
 				AAE79FD02A8106F0009823FB /* EditTodoViewModel.swift in Sources */,
 				AAE79F7D2A80E0C1009823FB /* AppDelegate.swift in Sources */,
-				AADA7FA22A864B1000B5E7C4 /* DoneTodoUseCase.swift in Sources */,
+				AADA7FA22A864B1000B5E7C4 /* DeleteTodoUseCase.swift in Sources */,
 				AA30E9692A8502880063809B /* CancelEditTodoUseCaseResult.swift in Sources */,
 				AAE79F792A80DFC2009823FB /* UIViewController+SwiftUI.swift in Sources */,
 				AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */,
-				AA1932872A830F5B002C846F /* SyncReadyTodoUseCase.swift in Sources */,
+				AA1932872A830F5B002C846F /* UploadReadyTodosUseCase.swift in Sources */,
 				AAE79FD22A810CB0009823FB /* TodoRepository.swift in Sources */,
 				AA1932772A82F030002C846F /* HomeAddView.swift in Sources */,
+				AA8F33AA2A88CA5A0090EFDB /* DownloadTodosUseCase.swift in Sources */,
 				AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */,
 				AAE79F822A80E101009823FB /* SceneDelegate.swift in Sources */,
 				AAE79FBD2A80FD2F009823FB /* LaunchUseCase.swift in Sources */,
@@ -1120,18 +1158,19 @@
 				AA8F339D2A872EB70090EFDB /* TodoSection.swift in Sources */,
 				AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */,
 				AA30E9622A84F7920063809B /* FetchTodoUseCase.swift in Sources */,
-				AA1932882A830F5B002C846F /* SyncReadyTodoUseCaseInput.swift in Sources */,
+				AA1932882A830F5B002C846F /* UploadReadyTodosUseCaseInput.swift in Sources */,
 				AAE79F752A80DF13009823FB /* R.generated.swift in Sources */,
 				AA1932922A837A11002C846F /* SignOutUseCase.swift in Sources */,
 				AA30E9682A8502880063809B /* CancelEditTodoUseCaseInput.swift in Sources */,
 				AA1932732A8248AB002C846F /* LoginViewModel.swift in Sources */,
-				AADA7FA42A864B1000B5E7C4 /* DoneTodoUseCaseResult.swift in Sources */,
+				AADA7FA42A864B1000B5E7C4 /* DeleteTodoUseCaseResult.swift in Sources */,
+				AA8F33A82A88CA5A0090EFDB /* DownloadTodosUseCaseInput.swift in Sources */,
 				AAE79FB22A80FAE1009823FB /* RegistrationStatus.swift in Sources */,
 				AA1932752A824B7C002C846F /* TodoItemView.swift in Sources */,
 				AADA7FAC2A86FFFE00B5E7C4 /* FirebaseAuthProvider.swift in Sources */,
 				AAE79FC42A80FDA6009823FB /* UseCaseProtocol.swift in Sources */,
 				AAE79F7F2A80E0E0009823FB /* UIAppearanceUtil.swift in Sources */,
-				AA1932892A830F5B002C846F /* SyncReadyTodoUseCaseResult.swift in Sources */,
+				AA1932892A830F5B002C846F /* UploadReadyTodosUseCaseResult.swift in Sources */,
 				AAE79FA12A80E543009823FB /* ListItemView.swift in Sources */,
 				AAE79FD82A8113AC009823FB /* LoginView.swift in Sources */,
 				AADA7FAA2A86FFF500B5E7C4 /* AuthProviderProtocol.swift in Sources */,
@@ -1150,13 +1189,14 @@
 				AAE79FD42A810D20009823FB /* PreviewUtil.swift in Sources */,
 				AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */,
 				AAE79F772A80DF48009823FB /* FAPage.swift in Sources */,
+				AA8F33A12A88B6360090EFDB /* FirebaseUIView.swift in Sources */,
 				AA8F33992A8725C70090EFDB /* FetchTodoListUseCase.swift in Sources */,
 				AAE79F932A80E376009823FB /* SettingsViewRouter.swift in Sources */,
 				AA30E9612A84F7920063809B /* FetchTodoUseCaseResult.swift in Sources */,
 				AAE79F912A80E376009823FB /* SettingsView.swift in Sources */,
 				AAE79F952A80E376009823FB /* SettingsListItemView.swift in Sources */,
 				AA1932912A837A11002C846F /* SignOutUseCaseInput.swift in Sources */,
-				AADA7FA32A864B1000B5E7C4 /* DoneTodoUseCaseInput.swift in Sources */,
+				AADA7FA32A864B1000B5E7C4 /* DeleteTodoUseCaseInput.swift in Sources */,
 				AAE79FBF2A80FD2F009823FB /* CheckVersionUseCaseInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

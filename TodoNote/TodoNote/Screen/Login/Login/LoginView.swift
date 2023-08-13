@@ -9,6 +9,11 @@ import SwiftUI
 
 /// A-2    ログイン
 struct LoginView: View {
+    @Environment(\.viewController) private var viewControllerHolder: ViewControllerHolder
+    private var viewController: UIViewController? {
+        viewControllerHolder.value
+    }
+
     @ObservedObject private var model = LoginViewModel()
 
     @State private var rotation = Angle(degrees: 0)
@@ -54,8 +59,12 @@ struct LoginView: View {
 
             Color.clear.frame(height: 16)
         }
+        .onAppear {
+            model.onAppear(from: viewController)
+        }
         .padding(.horizontal, 24)
         .alert(item: $model.alertItem) { $0.alert }
+        .sheet(isPresented: $model.isShowSheet) { FirebaseUIView() }
     }
 }
 

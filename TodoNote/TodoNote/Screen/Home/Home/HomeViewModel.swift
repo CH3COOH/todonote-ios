@@ -17,7 +17,7 @@ class HomeViewModel: BaseViewModel {
 
     private let fetchTodoListUseCase = FetchTodoListUseCase()
 
-    private let doneTodoUseCase = DoneTodoUseCase()
+    private let doneTodoUseCase = DeleteTodoUseCase()
 
     var isEmpty: Bool {
         isLoaded && items.isEmpty

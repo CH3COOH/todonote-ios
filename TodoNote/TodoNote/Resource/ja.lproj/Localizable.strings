@@ -77,7 +77,7 @@
 
 // MARK: - login
 "login_title" = "TodoNote へようこそ！";
-"login_body" = "ダウンロードしてくれてありがとう！\nTodoNote はTODOを管理するアプリだよ\n\nスタートボタンをクリックすると、Firestore の匿名ログインをするよ。タスクは Firestore に保存するよ。ログイン後はオフラインで使えるよ\nゆっくりしていってね";
+"login_body" = "ダウンロードしてくれてありがとう！\nTodoNote はTODOを管理するアプリだよ\n\nタスクは Firestore上 に保存するよ。ログイン後はオフラインでも使えるよ。ゆっくりしていってね";
 "login_button" = "アプリをはじめる";
 
 // MARK: - ダイアログ/ATT
@@ -98,8 +98,8 @@
 "settings_about_cell_privacy_policy" = "プライバシーポリシー";
 "settings_about_cell_company" = "開発者";
 "settings_about_cell_company_desc" = "Kenji Wada";
-"settings_alert_logout_title" = "ログアウトしますか？";
-"settings_alert_logout_message" = "匿名ログインのため、現在登録しているタスクにアクセスできなくなります。この選択は取り消せません";
+"settings_alert_logout_title" = "確認";
+"settings_alert_logout_message" = "ログアウトしますか？";
 
 // MARK: - 設定画面/問い合わせダイアログ
 "settings_bug_report_desc" = "不具合の報告は\n下記「不具合の報告」よりご連絡ください。早急に対応いたします。";

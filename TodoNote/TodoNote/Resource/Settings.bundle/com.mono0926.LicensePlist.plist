@@ -20,9 +20,49 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/AppAuth</string>
+			<key>Title</key>
+			<string>AppAuth</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/BoringSSL-GRPC</string>
 			<key>Title</key>
 			<string>BoringSSL-GRPC</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FBAEMKit</string>
+			<key>Title</key>
+			<string>FBAEMKit</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FBSDKCoreKit</string>
+			<key>Title</key>
+			<string>FBSDKCoreKit</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FBSDKCoreKit_Basics</string>
+			<key>Title</key>
+			<string>FBSDKCoreKit_Basics</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FBSDKLoginKit</string>
+			<key>Title</key>
+			<string>FBSDKLoginKit</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -44,6 +84,14 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseAnonymousAuthUI</string>
+			<key>Title</key>
+			<string>FirebaseAnonymousAuthUI</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/FirebaseAppCheckInterop</string>
 			<key>Title</key>
 			<string>FirebaseAppCheckInterop</string>
@@ -55,6 +103,22 @@
 			<string>com.mono0926.LicensePlist/FirebaseAuth</string>
 			<key>Title</key>
 			<string>FirebaseAuth</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseAuthInterop</string>
+			<key>Title</key>
+			<string>FirebaseAuthInterop</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseAuthUI</string>
+			<key>Title</key>
+			<string>FirebaseAuthUI</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -92,9 +156,57 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseDatabase</string>
+			<key>Title</key>
+			<string>FirebaseDatabase</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseDatabaseUI</string>
+			<key>Title</key>
+			<string>FirebaseDatabaseUI</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseEmailAuthUI</string>
+			<key>Title</key>
+			<string>FirebaseEmailAuthUI</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseFacebookAuthUI</string>
+			<key>Title</key>
+			<string>FirebaseFacebookAuthUI</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/FirebaseFirestore</string>
 			<key>Title</key>
 			<string>FirebaseFirestore</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseFirestoreUI</string>
+			<key>Title</key>
+			<string>FirebaseFirestoreUI</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseGoogleAuthUI</string>
+			<key>Title</key>
+			<string>FirebaseGoogleAuthUI</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -108,9 +220,25 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseOAuthUI</string>
+			<key>Title</key>
+			<string>FirebaseOAuthUI</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/FirebasePerformance</string>
 			<key>Title</key>
 			<string>FirebasePerformance</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebasePhoneAuthUI</string>
+			<key>Title</key>
+			<string>FirebasePhoneAuthUI</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -132,6 +260,30 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseStorage</string>
+			<key>Title</key>
+			<string>FirebaseStorage</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseStorageUI</string>
+			<key>Title</key>
+			<string>FirebaseStorageUI</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/FirebaseUI</string>
+			<key>Title</key>
+			<string>FirebaseUI</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/GoogleAppMeasurement</string>
 			<key>Title</key>
 			<string>GoogleAppMeasurement</string>
@@ -143,6 +295,14 @@
 			<string>com.mono0926.LicensePlist/GoogleDataTransport</string>
 			<key>Title</key>
 			<string>GoogleDataTransport</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/GoogleSignIn</string>
+			<key>Title</key>
+			<string>GoogleSignIn</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -167,6 +327,14 @@
 			<string>com.mono0926.LicensePlist/gRPC-Core</string>
 			<key>Title</key>
 			<string>gRPC-Core</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/GTMAppAuth</string>
+			<key>Title</key>
+			<string>GTMAppAuth</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -255,6 +423,14 @@
 			<string>com.mono0926.LicensePlist/ReachabilitySwift</string>
 			<key>Title</key>
 			<string>ReachabilitySwift</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/SDWebImage</string>
+			<key>Title</key>
+			<string>SDWebImage</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>

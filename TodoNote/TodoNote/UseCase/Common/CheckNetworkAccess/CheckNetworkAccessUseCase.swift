@@ -8,7 +8,7 @@
 import Foundation
 import Reachability
 
-/// BL-Z02 ネットワーク接続状態のチェック
+/// BL-Z03 ネットワーク接続状態のチェック
 class CheckNetworkAccessUseCase: UseCaseProtocol {
     func execute(_: CheckNetworkAccessUseCaseInput) async -> CheckNetworkAccessUseCaseResult {
         return await checkReachability()

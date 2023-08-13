@@ -1,5 +1,5 @@
 //
-//  DoneTodoUseCase.swift
+//  DeleteTodoUseCase.swift
 //  TodoNote
 //
 //  Created by KENJIWADA on 2023/08/09.
@@ -9,7 +9,7 @@ import Foundation
 import UserNotifications
 
 /// BL-B02 TODOアイテムの削除
-class DoneTodoUseCase: UseCaseProtocol {
+class DeleteTodoUseCase: UseCaseProtocol {
     private let firestoreRepository: FirestoreRepository
     private let todoRepository: TodoRepository
 
@@ -25,11 +25,11 @@ class DoneTodoUseCase: UseCaseProtocol {
         self.checkNetworkAccessUseCase = checkNetworkAccessUseCase
     }
 
-    func execute(_ input: DoneTodoUseCaseInput) async -> DoneTodoUseCaseResult {
+    func execute(_ input: DeleteTodoUseCaseInput) async -> DeleteTodoUseCaseResult {
         return await markTodoAsDone(input: input)
     }
 
-    private func markTodoAsDone(input: DoneTodoUseCaseInput) async -> DoneTodoUseCaseResult {
+    private func markTodoAsDone(input: DeleteTodoUseCaseInput) async -> DeleteTodoUseCaseResult {
         do {
             let newTodo = input.todo.copy(
                 status: .ready,
@@ -45,7 +45,7 @@ class DoneTodoUseCase: UseCaseProtocol {
         }
     }
 
-    private func deleteNotificationRequest(todo: Todo) async -> DoneTodoUseCaseResult {
+    private func deleteNotificationRequest(todo: Todo) async -> DeleteTodoUseCaseResult {
         let center = UNUserNotificationCenter.current()
 
         // 既存の通知リクエストを削除する
@@ -58,7 +58,7 @@ class DoneTodoUseCase: UseCaseProtocol {
         return await availableNetworkAccess(todo: todo)
     }
 
-    private func availableNetworkAccess(todo: Todo) async -> DoneTodoUseCaseResult {
+    private func availableNetworkAccess(todo: Todo) async -> DeleteTodoUseCaseResult {
         let result = await checkNetworkAccessUseCase.execute(.init())
         switch result {
         case .connected:
@@ -69,7 +69,7 @@ class DoneTodoUseCase: UseCaseProtocol {
         }
     }
 
-    private func syncTodoWithServer(todo: Todo) async -> DoneTodoUseCaseResult {
+    private func syncTodoWithServer(todo: Todo) async -> DeleteTodoUseCaseResult {
         do {
             try await firestoreRepository.delete(object: todo)
 
@@ -81,7 +81,7 @@ class DoneTodoUseCase: UseCaseProtocol {
         }
     }
 
-    private func finalizeTodoSync(todo: Todo) async -> DoneTodoUseCaseResult {
+    private func finalizeTodoSync(todo: Todo) async -> DeleteTodoUseCaseResult {
         do {
             try await todoRepository.delete(by: todo.id)
             return .success
