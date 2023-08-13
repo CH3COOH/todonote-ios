@@ -17,13 +17,20 @@ struct TodoItemView: View {
     var body: some View {
         HStack(spacing: 0) {
             Button(action: doneAction) {
-                Circle()
-                    .fill(computeFillColor())
-                    .frame(width: 32, height: 32)
-                    .overlay(
-                        Circle()
-                            .stroke(computeStrokeColor())
-                    )
+                ZStack {
+                    Circle()
+                        .fill(computeFillColor())
+                        .overlay(
+                            Circle()
+                                .stroke(computeStrokeColor())
+                        )
+                    Image(systemName: "checkmark")
+                        .resizable()
+                        .frame(width: 12, height: 12)
+                        .scaledToFit()
+                        .foregroundColor(Color.white)
+                }
+                .frame(width: 32, height: 32)
             }
             .buttonStyle(.plain)
             .padding(.trailing, 12)
@@ -58,11 +65,11 @@ struct TodoItemView: View {
         let todoDate = Calendar.current.startOfDay(for: item.datetime)
 
         if todoDate < today {
-            return R.color.red50.color
+            return R.color.red300.color
         } else if todoDate == today {
-            return R.color.amber50.color
+            return R.color.amber300.color
         } else {
-            return R.color.lightGreen50.color
+            return R.color.lightGreen300.color
         }
     }
 
