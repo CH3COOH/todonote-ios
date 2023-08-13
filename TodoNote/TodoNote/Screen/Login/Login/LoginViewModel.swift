@@ -13,7 +13,7 @@ import SwiftUI
 class LoginViewModel: BaseViewModel {
     @Published var isShowSheet = false
 
-    private let syncBackendTodoUseCase = SyncBackendTodoUseCase()
+    private let syncBackendTodoUseCase = DownloadTodosUseCase()
 
     private var listener: AuthStateDidChangeListenerHandle!
 

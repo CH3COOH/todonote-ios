@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// BL-B01 TODOリストの取得
 class FetchTodoListUseCase: UseCaseProtocol {
     private let todoRepository: TodoRepository
 

@@ -8,6 +8,7 @@
 import Foundation
 import UserNotifications
 
+/// BL-C02 TODOアイテムの登録・編集完了
 class UpdateTodoUseCase: UseCaseProtocol {
     private let firestoreRepository: FirestoreRepository
     private let todoRepository: TodoRepository

@@ -7,17 +7,18 @@
 import FirebaseAuth
 import Foundation
 
+/// BL-A01 アプリ起動時
 class LaunchUseCase: UseCaseProtocol {
     let todoRepository: TodoRepository
 
     let checkVersionUseCase: CheckVersionUseCase
 
-    let syncReadyTodoUseCase: SyncReadyTodoUseCase
+    let syncReadyTodoUseCase: UploadReadyTodosUseCase
 
     init(
         todoRepository: TodoRepository = TodoRepository(),
         checkVersionUseCase: CheckVersionUseCase = CheckVersionUseCase(),
-        syncReadyTodoUseCase: SyncReadyTodoUseCase = SyncReadyTodoUseCase()
+        syncReadyTodoUseCase: UploadReadyTodosUseCase = UploadReadyTodosUseCase()
     ) {
         self.todoRepository = todoRepository
         self.checkVersionUseCase = checkVersionUseCase

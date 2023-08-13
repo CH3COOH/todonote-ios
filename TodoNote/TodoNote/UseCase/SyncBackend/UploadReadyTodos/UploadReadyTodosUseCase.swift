@@ -1,5 +1,5 @@
 //
-//  SyncReadyTodoUseCase.swift
+//  UploadReadyTodosUseCase.swift
 //  TodoNote
 //
 //  Created by KENJIWADA on 2023/08/09.
@@ -9,8 +9,8 @@ import FirebaseAuth
 import FirebaseFirestore
 import Foundation
 
-/// BL-Z01 データの同期
-class SyncReadyTodoUseCase: UseCaseProtocol {
+/// BL-Z01 TODOアイテムのアップロード
+class UploadReadyTodosUseCase: UseCaseProtocol {
     private let checkNetworkAccessUseCase: CheckNetworkAccessUseCase
     private let firestoreRepository: FirestoreRepository
     private let todoRepository: TodoRepository
@@ -25,11 +25,11 @@ class SyncReadyTodoUseCase: UseCaseProtocol {
         self.checkNetworkAccessUseCase = checkNetworkAccessUseCase
     }
 
-    func execute(_ input: SyncReadyTodoUseCaseInput) async -> SyncReadyTodoUseCaseResult {
+    func execute(_ input: UploadReadyTodosUseCaseInput) async -> UploadReadyTodosUseCaseResult {
         return await fetchReadyItems(input: input)
     }
 
-    private func fetchReadyItems(input: SyncReadyTodoUseCaseInput) async -> SyncReadyTodoUseCaseResult {
+    private func fetchReadyItems(input: UploadReadyTodosUseCaseInput) async -> UploadReadyTodosUseCaseResult {
         do {
             let results = try await todoRepository.fetch(with: [.ready])
             if results.isEmpty {
@@ -43,7 +43,7 @@ class SyncReadyTodoUseCase: UseCaseProtocol {
     }
 
     /// ネットワーク接続が可能か調べる
-    private func availableNetworkAccess(input: SyncReadyTodoUseCaseInput, items: [Todo]) async -> SyncReadyTodoUseCaseResult {
+    private func availableNetworkAccess(input: UploadReadyTodosUseCaseInput, items: [Todo]) async -> UploadReadyTodosUseCaseResult {
         let result = await checkNetworkAccessUseCase.execute(.init())
         switch result {
         case .connected:
@@ -55,7 +55,7 @@ class SyncReadyTodoUseCase: UseCaseProtocol {
     }
 
     /// Firestore へデータを同期する
-    private func syncItems(input: SyncReadyTodoUseCaseInput, items: [Todo]) async -> SyncReadyTodoUseCaseResult {
+    private func syncItems(input: UploadReadyTodosUseCaseInput, items: [Todo]) async -> UploadReadyTodosUseCaseResult {
         do {
             for item in items {
                 if item.finished {
@@ -77,7 +77,7 @@ class SyncReadyTodoUseCase: UseCaseProtocol {
         }
     }
 
-    private func updateLocalData(input _: SyncReadyTodoUseCaseInput, items: [Todo]) async -> SyncReadyTodoUseCaseResult {
+    private func updateLocalData(input _: UploadReadyTodosUseCaseInput, items: [Todo]) async -> UploadReadyTodosUseCaseResult {
         do {
             for item in items {
                 if item.finished {

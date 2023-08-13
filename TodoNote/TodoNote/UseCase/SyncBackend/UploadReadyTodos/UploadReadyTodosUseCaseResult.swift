@@ -1,5 +1,5 @@
 //
-//  SyncBackendTodoUseCaseResult.swift
+//  UploadReadyTodosUseCaseResult.swift
 //  TodoNote
 //
 //  Created by KENJIWADA on 2023/08/09.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SyncBackendTodoUseCaseResult {
+enum UploadReadyTodosUseCaseResult {
     /// 成功
     case success
 
