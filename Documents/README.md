@@ -13,7 +13,7 @@
 
 ## 画面
 
-### 遷移図
+### 画面遷移図
 
 <img width="749" alt="screen-transition" src="https://github.com/CH3COOH/todonote-ios/assets/137952/dbdc0ac1-96f2-4873-ade5-7f9c9cbc7da1">
 
