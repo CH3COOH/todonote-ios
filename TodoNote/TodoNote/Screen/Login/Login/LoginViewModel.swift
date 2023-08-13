@@ -6,39 +6,59 @@
 //
 
 import FirebaseAuth
+import FirebaseAuthUI
 import KRProgressHUD
 import SwiftUI
 
-class LoginViewModel: ObservableObject {
-    @Published var alertItem: AlertItem?
+class LoginViewModel: BaseViewModel {
+    @Published var isShowSheet = false
 
-    let authProvider: AuthProviderProtocol = FirebaseAuthProvider()
+    private var listener: AuthStateDidChangeListenerHandle!
 
-    func onAppear(from _: UIViewController?) {}
+    deinit {
+        Auth.auth().removeStateDidChangeListener(listener)
+        listener = nil
+    }
+
+    func onAppear(from _: UIViewController?) {
+        if listener == nil {
+            listener = Auth.auth().addStateDidChangeListener { _, user in
+                if let currentUser = user {
+                    if currentUser.isAnonymous {
+                        print("sign-in: Anonymous User!")
+                    } else {
+                        print("sign-in")
+                    }
+                    self.hogehoge()
+                }
+            }
+        }
+    }
 
     func onClickLoginButton() {
-        KRProgressHUD.show()
-
-        defer {
-            KRProgressHUD.dismiss()
-        }
-
         Task {
             do {
                 let center = UNUserNotificationCenter.current()
                 try await center.requestAuthorization(options: [.sound, .sound])
-                try await authProvider.signInAnonymously()
-                await moveNextScreen()
-            } catch {
-                Task { @MainActor in
-                    alertItem = AlertItem(
-                        alert: Alert(
-                            title: R.string.localizable.error.text,
-                            message: Text(error.localizedDescription)
-                        )
-                    )
+
+                await MainActor.run {
+                    isShowSheet = true
                 }
+            } catch {
+                await show(error: error)
             }
+        }
+    }
+    
+    private func hogehoge() {
+        KRProgressHUD.show()
+        defer {
+            KRProgressHUD.dismiss()
+        }
+        Task {
+            // バックエンド上に存在するタスクの取得
+            
+            await self.moveNextScreen()
         }
     }
 

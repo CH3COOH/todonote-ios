@@ -42,6 +42,7 @@
 		AA8F339B2A8726DF0090EFDB /* HomeSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F339A2A8726DF0090EFDB /* HomeSortType.swift */; };
 		AA8F339D2A872EB70090EFDB /* TodoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F339C2A872EB70090EFDB /* TodoSection.swift */; };
 		AA8F339F2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F339E2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift */; };
+		AA8F33A12A88B6360090EFDB /* FirebaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A02A88B6360090EFDB /* FirebaseUIView.swift */; };
 		AA93D3202A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */; };
 		AA93D3212A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */; };
 		AA93D3222A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */; };
@@ -163,6 +164,7 @@
 		AA8F339A2A8726DF0090EFDB /* HomeSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSortType.swift; sourceTree = "<group>"; };
 		AA8F339C2A872EB70090EFDB /* TodoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSection.swift; sourceTree = "<group>"; };
 		AA8F339E2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTodoListUseCaseTests.swift; sourceTree = "<group>"; };
+		AA8F33A02A88B6360090EFDB /* FirebaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUIView.swift; sourceTree = "<group>"; };
 		AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseInput.swift; sourceTree = "<group>"; };
 		AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseResult.swift; sourceTree = "<group>"; };
 		AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCase.swift; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE79F842A80E1BC009823FB /* ActivityIndicatorView.swift */,
+				AA8F33A02A88B6360090EFDB /* FirebaseUIView.swift */,
 			);
 			path = Bridge;
 			sourceTree = "<group>";
@@ -1150,6 +1153,7 @@
 				AAE79FD42A810D20009823FB /* PreviewUtil.swift in Sources */,
 				AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */,
 				AAE79F772A80DF48009823FB /* FAPage.swift in Sources */,
+				AA8F33A12A88B6360090EFDB /* FirebaseUIView.swift in Sources */,
 				AA8F33992A8725C70090EFDB /* FetchTodoListUseCase.swift in Sources */,
 				AAE79F932A80E376009823FB /* SettingsViewRouter.swift in Sources */,
 				AA30E9612A84F7920063809B /* FetchTodoUseCaseResult.swift in Sources */,

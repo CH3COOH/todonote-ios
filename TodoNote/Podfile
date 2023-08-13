@@ -19,6 +19,10 @@ target 'TodoNote' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
 
+  pod 'FirebaseUI'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/OAuth'
+  
   # for script
   pod 'R.swift'
   pod 'SwiftFormat/CLI', '~> 0.49'
