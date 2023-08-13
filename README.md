@@ -31,3 +31,4 @@ bundle exec pod install
 * アーキテクチャ: Clean Architecture 
 * パッケージマネージャ: CocoaPods
 * バックエンド: Cloud Firestore
+* CI: Bitrise
