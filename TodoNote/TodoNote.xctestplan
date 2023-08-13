@@ -9,7 +9,6 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
     "targetForVariableExpansion" : {
       "containerPath" : "container:TodoNote.xcodeproj",
       "identifier" : "AABB4F772A80D7A4008FC467",
