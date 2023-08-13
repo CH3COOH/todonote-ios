@@ -1,3 +1,5 @@
+[![Build Status](https://app.bitrise.io/app/80fabd50-5db4-48ac-8357-21cbc43d7cb9/status.svg?token=-E0kWr3snOcU4eLFaYi9Vw&branch=master)](https://app.bitrise.io/app/80fabd50-5db4-48ac-8357-21cbc43d7cb9)
+
 # TodoNote for iOS
 
 TodoNote は、iOS向けTODO管理アプリです。
