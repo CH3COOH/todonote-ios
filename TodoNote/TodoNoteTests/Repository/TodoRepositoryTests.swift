@@ -19,6 +19,46 @@ final class TodoRepositoryTests: XCTestCase {
     override func tearDownWithError() throws {
     }
 
+    func testInsert_1() async throws {
+        try await repository.deleteAll(with: RegistrationStatus.allCases)
+        
+        let id = TodoId(rawValue: "test1")
+        let date = Date()
+        
+        let todo = Todo(
+            todoId: id,
+            status: .ready,
+            title: "タイトル",
+            description: "本文",
+            datetime: date,
+            createdAt: date,
+            updatedAt: date,
+            finished: false
+        )
+        
+        try await repository.insert(object: todo)
+        
+        let count1 = try repository.fetchCount()
+        
+        XCTAssertEqual(count1, 1)
+        
+        let fetchedTodo = try await repository.fetch(by: id)
+        
+        XCTAssertNotNil(fetchedTodo)
+        XCTAssertEqual(fetchedTodo!.id, id)
+        XCTAssertEqual(fetchedTodo!.todoId, id)
+        XCTAssertEqual(fetchedTodo!.status, RegistrationStatus.ready)
+        XCTAssertEqual(fetchedTodo!.title, "タイトル")
+        XCTAssertEqual(fetchedTodo!.description, "本文")
+        XCTAssertEqual(fetchedTodo!.finished, false)
+        
+        try await repository.delete(by: id)
+
+        let count2 = try repository.fetchCount()
+        
+        XCTAssertEqual(count2, 0)
+    }
+    
     func testCreateAndDelete_1() async throws {
         try await repository.deleteAll(with: RegistrationStatus.allCases)
         
@@ -88,47 +128,6 @@ final class TodoRepositoryTests: XCTestCase {
 
         XCTAssertEqual(count2, 0)
     }
-    
-//    func testCreateAndDelete_3() async throws {
-//        try await repository.deleteAll(with: RegistrationStatus.allCases)
-//
-//        let date = Date()
-//
-//        let todo1 = Todo(
-//            todoId: TodoId(rawValue: "test1"),
-//            status: RegistrationStatus.editing,
-//            title: "タイトル",
-//            description: "本文",
-//            datetime: date,
-//            createdAt: date,
-//            updatedAt: date,
-//            finished: false
-//        )
-//
-//        let todo2 = Todo(
-//            todoId: TodoId(rawValue: "test1"),
-//            status: RegistrationStatus.ready,
-//            title: "タイトル1",
-//            description: "本文2",
-//            datetime: date,
-//            createdAt: date,
-//            updatedAt: date,
-//            finished: false
-//        )
-//
-//        try await repository.insert(object: todo1)
-//        try await repository.insert(object: todo2)
-//
-//        let count1 = try repository.fetchCount()
-//
-//        XCTAssertEqual(count1, 2)
-//
-//        try await repository.deleteAll(with: RegistrationStatus.allCases)
-//
-//        let count2 = try repository.fetchCount()
-//
-//        XCTAssertEqual(count2, 0)
-//    }
     
     func testCreateAndGet_1() async throws {
         try await repository.deleteAll(with: RegistrationStatus.allCases)
