@@ -15,48 +15,41 @@ struct TodoItemView: View {
     let editAction: () -> Void
 
     var body: some View {
-        HStack(spacing: 0) {
-            Button(action: doneAction) {
-                ZStack {
-                    Circle()
-                        .fill(computeFillColor())
-                        .overlay(
-                            Circle()
-                                .stroke(computeStrokeColor())
-                        )
-                    Image(systemName: "checkmark")
-                        .resizable()
-                        .frame(width: 12, height: 12)
-                        .scaledToFit()
-                        .foregroundColor(Color.white)
+        Button(action: editAction) {
+            HStack(spacing: 0) {
+                Button(action: doneAction) {
+                    ZStack {
+                        Circle()
+                            .fill(computeFillColor())
+                            .overlay(
+                                Circle()
+                                    .stroke(computeStrokeColor())
+                            )
+                        Image(systemName: "checkmark")
+                            .resizable()
+                            .frame(width: 12, height: 12)
+                            .scaledToFit()
+                            .foregroundColor(Color.white)
+                    }
+                    .frame(width: 32, height: 32)
                 }
-                .frame(width: 32, height: 32)
-            }
-            .buttonStyle(.plain)
-            .padding(.trailing, 12)
-            .padding(.vertical, 4)
+                .buttonStyle(.plain)
+                .padding(.trailing, 12)
+                .padding(.vertical, 4)
 
-            VStack(alignment: .leading, spacing: 4) {
-                Text(item.title)
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(Color.black)
-                if let desc = item.description, !desc.isEmpty {
-                    Text(desc)
-                        .font(.system(size: 14, weight: .regular))
-                        .foregroundColor(R.color.grey700.color)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(item.title)
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(Color.black)
+                    if let desc = item.description, !desc.isEmpty {
+                        Text(desc)
+                            .font(.system(size: 14, weight: .regular))
+                            .foregroundColor(R.color.grey700.color)
+                    }
                 }
-            }
 
-            Spacer(minLength: 0)
-
-            Button(action: editAction) {
-                Image(systemName: "pencil")
-                    .resizable()
-                    .frame(width: 16, height: 16)
-                    .scaledToFit()
-                    .foregroundColor(R.color.accentColor.color)
+                Spacer(minLength: 0)
             }
-            .buttonStyle(.plain)
         }
     }
 
