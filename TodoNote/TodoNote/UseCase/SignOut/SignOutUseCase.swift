@@ -58,7 +58,7 @@ class SignOutUseCase: UseCaseProtocol {
 
     private func deleteAllLocalData() async -> SignOutUseCaseResult {
         do {
-            try await todoRepository.deleteAll(with: RegistrationStatus.allCases)
+            try await todoRepository.delete(with: RegistrationStatus.allCases)
         } catch {
             // エラーは無視する
             print(error.localizedDescription)

@@ -36,7 +36,9 @@ class FetchTodoUseCase: UseCaseProtocol {
         do {
             let editingTodo: Todo
             if let todo = todo {
-                editingTodo = todo.copy(status: .editing)
+                editingTodo = todo.copy(
+                    status: .editing
+                )
             } else {
                 editingTodo = Todo(
                     todoId: input.todoId,
@@ -49,7 +51,7 @@ class FetchTodoUseCase: UseCaseProtocol {
                     finished: false
                 )
             }
-            try await todoRepository.insert(object: editingTodo)
+            try await todoRepository.insert(for: editingTodo)
             return .success(editingTodo)
         } catch {
             return .failed(error)

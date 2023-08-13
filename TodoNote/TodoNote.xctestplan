@@ -9,7 +9,15 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:TodoNote.xcodeproj",
+          "identifier" : "AABB4F772A80D7A4008FC467",
+          "name" : "TodoNote"
+        }
+      ]
+    },
     "targetForVariableExpansion" : {
       "containerPath" : "container:TodoNote.xcodeproj",
       "identifier" : "AABB4F772A80D7A4008FC467",

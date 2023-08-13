@@ -27,7 +27,7 @@ final class UpdateTodoUseCaseTests: XCTestCase {
     }
     
     func test登録() async throws {
-        try await todoRepository.deleteAll(with: RegistrationStatus.allCases)
+        try await todoRepository.delete(with: RegistrationStatus.allCases)
         
         let todoId = TodoId(rawValue: "test1")
         let date = Date()
@@ -57,11 +57,11 @@ final class UpdateTodoUseCaseTests: XCTestCase {
 
         XCTAssertEqual(count1, 1)
         
-        try await todoRepository.deleteAll(with: RegistrationStatus.allCases)
+        try await todoRepository.delete(with: RegistrationStatus.allCases)
     }
     
     func test編集() async throws {
-        try await todoRepository.deleteAll(with: RegistrationStatus.allCases)
+        try await todoRepository.delete(with: RegistrationStatus.allCases)
         
         let todoId = TodoId(rawValue: "test1")
         let date = Date()
@@ -91,6 +91,6 @@ final class UpdateTodoUseCaseTests: XCTestCase {
 
         XCTAssertEqual(count1, 1)
         
-        try await todoRepository.deleteAll(with: RegistrationStatus.allCases)
+        try await todoRepository.delete(with: RegistrationStatus.allCases)
     }
 }
