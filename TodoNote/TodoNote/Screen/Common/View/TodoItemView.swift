@@ -30,6 +30,7 @@ struct TodoItemView: View {
                             .frame(width: 12, height: 12)
                             .scaledToFit()
                             .foregroundColor(Color.white)
+                            .opacity(0.4)
                     }
                     .frame(width: 32, height: 32)
                 }
