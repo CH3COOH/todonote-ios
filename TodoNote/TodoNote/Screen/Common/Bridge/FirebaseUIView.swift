@@ -1,3 +1,4 @@
+import FirebaseAnonymousAuthUI
 import FirebaseAuth
 import FirebaseAuthUI
 import FirebaseEmailAuthUI
@@ -21,6 +22,7 @@ struct FirebaseUIView: UIViewControllerRepresentable {
         let authUI = FUIAuth.defaultAuthUI()!
         let providers: [FUIAuthProvider] = [
             FUIEmailAuth(),
+            FUIAnonymousAuth(),
         ]
         authUI.providers = providers
         authUI.delegate = context.coordinator

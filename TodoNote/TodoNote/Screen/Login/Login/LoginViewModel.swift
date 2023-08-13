@@ -13,6 +13,8 @@ import SwiftUI
 class LoginViewModel: BaseViewModel {
     @Published var isShowSheet = false
 
+    private let syncBackendTodoUseCase = SyncBackendTodoUseCase()
+
     private var listener: AuthStateDidChangeListenerHandle!
 
     deinit {
@@ -29,7 +31,7 @@ class LoginViewModel: BaseViewModel {
                     } else {
                         print("sign-in")
                     }
-                    self.hogehoge()
+                    self.syncBackend()
                 }
             }
         }
@@ -49,16 +51,23 @@ class LoginViewModel: BaseViewModel {
             }
         }
     }
-    
-    private func hogehoge() {
+
+    private func syncBackend() {
         KRProgressHUD.show()
         defer {
             KRProgressHUD.dismiss()
         }
         Task {
             // バックエンド上に存在するタスクの取得
-            
-            await self.moveNextScreen()
+            let result = await syncBackendTodoUseCase.execute(.init())
+            switch result {
+            case .success:
+                await self.moveNextScreen()
+
+            case let .failed(error):
+                try! Auth.auth().signOut()
+                await show(error: error)
+            }
         }
     }
 

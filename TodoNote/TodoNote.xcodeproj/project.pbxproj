@@ -43,6 +43,9 @@
 		AA8F339D2A872EB70090EFDB /* TodoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F339C2A872EB70090EFDB /* TodoSection.swift */; };
 		AA8F339F2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F339E2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift */; };
 		AA8F33A12A88B6360090EFDB /* FirebaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A02A88B6360090EFDB /* FirebaseUIView.swift */; };
+		AA8F33A82A88CA5A0090EFDB /* SyncBackendTodoUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A52A88CA5A0090EFDB /* SyncBackendTodoUseCaseInput.swift */; };
+		AA8F33A92A88CA5A0090EFDB /* SyncBackendTodoUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A62A88CA5A0090EFDB /* SyncBackendTodoUseCaseResult.swift */; };
+		AA8F33AA2A88CA5A0090EFDB /* SyncBackendTodoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A72A88CA5A0090EFDB /* SyncBackendTodoUseCase.swift */; };
 		AA93D3202A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */; };
 		AA93D3212A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */; };
 		AA93D3222A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */; };
@@ -165,6 +168,9 @@
 		AA8F339C2A872EB70090EFDB /* TodoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSection.swift; sourceTree = "<group>"; };
 		AA8F339E2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTodoListUseCaseTests.swift; sourceTree = "<group>"; };
 		AA8F33A02A88B6360090EFDB /* FirebaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUIView.swift; sourceTree = "<group>"; };
+		AA8F33A52A88CA5A0090EFDB /* SyncBackendTodoUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncBackendTodoUseCaseInput.swift; sourceTree = "<group>"; };
+		AA8F33A62A88CA5A0090EFDB /* SyncBackendTodoUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncBackendTodoUseCaseResult.swift; sourceTree = "<group>"; };
+		AA8F33A72A88CA5A0090EFDB /* SyncBackendTodoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncBackendTodoUseCase.swift; sourceTree = "<group>"; };
 		AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseInput.swift; sourceTree = "<group>"; };
 		AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseResult.swift; sourceTree = "<group>"; };
 		AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCase.swift; sourceTree = "<group>"; };
@@ -383,6 +389,23 @@
 				AA8F33952A8725C70090EFDB /* FetchTodoListUseCaseResult.swift */,
 			);
 			path = FetchTodoList;
+			sourceTree = "<group>";
+		};
+		AA8F33A42A88CA210090EFDB /* SyncBackendTodo */ = {
+			isa = PBXGroup;
+			children = (
+				AA8F33A72A88CA5A0090EFDB /* SyncBackendTodoUseCase.swift */,
+				AA8F33A52A88CA5A0090EFDB /* SyncBackendTodoUseCaseInput.swift */,
+				AA8F33A62A88CA5A0090EFDB /* SyncBackendTodoUseCaseResult.swift */,
+			);
+			path = SyncBackendTodo;
+			sourceTree = "<group>";
+		};
+		AA8F33AB2A88CB730090EFDB /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		AA93D31B2A85DA9700BB5EF2 /* Common */ = {
@@ -666,7 +689,9 @@
 				AAE79FC32A80FDA6009823FB /* UseCaseProtocol.swift */,
 				AA93D31B2A85DA9700BB5EF2 /* Common */,
 				AAE79FB32A80FD2F009823FB /* Launch */,
+				AA8F33AB2A88CB730090EFDB /* SignIn */,
 				AA19328C2A837A11002C846F /* SignOut */,
+				AA8F33A42A88CA210090EFDB /* SyncBackendTodo */,
 				AA1932832A830F5B002C846F /* SyncReadyTodo */,
 				AA30E95B2A84DE2A0063809B /* Todo */,
 			);
@@ -1097,6 +1122,7 @@
 				AA8F33982A8725C70090EFDB /* FetchTodoListUseCaseResult.swift in Sources */,
 				AAE79F9C2A80E4E3009823FB /* AlertItem.swift in Sources */,
 				AAE79FC02A80FD2F009823FB /* CheckVersionUseCase.swift in Sources */,
+				AA8F33A92A88CA5A0090EFDB /* SyncBackendTodoUseCaseResult.swift in Sources */,
 				AAE79FE02A81180B009823FB /* AppConstValues.swift in Sources */,
 				AAE79FBC2A80FD2F009823FB /* LaunchUseCaseInput.swift in Sources */,
 				AAE79FB02A80FAC1009823FB /* Todo.swift in Sources */,
@@ -1111,6 +1137,7 @@
 				AA1932872A830F5B002C846F /* SyncReadyTodoUseCase.swift in Sources */,
 				AAE79FD22A810CB0009823FB /* TodoRepository.swift in Sources */,
 				AA1932772A82F030002C846F /* HomeAddView.swift in Sources */,
+				AA8F33AA2A88CA5A0090EFDB /* SyncBackendTodoUseCase.swift in Sources */,
 				AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */,
 				AAE79F822A80E101009823FB /* SceneDelegate.swift in Sources */,
 				AAE79FBD2A80FD2F009823FB /* LaunchUseCase.swift in Sources */,
@@ -1129,6 +1156,7 @@
 				AA30E9682A8502880063809B /* CancelEditTodoUseCaseInput.swift in Sources */,
 				AA1932732A8248AB002C846F /* LoginViewModel.swift in Sources */,
 				AADA7FA42A864B1000B5E7C4 /* DoneTodoUseCaseResult.swift in Sources */,
+				AA8F33A82A88CA5A0090EFDB /* SyncBackendTodoUseCaseInput.swift in Sources */,
 				AAE79FB22A80FAE1009823FB /* RegistrationStatus.swift in Sources */,
 				AA1932752A824B7C002C846F /* TodoItemView.swift in Sources */,
 				AADA7FAC2A86FFFE00B5E7C4 /* FirebaseAuthProvider.swift in Sources */,

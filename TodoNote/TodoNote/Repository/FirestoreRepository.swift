@@ -45,6 +45,48 @@ class FirestoreRepository {
         )
     }
 
+    func fetchAllTodos() async throws -> [Todo] {
+        if isTesting {
+            // TODO: DIした方が良い気がするけど将来的に考える
+            return []
+        }
+
+        guard let userId = Auth.auth().currentUser?.uid else {
+            fatalError("UserId が取得できない")
+        }
+
+        let collectionRef = firestore.collection("version/1/users/\(userId)/items")
+        let snapshot = try await collectionRef.getDocuments()
+
+        let todos: [Todo] = snapshot.documents
+            .compactMap { document -> Todo? in
+                let data = document.data()
+
+                guard
+                    let todoId = data["id"] as? String,
+                    let title = data["title"] as? String,
+                    let description = data["desc"] as? String,
+                    let datetime = data["datetime"] as? Date,
+                    let createdAt = data["create_at"] as? Date,
+                    let updatedAt = data["create_at"] as? Date
+                else {
+                    return nil
+                }
+                return Todo(
+                    todoId: TodoId(rawValue: todoId),
+                    status: .complete,
+                    title: title,
+                    description: description,
+                    datetime: datetime,
+                    createdAt: createdAt,
+                    updatedAt: updatedAt,
+                    finished: false
+                )
+            }
+
+        return todos
+    }
+
     func delete(object: Todo) async throws {
         if isTesting {
             // TODO: DIした方が良い気がするけど将来的に考える
