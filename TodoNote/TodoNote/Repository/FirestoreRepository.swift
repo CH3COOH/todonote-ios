@@ -45,7 +45,7 @@ class FirestoreRepository {
         )
     }
 
-    func fetchAllTodos() async throws -> [Todo] {
+    func fetchAll() async throws -> [Todo] {
         if isTesting {
             // TODO: DIした方が良い気がするけど将来的に考える
             return []
@@ -66,9 +66,9 @@ class FirestoreRepository {
                     let todoId = data["id"] as? String,
                     let title = data["title"] as? String,
                     let description = data["desc"] as? String,
-                    let datetime = data["datetime"] as? Date,
-                    let createdAt = data["create_at"] as? Date,
-                    let updatedAt = data["create_at"] as? Date
+                    let datetime = parseDate(data["datetime"]),
+                    let createdAt = parseDate(data["create_at"]),
+                    let updatedAt = parseDate(data["update_at"])
                 else {
                     return nil
                 }
@@ -100,5 +100,15 @@ class FirestoreRepository {
         let collectionRef = firestore.collection("version/1/users/\(userId)/items")
         let documentRef = collectionRef.document(object.todoId.rawValue)
         try await documentRef.delete()
+    }
+
+    private func parseDate(_ object: Any?) -> Date? {
+        if let value = object as? Timestamp {
+            return value.dateValue()
+        } else if let value = object as? Date {
+            return value
+        } else {
+            return nil
+        }
     }
 }
