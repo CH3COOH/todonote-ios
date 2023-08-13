@@ -1,5 +1,5 @@
 //
-//  DoneTodoUseCaseResult.swift
+//  DeleteTodoUseCaseResult.swift
 //  TodoNote
 //
 //  Created by KENJIWADA on 2023/08/09.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DoneTodoUseCaseResult {
+enum DeleteTodoUseCaseResult {
     /// 成功
     case success
 
