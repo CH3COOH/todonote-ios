@@ -1,6 +1,8 @@
 # TodoNote for iOS
 
-TodoNote は、iOS用TODO管理アプリである。
+TodoNote は、iOS向けTODO管理アプリです。
+
+![fk-PAUI8193_TP_V](https://github.com/CH3COOH/todonote-ios/assets/137952/d06483a2-846e-44ae-9713-88cf6aa2ddc2)
 
 ## ビルド方法
 
@@ -10,9 +12,9 @@ bundle install
 bundle exec pod install
 ```
 
-* `GoogleService-Info.plist` はプロジェクトには含まれていないため、ビルド前に追加すること。
+* `GoogleService-Info.plist` はプロジェクトには含まれていない。ビルド前に追加すること。
 
-## 開発
+## Development
 
 開発向けのドキュメントは [document](./document/README.md)ディレクトリに置いている。
 
@@ -26,4 +28,4 @@ bundle exec pod install
 * UIの実装: SwiftUI (View) + UIKit (Navigation)
 * アーキテクチャ: Clean Architecture 
 * パッケージマネージャ: CocoaPods
-* バックエンド: Firestore
+* バックエンド: Cloud Firestore
