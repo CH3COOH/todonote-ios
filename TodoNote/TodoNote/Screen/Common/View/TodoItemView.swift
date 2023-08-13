@@ -15,41 +15,42 @@ struct TodoItemView: View {
     let editAction: () -> Void
 
     var body: some View {
-        HStack(spacing: 0) {
-            Button(action: doneAction) {
-                Circle()
-                    .fill(computeFillColor())
-                    .frame(width: 32, height: 32)
-                    .overlay(
+        Button(action: editAction) {
+            HStack(spacing: 0) {
+                Button(action: doneAction) {
+                    ZStack {
                         Circle()
-                            .stroke(computeStrokeColor())
-                    )
-            }
-            .buttonStyle(.plain)
-            .padding(.trailing, 12)
-            .padding(.vertical, 4)
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text(item.title)
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(Color.black)
-                if let desc = item.description, !desc.isEmpty {
-                    Text(desc)
-                        .font(.system(size: 14, weight: .regular))
-                        .foregroundColor(R.color.grey700.color)
+                            .fill(computeFillColor())
+                            .overlay(
+                                Circle()
+                                    .stroke(computeStrokeColor())
+                            )
+                        Image(systemName: "checkmark")
+                            .resizable()
+                            .frame(width: 12, height: 12)
+                            .scaledToFit()
+                            .foregroundColor(Color.white)
+                            .opacity(0.4)
+                    }
+                    .frame(width: 32, height: 32)
                 }
-            }
+                .buttonStyle(.plain)
+                .padding(.trailing, 12)
+                .padding(.vertical, 4)
 
-            Spacer(minLength: 0)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(item.title)
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(Color.black)
+                    if let desc = item.description, !desc.isEmpty {
+                        Text(desc)
+                            .font(.system(size: 14, weight: .regular))
+                            .foregroundColor(R.color.grey700.color)
+                    }
+                }
 
-            Button(action: editAction) {
-                Image(systemName: "pencil")
-                    .resizable()
-                    .frame(width: 16, height: 16)
-                    .scaledToFit()
-                    .foregroundColor(R.color.accentColor.color)
+                Spacer(minLength: 0)
             }
-            .buttonStyle(.plain)
         }
     }
 
@@ -58,11 +59,11 @@ struct TodoItemView: View {
         let todoDate = Calendar.current.startOfDay(for: item.datetime)
 
         if todoDate < today {
-            return R.color.red50.color
+            return R.color.red300.color
         } else if todoDate == today {
-            return R.color.amber50.color
+            return R.color.amber300.color
         } else {
-            return R.color.lightGreen50.color
+            return R.color.lightGreen300.color
         }
     }
 
