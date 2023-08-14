@@ -46,6 +46,7 @@
 		AA8F33A82A88CA5A0090EFDB /* DownloadTodosUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A52A88CA5A0090EFDB /* DownloadTodosUseCaseInput.swift */; };
 		AA8F33A92A88CA5A0090EFDB /* DownloadTodosUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A62A88CA5A0090EFDB /* DownloadTodosUseCaseResult.swift */; };
 		AA8F33AA2A88CA5A0090EFDB /* DownloadTodosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33A72A88CA5A0090EFDB /* DownloadTodosUseCase.swift */; };
+		AA8F33AE2A89C2710090EFDB /* CheckVersionUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F33AD2A89C2710090EFDB /* CheckVersionUseCaseTests.swift */; };
 		AA93D3202A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */; };
 		AA93D3212A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */; };
 		AA93D3222A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */; };
@@ -171,6 +172,7 @@
 		AA8F33A52A88CA5A0090EFDB /* DownloadTodosUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadTodosUseCaseInput.swift; sourceTree = "<group>"; };
 		AA8F33A62A88CA5A0090EFDB /* DownloadTodosUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadTodosUseCaseResult.swift; sourceTree = "<group>"; };
 		AA8F33A72A88CA5A0090EFDB /* DownloadTodosUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadTodosUseCase.swift; sourceTree = "<group>"; };
+		AA8F33AD2A89C2710090EFDB /* CheckVersionUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVersionUseCaseTests.swift; sourceTree = "<group>"; };
 		AA93D31D2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseInput.swift; sourceTree = "<group>"; };
 		AA93D31E2A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseResult.swift; sourceTree = "<group>"; };
 		AA93D31F2A85DAE100BB5EF2 /* CheckNetworkAccessUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCase.swift; sourceTree = "<group>"; };
@@ -343,8 +345,9 @@
 		AA1932972A84609C002C846F /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */,
+				AA8F33AD2A89C2710090EFDB /* CheckVersionUseCaseTests.swift */,
 				AA8F339E2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift */,
+				AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1206,6 +1209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA1932962A84607F002C846F /* UpdateTodoUseCaseTests.swift in Sources */,
+				AA8F33AE2A89C2710090EFDB /* CheckVersionUseCaseTests.swift in Sources */,
 				AA8F339F2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift in Sources */,
 				AA19327B2A82F946002C846F /* TodoRepositoryTests.swift in Sources */,
 			);
