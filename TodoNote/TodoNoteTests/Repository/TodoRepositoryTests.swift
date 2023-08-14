@@ -59,6 +59,44 @@ final class TodoRepositoryTests: XCTestCase {
         XCTAssertEqual(count2, 0)
     }
     
+    func testInsert_2() async throws {
+        try await repository.delete(with: RegistrationStatus.allCases)
+        
+        let id = TodoId(rawValue: "test1")
+        
+        let todo1 = Todo(
+            todoId: id,
+            status: .ready,
+            title: "タイトル1",
+            description: "本文1",
+            datetime: Date(),
+            createdAt: Date(),
+            updatedAt: Date(),
+            finished: false
+        )
+        
+        let todo2 = Todo(
+            todoId: id,
+            status: .ready,
+            title: "タイトル2",
+            description: "本文2",
+            datetime: Date(),
+            createdAt: Date(),
+            updatedAt: Date(),
+            finished: false
+        )
+        
+        try await repository.insert(for: todo1)
+        
+        do {
+            // todo_id と status の一致するアイテムの挿入は失敗しないといけない
+            try await repository.insert(for: todo2)
+            XCTFail()
+        } catch {
+            // Test OK
+        }
+    }
+    
     func testDelete_1() async throws {
         try await repository.delete(with: RegistrationStatus.allCases)
         
@@ -302,5 +340,44 @@ final class TodoRepositoryTests: XCTestCase {
         let count2 = try repository.fetchCount()
 
         XCTAssertEqual(count2, 0)
+    }
+    
+    func test_updateTodoStatus_1()  async throws {
+        try await repository.delete(with: RegistrationStatus.allCases)
+        
+        let id = TodoId(rawValue: "test1")
+        
+        let todo1 = Todo(
+            todoId: id,
+            status: .ready,
+            title: "タイトル1",
+            description: "本文1",
+            datetime: Date(),
+            createdAt: Date(),
+            updatedAt: Date(),
+            finished: false
+        )
+        try await repository.insert(for: todo1)
+        
+            let todo2 = Todo(
+                todoId: id,
+                status: .ready,
+                title: "タイトル2",
+                description: "本文2",
+                datetime: Date(),
+                createdAt: Date(),
+                updatedAt: Date(),
+                finished: false
+            )
+        
+        do {
+            // todo_id と status の一致するアイテムの挿入は失敗しないといけない
+            try await repository.updateTodoStatus(for: todo2, with: [.editing])
+            XCTFail()
+        } catch {
+            // Test OK
+        }
+        
+        try await repository.delete(with: RegistrationStatus.allCases)
     }
 }

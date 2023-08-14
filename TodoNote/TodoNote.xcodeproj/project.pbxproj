@@ -345,9 +345,9 @@
 		AA1932972A84609C002C846F /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */,
-				AA8F339E2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift */,
 				AA8F33AD2A89C2710090EFDB /* CheckVersionUseCaseTests.swift */,
+				AA8F339E2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift */,
+				AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
