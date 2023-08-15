@@ -13,7 +13,7 @@ class BaseViewModel: ObservableObject {
     @Published var alertItem: AlertItem?
 
     @MainActor
-    func show(error: Error, dismissAction: (() -> Void)? = nil) {
+    internal func show(error: Error, dismissAction: (() -> Void)? = nil) {
         alertItem = AlertItem(
             alert: Alert(
                 title: R.string.localizable.error.text,
