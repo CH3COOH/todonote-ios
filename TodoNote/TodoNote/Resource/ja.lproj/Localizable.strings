@@ -44,7 +44,7 @@
 "create_date" = "作成日";
 "modified_date" = "更新日";
 "ascending" = "新しい→古い";
-"descending" = "新しい→古い";
+"descending" = "古い→新しい";
 
 // MARK: - permission
 "permission_err_camera" = "カメラの使用が許可されていません";
@@ -66,6 +66,7 @@
 "home_dialog_sort_title" = "タスクの並び替え";
 "home_sort_standard" = "標準";
 "home_today_and_overdue" = "本日期限日・期限切れ";
+"home_new_desc" = "新しいタスクを追加しよう！";
 
 // MARK: - todo edit
 "edit_todo_title_edit" = "タスクの編集";

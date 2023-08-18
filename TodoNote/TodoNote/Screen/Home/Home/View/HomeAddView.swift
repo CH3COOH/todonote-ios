@@ -20,7 +20,7 @@ struct HomeAddView: View {
                     .clipShape(Circle())
                     .padding(.bottom, 24)
 
-                Text("新しいタスクを追加しよう！")
+                R.string.localizable.home_new_desc.text
                     .foregroundColor(Color(uiColor: UIColor.label))
                     .font(.system(size: 17, weight: .bold))
             }
