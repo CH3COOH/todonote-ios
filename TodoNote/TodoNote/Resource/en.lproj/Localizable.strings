@@ -66,6 +66,7 @@
 "home_dialog_sort_title" = "Sort tasks";
 "home_sort_standard" = "Standard";
 "home_today_and_overdue" = "Today and Overdue";
+"home_new_desc" = "新しいタスクを追加しよう！";
 
 // MARK: - todo edit
 "edit_todo_title_edit" = "Edit Todo";

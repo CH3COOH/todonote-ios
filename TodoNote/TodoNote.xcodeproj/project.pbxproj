@@ -535,14 +535,14 @@
 		AABB4FAC2A80DA1D008FC467 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA93D3232A85E21C00BB5EF2 /* AppError.swift */,
 				AAE79F7A2A80E008009823FB /* AppState.swift */,
 				AAE79F762A80DF48009823FB /* FAPage.swift */,
+				AA8F339A2A8726DF0090EFDB /* HomeSortType.swift */,
 				AAE79FB12A80FAE1009823FB /* RegistrationStatus.swift */,
 				AAE79FAF2A80FAC1009823FB /* Todo.swift */,
-				AAE79FAE2A80FAAF009823FB /* Other */,
-				AA93D3232A85E21C00BB5EF2 /* AppError.swift */,
-				AA8F339A2A8726DF0090EFDB /* HomeSortType.swift */,
 				AA8F339C2A872EB70090EFDB /* TodoSection.swift */,
+				AAE79FAE2A80FAAF009823FB /* Other */,
 			);
 			path = Model;
 			sourceTree = "<group>";
