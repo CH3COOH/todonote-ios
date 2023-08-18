@@ -9,6 +9,8 @@ import Foundation
 
 enum AppError: Error {
     case invalidContent
+
+    case unknownNetworkState
 }
 
 extension AppError: LocalizedError {
@@ -16,6 +18,8 @@ extension AppError: LocalizedError {
         switch self {
         case .invalidContent:
             return "ネットワークのアクセス経路に異常がある"
+        case .unknownNetworkState:
+            return "ネットワーク接続状態に異常がある"
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@testable import TodoNote
 
 class MockAuthProvider: AuthProviderProtocol {
     func signInAnonymously() async throws {}

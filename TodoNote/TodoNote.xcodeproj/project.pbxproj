@@ -63,7 +63,12 @@
 		AADA7FA62A864ED600B5E7C4 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FA52A864ED600B5E7C4 /* BaseViewModel.swift */; };
 		AADA7FAA2A86FFF500B5E7C4 /* AuthProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FA92A86FFF500B5E7C4 /* AuthProviderProtocol.swift */; };
 		AADA7FAC2A86FFFE00B5E7C4 /* FirebaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FAB2A86FFFE00B5E7C4 /* FirebaseAuthProvider.swift */; };
-		AADA7FAE2A87003000B5E7C4 /* MockAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FAD2A87003000B5E7C4 /* MockAuthProvider.swift */; };
+		AAE454C72A8F1E9900D139CF /* SignOutUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE454C62A8F1E9900D139CF /* SignOutUseCaseTests.swift */; };
+		AAE454CC2A8F21F500D139CF /* ReachabilityProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE454CB2A8F21F500D139CF /* ReachabilityProviderProtocol.swift */; };
+		AAE454CE2A8F233200D139CF /* ReachabilityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE454CD2A8F233200D139CF /* ReachabilityProvider.swift */; };
+		AAE454D02A8F24F000D139CF /* CheckNetworkAccessUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE454CF2A8F24F000D139CF /* CheckNetworkAccessUseCaseTests.swift */; };
+		AAE454D22A8F270A00D139CF /* MockReachabilityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE454D12A8F270A00D139CF /* MockReachabilityProvider.swift */; };
+		AAE454D32A8F280900D139CF /* MockAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FAD2A87003000B5E7C4 /* MockAuthProvider.swift */; };
 		AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F6B2A80DE50009823FB /* SplashView.swift */; };
 		AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F6D2A80DE5C009823FB /* SplashViewModel.swift */; };
 		AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F702A80DE75009823FB /* RootViewController.swift */; };
@@ -193,6 +198,11 @@
 		AADA7FA92A86FFF500B5E7C4 /* AuthProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderProtocol.swift; sourceTree = "<group>"; };
 		AADA7FAB2A86FFFE00B5E7C4 /* FirebaseAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthProvider.swift; sourceTree = "<group>"; };
 		AADA7FAD2A87003000B5E7C4 /* MockAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthProvider.swift; sourceTree = "<group>"; };
+		AAE454C62A8F1E9900D139CF /* SignOutUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutUseCaseTests.swift; sourceTree = "<group>"; };
+		AAE454CB2A8F21F500D139CF /* ReachabilityProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityProviderProtocol.swift; sourceTree = "<group>"; };
+		AAE454CD2A8F233200D139CF /* ReachabilityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityProvider.swift; sourceTree = "<group>"; };
+		AAE454CF2A8F24F000D139CF /* CheckNetworkAccessUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseTests.swift; sourceTree = "<group>"; };
+		AAE454D12A8F270A00D139CF /* MockReachabilityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReachabilityProvider.swift; sourceTree = "<group>"; };
 		AAE79F6B2A80DE50009823FB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		AAE79F6D2A80DE5C009823FB /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		AAE79F702A80DE75009823FB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -345,8 +355,10 @@
 		AA1932972A84609C002C846F /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				AAE454CF2A8F24F000D139CF /* CheckNetworkAccessUseCaseTests.swift */,
 				AA8F33AD2A89C2710090EFDB /* CheckVersionUseCaseTests.swift */,
 				AA8F339E2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift */,
+				AAE454C62A8F1E9900D139CF /* SignOutUseCaseTests.swift */,
 				AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */,
 			);
 			path = UseCase;
@@ -489,6 +501,7 @@
 		AABB4F902A80D7A5008FC467 /* TodoNoteTests */ = {
 			isa = PBXGroup;
 			children = (
+				AAE454C82A8F211600D139CF /* DI */,
 				AA1932792A82F8F8002C846F /* Repository */,
 				AA1932972A84609C002C846F /* UseCase */,
 			);
@@ -581,6 +594,7 @@
 		AADA7FA72A86FFDB00B5E7C4 /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				AAE454CA2A8F21EC00D139CF /* Reachability */,
 				AADA7FA82A86FFEA00B5E7C4 /* Auth */,
 			);
 			path = DI;
@@ -591,9 +605,26 @@
 			children = (
 				AADA7FA92A86FFF500B5E7C4 /* AuthProviderProtocol.swift */,
 				AADA7FAB2A86FFFE00B5E7C4 /* FirebaseAuthProvider.swift */,
-				AADA7FAD2A87003000B5E7C4 /* MockAuthProvider.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		AAE454C82A8F211600D139CF /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				AADA7FAD2A87003000B5E7C4 /* MockAuthProvider.swift */,
+				AAE454D12A8F270A00D139CF /* MockReachabilityProvider.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		AAE454CA2A8F21EC00D139CF /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				AAE454CD2A8F233200D139CF /* ReachabilityProvider.swift */,
+				AAE454CB2A8F21F500D139CF /* ReachabilityProviderProtocol.swift */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		AAE79F692A80DE3D009823FB /* Splash */ = {
@@ -1130,6 +1161,7 @@
 				AABB4F852A80D7A5008FC467 /* Persistence.swift in Sources */,
 				AA30E9602A84F7920063809B /* FetchTodoUseCaseInput.swift in Sources */,
 				AA19329B2A8467DF002C846F /* SectionItemBase.swift in Sources */,
+				AAE454CC2A8F21F500D139CF /* ReachabilityProviderProtocol.swift in Sources */,
 				AA8F33982A8725C70090EFDB /* FetchTodoListUseCaseResult.swift in Sources */,
 				AAE79F9C2A80E4E3009823FB /* AlertItem.swift in Sources */,
 				AAE79FC02A80FD2F009823FB /* CheckVersionUseCase.swift in Sources */,
@@ -1152,7 +1184,6 @@
 				AABB4F882A80D7A5008FC467 /* TodoNote.xcdatamodeld in Sources */,
 				AAE79F822A80E101009823FB /* SceneDelegate.swift in Sources */,
 				AAE79FBD2A80FD2F009823FB /* LaunchUseCase.swift in Sources */,
-				AADA7FAE2A87003000B5E7C4 /* MockAuthProvider.swift in Sources */,
 				AABB4FB02A80DA99008FC467 /* TodoId.swift in Sources */,
 				AAE79FAC2A80E88D009823FB /* HomeViewModel.swift in Sources */,
 				AAE79F7B2A80E008009823FB /* AppState.swift in Sources */,
@@ -1185,6 +1216,7 @@
 				AA1932802A830A26002C846F /* UpdateTodoUseCaseInput.swift in Sources */,
 				AA1932822A830A2F002C846F /* UpdateTodoUseCaseResult.swift in Sources */,
 				AA93D3212A85DAE100BB5EF2 /* CheckNetworkAccessUseCaseResult.swift in Sources */,
+				AAE454CE2A8F233200D139CF /* ReachabilityProvider.swift in Sources */,
 				AAE79FC82A80FFBB009823FB /* AppTitleView.swift in Sources */,
 				AAE79F852A80E1BC009823FB /* ActivityIndicatorView.swift in Sources */,
 				AA1932942A845296002C846F /* FirestoreRepository.swift in Sources */,
@@ -1208,10 +1240,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE454D32A8F280900D139CF /* MockAuthProvider.swift in Sources */,
 				AA1932962A84607F002C846F /* UpdateTodoUseCaseTests.swift in Sources */,
 				AA8F33AE2A89C2710090EFDB /* CheckVersionUseCaseTests.swift in Sources */,
 				AA8F339F2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift in Sources */,
+				AAE454D02A8F24F000D139CF /* CheckNetworkAccessUseCaseTests.swift in Sources */,
 				AA19327B2A82F946002C846F /* TodoRepositoryTests.swift in Sources */,
+				AAE454D22A8F270A00D139CF /* MockReachabilityProvider.swift in Sources */,
+				AAE454C72A8F1E9900D139CF /* SignOutUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
