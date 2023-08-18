@@ -16,7 +16,7 @@ final class CheckNetworkAccessUseCaseTests: XCTestCase {
     override func tearDownWithError() throws {
     }
     
-    func testネットワーク接続済み() async throws {
+    func testネットワーク接続済み_1() async throws {
         let useCase = CheckNetworkAccessUseCase(
             reachabilityProvider: MockReachabilityProvider(connected: true)
         )
@@ -30,7 +30,7 @@ final class CheckNetworkAccessUseCaseTests: XCTestCase {
         }
     }
     
-    func testネットワーク未接続() async throws {
+    func testネットワーク未接続_1() async throws {
         let useCase = CheckNetworkAccessUseCase(
             reachabilityProvider: MockReachabilityProvider(connected: false)
         )
@@ -41,6 +41,20 @@ final class CheckNetworkAccessUseCaseTests: XCTestCase {
             XCTFail()
         case .unavailable:
             break
+        }
+    }
+    
+    func testネットワーク状況が不明_1() async throws {
+        let useCase = CheckNetworkAccessUseCase(
+            reachabilityProvider: MockReachabilityProvider(connected: nil)
+        )
+
+        let result = await useCase.execute(.init())
+        switch result {
+        case .connected:
+            break
+        case .unavailable:
+            XCTFail()
         }
     }
 }
