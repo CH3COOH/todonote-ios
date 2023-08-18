@@ -11,19 +11,37 @@ import XCTest
 final class SignOutUseCaseTests: XCTestCase {
     
     private var todoRepository: TodoRepository!
-//    private var useCase: SignOutUseCase!
+    private var useCase: SignOutUseCase!
     
     override func setUpWithError() throws {
         let context = PersistenceController.preview.managedObjectContext
         todoRepository = TodoRepository(context: context)
-//        useCase = SignOutUseCase(
-//            todoRepository: todoRepository,
-//            authProvider: MockAuthProvider(),
-//            syncReadyTodoUseCase: UploadReadyTodosUseCase()
-//        )
+        let uploadReadyTodosUseCase = UploadReadyTodosUseCase(
+            firestoreRepository: FirestoreRepository(isTesting: true),
+            todoRepository: todoRepository,
+            checkNetworkAccessUseCase: CheckNetworkAccessUseCase(
+                reachabilityProvider: MockReachabilityProvider(connected: true)
+            )
+    
+        )
+        useCase = SignOutUseCase(
+            todoRepository: todoRepository,
+            authProvider: MockAuthProvider(),
+            syncReadyTodoUseCase: uploadReadyTodosUseCase
+        )
     }
     
     override func tearDownWithError() throws {
+    }
+    
+    func test_1() async throws {
+        let result = await useCase.execute(.init())
+        switch result {
+        case .success:
+            break
+        case let .failed(error):
+            XCTFail(error.localizedDescription)
+        }
     }
 }
 
