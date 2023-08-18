@@ -69,6 +69,7 @@
 		AAE454D02A8F24F000D139CF /* CheckNetworkAccessUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE454CF2A8F24F000D139CF /* CheckNetworkAccessUseCaseTests.swift */; };
 		AAE454D22A8F270A00D139CF /* MockReachabilityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE454D12A8F270A00D139CF /* MockReachabilityProvider.swift */; };
 		AAE454D32A8F280900D139CF /* MockAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA7FAD2A87003000B5E7C4 /* MockAuthProvider.swift */; };
+		AAE454D52A8F2A4E00D139CF /* UploadReadyTodosUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE454D42A8F2A4E00D139CF /* UploadReadyTodosUseCaseTests.swift */; };
 		AAE79F6C2A80DE50009823FB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F6B2A80DE50009823FB /* SplashView.swift */; };
 		AAE79F6E2A80DE5C009823FB /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F6D2A80DE5C009823FB /* SplashViewModel.swift */; };
 		AAE79F712A80DE75009823FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79F702A80DE75009823FB /* RootViewController.swift */; };
@@ -203,6 +204,7 @@
 		AAE454CD2A8F233200D139CF /* ReachabilityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityProvider.swift; sourceTree = "<group>"; };
 		AAE454CF2A8F24F000D139CF /* CheckNetworkAccessUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetworkAccessUseCaseTests.swift; sourceTree = "<group>"; };
 		AAE454D12A8F270A00D139CF /* MockReachabilityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReachabilityProvider.swift; sourceTree = "<group>"; };
+		AAE454D42A8F2A4E00D139CF /* UploadReadyTodosUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadReadyTodosUseCaseTests.swift; sourceTree = "<group>"; };
 		AAE79F6B2A80DE50009823FB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		AAE79F6D2A80DE5C009823FB /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		AAE79F702A80DE75009823FB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				AA8F339E2A873AAE0090EFDB /* FetchTodoListUseCaseTests.swift */,
 				AAE454C62A8F1E9900D139CF /* SignOutUseCaseTests.swift */,
 				AA1932952A84607F002C846F /* UpdateTodoUseCaseTests.swift */,
+				AAE454D42A8F2A4E00D139CF /* UploadReadyTodosUseCaseTests.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1248,6 +1251,7 @@
 				AA19327B2A82F946002C846F /* TodoRepositoryTests.swift in Sources */,
 				AAE454D22A8F270A00D139CF /* MockReachabilityProvider.swift in Sources */,
 				AAE454C72A8F1E9900D139CF /* SignOutUseCaseTests.swift in Sources */,
+				AAE454D52A8F2A4E00D139CF /* UploadReadyTodosUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
