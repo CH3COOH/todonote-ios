@@ -58,15 +58,13 @@ struct HomeView: View {
         .navigationTitle(Text("Home"))
         .listStyle(.inset)
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button(action: onClickAddButton) {
                     Label(
                         "Add",
                         systemImage: "plus"
                     )
                 }
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: model.onClickSortButton) {
                     Label(
                         "Sort",
