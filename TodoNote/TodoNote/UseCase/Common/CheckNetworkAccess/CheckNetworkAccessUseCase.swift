@@ -10,18 +10,23 @@ import Reachability
 
 /// BL-Z03 ネットワーク接続状態のチェック
 class CheckNetworkAccessUseCase: UseCaseProtocol {
+    private let reachabilityProvider: ReachabilityProviderProtocol
+
+    init(reachabilityProvider: ReachabilityProviderProtocol = ReachabilityProvider()) {
+        self.reachabilityProvider = reachabilityProvider
+    }
+
     func execute(_: CheckNetworkAccessUseCaseInput) async -> CheckNetworkAccessUseCaseResult {
         return await checkReachability()
     }
 
     private func checkReachability() async -> CheckNetworkAccessUseCaseResult {
         do {
-            let reachability = try Reachability()
-            switch reachability.connection {
-            case .unavailable:
-                return .unavailable
-            default:
+            let isConnected = try reachabilityProvider.isConnected()
+            if isConnected {
                 return await checkNetworkAccess()
+            } else {
+                return .unavailable
             }
         } catch {
             // Reachability が例外を吐いた場合は次のステップへ進む
